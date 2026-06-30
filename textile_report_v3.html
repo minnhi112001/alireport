@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textile Export Intelligence 2026 | Alibaba.com Vietnam</title>
+    
+    <!-- Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ocean: {
+                            DEFAULT: '#0F4C81',
+                            navy: '#1B365D',
+                            sky: '#5DADE2',
+                            light: '#F7F9FC',
+                            silver: '#E9EEF5',
+                            orange: '#FF6A00' 
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(15, 76, 129, 0.1);
+        }
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(27, 54, 93, 0.95) 30%, rgba(27, 54, 93, 0.4) 100%);
+        }
+        .text-glow {
+            text-shadow: 0 0 30px rgba(93, 173, 226, 0.4);
+        }
+        .benchmark-table tr:nth-child(even) { background-color: #F7F9FC; }
+        .image-zoom:hover img { transform: scale(1.05); }
+        .art-shadow { box-shadow: 0 30px 60px -12px rgba(15, 76, 129, 0.15); }
+        
+        @keyframes dash {
+            from { stroke-dashoffset: 1000; }
+            to { stroke-dashoffset: 0; }
+        }
+        .animate-curve {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 3s ease-in-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-white font-sans text-ocean-navy selection:bg-ocean-sky selection:text-white">
+
+    <!-- Header & Navigation -->
+    <header class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Alibaba.com_logo.svg" alt="Alibaba.com" class="h-7">
+                <div class="h-6 w-px bg-ocean/20 hidden md:block"></div>
+                <div class="hidden md:block text-left">
+                    <span class="block text-sm font-bold tracking-tight text-ocean">Alibaba.com Vietnam</span>
+                    <span class="block text-[8px] uppercase tracking-[0.2em] text-ocean-sky font-bold">Global Export Growth Partner</span>
+                </div>
+            </div>
+            
+            <nav class="hidden lg:flex items-center gap-10 text-[10px] font-bold uppercase tracking-widest">
+                <a href="#about" class="hover:text-ocean-orange transition-colors">Vision</a>
+                <a href="#intelligence" class="hover:text-ocean-orange transition-colors">Intelligence</a>
+                <a href="#benchmark" class="hover:text-ocean-orange transition-colors">Market Map</a>
+                <a href="#cases" class="hover:text-ocean-orange transition-colors">Success Cases</a>
+                <a href="#services" class="hover:text-ocean-orange transition-colors">Services</a>
+                <a href="#contact" class="bg-ocean text-white px-8 py-3 rounded-full hover:bg-ocean-orange transition-all shadow-lg shadow-ocean/20">Get Consultation</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[90vh] flex items-center overflow-hidden bg-ocean-navy">
+        <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=80&w=2000" alt="Textile Background" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 hero-overlay"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
+            <div class="lg:w-3/5 space-y-8">
+                <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-ocean-sky animate-pulse"></span>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-white">Global Intelligence Report 2026</span>
+                </div>
+                <h1 class="font-serif text-6xl lg:text-8xl font-bold leading-tight text-white text-glow">
+                    Vietnam <br>
+                    <span class="italic font-light text-ocean-sky">Textile Growth</span>
+                </h1>
+                <p class="text-lg text-ocean-silver/70 font-light max-w-xl leading-relaxed">
+                    Analyzing the high-volume B2B export shift for FDI manufacturers. Mapping the transition to recycled fibers, technical textiles, and digital-first procurement.
+                </p>
+                <div class="flex items-center gap-8 pt-6">
+                    <a href="#intelligence" class="bg-white text-ocean-navy px-10 py-5 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-ocean-orange hover:text-white transition-all art-shadow">Explore Data</a>
+                    <div class="flex -space-x-3">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" class="w-10 h-10 rounded-full border-2 border-ocean-navy object-cover">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80" class="w-10 h-10 rounded-full border-2 border-ocean-navy object-cover">
+                        <div class="w-10 h-10 rounded-full border-2 border-ocean-navy bg-ocean-sky flex items-center justify-center text-[10px] font-bold">+2K</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: About (Factory Audit) -->
+    <section id="about" class="py-32 bg-ocean-light relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div class="relative image-zoom rounded-[2rem] overflow-hidden art-shadow h-[600px]">
+                    <img src="https://images.unsplash.com/photo-1558444479-c8a02e62ef96?auto=format&fit=crop&q=80&w=1200" alt="Factory Audit" class="w-full h-full object-cover transition-all duration-700">
+                    <div class="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-8 rounded-2xl border border-white/50">
+                        <span class="text-[10px] font-bold text-ocean-sky uppercase tracking-widest block mb-2">Manufacturing Excellence</span>
+                        <p class="text-sm font-medium text-ocean-navy">"Vietnam is no longer just an alternative; it is the global anchor for sustainable textile FDI."</p>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <h2 class="font-serif text-5xl font-bold leading-tight">The Growth Partner for FDI Manufacturers</h2>
+                    <p class="text-ocean-navy/60 leading-relaxed text-lg font-light">
+                        Alibaba.com Vietnam Advisory specializes in the end-to-end enablement of foreign-invested textile clusters. We combine deep supply chain visibility with localized export consulting to drive multi-million dollar B2B contract acquisition.
+                    </p>
+                    <div class="space-y-6 pt-4">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-ocean rounded-xl text-white"><i data-lucide="bar-chart-4" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-base">Quantitative Intelligence</h4>
+                                <p class="text-xs text-ocean-navy/50">Direct access to search volume indices and buyer intent heatmaps.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-ocean-sky rounded-xl text-white"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-base">Verified Compliance</h4>
+                                <p class="text-xs text-ocean-navy/50">Positioning factories to pass strict ESG and quality audits for Tier-1 retailers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Intelligence -->
+    <section id="intelligence" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                <h2 class="font-serif text-5xl font-bold">Global Textile Projections</h2>
+                <p class="text-ocean-navy/40 font-light italic">Digital Sourcing Index 2023 - 2030 (USD Billions)</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-8 bg-ocean-navy p-12 rounded-[3rem] shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-20"><i data-lucide="globe" class="w-32 h-32 text-white"></i></div>
+                    
+                    <!-- Visual Graph (SVG) -->
+                    <div class="h-[300px] w-full relative">
+                        <svg viewBox="0 0 1000 300" class="w-full h-full">
+                            <line x1="0" y1="50" x2="1000" y2="50" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                            <line x1="0" y1="150" x2="1000" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                            <line x1="0" y1="250" x2="1000" y2="250" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                            <path d="M0,280 Q250,260 500,180 T1000,50" fill="none" stroke="#5DADE2" stroke-width="6" stroke-linecap="round" class="animate-curve" />
+                            <circle cx="1000" cy="50" r="8" fill="#5DADE2" />
+                            <text x="0" y="295" fill="rgba(255,255,255,0.5)" font-size="12">2023 ($1.5T)</text>
+                            <text x="500" y="210" fill="#5DADE2" font-weight="bold" font-size="14">CAGR 4.5%</text>
+                            <text x="920" y="35" fill="#5DADE2" font-weight="bold" font-size="16">2030 ($2.1T)</text>
+                        </svg>
+                    </div>
+                    
+                    <div class="mt-12 grid grid-cols-3 gap-8 border-t border-white/10 pt-8">
+                        <div>
+                            <span class="block text-3xl font-bold text-white">$2.1T</span>
+                            <span class="text-[9px] uppercase tracking-widest text-white/40">Market Value 2030</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-bold text-ocean-sky">32%</span>
+                            <span class="text-[9px] uppercase tracking-widest text-white/40">Recycled Fabric Growth</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-bold text-white">40+</span>
+                            <span class="text-[9px] uppercase tracking-widest text-white/40">Target Import Markets</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-4 space-y-6">
+                    <div class="bg-ocean-sky/10 p-8 rounded-3xl border border-ocean-sky/20">
+                        <h4 class="font-bold text-ocean-navy mb-4">Strategic Insights</h4>
+                        <ul class="space-y-4 text-xs text-ocean-navy/70 leading-relaxed">
+                            <li class="flex gap-3"><i data-lucide="check" class="text-ocean-sky w-4 h-4 shrink-0"></i> High demand for recycled polyester and sustainable cotton fibers in US/EU.</li>
+                            <li class="flex gap-3"><i data-lucide="check" class="text-ocean-sky w-4 h-4 shrink-0"></i> Shift from mass apparel to technical & activewear textiles.</li>
+                            <li class="flex gap-3"><i data-lucide="check" class="text-ocean-sky w-4 h-4 shrink-0"></i> Smart factory integration is now a key buyer selection metric.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Benchmark -->
+    <section id="benchmark" class="py-32 bg-ocean-silver/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                <div class="lg:col-span-4 space-y-8">
+                    <h2 class="font-serif text-5xl font-bold">Supply Chain Resilience</h2>
+                    <p class="text-ocean-navy/60 font-light leading-relaxed">Vietnam offers a unique blend of tax efficiency (FTAs), labor skill, and green energy readiness that creates a superior FDI proposition so compared to regional rivals.</p>
+                </div>
+                <div class="lg:col-span-8 bg-white rounded-[2.5rem] overflow-hidden art-shadow">
+                    <table class="w-full text-left benchmark-table">
+                        <thead>
+                            <tr class="bg-ocean-navy text-white text-[9px] uppercase tracking-[0.3em]">
+                                <th class="p-8">Metric Benchmark</th>
+                                <th class="p-8">Vietnam</th>
+                                <th class="p-8">India</th>
+                                <th class="p-8">Bangladesh</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-xs">
+                            <tr>
+                                <td class="p-8 font-bold">Export Flexibility</td>
+                                <td class="p-8 text-ocean-sky font-bold">Very High</td>
+                                <td class="p-8">Moderate</td>
+                                <td class="p-8">High</td>
+                            </tr>
+                            <tr>
+                                <td class="p-8 font-bold">Sustainability Certs</td>
+                                <td class="p-8 text-ocean-sky font-bold">Ready (FDI Tier)</td>
+                                <td class="p-8">Developing</td>
+                                <td class="p-8">Moderate</td>
+                            </tr>
+                            <tr>
+                                <td class="p-8 font-bold">Digital B2B Readiness</td>
+                                <td class="p-8 text-ocean-sky font-bold">Accelerating</td>
+                                <td class="p-8">High</td>
+                                <td class="p-8">Low</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Success Cases -->
+    <section id="cases" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div class="space-y-4">
+                    <span class="text-ocean-sky font-bold text-xs uppercase tracking-widest">Client Benchmarks</span>
+                    <h2 class="font-serif text-5xl font-bold">Success Built on Data</h2>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Case: Texhong -->
+                <div class="group card-hover space-y-6">
+                    <div class="h-[400px] rounded-[2.5rem] overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format&fit=crop&q=80&w=800" alt="Texhong" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-ocean-navy/90 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-8 left-8 right-8 text-white">
+                            <span class="text-[9px] uppercase font-bold tracking-widest text-ocean-sky mb-2 block font-sans">Yarn & Fabric Specialist</span>
+                            <h4 class="text-2xl font-serif font-bold">Texhong Textile Group</h4>
+                        </div>
+                    </div>
+                    <div class="px-4 space-y-4">
+                        <p class="text-xs text-ocean-navy/60 leading-relaxed font-light">One of the largest FDI yarn manufacturers. Leveraged Alibaba.com to capture direct inquiries from US fashion retailers.</p>
+                        <div class="flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-ocean border-t border-ocean-silver pt-4">
+                            <span>Target: US, EU</span>
+                            <a href="https://texhong.en.alibaba.com" target="_blank" class="flex items-center gap-1 hover:text-ocean-orange transition-colors">Storefront <i data-lucide="external-link" class="w-3 h-3"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case: Century Fiber -->
+                <div class="group card-hover space-y-6">
+                    <div class="h-[400px] rounded-[2.5rem] overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1524275539700-cf51138f679b?auto=format&fit=crop&q=80&w=800" alt="Century Fiber" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-ocean-navy/90 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-8 left-8 right-8 text-white">
+                            <span class="text-[9px] uppercase font-bold tracking-widest text-ocean-sky mb-2 block font-sans">Sustainable Fiber Pioneer</span>
+                            <h4 class="text-2xl font-serif font-bold">Century Synthetic Fiber</h4>
+                        </div>
+                    </div>
+                    <div class="px-4 space-y-4">
+                        <p class="text-xs text-ocean-navy/60 leading-relaxed font-light">Specializing in recycled polyester. Transitioned to a "Digital-First" export model for ESG-compliant demand.</p>
+                        <div class="flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-ocean border-t border-ocean-silver pt-4">
+                            <span>Target: 30+ Markets</span>
+                            <a href="#" target="_blank" class="flex items-center gap-1 hover:text-ocean-orange transition-colors">View Profile <i data-lucide="external-link" class="w-3 h-3"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case: HCMC Alliance -->
+                <div class="group card-hover space-y-6">
+                    <div class="h-[400px] rounded-[2.5rem] overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1556740734-79383633659c?auto=format&fit=crop&q=80&w=800" alt="HCMC Alliance" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-ocean-navy/90 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-8 left-8 right-8 text-white">
+                            <span class="text-[9px] uppercase font-bold tracking-widest text-ocean-sky mb-2 block font-sans">Apparel OEM Cluster</span>
+                            <h4 class="text-2xl font-serif font-bold">HCMC Garment Alliance</h4>
+                        </div>
+                    </div>
+                    <div class="px-4 space-y-4">
+                        <p class="text-xs text-ocean-navy/60 leading-relaxed font-light">Integrated RFQ workflows to secure bulk uniform contracts for Oceania and European logistics firms.</p>
+                        <div class="flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-ocean border-t border-ocean-silver pt-4">
+                            <span>Target: Oceania, EU</span>
+                            <a href="#" target="_blank" class="flex items-center gap-1 hover:text-ocean-orange transition-colors">Case Details <i data-lucide="external-link" class="w-3 h-3"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Services -->
+    <section id="services" class="py-32 bg-ocean-navy text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-ocean-sky/10 rounded-full blur-[100px] -mr-48 -mt-48"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                <span class="text-ocean-sky font-bold text-xs uppercase tracking-widest">Consulting Roadmap</span>
+                <h2 class="font-serif text-4xl font-bold">End-to-End Export Enablement</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="space-y-4 group">
+                    <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-ocean-sky border border-white/10 group-hover:bg-ocean-sky group-hover:text-white transition-all">
+                        <i data-lucide="globe"></i>
+                    </div>
+                    <h4 class="font-bold text-sm uppercase tracking-wider">Market Intelligence</h4>
+                    <p class="text-[11px] text-white/50 leading-relaxed font-light">Deep-dive analytics on buyer demand, competitor pricing benchmarks, and global textile category trends.</p>
+                </div>
+                <div class="space-y-4 group">
+                    <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-ocean-sky border border-white/10 group-hover:bg-ocean-sky group-hover:text-white transition-all">
+                        <i data-lucide="layout-template"></i>
+                    </div>
+                    <h4 class="font-bold text-sm uppercase tracking-wider">Storefront Branding</h4>
+                    <p class="text-[11px] text-white/50 leading-relaxed font-light">Premium store design and visual optimization to build immediate trust with Tier-1 global retailers.</p>
+                </div>
+                <div class="space-y-4 group">
+                    <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-ocean-sky border border-white/10 group-hover:bg-ocean-sky group-hover:text-white transition-all">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h4 class="font-bold text-sm uppercase tracking-wider">Traffic Solutions</h4>
+                    <p class="text-[11px] text-white/50 leading-relaxed font-light">AI-driven keyword optimization and search advertising to capture targeted wholesale inquiries.</p>
+                </div>
+                <div class="space-y-4 group">
+                    <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-ocean-sky border border-white/10 group-hover:bg-ocean-sky group-hover:text-white transition-all">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h4 class="font-bold text-sm uppercase tracking-wider">Customer Success</h4>
+                    <p class="text-[11px] text-white/50 leading-relaxed font-light">Dedicated Account Manager providing ongoing strategy reviews and RFQ bidding training.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Contact -->
+    <section id="contact" class="py-32 bg-ocean-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-ocean-navy rounded-[4rem] overflow-hidden art-shadow flex flex-col lg:flex-row shadow-2xl">
+                <div class="lg:w-1/2 relative min-h-[500px]">
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1200" alt="Consultation" class="absolute inset-0 w-full h-full object-cover grayscale opacity-50">
+                    <div class="absolute inset-0 bg-ocean/40 mix-blend-multiply"></div>
+                </div>
+                <div class="lg:w-1/2 p-16 lg:p-24 space-y-12 text-white">
+                    <div class="space-y-4">
+                        <h2 class="font-serif text-5xl font-bold">Strategic <br><span class="text-ocean-sky">Consultation.</span></h2>
+                    </div>
+                    <div class="space-y-6 pt-4">
+                        <div class="flex items-center gap-4 text-sm text-ocean-silver/80">
+                            <i data-lucide="user" class="w-4 h-4 text-ocean-sky"></i>
+                            <span>Pham Nhi - Account Manager</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-sm text-ocean-silver/80">
+                            <i data-lucide="phone" class="w-4 h-4 text-ocean-sky"></i>
+                            <span>(+84) 974 965 909</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-sm text-ocean-silver/80">
+                            <i data-lucide="mail" class="w-4 h-4 text-ocean-sky"></i>
+                            <span>phamnhi01@alibaba-inc.com</span>
+                        </div>
+                    </div>
+                    <a href="mailto:phamnhi01@alibaba-inc.com" class="block bg-ocean-sky text-white text-center py-6 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-ocean-navy transition-all shadow-xl">Start Your Export Audit</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-16 border-t border-ocean-silver">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="flex items-center gap-6">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Alibaba.com_logo.svg" alt="Alibaba Logo" class="h-6">
+                <span class="text-[8px] uppercase font-bold text-ocean-navy/40 tracking-[0.3em]">© 2026 Alibaba.com Vietnam Sourcing Intelligence Division.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
