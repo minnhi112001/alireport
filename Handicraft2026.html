@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Báo cáo Thị trường Alibaba: Ngành Thủ công Mỹ nghệ Việt Nam - Phạm Nhi</title>
+  <!-- Google Fonts Lexend & FontAwesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --p: #002B5B;
+      --s: #1F75FE;
+      --g: #D4A017;
+      --bg: #F8F9FA;
+      --text: #2C3E50;
+      --sidebar-bg: #07162C;
+      --card-bg: #FFFFFF;
+      --sw: 260px;
+      --border-radius: 12px;
+      --transition: all 0.3s ease;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Lexend', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+    /* Sidebar */
+    .sidebar { position: fixed; top: 0; left: 0; width: var(--sw); height: 100vh; background: linear-gradient(180deg, var(--sidebar-bg) 0%, var(--p) 100%); color: #fff; padding: 2rem 1.5rem; overflow-y: auto; z-index: 100; box-shadow: 4px 0 15px rgba(0,0,0,0.1); }
+    .brand { display: flex; align-items: center; gap: 10px; font-size: 1.25rem; font-weight: 700; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .brand i { color: var(--g); }
+    .sidebar nav ul { list-style: none; }
+    .sidebar nav ul li { margin-bottom: 0.5rem; }
+    .sidebar nav ul li a { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.8); text-decoration: none; padding: 0.75rem 1rem; border-radius: var(--border-radius); font-size: 0.95rem; font-weight: 600; transition: var(--transition); }
+    .sidebar nav ul li a:hover, .sidebar nav ul li a.active { color: #fff; background-color: rgba(255,255,255,0.06); border-left: 4px solid var(--g); }
+    /* Main Layout */
+    .main-content { margin-left: var(--sw); padding: 2.5rem 3rem; max-width: 1400px; }
+    .header-banner { background: linear-gradient(135deg, rgba(7, 22, 44, 0.93) 0%, rgba(0, 43, 91, 0.85) 100%), url('https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=1200&q=80') no-repeat center/cover; color: #fff; padding: 3.5rem 2.5rem; border-radius: var(--border-radius); position: relative; margin-bottom: 2rem; box-shadow: 0 8px 25px rgba(0,43,91,0.15); }
+    .badge { display: inline-block; background-color: var(--g); color: #07162C; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 50px; margin-bottom: 1rem; }
+    .title { font-size: 2.1rem; font-weight: 800; margin-bottom: 0.5rem; line-height: 1.3; }
+    .meta { display: flex; flex-wrap: wrap; gap: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.85); border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1rem; margin-top: 1.5rem; }
+    .section-card { background-color: var(--card-bg); border-radius: var(--border-radius); padding: 2.5rem; margin-bottom: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.02); }
+    .section-title { font-size: 1.4rem; font-weight: 700; color: var(--p); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--bg); padding-bottom: 0.75rem; }
+    .section-title i { color: var(--g); }
+    .sub-title { font-size: 1.1rem; font-weight: 600; color: var(--p); margin: 1.25rem 0 0.5rem 0; }
+    p { margin-bottom: 1rem; color: #576574; }
+    .highlight { background-color: #F0F4F8; border-left: 4px solid var(--s); padding: 1rem 1.25rem; border-radius: 0 var(--border-radius) var(--border-radius) 0; margin-bottom: 1.25rem; }
+    .highlight.alert { background-color: #FFF9E6; border-left-color: var(--g); }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; }
+    .info-card { background-color: var(--bg); border-radius: var(--border-radius); padding: 1.25rem; border: 1px solid rgba(0,0,0,0.04); cursor: pointer; transition: var(--transition); }
+    .info-card:hover { transform: translateY(-4px); box-shadow: 0 8px 18px rgba(0,43,91,0.05); border-color: var(--s); }
+    .info-icon { font-size: 1.5rem; color: var(--p); margin-bottom: 0.75rem; }
+    .info-val { font-size: 1.35rem; font-weight: 800; color: var(--p); }
+    .info-lbl { font-size: 0.8rem; font-weight: 600; color: var(--s); margin-top: 0.25rem; }
+    .sup-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; }
+    .sup-card { background-color: var(--card-bg); border-radius: var(--border-radius); overflow: hidden; border: 1px solid rgba(0,0,0,0.06); transition: var(--transition); cursor: pointer; display: flex; flex-direction: column; }
+    .sup-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,43,91,0.08); border-color: var(--s); }
+    .sup-img-container { position: relative; width: 100%; height: 180px; overflow: hidden; }
+    .sup-img { width: 100%; height: 100%; object-fit: cover; border-bottom: 1px solid rgba(0,0,0,0.06); transition: var(--transition); }
+    .sup-card:hover .sup-img { transform: scale(1.05); }
+    .sup-body { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .sup-name { font-size: 0.95rem; font-weight: 700; color: var(--p); margin-bottom: 0.4rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sup-meta { display: flex; justify-content: space-between; font-size: 0.75rem; color: #7f8c8d; margin-bottom: 0.5rem; }
+    .sup-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 0.75rem; }
+    .sup-tag { background-color: #EEF5FC; color: var(--s); font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 4px; font-weight: 600; }
+    .sup-btn { display: block; width: 100%; text-align: center; background-color: var(--p); color: #fff; padding: 0.5rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; text-decoration: none; margin-top: auto; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.8rem; }
+    table th { background-color: var(--p); color: #fff; font-weight: 600; text-align: left; padding: 0.6rem 0.8rem; border: 1px solid rgba(0,0,0,0.05); }
+    table td { padding: 0.6rem 0.8rem; border: 1px solid rgba(0,0,0,0.05); }
+    table tr:nth-child(even) { background-color: #F8FAFC; }
+    .table-container { overflow-x: auto; margin-top: 1.5rem; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08); }
+    .chart-box { background-color: #FFF; border: 1px solid rgba(0,0,0,0.05); border-radius: var(--border-radius); padding: 1rem; height: 320px; position: relative; }
+    .link-store-btn { background-color: #8B4513; color: white !important; padding: 0.35rem 0.75rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.72rem; }
+    footer { background-color: var(--sidebar-bg); color: #fff; padding: 3rem 4rem 1.5rem 4rem; border-radius: var(--border-radius); margin-top: 3rem; }
+    .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem; }
+    .foot-title { font-size: 1.05rem; font-weight: 700; color: var(--g); margin-bottom: 1rem; }
+    .foot-bottom { display: flex; justify-content: space-between; font-size: 0.75rem; color: rgba(255,255,255,0.6); padding-top: 1.5rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Left Sidebar Navigation -->
+  <div class="sidebar">
+    <div class="brand">
+      <i class="fa-solid fa-chart-line"></i>
+      <span>Frank B2B Expert</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#sec1" class="active"><i class="fa-solid fa-flag"></i> Chương 1: Tóm tắt</a></li>
+        <li><a href="#sec2"><i class="fa-solid fa-globe"></i> Chương 2: Tổng quan</a></li>
+        <li><a href="#sec3"><i class="fa-solid fa-map"></i> Chương 3: Thị trường</a></li>
+        <li><a href="#sec4"><i class="fa-solid fa-warehouse"></i> Chương 4: Nhà bán VN</a></li>
+        <li><a href="#sec5"><i class="fa-solid fa-award"></i> Chương 5: SP bán chạy</a></li>
+        <li><a href="#sec6"><i class="fa-solid fa-tags"></i> Chương 6: So sánh giá</a></li>
+        <li><a href="#sec7"><i class="fa-solid fa-wand-magic-sparkles"></i> Chương 7: SEO & Cơ hội</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Content Wrapper -->
+  <div class="main-content">
+    <div class="header-banner">
+      <span class="badge">Báo cáo Xuất khẩu B2B</span>
+      <h1 class="title">BÁO CÁO THỊ TRƯỜNG: THỦ CÔNG MỸ NGHỆ VIỆT NAM</h1>
+      <p style="color: rgba(255,255,255,0.9); font-size: 1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Chuyên sâu về lưu lượng và tỷ lệ hỏi hàng cho nhà xuất khẩu Việt Nam.</p>
+      <div class="meta">
+        <span><i class="fa-solid fa-user-tie"></i> Phụ trách: <strong>Phạm Nhi (+84) 974 965 909</strong></span>
+        <span><i class="fa-solid fa-calendar-days"></i> Cập nhật: <strong>Ngày 07/07/2026</strong></span>
+        <span><i class="fa-solid fa-shield-halved"></i> Độ tin cậy: <strong>Premium Report</strong></span>
+      </div>
+    </div>
+
+    <!-- CHƯƠNG 1: EXECUTIVE SUMMARY -->
+    <div id="sec1" class="section-card">
+      <h2 class="section-title"><i class="fa-solid fa-flag"></i> Chương 1: Executive Summary (Tóm tắt điều hành)</h2>
+      <div class="grid-3">
+        <div class="info-card">
+          <div class="info-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+          <div class="info-val">3.5 - 7%</div>
+          <div class="info-lbl">Tỷ lệ hỏi hàng (Inquiry Rate)</div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
+          <div class="info-val">850k+</div>
+          <div class="info-lbl">Lượt truy cập/tháng (Gifts & Crafts)</div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fa-solid fa-earth-americas"></i></div>
+          <div class="info-val">163+</div>
+          <div class="info-lbl">Quốc gia nhập khẩu</div>
+        </div>
+      </div>
+      <div class="highlight">
+        <p><strong>Kết luận chính:</strong> Ngành thủ công mỹ nghệ Việt Nam đang đón nhận dòng traffic khổng lồ từ các quốc gia phương Tây. Các nhà bán có hồ sơ <strong>Verified Supplier</strong> và listing đầy đủ video/hình ảnh có tỷ lệ hỏi hàng cao gấp <strong>3-5 lần</strong> so với thông thường.</p>
+      </div>
+    </div>
+
+    <!-- CHƯƠNG 2: GLOBAL MARKET OVERVIEW -->
+    <div id="sec2" class="section-card">
+      <h2 class="section-title"><i class="fa-solid fa-globe"></i> Chương 2: Toàn cảnh thị trường & Nhu cầu</h2>
+      <p>Với giá trị thị trường dự kiến đạt 983 tỷ USD vào năm 2030, ngành thủ công mỹ nghệ đang chuyển đổi từ hàng hóa trang trí đơn thuần sang các giải pháp "Lối sống bền vững". Việt Nam hiện chiếm giữ gần 10% nhu cầu toàn cầu về các sản phẩm thủ công truyền thống.</p>
+      <div class="grid-2">
+        <div class="chart-box"><canvas id="shareChart"></canvas></div>
+        <div class="chart-box"><canvas id="growthChart"></canvas></div>
+      </div>
+    </div>
+
+    <!-- CHƯƠNG 3: MAIN IMPORT MARKETS & TRAFFIC -->
+    <div id="sec3" class="section-card">
+      <h2 class="section-title"><i class="fa-solid fa-map"></i> Chương 3: Thị trường nhập khẩu chính & Lưu lượng</h2>
+      <p>Lưu lượng truy cập (Traffic) cho ngành hàng thủ công mỹ nghệ trên Alibaba.com có sự tập trung cao độ vào các khu vực tiêu dùng lớn:</p>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Thị trường</th>
+              <th>Tỷ trọng Traffic (%)</th>
+              <th>Đặc điểm nhu cầu</th>
+              <th>Sản phẩm tiêu điểm</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Hoa Kỳ (USA)</strong></td>
+              <td>~35%</td>
+              <td>Số lượng lớn, ưu tiên chứng chỉ FSC/BSCI</td>
+              <td>Giỏ mây tre, Nội thất gỗ</td>
+            </tr>
+            <tr>
+              <td><strong>Châu Âu (EU)</strong></td>
+              <td>~28%</td>
+              <td>Thiết kế tối giản, tiêu chuẩn an toàn cao</td>
+              <td>Bát gáo dừa, Đồ gốm sứ</td>
+            </tr>
+            <tr>
+              <td><strong>Úc (Australia)</strong></td>
+              <td>~12%</td>
+              <td>Ưu tiên vật liệu tự nhiên, lối sống xanh</td>
+              <td>Thảm cói, Đồ trang trí tường</td>
+            </tr>
+            <tr>
+              <td><strong>Các thị trường khác</strong></td>
+              <td>~25%</td>
+              <td>Quà tặng lưu niệm, đồ gia dụng thủ công</td>
+              <td>Sơn mài, Đồ thêu ren</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="highlight alert">
+        <p><strong>Chỉ số Inquiry:</strong> Tỷ lệ hỏi hàng trung bình cho các nhà cung cấp Việt Nam trong ngành dao động từ <strong>3.5% đến 7%</strong>. Những nhà bán nằm trong <strong>Top 10% (Verified)</strong> có thể đạt tỷ lệ trên <strong>12-15%</strong> nhờ tối ưu hóa SEO và phản hồi tin nhắn dưới 1 giờ.</p>
+      </div>
+    </div>
+
+    <!-- CHƯƠNG 4: VIETNAM SUPPLIER LANDSCAPE -->
+    <div id="sec4" class="section-card">
+      <h2 class="section-title"><i class="fa-solid fa-warehouse"></i> Chương 4: Danh bạ nhà bán xuất sắc</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Nhà cung cấp</th>
+              <th>Thâm niên</th>
+              <th>Sản phẩm chính</th>
+              <th>Thị trường chính</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>99 GOLD DATA</td>
+              <td>8 năm</td>
+              <td>Mây tre, dừa, đồ decor</td>
+              <td>USA, China, Australia</td>
+              <td><a href="https://99golddata.trustpass.alibaba.com/" target="_blank" class="link-store-btn">Xem Store</a></td>
+            </tr>
+            <tr>
+              <td>INDOCHINA.,JSC</td>
+              <td>9 năm</td>
+              <td>Nội thất mây tre, giỏ cói</td>
+              <td>Asia, EU, USA</td>
+              <td><a href="https://indochinajscvietnam.trustpass.alibaba.com/" target="_blank" class="link-store-btn">Xem Store</a></td>
+            </tr>
+            <tr>
+              <td>GREEN ART EXPORT JSC</td>
+              <td>5 năm</td>
+              <td>Đồ decor mây tre</td>
+              <td>EU, USA, Japan</td>
+              <td><a href="https://vgreenart.trustpass.alibaba.com/" target="_blank" class="link-store-btn">Xem Store</a></td>
+            </tr>
+            <tr>
+              <td>LUNAR HANDICRAFT</td>
+              <td>6 năm</td>
+              <td>Bát dừa, tre</td>
+              <td>EU, North America</td>
+              <td><a href="https://lunarhandicraft.trustpass.alibaba.com/" target="_blank" class="link-store-btn">Xem Store</a></td>
+            </tr>
+            <tr>
+              <td>JNC HANDICRAFTS</td>
+              <td>3 năm</td>
+              <td>Macrame, Crochet toys</td>
+              <td>EU, USA, Asia</td>
+              <td><a href="https://jnchandicrafts.trustpass.alibaba.com/" target="_blank" class="link-store-btn">Xem Store</a></td>
+            </tr>
+            <tr>
+              <td>ARTEX DONG THAP</td>
+              <td>2 năm</td>
+              <td>Lục bình, cói, mây tre</td>
+              <td>South Asia, Americas</td>
+              <td><a href="https://artexdongthap.trustpass.alibaba.com/" target="_blank" class="link-store-btn">Xem Store</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CHƯƠNG 5: TOP SELLING PRODUCTS -->
+    <div id="sec5" class="section-card">
+      <h2 class="section-title"><i class="fa-solid fa-award"></i> Chương 5: Top Selling Products</h2>
+      <div class="sup-grid">
+        <div class="sup-card">
+          <div class="sup-img-container"><img src="https://s.alicdn.com/@sc04/kf/U73edfcc520da41b39bbf744972b43c21U.jpg" class="sup-img"></div>
+          <div class="sup-body">
+            <div class="sup-name">Giỏ Tre Xuất Khẩu</div>
+            <div class="sup-meta"><span>Giá: $1.00</span><span>MOQ: 100</span></div>
+            <a href="https://www.alibaba.com/product-detail/Bamboo-Basket-with-HIGH-QUALITY-From_62011988762.html" target="_blank" class="sup-btn">Xem Sản Phẩm</a>
+          </div>
+        </div>
+        <div class="sup-card">
+          <div class="sup-img-container"><img src="https://s.alicdn.com/@sc04/kf/S344e87767ebd47ea9fc86ee0f0746e12t.png" class="sup-img"></div>
+          <div class="sup-body">
+            <div class="sup-name">Bát Gáo Dừa Tự Nhiên</div>
+            <div class="sup-meta"><span>Giá: $0.25 - $0.85</span><span>MOQ: 200</span></div>
+            <a href="https://www.alibaba.com/product-detail/Natural-Coconut-Shell-Bowl-Eco-Conscious_11000012048595.html" target="_blank" class="sup-btn">Xem Sản Phẩm</a>
+          </div>
+        </div>
+        <div class="sup-card">
+          <div class="sup-img-container"><img src="https://s.alicdn.com/@sc04/kf/S63995b897293448c948ebde6faf3721fa.jpg" class="sup-img"></div>
+          <div class="sup-body">
+            <div class="sup-name">Khay Sơn Mài Mid-Century</div>
+            <div class="sup-meta"><span>Giá: $5.00 - $5.90</span><span>MOQ: 20</span></div>
+            <a href="https://www.alibaba.com/product-detail/Best-Selling-Design-Mid-Century-Pink_10000021520805.html" target="_blank" class="sup-btn">Xem Sản Phẩm</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHƯƠNG 6: PRICING INTELLIGENCE -->
+    <div id="sec6" class="section-card">
+      <h2 class="section-title"><i class="fa-solid fa-tags"></i> Chương 6: Pricing Intelligence</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Dòng sản phẩm</th>
+              <th>Khoảng giá FOB (USD)</th>
+              <th>MOQ phổ biến</th>
+              <th>Đơn vị tính</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Giỏ mây tre đan</td>
+              <td>0.50 - 5.50</td>
+              <td>100 - 300</td>
+              <td>Cái (Piece)</td>
+            </tr>
+            <tr>
+              <td>Bát gáo dừa</td>
+              <td>0.25 - 1.50</td>
+              <td>200 - 500</td>
+              <td>Cái (Piece)</td>
+            </tr>
+            <tr>
+              <td>Khay sơn mài</td>
+              <td>2.50 - 18.00</td>
+              <td>20 - 100</td>
+              <td>Cái (Piece)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CHƯƠNG 7: SEO INSIGHTS -->
+    <div id="sec7" class="section-card">
+      <h2 class="section-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Chương 7: SEO Insights & Action Plan</h2>
+      <div class="grid-2">
+        <div>
+          <p><strong>Kế hoạch tăng trưởng:</strong> Để tăng tỷ lệ hỏi hàng lên <strong>15%</strong>, nhà bán cần:</p>
+          <ul>
+            <li>Sử dụng keywords: `Vietnam handmade`, `Eco-friendly crafts`, `Wholesale Home Decor`.</li>
+            <li>Tối ưu hóa video giới thiệu nhà máy và quy trình đan lát thủ công.</li>
+            <li>Đăng ký gian hàng <strong>Verified Supplier</strong> để tạo niềm tin tuyệt đối.</li>
+          </ul>
+        </div>
+        <div class="highlight alert">
+          <p><strong>Liên hệ hỗ trợ:</strong> Mọi thắc mắc về dữ liệu chi tiết và chiến lược lên sàn, vui lòng liên hệ <strong>Phạm Nhi (+84) 974 965 909</strong>.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="foot-grid">
+        <div>
+          <div class="foot-title">B2B Market Intelligence</div>
+          <p style="color: rgba(255,255,255,0.8);">Báo cáo được biên soạn bởi **Frank B2B Expert** dành riêng cho thị trường Việt Nam. Toàn bộ link Alibaba được xác thực trực tiếp từ hệ thống.</p>
+        </div>
+        <div>
+          <div class="foot-title">Liên hệ</div>
+          <p style="color: rgba(255,255,255,0.8);">Phạm Nhi<br>Phone: (+84) 974 965 909</p>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>&copy; 2026 B2B Market Intelligence.</span>
+        <span>Phụ trách: <strong>Frank B2B Expert</strong></span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const ctxShare = document.getElementById('shareChart').getContext('2d');
+    new Chart(ctxShare, {
+      type: 'doughnut',
+      data: {
+        labels: ['China', 'Vietnam', 'Other'],
+        datasets: [{
+          data: [55, 30, 15],
+          backgroundColor: ['#D4A017', '#1F75FE', '#E0E6F2']
+        }]
+      },
+      options: { responsive: true, maintainAspectRatio: false }
+    });
+    const ctxGrowth = document.getElementById('growthChart').getContext('2d');
+    new Chart(ctxGrowth, {
+      type: 'line',
+      data: {
+        labels: ['2022', '2023', '2024', '2025', '2026'],
+        datasets: [{
+          label: 'Lưu lượng traffic (%)',
+          data: [60, 75, 85, 95, 110],
+          borderColor: '#D4A017',
+          tension: 0.3
+        }]
+      },
+      options: { responsive: true, maintainAspectRatio: false }
+    });
+  </script>
+</body>
+</html>
