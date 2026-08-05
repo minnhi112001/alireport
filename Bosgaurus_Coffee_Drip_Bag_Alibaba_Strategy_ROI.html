@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bosgaurus Coffee Drip Bag – Khung Chiến Lược Alibaba &amp; Mô Hình ROI</title>
+<style>
+  :root {
+    --bg: #0d1117; --surface: #161b22; --border: #30363d; --text: #c9d1d9;
+    --accent: #c49b4c; --accent2: #8b6914; --green: #3fb950; --red: #f85149;
+    --blue: #58a6ff; --orange: #d2991d; --purple: #a371f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.7; font-size: 15px;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+  /* HEADER */
+  .hero {
+    background: linear-gradient(135deg, #1a1206 0%, #2d1f0a 40%, #0d1117 100%);
+    border-bottom: 3px solid var(--accent); padding: 60px 20px 50px; text-align: center;
+  }
+  .hero h1 { font-size: 2.4em; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+  .hero .subtitle { font-size: 1.15em; color: var(--accent); margin-bottom: 15px; }
+  .hero .meta { font-size: 0.9em; color: #8b949e; }
+  .hero .brand-tag {
+    display: inline-block; background: var(--accent); color: #000; padding: 5px 16px;
+    border-radius: 20px; font-weight: 700; font-size: 0.85em; margin-bottom: 18px;
+  }
+
+  /* NAV */
+  nav.toc {
+    background: rgba(22,27,34,0.96); border: 1px solid var(--border); border-radius: 10px;
+    padding: 10px 14px; margin-bottom: 28px; position: sticky; top: 8px; z-index: 10;
+    display: flex; align-items: center; gap: 14px; overflow-x: auto;
+    scrollbar-width: thin; backdrop-filter: blur(8px);
+  }
+  nav.toc h3 { color: var(--accent); margin: 0; font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+  nav.toc ul { list-style: none; display: flex; align-items: center; gap: 7px; min-width: max-content; margin: 0; }
+  nav.toc li { margin: 0; white-space: nowrap; }
+  nav.toc a { display: block; color: var(--blue); text-decoration: none; font-size: 0.78em; padding: 4px 8px; border: 1px solid transparent; border-radius: 6px; }
+  nav.toc a:hover { color: var(--accent); border-color: var(--accent2); background: rgba(196,155,76,0.08); }
+  @media (max-width: 700px) {
+    nav.toc { gap: 8px; padding: 8px 10px; }
+    nav.toc h3 { font-size: 0.68em; }
+    nav.toc ul { gap: 3px; }
+    nav.toc a { font-size: 0.72em; padding: 3px 6px; }
+  }
+
+  /* CARDS */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-bottom: 40px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 24px; transition: border-color 0.2s;
+  }
+  .card:hover { border-color: var(--accent); }
+  .card .num { font-size: 2.2em; font-weight: 800; color: var(--accent); }
+  .card .label { font-size: 0.85em; color: #8b949e; margin-top: 4px; }
+
+  /* SECTIONS */
+  section { margin-bottom: 45px; }
+  h2 {
+    font-size: 1.6em; color: #fff; border-bottom: 2px solid var(--accent);
+    padding-bottom: 8px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+  }
+  h2 .sec-num { font-size: 0.65em; color: var(--accent); background: rgba(196,155,76,0.12); padding: 3px 10px; border-radius: 6px; }
+  h3 { font-size: 1.2em; color: #e6edf3; margin: 22px 0 10px; }
+  h4 { font-size: 1.05em; color: var(--accent); margin: 16px 0 8px; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 8px 0 16px 24px; }
+  li { margin-bottom: 5px; }
+
+  /* TABLES */
+  .table-wrap { overflow-x: auto; margin: 16px 0 24px; border-radius: 10px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; min-width: 700px; font-size: 0.9em; }
+  th { background: #21262d; color: var(--accent); font-weight: 600; padding: 11px 14px; text-align: left; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+  td { padding: 10px 14px; border-top: 1px solid var(--border); vertical-align: top; }
+  tr:hover td { background: rgba(196,155,76,0.04); }
+  .num-col { text-align: right; font-variant-numeric: tabular-nums; }
+
+  /* BADGES */
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.78em; font-weight: 600; margin-right: 4px; }
+  .badge-green { background: rgba(63,185,80,0.15); color: var(--green); }
+  .badge-red { background: rgba(248,81,73,0.15); color: var(--red); }
+  .badge-blue { background: rgba(88,166,255,0.15); color: var(--blue); }
+  .badge-orange { background: rgba(210,153,29,0.15); color: var(--orange); }
+  .badge-purple { background: rgba(163,113,247,0.15); color: var(--purple); }
+
+  /* CALLOUT */
+  .callout {
+    background: rgba(196,155,76,0.08); border-left: 4px solid var(--accent);
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0;
+  }
+  .callout strong { color: var(--accent); }
+
+  /* SCENARIO BOXES */
+  .scenario-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; margin: 20px 0; }
+  .scenario-box {
+    border: 1px solid var(--border); border-radius: 14px; padding: 24px; background: var(--surface);
+  }
+  .scenario-box.conservative { border-top: 4px solid var(--blue); }
+  .scenario-box.base { border-top: 4px solid var(--green); }
+  .scenario-box.aggressive { border-top: 4px solid var(--orange); }
+  .scenario-box h3 { margin-top: 0; }
+
+  /* ROI BIG */
+  .roi-big {
+    background: linear-gradient(135deg, #1a2e1a, #0d1117);
+    border: 2px solid var(--green); border-radius: 16px; padding: 30px; text-align: center; margin: 24px 0;
+  }
+  .roi-big .roi-num { font-size: 3em; font-weight: 900; color: var(--green); }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 30px; border-left: 2px solid var(--accent); margin: 20px 0 30px; }
+  .timeline .phase { margin-bottom: 25px; position: relative; }
+  .timeline .phase::before {
+    content: ''; position: absolute; left: -37px; top: 5px; width: 12px; height: 12px;
+    background: var(--accent); border-radius: 50%; border: 2px solid var(--bg);
+  }
+  .timeline .phase h4 { margin: 0 0 5px; color: #fff; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border); padding: 30px 20px; margin-top: 50px;
+    text-align: center; color: #6e7681; font-size: 0.85em;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 1.5em; }
+    nav.toc ul { columns: 1; }
+    .scenario-row { grid-template-columns: 1fr; }
+    .card-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media print {
+    body { background: #fff; color: #000; }
+    .hero { background: #f5f0e6; border-color: #c49b4c; }
+    nav.toc { display: none; }
+    .card, .scenario-box, table { border-color: #ccc; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ====== HERO ====== -->
+<div class="hero">
+  <span class="brand-tag">BOSGAURUS COFFEE ROASTERS</span>
+  <h1>Khung Chiến Lược Alibaba &amp; Mô Hình ROI<br>Cà Phê Drip Bag Cao Cấp</h1>
+  <p class="subtitle">Từ Di Sản Cà Phê Việt Nam → Thị Trường B2B Toàn Cầu</p>
+  <p class="meta">Báo cáo chiến lược • Tháng 8/2026 • Ngành: Specialty Coffee Drip Bag • Xuất xứ: TP. Hồ Chí Minh, Việt Nam</p>
+</div>
+
+<div class="container">
+
+<!-- ====== TOC ====== -->
+<nav class="toc">
+  <h3>📑 Mục Lục</h3>
+  <ul>
+    <li><a href="#s1">1. Tóm tắt điều hành</a></li>
+    <li><a href="#s2">2. Bối cảnh thương hiệu &amp; thị trường</a></li>
+    <li><a href="#s3">3. Kiến trúc SKU</a></li>
+    <li><a href="#s4">4. ICP – Chân dung khách hàng lý tưởng</a></li>
+    <li><a href="#s5">5. Kiến trúc giá (Pricing Architecture)</a></li>
+    <li><a href="#s6">6. Chiến lược MOQ</a></li>
+    <li><a href="#s7">7. Thiết kế Funnel B2B</a></li>
+    <li><a href="#s8">8. Khung KPI</a></li>
+    <li><a href="#s9">9. Buyer economics</a></li>
+    <li><a href="#s11">10. Lộ trình</a></li>
+    <li><a href="#s12">11. Compliance &amp; Risk</a></li>
+    <li><a href="#s13">12. Nguồn &amp; giả định</a></li>
+  </ul>
+</nav>
+
+<!-- ====== EXEC CARDS ====== -->
+<div class="card-grid">
+  <div class="card">
+    <div class="num">$2.8B</div>
+    <div class="label">Thị trường drip bag toàn cầu 2025</div>
+  </div>
+  <div class="card">
+    <div class="num">8.1%</div>
+    <div class="label">CAGR dự báo đến 2034</div>
+  </div>
+  <div class="card">
+    <div class="num">$8B+</div>
+    <div class="label">Xuất khẩu cà phê Việt Nam 2025</div>
+  </div>
+  <div class="card">
+    <div class="num">55–68%</div>
+    <div class="label">Biên gộp mục tiêu theo SKU, trước chi phí kênh</div>
+  </div>
+</div>
+
+<!-- ====== S1 ====== -->
+<section id="s1">
+<h2><span class="sec-num">1</span> Tóm tắt điều hành</h2>
+
+<p>Báo cáo này xây dựng khung chiến lược toàn diện để đưa dòng sản phẩm <strong>Bosgaurus Coffee Drip Bag</strong> lên sàn B2B <strong>Alibaba.com</strong>, khai thác làn sóng specialty coffee toàn cầu và vị thế "Vietnam – cường quốc cà phê số 2 thế giới". Bosgaurus sở hữu lợi thế cạnh tranh độc đáo: bằng sáng chế công nghệ lên men, giải thưởng world championship, câu chuyện thương hiệu mạnh, và hệ sinh thái từ nông trại đến tách cà phê.</p>
+
+<p>Các báo cáo thị trường công khai cho thấy quy mô drip bag coffee toàn cầu năm 2025 nằm trong khoảng <strong>$1,8–2,83 tỷ USD</strong>, với dự báo CAGR khoảng <strong>6,5–8,5%</strong>; chênh lệch đến từ khác biệt về phạm vi định nghĩa. Đây là tín hiệu nhu cầu, không phải số liệu doanh thu có thể quy đổi trực tiếp thành sales của Bosgaurus. Cơ hội phù hợp nhất là định vị nhà cung cấp drip bag specialty <strong>cao cấp từ Việt Nam</strong>, thay vì cạnh tranh hàng đại trà.</p>
+
+<div class="callout">
+<strong>Đề xuất cốt lõi:</strong> Áp dụng chiến lược định vị Premium Vietnam Specialty trên Alibaba, với mức giá FOB đề xuất $4.50–$7.00/hộp (10 gói), nhắm đến nhà nhập khẩu specialty coffee, chuỗi khách sạn boutique và nhà phân phối B2B. Bắt đầu bằng pilot 90 ngày, ngân sách kiểm soát; chỉ mở rộng sau khi có dữ liệu inquiry, sample-to-order, gross margin và repeat order thực tế. Mô hình cơ sở trong báo cáo là kịch bản lập kế hoạch, không phải cam kết doanh thu hay ROI.
+</div>
+</section>
+
+<!-- ====== S2 ====== -->
+<section id="s2">
+<h2><span class="sec-num">2</span> Bối cảnh thương hiệu &amp; thị trường</h2>
+
+<h3>2.1 Bosgaurus Coffee – Tài sản thương hiệu</h3>
+
+<table>
+<tr><th style="width:220px">Yếu tố</th><th>Chi tiết</th></tr>
+<tr><td>Thành lập</td><td>2016, bởi Nguyễn Cảnh Hưng</td></tr>
+<tr><td>Định vị</td><td>Specialty coffee cao cấp, Vietnamese-coffee specialist với tiêu chuẩn quốc tế</td></tr>
+<tr><td>Cơ sở</td><td>3 cửa hàng flagship tại TP.HCM (Opera House, Saigon Pearl, Nexus)</td></tr>
+<tr><td>Thành tích</td><td>World Coffee Roasting Championship, World Barista Championship, World Aromaster</td></tr>
+<tr><td>Sáng chế</td><td>Deep-Washed Coffee Fermentation, Reuse Fermentation Water, Yeast Absorbed Anaerobic</td></tr>
+<tr><td>Bền vững</td><td>Zero waste water discharge, tái chế vỏ trấu thành phân hữu cơ</td></tr>
+<tr><td>Sản phẩm hiện tại</td><td>Cold brew ($3.50), Classic Iced ($3.00), Dark Vader sachet ($10.00), GAIA, Stewpen</td></tr>
+<tr><td>Kênh hiện tại</td><td>B2C: cửa hàng + website bosgauruscoffee.com. <strong>Chưa có kênh B2B quốc tế</strong></td></tr>
+</table>
+
+<h3>2.2 Thị trường Drip Bag Coffee</h3>
+
+<table>
+<tr><th>Chỉ số</th><th>Giá trị</th><th>Nguồn</th></tr>
+<tr><td>Quy mô thị trường 2025</td><td>$1,8–2,83 tỷ USD</td><td>Khoảng công khai; khác biệt theo định nghĩa thị trường</td></tr>
+<tr><td>Dự báo dài hạn</td><td>$3,9–5,01 tỷ USD</td><td>Khoảng công khai; không dùng làm forecast doanh thu riêng của Bosgaurus</td></tr>
+<tr><td>CAGR công khai</td><td>6,5–8,5%</td><td>Khoảng từ nhiều báo cáo thị trường</td></tr>
+<tr><td>Thị trường ưu tiên</td><td>EU/UK, Mỹ/Canada, Nhật/Hàn; Úc/Singapore là gateway; GCC là giai đoạn sau</td><td>Phân tích buyer-fit và rào cản trong báo cáo</td></tr>
+<tr><td>Xuất khẩu cà phê Việt Nam</td><td>Không dùng một con số tổng hợp duy nhất trong mô hình ROI</td><td>Số liệu công khai khác nhau theo niên vụ/phạm vi; cần đối soát nguồn chính thức khi làm hồ sơ đầu tư</td></tr>
+<tr><td>Giá Arabica và COGS</td><td>Biến động; dùng dải giả định trong mô hình</td><td>Không phải báo giá cam kết</td></tr>
+</table>
+
+<h3>2.3 Phân tích cạnh tranh trên Alibaba</h3>
+
+<table>
+<tr><th>Đối thủ</th><th>Giá/piece</th><th>MOQ</th><th>Chứng nhận</th><th>Định vị</th></tr>
+<tr><td>ARO BAO KHANH (VN, 5 năm)</td><td>$0.28–$0.32</td><td>500 pieces</td><td>ISO 22000</td><td>Phổ thông – Trung cấp</td></tr>
+<tr><td>Vietnam Arabica Drip (listing khác)</td><td>$3.50–$3.70/hộp</td><td>4,800 hộp</td><td>Không rõ</td><td>Trung cấp</td></tr>
+<tr><td>Các nhà cung cấp Trung Quốc</td><td>$0.01–$0.09</td><td>1,000–3,000</td><td>Đa dạng</td><td>Giá rẻ, số lượng lớn</td></tr>
+<tr><td><strong>Bosgaurus (đề xuất)</strong></td><td><strong>$0.45–$0.70</strong></td><td><strong>200–500</strong></td><td><strong>ISO + Specialty + Patent</strong></td><td><strong>Premium Specialty</strong></td></tr>
+</table>
+
+<div class="callout">
+<strong>Gap chiến lược:</strong> Alibaba hiện <strong>chưa có nhà cung cấp drip bag specialty cao cấp đích thực từ Việt Nam</strong>. Các đối thủ cạnh tranh về giá. Bosgaurus nên cạnh tranh bằng giá trị: câu chuyện nguồn gốc, bằng sáng chế, world championship, và trải nghiệm specialty đích thực.
+</div>
+</section>
+
+<!-- ====== S3 ====== -->
+<section id="s3">
+<h2><span class="sec-num">3</span> Kiến trúc SKU</h2>
+
+<h3>3.1 Ma trận SKU đề xuất</h3>
+
+<table>
+<tr><th>Tier</th><th>Tên SKU</th><th>Đặc điểm</th><th>Giá FOB/hộp (10 gói × 12g)</th><th>MOQ</th><th>Thị trường mục tiêu</th></tr>
+<tr>
+  <td><span class="badge badge-orange">GOLD</span></td>
+  <td><strong>Bosgaurus Signature Drip</strong></td>
+  <td>100% Arabica Vietnam single-origin, medium roast, câu chuyện nông trại cụ thể, bao bì premium hộp từ kraft cao cấp</td>
+  <td>$5.90–$7.00</td>
+  <td>200 hộp</td>
+  <td>Specialty cafés, khách sạn boutique 5★, nhà phân phối cao cấp</td>
+</tr>
+<tr>
+  <td><span class="badge badge-green">SILVER</span></td>
+  <td><strong>Bosgaurus Origin Collection</strong></td>
+  <td>Blend Arabica + Robusta specialty, dark roast đậm chất Việt, hộp giấy kraft</td>
+  <td>$4.50–$5.50</td>
+  <td>300 hộp</td>
+  <td>Nhà nhập khẩu B2B vừa, chuỗi văn phòng premium, retail specialty</td>
+</tr>
+<tr>
+  <td><span class="badge badge-blue">PRIVATE LABEL</span></td>
+  <td><strong>Bosgaurus OEM/ODM</strong></td>
+  <td>Custom roast profile, bao bì riêng, tối thiểu 3 variants, MOQ linh hoạt theo đối tác</td>
+  <td>$3.80–$5.00</td>
+  <td>1,000 hộp</td>
+  <td>Chuỗi khách sạn quốc tế, airline catering, thương hiệu riêng</td>
+</tr>
+<tr>
+  <td><span class="badge badge-purple">SAMPLER</span></td>
+  <td><strong>Bosgaurus Discovery Kit</strong></td>
+  <td>6 gói × 4 loại (24 gói/hộp), trải nghiệm toàn bộ range, booklet câu chuyện</td>
+  <td>$12.00–$15.00</td>
+  <td>100 hộp</td>
+  <td>Buyer mới làm quen, quà tặng doanh nghiệp, hội chợ</td>
+</tr>
+</table>
+
+<h3>3.2 Lý do kiến trúc 3-tier + Sampler</h3>
+<ul>
+  <li><strong>Gold (flagship):</strong> Tạo halo effect, xây dựng uy tín "đắt nhất Alibaba nhưng xứng đáng nhất"</li>
+  <li><strong>Silver (volume driver):</strong> Giá cạnh tranh hơn, mở rộng tệp khách hàng, tận dụng năng lực sản xuất</li>
+  <li><strong>Private Label (B2B door-opener):</strong> Cánh cửa vào chuỗi cung ứng lớn (khách sạn, airline, retailer)</li>
+  <li><strong>Sampler (lead magnet):</strong> Chi phí thấp để buyer trải nghiệm trước khi cam kết đơn lớn</li>
+</ul>
+</section>
+
+<!-- ====== S4 ====== -->
+<section id="s4">
+<h2><span class="sec-num">4</span> ICP – Chân dung khách hàng lý tưởng</h2>
+
+<h3>4.1 Buyer-first: chọn đúng tệp trước khi chạy quảng cáo</h3>
+<p>Không nên xem mọi inquiry trên Alibaba là khách hàng mục tiêu. Bosgaurus cần ưu tiên buyer có khả năng bán được giá premium, mua lặp lại và kể được câu chuyện Vietnam specialty. Thứ tự ưu tiên dưới đây dựa trên mức phù hợp với tài sản thương hiệu hiện có; quy mô đơn và lợi nhuận là <strong>khung mục tiêu để kiểm chứng</strong>, không phải cam kết.</p>
+
+<table>
+<tr><th>#</th><th>Tệp buyer</th><th>Nhu cầu mua</th><th>SKU/offer phù hợp</th><th>Khung đơn thử</th><th>Đòn bẩy lợi nhuận</th></tr>
+<tr>
+  <td>1</td>
+  <td><strong>Specialty importer / distributor</strong><br>Mỹ, Canada, EU, UK</td>
+  <td>Cần sản phẩm khác biệt để phân phối cho roaster, café, specialty retail; coi trọng origin, traceability và ổn định chất lượng.</td>
+  <td>Gold Signature + Discovery Kit; sau validation chuyển sang Silver/Gold theo portfolio.</td>
+  <td>200–500 hộp; tái mua theo quý nếu sell-through tốt.</td>
+  <td>Giá trị đơn và repeat tốt; giữ biên bằng story, cupping data, batch consistency; không giảm giá theo commodity.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><strong>Boutique hotel / resort / villa</strong><br>Nhật, EU, Úc, Singapore, GCC</td>
+  <td>Cần coffee amenity cao cấp, dễ pha trong phòng, breakfast hoặc welcome gift; ưu tiên packaging, shelf life và giao hàng ổn định.</td>
+  <td>Gold Signature hộp 10 gói; phiên bản hotel sleeve hoặc co-brand.</td>
+  <td>500–2.000 hộp; mua theo mùa/chu kỳ 3–6 tháng.</td>
+  <td>Biên khá tốt nếu chuẩn hóa packaging; upsell co-brand, sleeve và gift presentation thay vì chỉ cạnh tranh giá/gói.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><strong>Specialty roaster / D2C brand cần private label</strong><br>Mỹ, EU, Nhật, Hàn</td>
+  <td>Muốn ra mắt drip bag nhanh nhưng không tự đầu tư rang–đóng gói; cần custom roast, artwork, label và hồ sơ sản phẩm.</td>
+  <td>Private Label OEM/ODM, tối thiểu 1–3 profile; tính setup artwork/packaging riêng.</td>
+  <td>1.000 hộp trở lên; có thể mở rộng theo SKU bán chạy.</td>
+  <td>Biên hộp thấp hơn Gold nhưng giá trị hợp đồng lớn; lợi nhuận đến từ phí setup, volume, repeat và giảm changeover.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><strong>Corporate gifting / premium retail</strong><br>Nhật, Hàn, Singapore, GCC</td>
+  <td>Cần sản phẩm có câu chuyện, thiết kế đẹp, đóng theo mùa lễ hoặc chiến dịch; quyết định mua theo concept và deadline.</td>
+  <td>Discovery Kit, gift box, limited crop; không dùng SKU commodity.</td>
+  <td>300–2.000 hộp theo dự án.</td>
+  <td>Giá bán/hộp cao; phải báo riêng phí thiết kế, hộp, insert, QC và deadline để tránh ăn mòn biên.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><strong>Airline / office coffee / café chain</strong></td>
+  <td>Cần volume, giá ổn định, giao hàng đúng lịch và profile dễ uống; yêu cầu procurement/compliance cao hơn.</td>
+  <td>Silver Origin hoặc private label; chỉ chào sau khi có năng lực sản xuất và hồ sơ compliance.</td>
+  <td>2.000–5.000+ hộp; thường đấu thầu hoặc hợp đồng định kỳ.</td>
+  <td>Biên % thấp hơn nhưng sản lượng lớn; chỉ nhận khi công suất, cash flow, lead time và giá sàn đã được khóa.</td>
+</tr>
+</table>
+
+<h3>4.2 Chấm điểm buyer trên Alibaba</h3>
+<table>
+<tr><th>Tiêu chí</th><th>Buyer đạt chuẩn</th><th>Cách kiểm tra trong 1–2 cuộc trao đổi</th></tr>
+<tr><td>Product fit</td><td>Đang bán specialty coffee, premium gifting, hotel amenity hoặc private label.</td><td>Xin website/catalog, thị trường bán, kênh phân phối và lý do tìm drip bag.</td></tr>
+<tr><td>Commercial fit</td><td>Chấp nhận giá dựa trên chất lượng và có MOQ thử hợp lý.</td><td>Hỏi target retail price, landed-cost target, MOQ và ngân sách sample.</td></tr>
+<tr><td>Operational fit</td><td>Có importer/distributor hoặc quy trình nhập thực phẩm.</td><td>Xác nhận importer of record, label language, compliance và Incoterms.</td></tr>
+<tr><td>Repeat potential</td><td>Có lịch seasonal/quarterly hoặc portfolio để mở rộng.</td><td>Hỏi forecast 6 tháng, SKU dự kiến và điều kiện tái đặt hàng.</td></tr>
+</table>
+
+<h3>4.3 BANT tối thiểu trước khi gửi quote sâu</h3>
+<p>Chỉ chuyển từ inquiry sang sample/quote chi tiết khi đã biết: <strong>buyer bán cho ai, target giá landed, số lượng thử, thị trường nhập, deadline và người quyết định</strong>. Inquiry chỉ hỏi “best price” nhưng không cung cấp bối cảnh nên được xếp nhóm lead thấp, không dùng để điều chỉnh giá niêm yết.</p>
+</section>
+
+<!-- ====== S5 ====== -->
+<section id="s5">
+<h2><span class="sec-num">5</span> Kiến trúc giá (Pricing Architecture)</h2>
+
+<h3>5.1 Cấu trúc chi phí đơn vị (COGS) – Hộp 10 gói × 12g</h3>
+
+<table>
+<tr><th>Thành phần</th><th>Gold (Signature)</th><th>Silver (Origin)</th><th>Private Label</th><th>Ghi chú</th></tr>
+<tr><td>Cà phê nhân xanh (specialty Arabica)</td><td>$1.08</td><td>$0.78</td><td>$0.72</td><td>Gold: $9/kg green; Silver: blend ~$6.5/kg; PL: ~$6/kg. Hao hụt rang 16%</td></tr>
+<tr><td>Rang &amp; xay</td><td>$0.25</td><td>$0.22</td><td>$0.20</td><td>Nhân công + năng lượng + khấu hao máy</td></tr>
+<tr><td>Túi drip + bao bì ngoài + flush Nitơ</td><td>$0.35</td><td>$0.25</td><td>$0.20</td><td>Gold: bao bì premium kraft in offset; Silver: in flexo; PL: theo yêu cầu</td></tr>
+<tr><td>Hộp + assembly</td><td>$0.38</td><td>$0.28</td><td>$0.25</td><td>Gold: hộp cứng từ tính; Silver/PL: hộp giấy tiêu chuẩn</td></tr>
+<tr><td>Nhân công đóng gói</td><td>$0.18</td><td>$0.15</td><td>$0.15</td><td></td></tr>
+<tr><td>QC + hao hụt (3%)</td><td>$0.07</td><td>$0.05</td><td>$0.05</td><td></td></tr>
+<tr style="font-weight:700; background:rgba(196,155,76,0.08)">
+  <td><strong>Tổng COGS/hộp</strong></td>
+  <td><strong>$2.31</strong></td>
+  <td><strong>$1.73</strong></td>
+  <td><strong>$1.57</strong></td>
+  <td></td>
+</tr>
+</table>
+
+<h3>5.2 Bảng giá FOB theo volume</h3>
+
+<table>
+<tr><th>SKU</th><th>200–499 hộp</th><th>500–1,999 hộp</th><th>2,000–4,999 hộp</th><th>5,000+ hộp</th><th>Gross Margin</th></tr>
+<tr><td><strong>Gold Signature</strong></td><td>$6.90</td><td>$6.20</td><td>$5.60</td><td>$5.30</td><td>57–67%</td></tr>
+<tr><td><strong>Silver Origin</strong></td><td>$5.30</td><td>$4.80</td><td>$4.40</td><td>$4.10</td><td>58–68%</td></tr>
+<tr><td><strong>Private Label</strong></td><td>$4.90</td><td>$4.40</td><td>$3.95</td><td>$3.65</td><td>57–68%</td></tr>
+<tr><td><strong>Discovery Kit (24 gói)</strong></td><td>$14.50</td><td>$13.00</td><td>$12.00</td><td>$11.50</td><td>55–65%</td></tr>
+</table>
+
+<div class="callout">
+<strong>Lưu ý:</strong> Giá trên là FOB HCMC. Chưa bao gồm phí vận chuyển quốc tế, bảo hiểm, thuế nhập khẩu nước đến. Đối với đơn Private Label, giá sẽ điều chỉnh theo yêu cầu bao bì cụ thể. Toàn bộ giá đã bao gồm biên lợi nhuận gộp mục tiêu ≥55%.
+</div>
+
+<h3>5.3 So sánh giá với thị trường</h3>
+
+<table>
+<tr><th>Đối thủ / Phân khúc</th><th>Giá/hộp FOB</th><th>Định vị</th></tr>
+<tr><td>Trung Quốc OEM giá rẻ</td><td>$0.50–$1.50</td><td>Commodity</td></tr>
+<tr><td>ARO BAO KHANH (VN)</td><td>$2.80–$3.20</td><td>Phổ thông</td></tr>
+<tr><td>Listing Vietnam Arabica khác</td><td>$3.50–$3.70</td><td>Trung cấp</td></tr>
+<tr><td>Specialty Nhật Bản (Kurasu, Fuglen…)</td><td>$8.00–$15.00</td><td>Cao cấp</td></tr>
+<tr><td><strong>Bosgaurus Gold</strong></td><td><strong>$5.30–$6.90</strong></td><td><strong>Premium Vietnam Specialty</strong></td></tr>
+</table>
+</section>
+
+<!-- ====== S6 ====== -->
+<section id="s6">
+<h2><span class="sec-num">6</span> Chiến lược MOQ</h2>
+
+<h3>6.1 Nguyên tắc MOQ</h3>
+<ul>
+  <li><strong>MOQ thấp cho đơn đầu:</strong> 200 hộp (Gold) / 300 hộp (Silver) – đủ thấp để buyer thử nghiệm, đủ cao để tối ưu logistics</li>
+  <li><strong>MOQ Private Label:</strong> 1,000 hộp – yêu cầu tối thiểu để amortize chi phí setup bao bì riêng</li>
+  <li><strong>Sample order:</strong> Discovery Kit (24 gói) tại $15 + shipping – lead magnet chính</li>
+  <li><strong>Escalator discount:</strong> Chiết khấu rõ ràng ở các mốc 500, 2,000, 5,000 hộp → khuyến khích upsize</li>
+</ul>
+
+<h3>6.2 Chiến lược MOQ so với đối thủ</h3>
+
+<table>
+<tr><th>Yếu tố</th><th>Đối thủ phổ thông</th><th>Bosgaurus (đề xuất)</th><th>Lý do</th></tr>
+<tr><td>MOQ tối thiểu</td><td>500–1,000 pieces</td><td>200 hộp (2,000 gói)</td><td>Cạnh tranh hơn về số lượng tối thiểu, giá trị đơn hàng cao hơn</td></tr>
+<tr><td>Sample</td><td>$49/sample</td><td>$15/Discovery Kit</td><td>Lead magnet giá thấp, buyer thấy được toàn bộ range</td></tr>
+<tr><td>MOQ Private Label</td><td>500 pieces</td><td>1,000 hộp</td><td>Cao hơn để đảm bảo chất lượng và tính kinh tế</td></tr>
+</table>
+</section>
+
+<!-- ====== S7 ====== -->
+<section id="s7">
+<h2><span class="sec-num">7</span> Thiết kế Funnel B2B trên Alibaba</h2>
+
+<h3>7.1 Cấu trúc Funnel 5 tầng</h3>
+
+<table>
+<tr><th>Tầng</th><th>Mục tiêu</th><th>Công cụ</th><th>Conversion Rate mục tiêu</th></tr>
+<tr>
+  <td><strong>1. Awareness</strong></td>
+  <td>Hiển thị listing, xuất hiện trong tìm kiếm "Vietnam specialty coffee drip bag", "premium drip coffee OEM"</td>
+  <td>P4P keywords, SEO listing, Alibaba storefront design, external content (blog, Instagram, Specialty Coffee Association)</td>
+  <td>CTR 2.5–4%</td>
+</tr>
+<tr>
+  <td><strong>2. Interest</strong></td>
+  <td>Buyer click vào listing, xem ảnh/video, đọc mô tả, xem profile công ty</td>
+  <td>Video storytelling nông trại → rang → đóng gói, ảnh lifestyle cao cấp, chứng nhận hiển thị rõ</td>
+  <td>40–55% ở lại &gt;30s</td>
+</tr>
+<tr>
+  <td><strong>3. Consideration</strong></td>
+  <td>Buyer gửi inquiry, yêu cầu sample, đàm phán</td>
+  <td>Phản hồi ≤2h, template chuyên nghiệp, gửi catalog PDF, video call nếu cần</td>
+  <td>Inquiry rate 3–6%</td>
+</tr>
+<tr>
+  <td><strong>4. Conversion</strong></td>
+  <td>Sample order → trial order → repeat order</td>
+  <td>Discovery Kit $15, Trade Assurance, linh hoạt thanh toán, lead time minh bạch</td>
+  <td>Sample→Order 25–40%</td>
+</tr>
+<tr>
+  <td><strong>5. Loyalty</strong></td>
+  <td>Repeat purchase, upsell, referral</td>
+  <td>CRM (theo dõi mùa vụ, gửi new crop announcement), loyalty discount, exclusive SKU</td>
+  <td>Repeat rate 30–50%</td>
+</tr>
+</table>
+
+<h3>7.2 Chiến lược Alibaba Listing</h3>
+
+<table>
+<tr><th>Yếu tố</th><th>Chiến lược Bosgaurus</th></tr>
+<tr><td>Tiêu đề</td><td>"Premium Vietnam Specialty Arabica Drip Coffee Bag | Single Origin | Private Label OEM | Bosgaurus Coffee Roasters – World Championship Awarded"</td></tr>
+<tr><td>Video</td><td>3–5 phút: Từ nông trại Tây Nguyên → xưởng rang → đóng gói → khách hàng quốc tế (subtitle EN + JP + KR)</td></tr>
+<tr><td>Hình ảnh</td><td>Min. 10 ảnh: lifestyle shot + bao bì close-up + brewing sequence + chứng nhận + team + factory</td></tr>
+<tr><td>Mô tả</td><td>Câu chuyện Bosgaurus, bằng sáng chế, world championship, traceability, hồ sơ rang, hướng dẫn brew</td></tr>
+<tr><td>Keywords chính</td><td>Vietnam specialty coffee, premium drip bag, Arabica drip coffee OEM, single origin Vietnam, private label coffee bag, hotel coffee amenity, world championship coffee roaster</td></tr>
+</table>
+</section>
+
+<!-- ====== S8 ====== -->
+<section id="s8">
+<h2><span class="sec-num">8</span> Khung KPI</h2>
+
+<h3>8.1 KPI theo giai đoạn</h3>
+
+<table>
+<tr><th>Giai đoạn</th><th>KPI</th><th>Target</th><th>Tần suất đo</th></tr>
+<tr><td rowspan="4"><strong>Nền tảng (Tháng 1–3)</strong></td><td>Listing impressions/tháng</td><td>≥5,000</td><td>Tuần</td></tr>
+<tr><td>CTR listing</td><td>≥2.5%</td><td>Tuần</td></tr>
+<tr><td>Số inquiry/tháng</td><td>≥15</td><td>Tuần</td></tr>
+<tr><td>Sample order/tháng</td><td>≥5</td><td>Tháng</td></tr>
+<tr><td rowspan="4"><strong>Tăng trưởng (Tháng 4–6)</strong></td><td>Inquiry → Sample conversion</td><td>≥30%</td><td>Tháng</td></tr>
+<tr><td>Sample → Trial order</td><td>≥25%</td><td>Tháng</td></tr>
+<tr><td>Doanh thu/tháng</td><td>≥$3,000</td><td>Tháng</td></tr>
+<tr><td>ACP (Average Contract Price)</td><td>≥$2,500</td><td>Tháng</td></tr>
+<tr><td rowspan="4"><strong>Ổn định (Tháng 7–12)</strong></td><td>Doanh thu/tháng</td><td>≥$8,000</td><td>Tháng</td></tr>
+<tr><td>Repeat order rate</td><td>≥30%</td><td>Quý</td></tr>
+<tr><td>Gross margin</td><td>≥58%</td><td>Quý</td></tr>
+<tr><td>CAC (Customer Acquisition Cost)</td><td>≤$200</td><td>Quý</td></tr>
+<tr><td rowspan="3"><strong>Mở rộng (Năm 2)</strong></td><td>Doanh thu/tháng</td><td>≥$20,000</td><td>Tháng</td></tr>
+<tr><td>Số khách hàng active</td><td>≥20</td><td>Quý</td></tr>
+<tr><td>LTV/CAC ratio</td><td>≥5:1</td><td>Quý</td></tr>
+</table>
+
+<h3>8.2 North Star Metric</h3>
+<div class="callout">
+<strong>Monthly Recurring Revenue (MRR) from B2B drip bag:</strong> Đây là chỉ số cốt lõi phản ánh sức khỏe kênh Alibaba. Target: $10K MRR vào cuối Năm 1, $25K MRR vào cuối Năm 2.
+</div>
+</section>
+
+<!-- ====== S9 ====== -->
+<section id="s9">
+<h2><span class="sec-num">9</span> Lợi nhuận theo buyer và unit economics</h2>
+
+<p>Phần này thay cho forecast doanh thu theo năm. Câu hỏi cần trả lời là: <strong>buyer nào tạo ra lợi nhuận tốt nhất cho từng SKU, và điều kiện nào khiến biên lợi nhuận bị giảm?</strong> Các mức dưới đây dùng giá FOB đề xuất và COGS giả định trong phần 5; cần thay bằng cost sheet thực tế trước khi báo giá chính thức.</p>
+
+<h3>9.1 Biên lợi nhuận gộp theo SKU</h3>
+<table>
+<tr><th>SKU</th><th>Giá FOB tham chiếu</th><th>COGS giả định</th><th>Lãi gộp/hộp</th><th>Biên gộp</th><th>Buyer phù hợp</th></tr>
+<tr><td><strong>Gold Signature</strong></td><td>$5.30–$6.90</td><td>$2.31</td><td>$2.99–$4.59</td><td>56–67%</td><td>Importer, boutique hotel, corporate gifting</td></tr>
+<tr><td><strong>Silver Origin</strong></td><td>$4.10–$5.30</td><td>$1.73</td><td>$2.37–$3.57</td><td>58–67%</td><td>Distributor, office coffee, café chain</td></tr>
+<tr><td><strong>Private Label</strong></td><td>$3.65–$4.90</td><td>$1.57</td><td>$2.08–$3.33</td><td>57–68%</td><td>Roaster/D2C brand, hotel chain, retailer</td></tr>
+<tr><td><strong>Discovery Kit</strong></td><td>$11.50–$14.50</td><td>Chưa chốt theo cấu hình</td><td>Chốt sau BOM</td><td>Target ≥55%</td><td>Sample, buyer gifting, trade show</td></tr>
+</table>
+
+<h3>9.2 Lợi nhuận gộp minh họa theo khung buyer</h3>
+<table>
+<tr><th>Buyer frame</th><th>Giả định đơn thử</th><th>SKU chính</th><th>Doanh thu FOB</th><th>Lãi gộp minh họa</th><th>Điều kiện để bảo vệ biên</th></tr>
+<tr><td><strong>Importer / distributor specialty</strong></td><td>200–500 hộp</td><td>Gold hoặc mix Gold/Silver</td><td>$1.060–$3.450</td><td>Khoảng $598–$2.295 trước phí kênh, sample và overhead</td><td>Giữ MOQ, không bao gồm freight/thuế trong giá FOB; yêu cầu forecast và repeat plan.</td></tr>
+<tr><td><strong>Boutique hotel / resort</strong></td><td>500–2.000 hộp</td><td>Gold / hotel sleeve</td><td>$2.650–$13.800</td><td>Khoảng $1.495–$9.180 trước phí custom packaging</td><td>Quote riêng sleeve, insert, artwork, QC và rush fee; tránh “free customization”.</td></tr>
+<tr><td><strong>Private-label roaster / D2C</strong></td><td>1.000–5.000 hộp</td><td>Private Label</td><td>$3.650–$24.500</td><td>Khoảng $2.080–$16.650 trước phí setup</td><td>Tách phí artwork/plate/setup; điều khoản thanh toán đủ bù nguyên liệu và bao bì.</td></tr>
+<tr><td><strong>Corporate gifting</strong></td><td>300–2.000 hộp</td><td>Discovery/Gold gift box</td><td>Chốt theo BOM</td><td>Target ≥55% sau BOM</td><td>Chốt mẫu duyệt, deadline, reject tolerance và phí thay đổi thiết kế.</td></tr>
+<tr><td><strong>Airline / office / café chain</strong></td><td>2.000–5.000+ hộp</td><td>Silver/PL</td><td>$8.200–$24.500+ tùy volume</td><td>Khoảng $4.740–$16.650+ trước logistics</td><td>Chỉ nhận nếu đạt công suất, cash conversion và biên sàn; không dùng Gold custom cho đơn giá tender.</td></tr>
+</table>
+
+<h3>9.3 Cách tính lợi nhuận thực nhận (Contribution Margin framework)</h3>
+<p>Mỗi đơn B2B được tính theo khung biên đóng góp (contribution margin), tách biệt biến phí gắn với đơn và định phí phân bổ của kênh. Công thức chuẩn dưới đây áp dụng cho từng đơn hàng hoặc từng tệp buyer.</p>
+
+<div class="roi-big">
+<p style="font-size:1.15em; margin-bottom:6px"><strong>Contribution Margin (CM)</strong></p>
+<p style="font-size:1.25em; font-family:Consolas,monospace; margin-bottom:10px">
+  CM = (P<sub>FOB</sub> − C<sub>var</sub>) × Q − F<sub>order</sub>
+</p>
+<p style="font-size:1.05em; color:#8b949e">với C<sub>var</sub> = C<sub>COGS</sub> + C<sub>TA</sub> + C<sub>intl</sub> + C<sub>fob</sub> + C<sub>claim</sub></p>
+</div>
+
+<table>
+<tr><th>Ký hiệu</th><th>Định nghĩa</th><th>Đơn vị / nguồn</th></tr>
+<tr><td><strong>P<sub>FOB</sub></strong></td><td>Đơn giá bán FOB (hoặc Incoterm giao dịch) sau chiết khấu volume</td><td>$/hộp — bảng giá chốt theo MOQ</td></tr>
+<tr><td><strong>Q</strong></td><td>Số lượng giao trong đơn (hộp, sau khi trừ khuyến mại/hàng thưởng nếu có)</td><td>hộp</td></tr>
+<tr><td><strong>C<sub>COGS</sub></strong></td><td>Toàn bộ biến phí sản xuất: nguyên liệu, rang–xay, túi, hộp, nhân công, QC, hao hụt</td><td>$/hộp — cost sheet thực tế</td></tr>
+<tr><td><strong>C<sub>TA</sub></strong></td><td>Phí Trade Assurance / phí nền tảng tính trên giá trị giao dịch</td><td>$ = rate% × (P<sub>FOB</sub> × Q)</td></tr>
+<tr><td><strong>C<sub>intl</sub></strong></td><td>Chi phí quốc tế nếu Bosgaurus chịu: freight, bảo hiểm, khai báo hải quan, phí chứng từ</td><td>$/đơn — quote theo tuyến và Incoterm</td></tr>
+<tr><td><strong>C<sub>fob</sub></strong></td><td>Biến phí nội địa: vận chuyển ra cảng, đóng kiện, phí cảng, chứng nhận lô hàng</td><td>$/đơn</td></tr>
+<tr><td><strong>C<sub>claim</sub></strong></td><td>Dự phòng khiếu nại / đền bù / hàng lỗi của đơn (claim reserve)</td><td>$ = tỷ lệ quy ước × giá trị đơn</td></tr>
+<tr><td><strong>F<sub>order</sub></strong></td><td>Chi phí cố định gắn với đơn nhưng không đổi theo Q: sample, artwork/setup, phí điều chỉnh thiết kế, phí sản xuất thử (pilot run), phí nhân sự xử lý đơn</td><td>$/đơn</td></tr>
+</table>
+
+<p><strong>Biên đóng góp đơn vị:</strong> CM<sub>unit</sub> = P<sub>FOB</sub> − C<sub>var</sub>&nbsp;&nbsp;(đơn vị: $/hộp) — so sánh trực tiếp giữa các SKU, không phụ thuộc số lượng.</p>
+<p><strong>Biên đóng góp tỷ lệ:</strong> CM% = CM ÷ (P<sub>FOB</sub> × Q) — dùng để đối chiếu với ngưỡng giữ biên trong mục 9.4 và đánh giá hiệu quả theo tệp buyer.</p>
+<p><strong>Lợi nhuận kênh trước thuế:</strong> Net<sub>channel</sub> = ΣCM (toàn bộ đơn) − F<sub>channel</sub>, trong đó F<sub>channel</sub> là định phí kênh Alibaba (membership, P4P, lương CS phân bổ, chi phí listing và công cụ) — tách bạch với biên từng đơn.</p>
+
+<h3>9.3a Ví dụ minh họa một đơn</h3>
+<table>
+<tr><th>Hạng mục</th><th>Giá trị</th></tr>
+<tr><td>Đơn Gold Signature, 500 hộp @ $5.30 FOB (mốc 2.000–4.999)</td><td>Doanh thu FOB = $2.650</td></tr>
+<tr><td>C<sub>COGS</sub> 500 × $2.31</td><td>($1.155)</td></tr>
+<tr><td>C<sub>TA</sub> 2,5% × $2.650</td><td>($66)</td></tr>
+<tr><td>C<sub>fob</sub> + C<sub>intl</sub> (ước tính, theo Incoterm giao dịch)</td><td>(±, tách riêng)</td></tr>
+<tr><td>C<sub>claim</sub> dự phòng 1% × $2.650</td><td>($27)</td></tr>
+<tr><td><strong>CM đơn (chưa trừ F<sub>order</sub>)</strong></td><td><strong>≈ $1.402</strong> (≈53% doanh thu)</td></tr>
+<tr><td>F<sub>order</sub> (mẫu đã gửi, thời gian CS, artwork)</td><td>($150)</td></tr>
+<tr><td><strong>CM ròng đơn</strong></td><td><strong>≈ $1.252</strong></td></tr>
+</table>
+<p><small>Ví dụ minh họa từ giả định của báo cáo, dùng để minh họa cách áp dụng công thức — không phải báo giá. C<sub>fob</sub>/C<sub>intl</sub> và F<sub>order</sub> phụ thuộc Incoterm, tuyến vận chuyển và chi phí thực tế của Bosgaurus.</small></p>
+
+<h3>9.3b Cách đọc kết quả để ra quyết định</h3>
+<ul>
+  <li>CM<sub>unit</sub> âm hoặc quá thấp → đơn đó đang lỗ giấu: không lấy volume để bù, vì càng bán càng lỗ trước khi tính định phí.</li>
+  <li>So sánh CM% với ngưỡng mục 9.4: <strong>không chào giá chính thức khi CM% thấp hơn ngưỡng của tệp buyer</strong>; nếu cần thử nghiệm, giới hạn volume và thời gian.</li>
+  <li>Khi buyer yêu cầu DDP / landed price: quy đổi ngược về P<sub>FOB</sub> tương đương, hoặc lập quote riêng có C<sub>intl</sub> + thuế để giữ nguyên mức CM% mục tiêu.</li>
+  <li>Cuối mỗi quý, đối chiếu CM theo đơn với doanh thu và chi phí thực để phát hiện lệch (giá nguyên liệu, phí vận chuyển, tỷ giá) trước khi chúng bào mòn biên.</li>
+</ul>
+
+<h3>9.4 Ngưỡng quyết định theo từng tệp</h3>
+
+<table>
+<tr><th>Tệp buyer</th><th>Ngưỡng nên giữ</th><th>Không nên nhận khi</th></tr>
+<tr><td>Importer/distributor</td><td>Gross margin ≥58%, có cơ hội reorder theo quý</td><td>Chỉ hỏi giá thấp, không có kênh phân phối hoặc không chấp nhận sample.</td></tr>
+<tr><td>Hotel/resort</td><td>Gross margin ≥55% sau custom packaging, deadline khả thi</td><td>Đòi custom nhỏ lẻ miễn phí hoặc thanh toán kéo dài làm âm cash flow.</td></tr>
+<tr><td>Private label</td><td>Gross margin ≥55% trước commission; setup fee thu trước</td><td>MOQ thấp nhưng artwork/variants quá nhiều.</td></tr>
+<tr><td>Corporate gifting</td><td>Gross margin ≥55% sau BOM và rush cost</td><td>Chưa chốt mẫu cuối nhưng yêu cầu giao gấp.</td></tr>
+<tr><td>Volume/tender</td><td>Gross margin sàn 45–50% và forecast đủ lớn</td><td>Volume không chắc, điều khoản phạt cao hoặc công nợ dài.</td></tr>
+</table>
+
+<h3>9.4a Kết luận kinh doanh</h3>
+<div class="callout">
+<strong>Tệp nên ưu tiên:</strong> specialty importer/distributor và boutique hotel/resort vì vừa phù hợp định vị Bosgaurus, vừa cho phép giữ giá Gold và tạo repeat. <strong>Tệp tạo lợi nhuận tuyệt đối lớn:</strong> private-label roaster/D2C và hotel chain khi đạt MOQ từ 1.000 hộp trở lên. <strong>Tệp chỉ nên mở sau:</strong> airline/office/café chain, vì volume lớn nhưng dễ ép giá, yêu cầu compliance và tạo áp lực vốn lưu động.
+</div>
+
+<h3>9.4b Khung chi phí kênh để kiểm chứng</h3>
+<table>
+<tr><th>Khoản mục</th><th>Cách phân bổ</th><th>KPI kiểm soát</th></tr>
+<tr><td>Alibaba membership/P4P</td><td>Phân bổ theo buyer mới hoặc contribution margin của đơn</td><td>CAC theo buyer, không chỉ CPC</td></tr>
+<tr><td>Sample</td><td>Ghi nhận riêng theo lead; hoàn/không hoàn tùy đơn thử</td><td>Sample-to-order và payback sample</td></tr>
+<tr><td>CS/sales</td><td>Phân bổ theo giờ xử lý hoặc số quote</td><td>Response time, quote-to-order</td></tr>
+<tr><td>Custom packaging</td><td>Tính setup fee và amortize theo MOQ</td><td>Setup recovery trước sản xuất</td></tr>
+</table>
+
+<div style="display:none" aria-hidden="true">
+<h3>9.x (ẩn) Kịch bản cũ</h3>
+
+<div class="scenario-row"><div class="scenario-box conservative">
+<h3>🟦 Kịch bản A: Thận trọng</h3>
+<p><strong>Giả định:</strong> Ngân sách tối thiểu, tăng trưởng chậm, chỉ Alibaba organic + P4P thấp.</p>
+<table style="margin-top:12px">
+<tr><td>P4P/tháng</td><td class="num-col">$300</td></tr>
+<tr><td>Inquiry/tháng (TB)</td><td class="num-col">10</td></tr>
+<tr><td>Đơn hàng/tháng (TB)</td><td class="num-col">1–2</td></tr>
+</table>
+<h4 style="margin-top:14px">P&amp;L Năm 1</h4>
+<table>
+<tr><td>Doanh thu</td><td class="num-col">$36,000</td></tr>
+<tr><td>COGS (35%)</td><td class="num-col">($12,600)</td></tr>
+<tr><td><strong>Gross Profit</strong></td><td class="num-col"><strong>$23,400</strong></td></tr>
+<tr><td>Gold Supplier</td><td class="num-col">($3,500)</td></tr>
+<tr><td>P4P</td><td class="num-col">($3,600)</td></tr>
+<tr><td>Trade Assurance (2.5%)</td><td class="num-col">($900)</td></tr>
+<tr><td>Vận hành Alibaba CS</td><td class="num-col">($6,000)</td></tr>
+<tr><td>Sample/catalog</td><td class="num-col">($500)</td></tr>
+<tr style="font-weight:700"><td><strong>Net Profit</strong></td><td class="num-col"><strong>$8,900</strong></td></tr>
+<tr><td>Net Margin</td><td class="num-col">24.7%</td></tr>
+</table>
+</div>
+
+<div class="scenario-box base">
+<h3>🟩 Kịch bản B: Cơ sở (Base Case)</h3>
+<p><strong>Giả định:</strong> Đầu tư vừa phải, P4P trung bình, conversion rate khả thi.</p>
+<table style="margin-top:12px">
+<tr><td>P4P/tháng</td><td class="num-col">$800</td></tr>
+<tr><td>Inquiry/tháng (TB)</td><td class="num-col">25</td></tr>
+<tr><td>Đơn hàng/tháng (TB)</td><td class="num-col">3–5</td></tr>
+</table>
+<h4 style="margin-top:14px">P&amp;L Năm 1</h4>
+<table>
+<tr><td>Doanh thu</td><td class="num-col">$108,000</td></tr>
+<tr><td>COGS (35%)</td><td class="num-col">($37,800)</td></tr>
+<tr><td><strong>Gross Profit</strong></td><td class="num-col"><strong>$70,200</strong></td></tr>
+<tr><td>Gold Supplier</td><td class="num-col">($3,500)</td></tr>
+<tr><td>P4P</td><td class="num-col">($9,600)</td></tr>
+<tr><td>Trade Assurance (2.5%)</td><td class="num-col">($2,700)</td></tr>
+<tr><td>Vận hành Alibaba CS</td><td class="num-col">($6,000)</td></tr>
+<tr><td>Sample/catalog</td><td class="num-col">($800)</td></tr>
+<tr style="font-weight:700"><td><strong>Net Profit</strong></td><td class="num-col"><strong>$47,600</strong></td></tr>
+<tr><td>Net Margin</td><td class="num-col">44.1%</td></tr>
+</table>
+</div>
+
+<div class="scenario-box aggressive">
+<h3>🟧 Kịch bản C: Tăng trưởng mạnh (Aggressive)</h3>
+<p><strong>Giả định:</strong> Đầu tư mạnh P4P + external marketing, brand mạnh, team chuyên trách.</p>
+<table style="margin-top:12px">
+<tr><td>P4P/tháng</td><td class="num-col">$2,000</td></tr>
+<tr><td>Inquiry/tháng (TB)</td><td class="num-col">50</td></tr>
+<tr><td>Đơn hàng/tháng (TB)</td><td class="num-col">8–12</td></tr>
+</table>
+<h4 style="margin-top:14px">P&amp;L Năm 1</h4>
+<table>
+<tr><td>Doanh thu</td><td class="num-col">$288,000</td></tr>
+<tr><td>COGS (35%)</td><td class="num-col">($100,800)</td></tr>
+<tr><td><strong>Gross Profit</strong></td><td class="num-col"><strong>$187,200</strong></td></tr>
+<tr><td>Gold Supplier</td><td class="num-col">($3,500)</td></tr>
+<tr><td>P4P</td><td class="num-col">($24,000)</td></tr>
+<tr><td>Trade Assurance (2.5%)</td><td class="num-col">($7,200)</td></tr>
+<tr><td>Vận hành Alibaba CS (full-time)</td><td class="num-col">($15,000)</td></tr>
+<tr><td>Sample/catalog</td><td class="num-col">($1,500)</td></tr>
+<tr><td>Marketing ngoài (hội chợ, PR)</td><td class="num-col">($12,000)</td></tr>
+<tr style="font-weight:700"><td><strong>Net Profit</strong></td><td class="num-col"><strong>$124,000</strong></td></tr>
+<tr><td>Net Margin</td><td class="num-col">43.1%</td></tr>
+</table>
+</div>
+</div>
+
+<h3>9.y (ẩn) So sánh kịch bản cũ</h3>
+
+<table>
+<tr><th>Chỉ số</th><th>A – Thận trọng</th><th>B – Cơ sở</th><th>C – Tăng trưởng mạnh</th></tr>
+<tr><td>Doanh thu</td><td class="num-col">$36,000</td><td class="num-col">$108,000</td><td class="num-col">$288,000</td></tr>
+<tr><td>Tổng chi phí vận hành</td><td class="num-col">$14,500</td><td class="num-col">$22,600</td><td class="num-col">$63,200</td></tr>
+<tr><td>Net Profit</td><td class="num-col">$8,900</td><td class="num-col">$47,600</td><td class="num-col">$124,000</td></tr>
+<tr><td>Net Margin</td><td class="num-col">24.7%</td><td class="num-col">44.1%</td><td class="num-col">43.1%</td></tr>
+<tr><td>ROI Năm 1</td><td class="num-col">61%</td><td class="num-col">211%</td><td class="num-col">196%</td></tr>
+<tr><td>Thời gian hoàn vốn dự kiến*</td><td class="num-col">18–24 tháng</td><td class="num-col">8–12 tháng</td><td class="num-col">4–7 tháng</td></tr>
+<tr><td>Điểm hòa vốn</td><td class="num-col">$14,500 (~6 đơn)</td><td class="num-col">$22,600 (~8 đơn)</td><td class="num-col">$63,200 (~21 đơn)</td></tr>
+</table>
+
+<div class="callout">
+<strong>Khuyến nghị:</strong> Bắt đầu với <strong>pilot kiểm soát giữa A và B</strong> trong 90 ngày, thay vì cam kết ngay ngân sách Base Case cả năm. Sau 90 ngày, chỉ scale khi đạt tối thiểu: phản hồi đủ chất lượng từ ICP, sample-to-order có tín hiệu, gross margin thực tế đạt ngưỡng, và có dữ liệu chi phí trên mỗi buyer. Các con số A/B/C là scenario planning dựa trên giả định, không phải forecast chắc chắn.
+</div>
+<p><small>*Payback được trình bày như khoảng lập kế hoạch và phải tính lại theo dòng tiền thực thu, chi phí mẫu, freight, thuế, công nợ, hoàn/claim và overhead phân bổ; không suy ra trực tiếp từ lợi nhuận kế toán năm.</small></p>
+</section>
+</div>
+
+<!-- ====== S10 ====== -->
+<section id="s10" style="display:none" aria-hidden="true">
+<h2><span class="sec-num">10</span> Công thức ROI &amp; Phân tích</h2>
+
+<h3>10.1 Công thức ROI tổng quát</h3>
+
+<div class="roi-big">
+<p style="font-size:1.3em; margin-bottom:8px"><strong>ROI = [(Doanh thu × Gross Margin%) − Tổng chi phí vận hành] ÷ Tổng đầu tư × 100%</strong></p>
+</div>
+
+<h3>10.2 Các chỉ số đơn vị (Unit Economics)</h3>
+
+<table>
+<tr><th>Chỉ số</th><th>Công thức</th><th>Benchmark</th></tr>
+<tr><td><strong>CAC</strong> (Customer Acquisition Cost)</td><td>(P4P + CS vận hành + Sample) ÷ Số KH mới</td><td>≤$200/KH</td></tr>
+<tr><td><strong>LTV</strong> (Lifetime Value)</td><td>ACP × Số đơn TB/KH × Gross Margin%</td><td>≥$1,500</td></tr>
+<tr><td><strong>LTV/CAC</strong></td><td>LTV ÷ CAC</td><td>≥5:1</td></tr>
+<tr><td><strong>CPL</strong> (Cost Per Lead)</td><td>Tổng P4P ÷ Số inquiry</td><td>≤$40</td></tr>
+<tr><td><strong>Conversion Rate</strong></td><td>Số đơn hàng ÷ Số inquiry</td><td>≥12%</td></tr>
+<tr><td><strong>ACP</strong> (Average Contract Price)</td><td>Tổng doanh thu ÷ Số đơn hàng</td><td>≥$3,000</td></tr>
+<tr><td><strong>Payback Period</strong></td><td>Tổng đầu tư ban đầu ÷ Net Profit/tháng TB</td><td>≤18 tháng</td></tr>
+</table>
+
+<h3>10.3 Ví dụ tính ROI Kịch bản B (Cơ sở) – Năm 1</h3>
+
+<table>
+<tr><th>Bước</th><th>Phép tính</th><th>Kết quả</th></tr>
+<tr><td>1. Doanh thu</td><td>36 đơn × $3,000 ACP</td><td class="num-col">$108,000</td></tr>
+<tr><td>2. Gross Profit</td><td>$108,000 × 65%</td><td class="num-col">$70,200</td></tr>
+<tr><td>3. Tổng chi phí vận hành</td><td>$3,500 + $9,600 + $2,700 + $6,000 + $800</td><td class="num-col">$22,600</td></tr>
+<tr><td>4. Net Profit</td><td>$70,200 − $22,600</td><td class="num-col">$47,600</td></tr>
+<tr><td>5. Tổng đầu tư</td><td>Chi phí khởi tạo ~$8,000 + vận hành Q1 ~$5,650</td><td class="num-col">$13,650</td></tr>
+<tr style="font-weight:700"><td><strong>6. ROI Năm 1</strong></td><td><strong>$47,600 ÷ $13,650 × 100%</strong></td><td class="num-col"><strong>349%</strong></td></tr>
+<tr style="font-weight:700"><td><strong>7. Payback</strong></td><td><strong>$13,650 ÷ ($47,600 ÷ 12)</strong></td><td class="num-col"><strong>~3.4 tháng</strong></td></tr>
+</table>
+
+<div class="callout">
+<strong>Lưu ý quan trọng:</strong> ROI 349% và payback 3.4 tháng là tính trên tổng đầu tư biến đổi (không bao gồm chi phí cố định của Bosgaurus như nhà xưởng, máy móc hiện hữu). Nếu tính cả depreciation và overhead cố định, ROI hiệu chỉnh sẽ thấp hơn. Tuy nhiên, vì Bosgaurus đã có sẵn hạ tầng sản xuất, chi phí biên cho kênh Alibaba là tương đối thấp → đây là kênh <strong>high-ROI, low-capex</strong>.
+</div>
+
+<h3>10.4 Phân tích độ nhạy (Sensitivity) – Kịch bản B</h3>
+
+<table>
+<tr><th>Biến số thay đổi</th><th>−20%</th><th>Base</th><th>+20%</th></tr>
+<tr><td>ACP ($)</td><td class="num-col">$2,400 → Net $26,480</td><td class="num-col">$3,000 → Net $47,600</td><td class="num-col">$3,600 → Net $68,720</td></tr>
+<tr><td>Conversion Rate</td><td class="num-col">9.6% → Net $24,740</td><td class="num-col">12% → Net $47,600</td><td class="num-col">14.4% → Net $70,460</td></tr>
+<tr><td>P4P CPC</td><td class="num-col">$1.00 → Net $50,000</td><td class="num-col">$1.25 → Net $47,600</td><td class="num-col">$1.50 → Net $45,200</td></tr>
+<tr><td>COGS %</td><td class="num-col">28% → Net $55,160</td><td class="num-col">35% → Net $47,600</td><td class="num-col">42% → Net $40,040</td></tr>
+</table>
+
+<p><strong>Nhận xét:</strong> Mô hình nhạy nhất với <strong>ACP</strong> và <strong>Conversion Rate</strong> → ưu tiên tối ưu chất lượng inquiry và upsize đơn hàng. COGS có tác động vừa phải → đàm phán với nhà cung cấp bao bì và tối ưu quy trình sản xuất là đòn bẩy thứ cấp.</p>
+</section>
+
+<!-- ====== S11 ====== -->
+<section id="s11">
+<h2><span class="sec-num">11</span> Lộ trình 90 / 180 / 365 ngày</h2>
+
+<h3>11.1 Giai đoạn 1: NỀN TẢNG (Ngày 1–90)</h3>
+
+<div class="timeline">
+<div class="phase">
+<h4>🚀 Tháng 1: Setup &amp; Go-Live</h4>
+<ul>
+  <li>Đăng ký Gold Supplier Membership (~$3,500/năm)</li>
+  <li>Thiết lập Alibaba Storefront: logo, banner, company profile, verification</li>
+  <li>Chuẩn bị nội dung: ảnh sản phẩm lifestyle + studio, video 3–5 phút (nông trại → rang → đóng gói)</li>
+  <li>Đăng 4 listing SKU (Gold, Silver, Private Label, Discovery Kit)</li>
+  <li>Kích hoạt P4P campaign cơ bản: 15–20 keywords ban đầu, budget $500/tháng</li>
+  <li>KPI: Storefront hoàn chỉnh, 4 listings live, impressions ≥500/tuần</li>
+</ul>
+</div>
+<div class="phase">
+<h4>📊 Tháng 2: Tối ưu &amp; Thu hút</h4>
+<ul>
+  <li>Phân tích dữ liệu P4P tuần đầu: loại bỏ keywords CPC cao/CTR thấp, thêm long-tail keywords</li>
+  <li>Tối ưu listing: A/B test tiêu đề, thêm rich content, FAQ section</li>
+  <li>Kết nối với 20–30 buyer tiềm năng qua Alibaba RFQ</li>
+  <li>Gửi sample Discovery Kit đến 5–10 buyer triển vọng nhất</li>
+  <li>KPI: ≥30 inquiries, ≥5 sample orders, CPL ≤$40</li>
+</ul>
+</div>
+<div class="phase">
+<h4>⚡ Tháng 3: Chuyển đổi đầu tiên</h4>
+<ul>
+  <li>Theo dõi sample → follow-up sau 10 ngày (email + Alibaba chat)</li>
+  <li>Đóng đơn hàng B2B đầu tiên (target: ≥3 đơn, ACP ≥$2,000)</li>
+  <li>Thiết lập CRM đơn giản: Google Sheets hoặc HubSpot free tier để track buyer</li>
+  <li>Điều chỉnh pricing nếu cần dựa trên phản hồi thị trường</li>
+  <li>KPI: ≥3 đơn hàng B2B, Doanh thu ≥$6,000, Inquiry→Order ≥10%</li>
+</ul>
+</div>
+</div>
+
+<h3>11.2 Giai đoạn 2: TĂNG TRƯỞNG (Ngày 91–180)</h3>
+
+<div class="timeline">
+<div class="phase">
+<h4>📈 Tháng 4–5: Scale P4P &amp; Mở rộng kênh</h4>
+<ul>
+  <li>Tăng P4P budget lên $800–$1,200/tháng; mở rộng target market (thêm EU, Nhật)</li>
+  <li>Đăng ký tham gia 1 hội chợ specialty coffee (World of Coffee, SCA Expo, hoặc FHA Singapore)</li>
+  <li>Sản xuất catalog PDF chuyên nghiệp + line sheet giá wholesale</li>
+  <li>Bắt đầu LinkedIn outreach: kết nối với buyer specialty coffee, tea &amp; beverage importers</li>
+  <li>KPI: Doanh thu ≥$8,000/tháng, ≥8 KH mới, Repeat rate ≥20%</li>
+</ul>
+</div>
+<div class="phase">
+<h4>🔧 Tháng 6: Tối ưu chuỗi cung ứng</h4>
+<ul>
+  <li>Đàm phán với nhà cung cấp bao bì để giảm COGS 5–10% trên volume</li>
+  <li>Chuẩn hóa lead time 14–21 ngày cho đơn ≤5,000 hộp</li>
+  <li>Thiết lập quy trình QC xuất khẩu: kiểm tra độ ẩm, seal túi, flush nitơ</li>
+  <li>Bổ sung chứng nhận nếu cần: HACCP, FDA registration (nếu target Mỹ mạnh)</li>
+  <li>KPI: COGS giảm còn 32%, Lead time ≤21 ngày, CSAT ≥4.5/5</li>
+</ul>
+</div>
+</div>
+
+<h3>11.3 Giai đoạn 3: ỔN ĐỊNH &amp; MỞ RỘNG (Ngày 181–365)</h3>
+
+<div class="timeline">
+<div class="phase">
+<h4>🏆 Tháng 7–9: Tối ưu hóa kênh</h4>
+<ul>
+  <li>Scale P4P lên $1,500–$2,000/tháng dựa trên ROAS đã kiểm chứng</li>
+  <li>Thêm SKU mùa vụ (New Crop, Limited Edition) để tạo urgency</li>
+  <li>Phát triển chương trình loyalty: giảm giá 5% cho repeat order, ưu tiên new crop</li>
+  <li>Đánh giá thuê thêm 1 CS specialist nếu inquiry volume ≥50/tháng</li>
+  <li>KPI: Doanh thu ≥$12,000/tháng, MRR ≥$10,000</li>
+</ul>
+</div>
+<div class="phase">
+<h4>🌏 Tháng 10–12: Mở rộng quốc tế</h4>
+<ul>
+  <li>Nhắm mục tiêu ít nhất 1 hợp đồng Private Label dài hạn (khách sạn, retailer)</li>
+  <li>Khám phá các marketplace B2B bổ sung: Tridge, Kinnek, EC21 cho thị trường châu Á</li>
+  <li>Tham gia thêm 1 hội chợ quốc tế</li>
+  <li>Xây dựng case study từ khách hàng thành công → content marketing</li>
+  <li>KPI: ≥20 KH active, Doanh thu lũy kế Năm 1 ≥$108,000, Net Profit ≥$47,600</li>
+</ul>
+</div>
+</div>
+
+<h3>11.4 Cột mốc Năm 2 (365–730 ngày)</h3>
+
+<table>
+<tr><th>Mục tiêu</th><th>Target</th></tr>
+<tr><td>Doanh thu Năm 2</td><td>$250K–$400K</td></tr>
+<tr><td>MRR cuối Năm 2</td><td>$25K–$35K</td></tr>
+<tr><td>Số KH active</td><td>30–50</td></tr>
+<tr><td>Private Label partnerships</td><td>3–5 hợp đồng dài hạn</td></tr>
+<tr><td>Thị trường địa lý</td><td>Mỹ, EU, Nhật, Hàn, Úc, UAE</td></tr>
+<tr><td>Đội ngũ Alibaba</td><td>1 full-time specialist + 1 part-time content creator</td></tr>
+<tr><td>Kênh bổ sung</td><td>Website B2B riêng, B2B marketplace thứ 2, hội chợ thường niên</td></tr>
+</table>
+</section>
+
+<!-- ====== S12 ====== -->
+<section id="s12">
+<h2><span class="sec-num">12</span> Compliance &amp; Risk Matrix</h2>
+
+<h3>12.1 Yêu cầu tuân thủ theo thị trường</h3>
+
+<table>
+<tr><th>Thị trường</th><th>Yêu cầu</th><th>Trạng thái Bosgaurus</th><th>Hành động</th></tr>
+<tr>
+  <td><strong>Mỹ</strong></td>
+  <td>FDA Food Facility Registration, FSVP (Foreign Supplier Verification Program), Bioterrorism Act</td>
+  <td><span class="badge badge-orange">Cần đăng ký</span></td>
+  <td>Đăng ký FDA (miễn phí), chỉ định US Agent, chuẩn bị FSVP documentation</td>
+</tr>
+<tr>
+  <td><strong>EU</strong></td>
+  <td>EUDR (EU Deforestation Regulation – hiệu lực 12/2025), EU Organic (nếu claim organic), GMP, HACCP</td>
+  <td><span class="badge badge-orange">Cần chuẩn bị</span></td>
+  <td>Xây dựng hồ sơ truy xuất nguồn gốc (geolocation nông trại), chứng minh không phá rừng sau 31/12/2020</td>
+</tr>
+<tr>
+  <td><strong>Nhật Bản</strong></td>
+  <td>Food Sanitation Act, JAS (nếu claim organic), kiểm dịch thực vật</td>
+  <td><span class="badge badge-blue">Tương thích một phần</span></td>
+  <td>Đăng ký với MHLW, kiểm tra dư lượng thuốc BVTV</td>
+</tr>
+<tr>
+  <td><strong>Hàn Quốc</strong></td>
+  <td>MFDS (Ministry of Food and Drug Safety), HACCP</td>
+  <td><span class="badge badge-blue">Tương thích một phần</span></td>
+  <td>Đăng ký MFDS, kiểm tra tiêu chuẩn ghi nhãn</td>
+</tr>
+<tr>
+  <td><strong>Úc</strong></td>
+  <td>FSANZ (Food Standards Code), biosecurity inspection</td>
+  <td><span class="badge badge-blue">Tương thích một phần</span></td>
+  <td>Đảm bảo bao bì đáp ứng yêu cầu ghi nhãn FSANZ</td>
+</tr>
+</table>
+
+<h3>12.2 Chứng nhận nên ưu tiên</h3>
+
+<table>
+<tr><th>Thứ tự</th><th>Chứng nhận</th><th>Chi phí ước tính</th><th>Thời gian</th><th>Giá trị</th></tr>
+<tr><td>1</td><td>FDA Registration (Mỹ)</td><td>$0 (đăng ký) + US Agent ~$300–$500/năm</td><td>2–4 tuần</td><td>Mở khóa thị trường Mỹ</td></tr>
+<tr><td>2</td><td>HACCP</td><td>$2,000–$5,000 (tư vấn + đánh giá)</td><td>2–3 tháng</td><td>Yêu cầu nền tảng cho EU, Nhật, Hàn</td></tr>
+<tr><td>3</td><td>ISO 22000</td><td>$3,000–$8,000</td><td>3–6 tháng</td><td>Tín nhiệm cao trên Alibaba, tăng conversion</td></tr>
+<tr><td>4</td><td>EU Organic</td><td>$2,500–$5,000/năm (kiểm định + chứng nhận)</td><td>6–12 tháng</td><td>Premium pricing +15–25% cho thị trường EU hữu cơ</td></tr>
+<tr><td>5</td><td>USDA Organic</td><td>$3,000–$6,000/năm</td><td>6–12 tháng</td><td>Giá trị tương tự cho thị trường Mỹ</td></tr>
+</table>
+
+<h3>12.3 Ma trận rủi ro</h3>
+
+<table>
+<tr><th>Rủi ro</th><th>Xác suất</th><th>Tác động</th><th>Chiến lược giảm thiểu</th></tr>
+<tr>
+  <td>Biến động giá cà phê nhân xanh</td>
+  <td><span class="badge badge-red">Cao</span></td>
+  <td><span class="badge badge-red">Cao</span></td>
+  <td>Hợp đồng kỳ hạn với nông trại, điều chỉnh giá FOB theo quý, hedging nếu quy mô lớn</td>
+</tr>
+<tr>
+  <td>Alibaba thay đổi chính sách / phí</td>
+  <td><span class="badge badge-orange">Trung bình</span></td>
+  <td><span class="badge badge-orange">Trung bình</span></td>
+  <td>Đa dạng kênh: website B2B riêng, Tridge, hội chợ; không phụ thuộc &gt;60% vào Alibaba</td>
+</tr>
+<tr>
+  <td>EUDR compliance failure</td>
+  <td><span class="badge badge-orange">Trung bình</span></td>
+  <td><span class="badge badge-red">Cao</span></td>
+  <td>Xây dựng hệ thống traceability từ bây giờ, audit nông trại đối tác</td>
+</tr>
+<tr>
+  <td>Chất lượng không đồng nhất giữa các lô</td>
+  <td><span class="badge badge-orange">Trung bình</span></td>
+  <td><span class="badge badge-red">Cao</span></td>
+  <td>QC chuẩn hóa: cup test mỗi lô, máy đo độ ẩm, seal test, lưu mẫu 12 tháng</td>
+</tr>
+<tr>
+  <td>Thời gian vận chuyển quốc tế kéo dài</td>
+  <td><span class="badge badge-orange">Trung bình</span></td>
+  <td><span class="badge badge-orange">Trung bình</span></td>
+  <td>Lead time buffer 7–10 ngày, cập nhật tracking real-time, đối tác logistics backup</td>
+</tr>
+<tr>
+  <td>Cạnh tranh từ Trung Quốc giá rẻ</td>
+  <td><span class="badge badge-red">Cao</span></td>
+  <td><span class="badge badge-blue">Thấp</span></td>
+  <td>Không cạnh tranh về giá; tập trung vào differentiation: specialty, story, patent, championship</td>
+</tr>
+<tr>
+  <td>Thiếu nhân sự B2B chuyên trách</td>
+  <td><span class="badge badge-orange">Trung bình</span></td>
+  <td><span class="badge badge-orange">Trung bình</span></td>
+  <td>Bắt đầu với part-time + outsourcing; tuyển full-time khi MRR &gt;$10K</td>
+</tr>
+<tr>
+  <td>Rào cản ngôn ngữ / văn hóa với buyer</td>
+  <td><span class="badge badge-blue">Thấp</span></td>
+  <td><span class="badge badge-orange">Trung bình</span></td>
+  <td>CS specialist song ngữ Anh-Việt, template inquiry đa ngôn ngữ, chatbot cơ bản</td>
+</tr>
+</table>
+</section>
+
+<!-- ====== S13 ====== -->
+<section id="s13">
+<h2><span class="sec-num">13</span> Giả định &amp; Nguồn tham khảo</h2>
+
+<h3>13.1 Các giả định chính (Assumptions)</h3>
+
+<table>
+<tr><th>#</th><th>Giả định</th><th>Giá trị</th><th>Cơ sở</th></tr>
+<tr><td>A1</td><td>Giá cà phê nhân Arabica specialty</td><td>$7–$9/kg FOB</td><td>Trading Economics (8/2026: ~$7.12/kg Arabica TG); specialty premium +20–30%</td></tr>
+<tr><td>A2</td><td>Tỷ lệ hao hụt khi rang</td><td>16%</td><td>Tiêu chuẩn ngành rang specialty (medium roast)</td></tr>
+<tr><td>A3</td><td>Khối lượng cà phê/gói drip</td><td>12g</td><td>Tiêu chuẩn drip bag phổ biến (10–15g)</td></tr>
+<tr><td>A4</td><td>Giá bao bì drip bag (túi + hộp/label)</td><td>$0.35–$0.73/hộp</td><td>Theo cấp độ (Gold premium, Silver/PL tiêu chuẩn); MOQ càng cao giá càng thấp</td></tr>
+<tr><td>A5</td><td>Alibaba Gold Supplier fee</td><td>$3,500/năm</td><td>Mức trung bình từ nhiều nguồn ($2,999–$4,700); làm tròn</td></tr>
+<tr><td>A6</td><td>Trade Assurance fee</td><td>2.5%/giao dịch</td><td>Nhiều nguồn xác nhận 2–3%</td></tr>
+<tr><td>A7</td><td>P4P CPC trung bình (Food &amp; Beverage B2B)</td><td>$1.25</td><td>BusinessOfApps 2026: F&amp;B ~$1.25; B2B ~$3.33 nhưng Alibaba thấp hơn Google Ads</td></tr>
+<tr><td>A8</td><td>Inquiry → Order conversion rate</td><td>12% (Base)</td><td>Dựa trên benchmark ngành B2B Alibaba cho hàng specialty (thấp hơn consumer goods)</td></tr>
+<tr><td>A9</td><td>Thời gian lead time sản xuất</td><td>14–21 ngày</td><td>ARO BAO KHANH listing: 31 ngày cho ≤5,000 pieces → Bosgaurus target nhanh hơn</td></tr>
+<tr><td>A10</td><td>Shelf life drip bag</td><td>12 tháng</td><td>Với flush nitơ, bao bì kín; tiêu chuẩn ngành</td></tr>
+<tr><td>A11</td><td>ACP Năm 1</td><td>$3,000/đơn</td><td>Giả định TB đơn ~500–700 hộp × giá trung bình $4.50–$5.50</td></tr>
+<tr><td>A12</td><td>Chi phí vận hành CS Alibaba</td><td>$500/tháng</td><td>Part-time specialist (20h/tuần) tại VN; full-time ~$1,250/tháng</td></tr>
+</table>
+
+<h3>13.2 Nguồn tham khảo</h3>
+
+<table>
+<tr><th>#</th><th>Nguồn</th><th>URL / Mô tả</th></tr>
+<tr><td>S1</td><td>DataIntelo – Drip Bag Coffee Market Report 2034</td><td>dataintelo.com/report/global-drip-bag-coffee-market</td></tr>
+<tr><td>S2</td><td>DataHorizzon Research – Drip Bag Coffee Market 2026–2033</td><td>datahorizzonresearch.com/drip-bag-coffee-market-75428</td></tr>
+<tr><td>S3</td><td>Trading Economics – Arabica Coffee Price</td><td>tradingeconomics.com/commodity/coffee (8/2026: ~$3.23/lb)</td></tr>
+<tr><td>S4</td><td>USDA FAS – Vietnam Coffee Annual 2026</td><td>apps.fas.usda.gov (VM2026-0016, 5/2026)</td></tr>
+<tr><td>S5</td><td>Alibaba – ARO BAO KHANH Listing</td><td>alibaba.com/product-detail/Factory-directed-Coffee-Viet-Nam-Drip_10000010038638.html</td></tr>
+<tr><td>S6</td><td>Alibaba Seller – Gold Supplier Membership Guide 2026</td><td>seller.alibaba.com/blogs/2026/southeast-asia/food-beverage/gold-supplier-membership-guide-alibaba-b2b</td></tr>
+<tr><td>S7</td><td>SmartBuy Alibaba – B2B Store Costs 2026</td><td>smartbuy.alibaba.com/b2b/how-much-does-it-cost-to-open-alibaba-shop-b2b</td></tr>
+<tr><td>S8</td><td>BusinessOfApps – CPC Rates 2026</td><td>businessofapps.com/ads/cpc/research/cpc-rates/</td></tr>
+<tr><td>S9</td><td>Bosgaurus Coffee – Website chính thức</td><td>bosgauruscoffee.com</td></tr>
+<tr><td>S10</td><td>Sprudge – Inside Bosgaurus (2019)</td><td>sprudge.com/inside-bosgaurus-ho-chi-minh-citys-stunning-multi-story-cafe-140778.html</td></tr>
+<tr><td>S11</td><td>FilterNotes – Bosgaurus Review (2026)</td><td>filternotes.com/ho-chi-minh-city/bosgaurus-coffee-roasters</td></tr>
+<tr><td>S12</td><td>DHL – How to Export Coffee from Vietnam to EU (2025)</td><td>dhl.com/discover/en-vn/logistics-advice/import-export-advice/shipping-coffee-from-vietnam-to-the-eu</td></tr>
+<tr><td>S13</td><td>TraceX – EUDR Compliance for Vietnam Coffee Exporters</td><td>tracextech.com/eudr-exporter/eudr-vietnam-coffee-exporter/</td></tr>
+<tr><td>S14</td><td>VIRFQ – How to Import Vietnamese Coffee 2026</td><td>virfq.com/en/blog/how-to-import-vietnamese-coffee</td></tr>
+<tr><td>S15</td><td>StoneX – Vietnam Export Surge (7/2026)</td><td>stonex.com/en-gb/insights/vietnam-s-export-surge-reinforces-its-growing-influence-in-the-global-coffee-market/</td></tr>
+</table>
+
+<h3>13.3 Disclaimer</h3>
+<div class="callout">
+<strong>Lưu ý quan trọng:</strong> Báo cáo này được xây dựng dựa trên dữ liệu công khai, listing Alibaba hiện hành, và các giả định minh bạch nêu trên. Các con số tài chính là dự báo dựa trên benchmark ngành và có thể thay đổi tùy theo điều kiện thực tế của Bosgaurus (năng lực sản xuất, chi phí thực, mùa vụ cà phê, biến động tỷ giá). Khuyến nghị kiểm chứng tất cả giả định với dữ liệu nội bộ của Bosgaurus trước khi triển khai. Không truy cập CRM hay dữ liệu nội bộ Bosgaurus. Toàn bộ phân tích dựa trên nguồn công khai.
+</div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+<p><strong>Bosgaurus Coffee Drip Bag – Alibaba Strategy &amp; ROI Framework</strong></p>
+<p>Báo cáo chiến lược tháng 8/2026 • Bosgaurus Coffee Roasters • TP. Hồ Chí Minh, Việt Nam</p>
+<p style="margin-top:8px; font-size:0.8em">Tài liệu này dành cho mục đích hoạch định chiến lược nội bộ. Mọi quyết định đầu tư cần dựa trên đánh giá thực tế và tư vấn chuyên môn.</p>
+</footer>
+
+</div>
+</body>
+</html>
