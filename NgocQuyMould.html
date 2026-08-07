@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ngọc Quý Mould – Phương án kinh doanh Alibaba (Gói Cơ bản $1,999) | Khuôn lốp &amp; Máy móc ngành cao su</title>
+<style>
+  :root {
+    --bg: #ffffff; --surface: #fbf7f4; --surface2: #f4eee8; --border: #e8ded5;
+    --text: #333a45; --muted: #6b7280; --heading: #1f2937;
+    --accent: #cc2c32; --accent2: #e8633a; --orange: #e06d2b;
+    --green: #1a7f37; --red: #cf222e; --blue: #0969da; --purple: #8250df;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.7; font-size: 15px;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+  /* HEADER — nền trắng ấm, viền đỏ brand Ngọc Quý */
+  .hero {
+    background: linear-gradient(135deg, #fff5f2 0%, #ffe9e3 45%, #ffffff 100%);
+    border-bottom: 4px solid var(--accent); padding: 60px 20px 50px; text-align: center;
+  }
+  .hero h1 { font-size: 2.3em; color: var(--heading); margin-bottom: 8px; letter-spacing: -0.5px; }
+  .hero .subtitle { font-size: 1.12em; color: var(--accent); margin-bottom: 15px; font-weight: 600; }
+  .hero .meta { font-size: 0.9em; color: var(--muted); }
+  .hero .brand-tag {
+    display: inline-block; background: var(--accent); color: #fff; padding: 5px 16px;
+    border-radius: 20px; font-weight: 700; font-size: 0.85em; margin-bottom: 18px;
+  }
+  .hero .pkg-tag {
+    display: inline-block; background: #fff; color: var(--accent); border: 2px solid var(--accent);
+    padding: 4px 14px; border-radius: 20px; font-weight: 700; font-size: 0.85em; margin-left: 8px;
+  }
+
+  /* NAV */
+  nav.toc {
+    background: rgba(255,255,255,0.96); border: 1px solid var(--border); border-radius: 10px;
+    padding: 10px 14px; margin-bottom: 28px; position: sticky; top: 8px; z-index: 10;
+    display: flex; align-items: center; gap: 14px; overflow-x: auto;
+    scrollbar-width: thin; backdrop-filter: blur(8px); box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  nav.toc h3 { color: var(--accent); margin: 0; font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+  nav.toc ul { list-style: none; display: flex; align-items: center; gap: 7px; min-width: max-content; margin: 0; }
+  nav.toc li { margin: 0; white-space: nowrap; }
+  nav.toc a { display: block; color: var(--blue); text-decoration: none; font-size: 0.78em; padding: 4px 8px; border: 1px solid transparent; border-radius: 6px; }
+  nav.toc a:hover { color: var(--accent); border-color: var(--accent); background: rgba(204,44,50,0.06); }
+  @media (max-width: 700px) {
+    nav.toc { gap: 8px; padding: 8px 10px; }
+    nav.toc h3 { font-size: 0.68em; }
+    nav.toc ul { gap: 3px; }
+    nav.toc a { font-size: 0.72em; padding: 3px 6px; }
+  }
+
+  /* CARDS */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-bottom: 40px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 24px; transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .card:hover { border-color: var(--accent); box-shadow: 0 4px 14px rgba(204,44,50,0.08); }
+  .card .num { font-size: 2.1em; font-weight: 800; color: var(--accent); }
+  .card .label { font-size: 0.85em; color: var(--muted); margin-top: 4px; }
+
+  /* SECTIONS */
+  section { margin-bottom: 45px; }
+  h2 {
+    font-size: 1.55em; color: var(--heading); border-bottom: 3px solid var(--accent);
+    padding-bottom: 8px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+  }
+  h2 .sec-num { font-size: 0.65em; color: var(--accent); background: rgba(204,44,50,0.08); padding: 3px 10px; border-radius: 6px; border: 1px solid rgba(204,44,50,0.2); }
+  h3 { font-size: 1.18em; color: var(--heading); margin: 22px 0 10px; }
+  h4 { font-size: 1.04em; color: var(--accent); margin: 16px 0 8px; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 8px 0 16px 24px; }
+  li { margin-bottom: 5px; }
+
+  /* TABLES */
+  .table-wrap { overflow-x: auto; margin: 16px 0 24px; border-radius: 10px; border: 1px solid var(--border); background: #fff; }
+  table { width: 100%; border-collapse: collapse; min-width: 700px; font-size: 0.9em; }
+  th { background: var(--surface2); color: var(--accent); font-weight: 700; padding: 11px 14px; text-align: left; font-size: 0.83em; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+  td { padding: 10px 14px; border-top: 1px solid var(--border); vertical-align: top; }
+  tr:hover td { background: rgba(204,44,50,0.03); }
+  .num-col { text-align: right; font-variant-numeric: tabular-nums; }
+
+  /* BADGES */
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.78em; font-weight: 700; margin-right: 4px; }
+  .badge-green { background: rgba(26,127,55,0.1); color: var(--green); }
+  .badge-red { background: rgba(207,34,46,0.1); color: var(--red); }
+  .badge-blue { background: rgba(9,105,218,0.1); color: var(--blue); }
+  .badge-orange { background: rgba(224,109,43,0.12); color: var(--orange); }
+  .badge-purple { background: rgba(130,80,223,0.1); color: var(--purple); }
+
+  /* CALLOUT */
+  .callout {
+    background: #fff6f4; border-left: 4px solid var(--accent);
+    padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 18px 0; border-top: 1px solid #f3d9d5; border-right: 1px solid #f3d9d5; border-bottom: 1px solid #f3d9d5;
+  }
+  .callout strong { color: var(--accent); }
+
+  /* SCENARIO BOXES */
+  .scenario-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; margin: 20px 0; }
+  .scenario-box {
+    border: 1px solid var(--border); border-radius: 14px; padding: 24px; background: var(--surface);
+  }
+  .scenario-box.conservative { border-top: 4px solid var(--blue); }
+  .scenario-box.base { border-top: 4px solid var(--green); }
+  .scenario-box.aggressive { border-top: 4px solid var(--orange); }
+  .scenario-box h3 { margin-top: 0; }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 30px; border-left: 2px solid var(--accent); margin: 20px 0 30px; }
+  .timeline .phase { margin-bottom: 25px; position: relative; }
+  .timeline .phase::before {
+    content: ''; position: absolute; left: -37px; top: 5px; width: 12px; height: 12px;
+    background: var(--accent); border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 2px var(--accent);
+  }
+  .timeline .phase h3 { margin: 0 0 6px; }
+  .timeline .phase .dur { color: var(--accent); font-size: 0.85em; font-weight: 700; }
+
+  /* PROGRESS BARS */
+  .bar { height: 12px; background: #f0e8e2; border-radius: 6px; overflow: hidden; margin: 6px 0 14px; }
+  .bar > i { display: block; height: 100%; background: linear-gradient(90deg, var(--accent2), var(--accent)); border-radius: 6px; }
+  .margin-bar { height: 14px; background: #f0e8e2; border-radius: 7px; overflow: hidden; margin: 4px 0 6px; min-width: 120px; }
+  .margin-bar > i { display: block; height: 100%; border-radius: 7px; }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--border); padding: 24px 0 40px; color: var(--muted); font-size: 0.85em; text-align: center; }
+  a { color: var(--blue); }
+  .src-list { font-size: 0.85em; color: var(--muted); }
+  .src-list li { margin-bottom: 8px; word-break: break-word; }
+
+  @media print {
+    nav.toc { display: none; }
+    .hero { background: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="brand-tag">PHƯƠNG ÁN KINH DOANH ALIBABA.COM</span><span class="pkg-tag">GÓI CƠ BẢN — $1,999/NĂM</span>
+  <h1>CÔNG TY TNHH KHUÔN MẪU NGỌC QUÝ</h1>
+  <div class="subtitle">Khuôn lốp cao su &amp; Máy móc ngành công nghiệp cao su — Mở gian hàng &amp; tìm khách hàng toàn cầu trên Alibaba</div>
+  <div class="meta">Website khách hàng: ngocquymould.com · Báo cáo lập: 05/08/2026 · Phiên bản 2 (nền trắng, gói cơ bản)</div>
+</div>
+
+<div class="container">
+
+<nav class="toc">
+  <h3>Nội dung</h3>
+  <ul>
+    <li><a href="#s1">1. Tóm tắt điều hành</a></li>
+    <li><a href="#s2">2. Hồ sơ khách hàng</a></li>
+    <li><a href="#s3">3. Phân tích sản phẩm</a></li>
+    <li><a href="#s4">4. Thị trường toàn cầu</a></li>
+    <li><a href="#s5">5. Tệp khách hàng</a></li>
+    <li><a href="#s6">6. Lợi thế cạnh tranh VN</a></li>
+    <li><a href="#s7">7. Cơ cấu lợi nhuận sản phẩm</a></li>
+    <li><a href="#s8">8. Chu kỳ mua hàng Alibaba</a></li>
+    <li><a href="#s9">9. Phương án gian hàng</a></li>
+    <li><a href="#s10">10. Lộ trình &amp; KPI</a></li>
+    <li><a href="#s11">11. Rủi ro</a></li>
+    <li><a href="#s12">12. Nguồn tham khảo</a></li>
+  </ul>
+</nav>
+
+<section id="s1">
+<h2><span class="sec-num">1</span> Tóm tắt điều hành (Executive Summary)</h2>
+
+<div class="card-grid">
+  <div class="card"><div class="num">$1,999</div><div class="label">Chi phí gói cơ bản Alibaba 1 năm — hoàn vốn chỉ cần 1–2 đơn khuôn xe máy hoặc 1 máy lưu hóa</div></div>
+  <div class="card"><div class="num">8,9%/năm</div><div class="label">Tăng trưởng thị trường khuôn lốp toàn cầu 2025–2031 (1,78 → 2,97 tỷ USD) — TechSci Research</div></div>
+  <div class="card"><div class="num">0 nhà cung cấp</div><div class="label">Số nhà cung cấp Việt Nam trong top tìm kiếm khuôn lốp / máy lưu hóa trên Alibaba — khoảng trống gần như tuyệt đối</div></div>
+  <div class="card"><div class="num">35–50%</div><div class="label">Biên lợi nhuận gộp ước tính cho khuôn (xe máy, săm, đắp lốp) — sản phẩm lõi tạo lợi nhuận cao nhất</div></div>
+</div>
+
+<div class="callout">
+  <strong>Kết luận định hướng:</strong> Với chi phí gia nhập chỉ <strong>$1,999/năm (gói cơ bản)</strong>, Ngọc Quý Mould có thể sở hữu kênh bán hàng toàn cầu đầu tiên cho phân khúc khuôn lốp &amp; máy cao su xuất xứ Việt Nam — trong khi toàn bộ đối thủ trên nền tảng tập trung tại cụm Thanh Đảo (Trung Quốc). Lợi thế 40 năm kinh nghiệm (1986), ISO 9001, giải pháp trọn gói khuôn + máy, cùng hồ sơ xuất khẩu sang Ý, Brazil, Argentina, Ấn Độ, Bangladesh, Thái Lan tạo nền tảng niềm tin vững chắc ngay từ ngày khai trương gian hàng. Kỳ vọng GMV năm 1: USD 250.000–450.000 với ROI gói thành viên gấp 100–200 lần.
+</div>
+
+<p><strong>5 hành động trọng tâm</strong></p>
+<ol>
+  <li><strong>Khai trương gian hàng gói cơ bản $1,999:</strong> hồ sơ công ty song ngữ + ISO 9001 + video nhà máy CNC/EDM; 20–30 SKU thuộc 4 nhóm sản phẩm; 5 SKU flagship chuẩn ảnh/video.</li>
+  <li><strong>Định vị "Vietnam OEM tire mould &amp; rubber machinery since 1986":</strong> chiếm sóng từ khóa nguồn gốc Việt Nam — chưa đối thủ nào dùng.</li>
+  <li><strong>Tập trung 3 phân khúc lợi nhuận cao:</strong> khuôn lốp xe máy/xe đạp, khuôn săm, khuôn đắp lốp (retread) — biên gộp 35–50%, ít cạnh tranh giá rẻ.</li>
+  <li><strong>Khai thác chu kỳ mua lặp lại:</strong> bán kèm màng hơi/cốt hơi (tiêu hao 6–12 tháng) + máy lưu hóa/máy thành hình để nâng giá trị giỏ hàng và tạo đơn lặp lại.</li>
+  <li><strong>Phối hợp 3 kênh:</strong> SEO/RFQ (inbound) + chào hàng chủ động 30–50 khách/tháng tại Ấn Độ, Bangladesh, Indonesia, Philippines, Brazil (outbound) + Trade Assurance cho đơn nền tảng.</li>
+</ol>
+</section>
+<section id="s2">
+<h2><span class="sec-num">2</span> Hồ sơ khách hàng: Năng lực của Ngọc Quý Mould</h2>
+
+<h3>2.1 Thông tin doanh nghiệp</h3>
+<div class="table-wrap"><table>
+<tr><th>Tiêu chí</th><th>Thông tin (nguồn: ngocquymould.com)</th></tr>
+<tr><td>Tên doanh nghiệp</td><td>CÔNG TY TNHH KHUÔN MẪU NGỌC QUÝ (Ngoc Quy Mould Co., Ltd.)</td></tr>
+<tr><td>Năm thành lập / Kinh nghiệm</td><td>1986 — hơn 40 năm trong ngành chế tạo khuôn mẫu &amp; máy móc cao su</td></tr>
+<tr><td>Địa điểm</td><td>Lô B2-35 KCN Tân Đông Hiệp B, TP. Dĩ An, tỉnh Bình Dương (liền kề TP.HCM — thuận lợi logistics cảng Cát Lái)</td></tr>
+<tr><td>Năng lực gia công</td><td>Hệ thống máy CNC &amp; EDM hiện đại — khuôn độ chính xác cao, hoa văn/ren sắc nét, độ đồng đều</td></tr>
+<tr><td>Chứng nhận</td><td>ISO 9001 (quản lý chất lượng đạt chuẩn quốc tế)</td></tr>
+<tr><td>Thị trường xuất khẩu hiện tại</td><td>Ý (Italy), Argentina, Brazil, Ấn Độ, Bangladesh, Thái Lan và nhiều quốc gia khác</td></tr>
+<tr><td>Liên hệ</td><td>info@ngocquymould.com · +84 903.698.468 / +84 935.257.768</td></tr>
+</table></div>
+
+<h3>2.2 Danh mục sản phẩm hiện hữu (trụ cột xây gian hàng Alibaba)</h3>
+<div class="table-wrap"><table>
+<tr><th>Nhóm</th><th>Sản phẩm</th><th>Vai trò trong chiến lược Alibaba</th></tr>
+<tr><td rowspan="3"><span class="badge badge-red">KHUÔN LỐP</span></td><td>Khuôn lốp xe đạp, xe máy, ô tô</td><td>Nhóm chủ lực — nhu cầu cao nhất từ nhà máy lốp 2 bánh tại Ấn Độ, châu Phi, Đông Nam Á</td></tr>
+<tr><td>Khuôn lốp nông nghiệp, lốp công nghiệp, lốp tải, lốp xe nâng, lốp đặc (solid)</td><td>Phân khúc giá trị cao, ít cạnh tranh giá rẻ, phù hợp Mỹ Latinh &amp; Đông Âu</td></tr>
+<tr><td>Khuôn đắp lốp (retread mold)</td><td>Phân khúc tăng trưởng nhanh nhất (retreading CAGR 7–9%) — trùng đúng thế mạnh EDM gia công hoa văn</td></tr>
+<tr><td rowspan="3"><span class="badge badge-orange">KHUÔN SĂM / PHỤ KIỆN</span></td><td>Khuôn săm (inner tube), khuôn yếm (flap)</td><td>Đơn hàng lặp lại cao, giá hợp lý — tạo dòng tiền đều</td></tr>
+<tr><td>Khuôn cốt hơi &amp; màng hơi (curing bladder)</td><td>Sản phẩm tiêu hao, nhu cầu thay thế định kỳ của mọi nhà máy lốp</td></tr>
+<tr><td>Khuôn cho sản phẩm cao su kỹ thuật khác</td><td>Mở rộng tệp khách hàng ngoài ngành lốp (gioăng, ống, chi tiết cao su)</td></tr>
+<tr><td rowspan="3"><span class="badge badge-green">MÁY MÓC NGÀNH CAO SU</span></td><td>Máy lưu hóa lốp (curing press): 2–6 tầng, ben trên/ben dưới, màng hơi</td><td>Đơn hàng giá trị lớn (USD 5.000–30.000+) — nâng GMV, tạo gói giải pháp trọn gói</td></tr>
+<tr><td>Máy thành hình lốp (tire building machine) xe đạp/xe máy</td><td>Bán kèm theo khuôn — giải pháp "turnkey" cho nhà máy lốp mới</td></tr>
+<tr><td>Máy định hình sau lưu hóa, máy cắt vải mành, máy cuốn tanh, máy nong cốt sống, chuyền làm mát mặt lốp</td><td>Sản phẩm hỗ trợ — tăng giá trị giỏ hàng mỗi khách hàng</td></tr>
+</table></div>
+
+<div class="callout">
+  <strong>Nhận định:</strong> Ngọc Quý không chỉ bán khuôn — mà bán <strong>giải pháp sản xuất lốp trọn gói</strong> (khuôn + máy lưu hóa + máy thành hình + thiết bị phụ trợ). Trên Alibaba, đây là cấu trúc gian hàng hiếm có, cho phép định vị "one-stop tire production solution" thay vì cạnh tranh đơn lẻ từng sản phẩm với cụm Thanh Đảo.
+</div>
+</section>
+
+<section id="s3">
+<h2><span class="sec-num">3</span> Phân tích sản phẩm chuyên sâu (qua lăng kính Alibaba)</h2>
+
+<h3>3.1 Bản đồ sản phẩm theo cơ hội trên nền tảng</h3>
+<div class="table-wrap"><table>
+<tr><th>Sản phẩm</th><th>Người mua điển hình</th><th>Khoảng giá tham chiếu (Alibaba, 08/2026)</th><th>Mức độ cạnh tranh</th><th>Ưu tiên cho Ngọc Quý</th></tr>
+<tr><td>Khuôn lốp xe đạp / xe máy</td><td>Nhà máy lốp 2 bánh (Ấn Độ, Pakistan, Bangladesh, Nigeria, Indonesia, Philippines)</td><td>USD 650 – 6.000/set tùy size &amp; độ phức tạp</td><td>Trung bình — đa số từ Thanh Đảo</td><td><span class="badge badge-green">CAO NHẤT</span></td></tr>
+<tr><td>Khuôn săm (inner tube mold)</td><td>Nhà sản xuất săm xe 2 bánh, xe tải nhẹ</td><td>~USD 2.650/set</td><td>Thấp — ít đối thủ chuyên sâu</td><td><span class="badge badge-green">CAO</span></td></tr>
+<tr><td>Khuôn đắp lốp (retread mold)</td><td>Xưởng đắp lốp xe tải, xe máy (Brazil, Ấn Độ, châu Phi, Đông Âu)</td><td>USD 3.666 – 5.000/set</td><td>Thấp — phân khúc ngách</td><td><span class="badge badge-green">CAO</span></td></tr>
+<tr><td>Khuôn lốp đặc / xe nâng / OTR</td><td>Nhà sản xuất lốp công nghiệp, forklift</td><td>USD 2.400 – 2.450/set (OTR)</td><td>Trung bình</td><td><span class="badge badge-orange">TB–CAO</span></td></tr>
+<tr><td>Máy lưu hóa lốp (curing press)</td><td>Nhà máy lốp, xưởng đắp lốp</td><td>USD 1.350 (xe đạp) – 30.000 (OTR); xe máy ~USD 4.500–7.000</td><td>Cao (cụm Thanh Đảo)</td><td><span class="badge badge-orange">TRUNG BÌNH</span></td></tr>
+<tr><td>Máy thành hình lốp (building machine)</td><td>Nhà máy lốp mới / mở rộng</td><td>USD 800–888 (xe đạp); USD 7.000–15.000 (xe máy); USD 63.000 (auto)</td><td>Trung bình</td><td><span class="badge badge-blue">BÁN KÈM</span></td></tr>
+<tr><td>Curing bladder / màng hơi, cốt hơi</td><td>Mọi nhà máy lốp (hàng tiêu hao)</td><td>Chưa công bố rộng trên nền tảng</td><td>Thấp</td><td><span class="badge badge-blue">BÁN KÈM</span></td></tr>
+</table></div>
+
+<h3>3.2 Phân tích chiều sâu 3 nhóm sản phẩm đột phá</h3>
+
+<h4>(1) Khuôn lốp xe máy &amp; xe đạp — "con bài" chủ lực</h4>
+<p>Phân khúc có tần suất tìm kiếm cao nhất trong nhóm khuôn lốp trên Alibaba. Người mua là các nhà máy lốp vừa &amp; nhỏ tại các nước có tỷ lệ xe máy cao (Ấn Độ, Indonesia, Việt Nam, Nigeria, Philippines, Bangladesh). Thị trường lốp xe máy toàn cầu dự kiến tăng từ 5,18 tỷ USD (2025) lên 9,87 tỷ USD (2034); lốp 2 bánh châu Phi tăng CAGR 6,89% (2024–2030) — mỗi nhà máy mới = nhu cầu bộ khuôn nhiều size + khuôn săm + khuôn màng hơi, kèm máy lưu hóa và máy thành hình.</p>
+<p><strong>Gợi ý danh mục niêm yết:</strong> khuôn lốp xe máy các size phổ thông (2.50-17, 2.75-18, 3.00-18, 80/90-17, 90/90-18...), khuôn lốp xe đạp, khuôn săm tương ứng. Đính kèm bảng size chuẩn &amp; ảnh hoa văn mặt lốp thực tế — điểm bán mạnh so với đối thủ niêm yết ảnh minh họa chung chung.</p>
+
+<h4>(2) Khuôn &amp; thiết bị đắp lốp (retreading) — phân khúc tăng trưởng nhanh, biên lợi nhuận cao</h4>
+<p>Thị trường retreading toàn cầu tăng từ ~12,3 tỷ USD (2025) lên ~19,9 tỷ USD (2032), CAGR 7,1%; riêng Brazil (thị trường Ngọc Quý đã có khách) tăng 9,2%/năm lên 16,2 tỷ USD (2030). Khuôn đắp lốp trên Alibaba chỉ ~USD 3.666–5.000/set, số lượng đối thủ ít, và Ngọc Quý có sẵn năng lực EDM gia công hoa văn — lợi thế gần như trọn vẹn, biên gộp ước tính 40–50%.</p>
+
+<h4>(3) Máy lưu hóa &amp; máy thành hình lốp xe máy — nâng GMV</h4>
+<p>Đơn giá máy (USD 4.500–15.000) gấp 3–10 lần đơn giá khuôn. Chiến lược: bán bộ giải pháp "khuôn + máy" cho nhà máy mới, đồng thời niêm yết máy lưu hóa 2–6 tầng để cạnh tranh trực tiếp với cụm Thanh Đảo bằng lợi thế giá FOB Việt Nam và chi phí vận chuyển thấp hơn tới Đông Nam Á / Nam Á.</p>
+
+<h3>3.3 Khoảng trống nhận diện trên nền tảng</h3>
+<ul>
+  <li>Trong toàn bộ kết quả tìm kiếm "tire mold", "tire curing press", "tire building machine" (gần 400 listing khảo sát), <strong>không xuất hiện nhà cung cấp Việt Nam nào</strong> ở vị trí cạnh tranh; gần như toàn bộ thuộc cụm Thanh Đảo, Sơn Đông (Trung Quốc), ngoài ra có Malaysia (MAXRUBBER) và Campuchia (TOPOWER).</li>
+  <li>Người mua từ Nam Á, Đông Nam Á, châu Phi, Mỹ Latinh đang tìm nguồn thay thế Trung Quốc (đa dạng hóa chuỗi cung ứng) — nguồn gốc "Made in Vietnam" là tín hiệu tin cậy đang được ưa chuộng.</li>
+  <li>Listing của đối thủ chủ yếu dùng ảnh sản phẩm đơn lẻ, ít video nhà máy, ít chứng chỉ công bố — Ngọc Quý có thể vượt trội ngay ở chất lượng nội dung gian hàng.</li>
+</ul>
+</section>
+<section id="s4">
+<h2><span class="sec-num">4</span> Thị trường toàn cầu &amp; tiềm năng phát triển</h2>
+
+<h3>4.1 Quy mô &amp; tăng trưởng thị trường</h3>
+<div class="table-wrap"><table>
+<tr><th>Thị trường</th><th>Quy mô</th><th>Dự báo</th><th>CAGR</th><th>Nguồn</th></tr>
+<tr><td>Khuôn lốp toàn cầu</td><td>1,78 tỷ USD (2025)</td><td>2,97 tỷ USD (2031)</td><td>8,91%</td><td>TechSci Research</td></tr>
+<tr><td>Khuôn lốp toàn cầu (tham chiếu 2)</td><td>4,94 tỷ USD (2025)</td><td>7,21 tỷ USD (2035)</td><td>~3,8%</td><td>Market Research Future</td></tr>
+<tr><td>Lốp xe toàn cầu</td><td>282 tỷ USD (2025)</td><td>367 tỷ USD (2030), sản lượng +4,0%/năm</td><td>~5,4%</td><td>Smithers</td></tr>
+<tr><td>Lốp xe máy toàn cầu</td><td>5,18 tỷ USD (2025)</td><td>9,87 tỷ USD (2034)</td><td>~7,4%</td><td>Fortune Business Insights</td></tr>
+<tr><td>Lốp 2 bánh châu Phi</td><td>4,05 tỷ USD (2024)</td><td>6,04 tỷ USD (2030)</td><td>6,89%</td><td>MarkNtel (qua công bố phân tích)</td></tr>
+<tr><td>Lốp 2 bánh châu Á – Thái Bình Dương</td><td>—</td><td>—</td><td>&gt;5,45% (2025–2030)</td><td>Mordor Intelligence</td></tr>
+<tr><td>Đắp lốp (retreading) toàn cầu</td><td>12,3 tỷ USD (2025)</td><td>19,9 tỷ USD (2032)</td><td>7,1%</td><td>Persistence MR / Fortune BI (22,55 tỷ USD 2034)</td></tr>
+<tr><td>Đắp lốp Brazil</td><td>9,5 tỷ USD (2024)</td><td>16,2 tỷ USD (2030)</td><td>9,2%</td><td>TechSci Research</td></tr>
+<tr><td>Thiết bị đắp lốp toàn cầu</td><td>547 triệu USD</td><td>— (đến 2035)</td><td>5,1%</td><td>Rubber Inc. outlook</td></tr>
+</table></div>
+
+<p class="src-list">Lưu ý: số liệu từ nhiều nhà nghiên cứu có phạm vi định nghĩa khác nhau nên giá trị tuyệt đối chênh lệch; xu hướng chung nhất quán: <strong>tăng trưởng ổn định 3,5–9%/năm ở tất cả phân khúc liên quan</strong>, trong đó retreading và lốp 2 bánh khu vực mới nổi tăng nhanh nhất.</p>
+
+<h3>4.2 Bối cảnh Việt Nam — nền tảng lợi thế quốc gia</h3>
+<ul>
+  <li>Xuất khẩu cao su Việt Nam năm 2025 ước đạt <strong>~11 tỷ USD</strong> (VRA), ~2 triệu tấn cao su thiên nhiên; 8 tháng đầu 2025 xuất khẩu 1,11 triệu tấn, đạt 1,98 tỷ USD, tăng 12,6% về giá trị (Vietnam Briefing).</li>
+  <li>Việt Nam đang trở thành trung tâm sản xuất <strong>cao su kỹ thuật, lốp xe và chi tiết cao su theo yêu cầu</strong> — hệ sinh thái khách hàng nội địa cho khuôn mẫu ngày càng dày.</li>
+  <li>Đáng chú ý: riêng năm 2025, Việt Nam <strong>nhập khẩu 3.810 lô hàng khuôn lốp</strong> từ 144 nhà cung cấp (ExportGenius) — nhu cầu khuôn lốp nội địa rất lớn đang "chảy" ra nước ngoài; Ngọc Quý có thể chiếm lại thị phần nội địa ngay đồng thời xuất khẩu.</li>
+  <li>Hiệp định EVFTA, CPTPP, RCEP giúp khuôn/máy móc xuất khẩu từ Việt Nam hưởng ưu đãi thuế về EU và nhiều nước — điểm bán mạnh khi chào khách Ý, Đông Âu, Nhật Bản, Canada.</li>
+</ul>
+
+<h3>4.3 Tiềm năng phát triển cho Ngọc Quý (định lượng 3 năm, theo gói cơ bản $1,999)</h3>
+<div class="scenario-row">
+  <div class="scenario-box conservative">
+    <h3>Kịch bản thận trọng</h3>
+    <p>Gian hàng vận hành cơ bản, chỉ dựa inbound RFQ &amp; tìm kiếm.</p>
+    <ul>
+      <li>Inquiry/tháng (tháng 12): 25–40</li>
+      <li>Đơn hàng năm 1: 6–10 đơn</li>
+      <li>GMV năm 1: <strong>USD 80.000–150.000</strong></li>
+      <li>Lợi nhuận gộp ước tính: USD 28.000–60.000</li>
+      <li>ROI gói $1.999: gấp 14–30 lần</li>
+    </ul>
+  </div>
+  <div class="scenario-box base">
+    <h3>Kịch bản kỳ vọng</h3>
+    <p>Gian hàng chuẩn + chào hàng chủ động 30–50 khách/tháng + RFQ đều đặn.</p>
+    <ul>
+      <li>Inquiry/tháng (tháng 12): 60–100</li>
+      <li>Đơn hàng năm 1: 15–25 đơn (khuôn + máy)</li>
+      <li>GMV năm 1: <strong>USD 250.000–450.000</strong>; năm 2–3 tăng 50–80%/năm</li>
+      <li>Lợi nhuận gộp ước tính: USD 90.000–170.000</li>
+      <li>ROI gói $1.999: gấp 45–85 lần; payback tháng 3–6</li>
+    </ul>
+  </div>
+  <div class="scenario-box aggressive">
+    <h3>Kịch bản tăng tốc</h3>
+    <p>Gian hàng chuẩn + ký được 2–3 khách hàng "neo" (nhà máy lốp mới tại Ấn Độ/châu Phi) bán trọn gói khuôn + máy.</p>
+    <ul>
+      <li>GMV năm 1: <strong>USD 600.000 – 1.000.000+</strong></li>
+      <li>Mỗi hợp đồng trọn gói nhà máy lốp xe máy: USD 100.000–300.000</li>
+      <li>Lợi nhuận gộp ước tính: USD 200.000–350.000</li>
+      <li>Yêu cầu: hỗ trợ lắp đặt/hướng dẫn vận hành từ xa, giao hàng cam kết 45–75 ngày</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<section id="s5">
+<h2><span class="sec-num">5</span> Tệp khách hàng &amp; phân tích thị trường mục tiêu</h2>
+
+<h3>5.1 Chân dung người mua (Buyer Personas) trên Alibaba</h3>
+<div class="table-wrap"><table>
+<tr><th>Persona</th><th>Mô tả</th><th>Hành vi trên Alibaba</th><th>Sản phẩm phù hợp</th><th>Giá trị đơn hàng</th></tr>
+<tr><td><strong>P1 — Nhà máy lốp 2 bánh vừa &amp; nhỏ</strong></td><td>Ấn Độ, Pakistan, Bangladesh, Nigeria, Indonesia, Philippines; sản xuất lốp xe máy/xe đạp nội địa</td><td>Tìm "motorcycle tire mould", so sánh giá + MOQ, yêu cầu ảnh mẫu thực tế, mua lặp lại khi thêm size mới</td><td>Khuôn lốp xe máy/xe đạp, khuôn săm, khuôn màng hơi, máy lưu hóa, máy thành hình</td><td>USD 5.000–50.000/đơn; trọn gói nhà máy USD 100.000+</td></tr>
+<tr><td><strong>P2 — Xưởng đắp lốp (retreader)</strong></td><td>Brazil, Argentina, Ấn Độ, châu Phi, Trung Đông, Đông Âu</td><td>Tìm "retread mould", "tire retreading machine", cần bộ khuôn nhiều size + máy lưu hóa khuôn nóng/autoclave</td><td>Khuôn đắp lốp, máy lưu hóa khuôn nóng, thiết bị đắp</td><td>USD 10.000–80.000</td></tr>
+<tr><td><strong>P3 — Nhà sản xuất lốp đặc/công nghiệp</strong></td><td>Sản xuất lốp xe nâng, lốp đặc, lốp OTR khai khoáng/nông nghiệp</td><td>Tìm "solid tire mould", "OTR tyre mould", khuôn theo bản vẽ riêng (custom)</td><td>Khuôn lốp đặc, khuôn OTR, máy ép lưu hóa lốp đặc</td><td>USD 5.000–100.000</td></tr>
+<tr><td><strong>P4 — Nhà phân phối máy móc cao su</strong></td><td>Distributor tại các nước mới nổi, cung cấp trọn gói thiết bị cho nhà máy lốp địa phương</td><td>Tìm "rubber machinery manufacturer", đối tác dài hạn, cần hỗ trợ kỹ thuật &amp; linh kiện thay thế</td><td>Toàn bộ dòng máy + khuôn (nguồn hàng đa dạng)</td><td>USD 20.000–200.000/năm</td></tr>
+<tr><td><strong>P5 — Nhà máy cao su kỹ thuật</strong></td><td>Sản xuất gioăng, ống, chi tiết cao su kỹ thuật; cần khuôn ép đa dạng</td><td>Tìm "rubber mould", "compression mould", OEM theo bản vẽ</td><td>Khuôn cao su kỹ thuật, khuôn ép</td><td>USD 3.000–30.000</td></tr>
+</table></div>
+
+<h3>5.2 Bảng điểm thị trường mục tiêu (thứ tự ưu tiên)</h3>
+<div class="table-wrap"><table>
+<tr><th>Thị trường</th><th>Động lực cầu</th><th>Cạnh tranh Trung Quốc</th><th>Vận chuyển từ VN</th><th>Rào cản</th><th>Điểm khả thi</th></tr>
+<tr><td><span class="badge badge-green">ẤN ĐỘ</span></td><td>Nhà máy lốp 2 bánh lớn nhất thế giới; chính sách nội địa hóa sản xuất</td><td>Cao nhưng nhu cầu vượt cung khuôn chất lượng</td><td>Thấp–TB (2–3 tuần)</td><td>Trung bình; ưu tiên ISO</td><td>★★★★★</td></tr>
+<tr><td><span class="badge badge-green">BANGLADESH</span></td><td>Xe 2 bánh &amp; xe tải nhẹ phát triển; Ngọc Quý đã có khách</td><td>Trung bình</td><td>Thấp</td><td>Thấp</td><td>★★★★★</td></tr>
+<tr><td><span class="badge badge-green">BRAZIL / ARGENTINA</span></td><td>Retreading Brazil CAGR 9,2%; Ngọc Quý đã xuất khẩu cả 2 nước</td><td>Trung bình — người mua ưu tiên nguồn ngoài TQ</td><td>TB–Cao (4–6 tuần)</td><td>Thuế cao — cần chào FOB/CIF rõ</td><td>★★★★☆</td></tr>
+<tr><td><span class="badge badge-green">INDONESIA / PHILIPPINES</span></td><td>Thị trường xe máy khổng lồ; nhà máy lốp địa phương mở rộng</td><td>Trung bình</td><td>Thấp (1–2 tuần) — vượt trội so với Thanh Đảo</td><td>Thấp (ASEAN)</td><td>★★★★★</td></tr>
+<tr><td><span class="badge badge-blue">CHÂU PHI</span> (Nigeria, Kenya, Ethiopia, Ai Cập)</td><td>Lốp 2 bánh châu Phi CAGR 6,89%; nhu cầu đắp lốp xe tải lớn</td><td>Thấp — nguồn cung khuôn hạn chế</td><td>TB (3–5 tuần)</td><td>Thanh toán rủi ro — dùng Trade Assurance/LC</td><td>★★★★☆</td></tr>
+<tr><td><span class="badge badge-blue">THÁI LAN / ĐNÁ</span></td><td>Trung tâm sản xuất lốp toàn cầu; Ngọc Quý đã có khách</td><td>Cao (nhà máy lớn tự làm khuôn)</td><td>Thấp</td><td>Thấp</td><td>★★★☆☆ (phân khúc nhà máy vừa)</td></tr>
+<tr><td><span class="badge badge-orange">Ý / ĐÔNG ÂU</span></td><td>EVFTA ưu đãi thuế; Ngọc Quý đã xuất Ý; retreading Đông Âu phát triển</td><td>Thấp ở khuôn đắp &amp; khuôn cỡ vừa</td><td>TB (4–5 tuần)</td><td>CE cho máy; tài liệu kỹ thuật chuẩn</td><td>★★★☆☆</td></tr>
+<tr><td><span class="badge badge-orange">TRUNG ĐÔNG</span></td><td>Đầu tư công nghiệp lốp &amp; logistics; nhu cầu đắp lốp xe tải</td><td>Thấp</td><td>TB</td><td>Trung bình</td><td>★★★☆☆</td></tr>
+</table></div>
+
+<div class="callout">
+  <strong>Thứ tự nguồn lực:</strong> Vòng 1 (0–6 tháng): Ấn Độ, Bangladesh, Indonesia, Philippines — lân cận, logistics rẻ, nhu cầu lốp 2 bánh lớn nhất. Vòng 2 (6–12 tháng): Brazil/Argentina (khuôn đắp lốp — tận dụng khách hiện hữu giới thiệu). Vòng 3 (12–24 tháng): châu Phi &amp; Trung Đông (đắp lốp xe tải, khuôn lốp xe máy).
+</div>
+</section>
+<section id="s6">
+<h2><span class="sec-num">6</span> Lợi thế cạnh tranh của Ngọc Quý &amp; Việt Nam</h2>
+
+<h3>6.1 Ma trận lợi thế của doanh nghiệp</h3>
+<div class="table-wrap"><table>
+<tr><th>Lợi thế</th><th>Bằng chứng</th><th>Tác động kinh doanh dự kiến</th></tr>
+<tr><td><strong>1. Di sản 40 năm</strong></td><td>Thành lập 1986, hợp tác nhiều tập đoàn lớn trong &amp; ngoài nước</td><td>Yếu tố tin cậy số 1 trong B2B khuôn mẫu — rút ngắn chu kỳ quyết định 30–50%</td></tr>
+<tr><td><strong>2. Giải pháp trọn gói (khuôn + máy)</strong></td><td>Khuôn lốp/săm + máy lưu hóa + máy thành hình + thiết bị phụ trợ</td><td>Tăng giá trị đơn hàng 3–5 lần; khách mua 1 lần mua nhiều hạng mục</td></tr>
+<tr><td><strong>3. Công nghệ CNC + EDM</strong></td><td>Gia công khuôn chính xác cao, hoa văn sắc nét (đúng nhu cầu khuôn đắp &amp; khuôn lốp hoa văn)</td><td>Đủ năng lực phân khúc khuôn đắp lốp giá trị cao — nơi ít đối thủ</td></tr>
+<tr><td><strong>4. ISO 9001</strong></td><td>Chứng nhận quản lý chất lượng quốc tế</td><td>Điều kiện tiên quyết để vào danh sách nhà cung cấp của nhà máy lớn &amp; đấu thầu dự án</td></tr>
+<tr><td><strong>5. Hồ sơ xuất khẩu hiện hữu</strong></td><td>Đã giao hàng Ý, Argentina, Brazil, Ấn Độ, Bangladesh, Thái Lan</td><td>Chứng cứ xã hội mạnh ngay ngày đầu — đăng case study + ảnh lắp đặt thực tế</td></tr>
+<tr><td><strong>6. Khoảng trống trên nền tảng</strong></td><td>Không nhà cung cấp VN nào trong top tìm kiếm khuôn lốp/máy lưu hóa</td><td>Người đầu tiên trong phân khúc "Vietnam tire mould manufacturer" — chiếm sóng từ khóa độc quyền</td></tr>
+<tr><td><strong>7. Chi phí vận hành cạnh tranh</strong></td><td>Chi phí nhân công &amp; sản xuất Việt Nam thấp hơn Trung Quốc ven biển</td><td>Giữ biên lợi nhuận tốt khi chào giá ngang đối thủ</td></tr>
+</table></div>
+
+<h3>6.2 Lợi thế cạnh tranh của Việt Nam — điểm bán mạnh để chốt khách quốc tế</h3>
+<p>Đây là nhóm lợi thế Ngọc Quý <strong>cần khai thác triệt để trong nội dung gian hàng</strong> vì không đối thủ Thanh Đảo nào có được:</p>
+<div class="table-wrap"><table>
+<tr><th>Lợi thế quốc gia</th><th>Nội dung chi tiết</th><th>Cách dùng để chốt đơn</th></tr>
+<tr><td><strong>1. Xu hướng "China+1" / đa dạng hóa chuỗi cung ứng</strong></td><td>Các nhà nhập khẩu tại Ấn Độ, Brazil, châu Phi, Đông Nam Á chủ động tìm nguồn hàng thay thế Trung Quốc để giảm rủi ro tập trung nguồn cung, thuế quan và chi phí logistics</td><td>Ngay từ tiêu đề/giới thiệu gian hàng: "Made in Vietnam — reliable alternative to China"; trả lời RFQ kèm lợi thế so sánh</td></tr>
+<tr><td><strong>2. Ưu đãi thuế quan (EVFTA, CPTPP, RCEP, ASEAN)</strong></td><td>Khuôn &amp; máy móc xuất từ Việt Nam được hưởng thuế nhập khẩu ưu đãi hoặc 0% về EU, Canada, Nhật Bản, Úc và các nước ASEAN; ngược lại Trung Quốc chịu thuế cao hơn ở nhiều thị trường</td><td>Chào khách EU (Ý, Ba Lan), Canada, Nhật: kèm bảng so sánh thuế nhập khẩu để lượng giá tổng chi phí thấp hơn</td></tr>
+<tr><td><strong>3. Vị trí địa lý &amp; logistics</strong></td><td>Bình Dương – TP.HCM, cảng Cát Lái; cách Ấn Độ, Bangladesh, Indonesia, Philippines, Thái Lan 1–3 tuần vận chuyển — ngắn hơn đáng kể so với Thanh Đảo</td><td>Cam kết lead time ngắn hơn 20–30% so với đối thủ TQ với cùng cảng đích; đây là lợi thế đàm phán trực tiếp</td></tr>
+<tr><td><strong>4. Hệ sinh thái cao su phát triển</strong></td><td>Việt Nam xuất khẩu ~2 triệu tấn cao su thiên nhiên/năm (~11 tỷ USD 2025); ngành lốp &amp; cao su kỹ thuật đang hình thành trung tâm sản xuất — nhân lực, nguyên liệu, nhà cung cấp phụ trợ sẵn có</td><td>Kể chuyện "đất nước của ngành cao su" trong phần About — tăng độ tin cậy kỹ thuật với khách ngành lốp</td></tr>
+<tr><td><strong>5. Nhân công kỹ thuật &amp; chi phí</strong></td><td>Đội ngũ kỹ sư cơ khí/khuôn mẫu dồi dào, chi phí nhân công thấp hơn Trung Quốc ven biển 30–50%</td><td>Chào giá FOB cạnh tranh 10–20% thấp hơn Thanh Đảo mà vẫn giữ biên 35–45% ở dòng khuôn</td></tr>
+<tr><td><strong>6. Hình ảnh "Made in Vietnam" đang lên</strong></td><td>Việt Nam được quốc tế đánh giá cao về chất lượng sản xuất điện tử, dệt may, đồ gỗ, cơ khí — nhận diện thương hiệu sản xuất đang cải thiện nhanh</td><td>Sử dụng cờ/nguồn gốc rõ ràng trên listing; đăng chứng nhận xuất xứ; minh bạch nhà máy qua video</td></tr>
+<tr><td><strong>7. Chính sách hỗ trợ sản xuất</strong></td><td>Chính phủ ưu đãi thuế thu nhập doanh nghiệp, hỗ trợ công nghiệp hỗ trợ &amp; cơ khí chế tạo; chi phí năng lượng, mặt bằng KCN cạnh tranh</td><td>Dùng làm lý do ổn định giá dài hạn khi đàm phán hợp đồng nhiều năm</td></tr>
+</table></div>
+
+<h3>6.3 Định vị so với đối thủ (benchmark chuẩn hóa)</h3>
+<div class="table-wrap"><table>
+<tr><th>Tiêu chí</th><th>Cụm Thanh Đảo (đối thủ chính)</th><th>Ngọc Quý Mould (đề xuất định vị)</th></tr>
+<tr><td>Kinh nghiệm</td><td>3–17 năm trên Alibaba</td><td>40 năm sản xuất (1986)</td></tr>
+<tr><td>Chứng nhận công bố</td><td>Chủ yếu CE (một số), ISO hiếm trên listing</td><td>ISO 9001 — công bố nổi bật ngay từ đầu gian hàng</td></tr>
+<tr><td>Phạm vi sản phẩm</td><td>Chuyên máy hoặc chuyên khuôn, ít đơn vị đủ cả hai</td><td>Khuôn + máy + thiết bị phụ trợ — giải pháp trọn gói</td></tr>
+<tr><td>Nguồn gốc</td><td>Trung Quốc (áp lực thuế quan &amp; tâm lý đa dạng hóa)</td><td>Việt Nam — EVFTA/CPTPP, hình ảnh "made in Vietnam" đang lên</td></tr>
+<tr><td>Nội dung listing</td><td>Ảnh sản phẩm đơn lẻ, ít video nhà máy</td><td>Video nhà máy CNC/EDM + ảnh thực tế + case study xuất khẩu</td></tr>
+<tr><td>Giá</td><td>Thấp (cạnh tranh bằng giá)</td><td>Ngang hoặc nhỉnh hơn — cạnh tranh bằng chất lượng, giao hàng, dịch vụ</td></tr>
+</table></div>
+
+<h3>6.4 Điểm yếu cần xử lý trước khi mở gian hàng</h3>
+<ul>
+  <li><strong>Thiếu hiện diện số:</strong> website thuần tiếng Việt (có bản EN cơ bản), chưa có listing chuẩn B2B. → Xây bộ tài liệu song ngữ Việt–Anh, chuẩn hóa thông số kỹ thuật (inch, kg, MPa...).</li>
+  <li><strong>Chưa công bố chứng nhận trên kênh bán:</strong> ISO 9001 mới giới thiệu trên web. → Quét &amp; đăng chứng chỉ; thêm CE/ISO cho máy móc nếu hướng EU.</li>
+  <li><strong>Thiếu giá tham chiếu công khai:</strong> khách B2B cần giá gợi ý. → Niêm yết giá "negotiable from" theo từng dòng sản phẩm như đối thủ.</li>
+  <li><strong>Năng lực tiếng Anh kỹ thuật &amp; phản hồi:</strong> tốc độ trả lời inquiry là chỉ số xếp hạng quan trọng (đối thủ hàng đầu phản hồi ≤2h). → Bố trí nhân sự phụ trách Alibaba chuyên trách + kịch bản trả lời chuẩn.</li>
+</ul>
+</section>
+
+<section id="s7">
+<h2><span class="sec-num">7</span> Cơ cấu lợi nhuận theo từng sản phẩm (Margin Breakdown)</h2>
+
+<div class="callout">
+  <strong>Lưu ý quan trọng:</strong> Bảng dưới là <strong>mô hình ước tính</strong> xây dựng từ khoảng giá bán tham chiếu Alibaba (08/2026) và cấu trúc chi phí điển hình ngành chế tạo khuôn Việt Nam (thép khuôn 25–35% giá thành; gia công CNC/EDM 35–45%; nhân công + lắp ráp 10–15%; quản lý, đóng gói, tài chính 10–15%). Số liệu chính xác cần được xác nhận lại với bộ phận sản xuất của Ngọc Quý trước khi chốt giá bán.
+</div>
+
+<h3>7.1 Biên lợi nhuận theo dòng sản phẩm</h3>
+<div class="table-wrap"><table>
+<tr><th>Dòng sản phẩm</th><th>Giá bán FOB tham chiếu</th><th>Ước giá thành (cơ cấu)</th><th>Biên gộp ước tính</th><th>Lợi nhuận gộp / đơn hàng điển hình</th><th>Vai trò chiến lược</th></tr>
+<tr><td><strong>Khuôn lốp xe máy</strong></td><td>$1.300–2.500/set</td><td>Thép 30% + gia công 45% + nhân công 10% + quản lý 15%</td><td>35–45%</td><td>$450–1.100/set; đơn 4–10 khuôn = $2.000–10.000</td><td><span class="badge badge-green">CHỦ LỰC</span> đơn lặp lại khi thêm size</td></tr>
+<tr><td><strong>Khuôn lốp xe đạp</strong></td><td>$650–1.300/set</td><td>Thép 28% + gia công 45% + nhân công 12% + quản lý 15%</td><td>30–40%</td><td>$200–520/set</td><td><span class="badge badge-green">DÒNG TIỀN</span> sản lượng lớn</td></tr>
+<tr><td><strong>Khuôn săm (inner tube)</strong></td><td>~$2.650/set</td><td>Thép 30% + gia công 42% + nhân công 12% + quản lý 16%</td><td>35–45%</td><td>~$950/set</td><td><span class="badge badge-green">CHỦ LỰC</span> nhu cầu ổn định, đối thủ ít</td></tr>
+<tr><td><strong>Khuôn đắp lốp (retread)</strong></td><td>$3.666–5.000/set</td><td>Thép 25% + EDM 50% + nhân công 10% + quản lý 15%</td><td>40–50%</td><td>$1.500–2.500/set</td><td><span class="badge badge-green">LỢI NHUẬN CAO NHẤT</span> ngách ít cạnh tranh</td></tr>
+<tr><td><strong>Khuôn OTR / lốp đặc</strong></td><td>$2.400–2.450/set</td><td>Thép 35% + gia công 40% + nhân công 10% + quản lý 15%</td><td>35–45%</td><td>$850–1.100/set</td><td><span class="badge badge-orange">GIÁ TRỊ CAO</span> khách công nghiệp</td></tr>
+<tr><td><strong>Khuôn thép nguyên khối cao cấp</strong></td><td>$6.000–28.000/set</td><td>Thép 40% + gia công 40% + nhân công 8% + quản lý 12%</td><td>40–50%</td><td>$2.400–14.000/set</td><td><span class="badge badge-orange">DỰ ÁN</span> đơn lớn, chu kỳ dài</td></tr>
+<tr><td><strong>Máy lưu hóa xe máy</strong></td><td>$4.500–7.000/máy</td><td>Khung thép + thủy lực 45% + lắp ráp 20% + điện 15% + quản lý 20%</td><td>25–35%</td><td>$1.100–2.400/máy</td><td><span class="badge badge-blue">NÂNG GMV</span> bán kèm khuôn</td></tr>
+<tr><td><strong>Máy lưu hóa đa tầng / OTR</strong></td><td>$21.000–30.000/máy</td><td>Khung + thủy lực 50% + lắp ráp 18% + điện 12% + quản lý 20%</td><td>25–30%</td><td>$5.000–9.000/máy</td><td><span class="badge badge-blue">ĐƠN LỚN</span> ký hợp đồng dự án</td></tr>
+<tr><td><strong>Máy thành hình xe máy</strong></td><td>$7.000–15.000/máy</td><td>Khung + cơ khí 45% + lắp ráp 20% + điện 15% + quản lý 20%</td><td>25–35%</td><td>$1.800–5.200/máy</td><td><span class="badge badge-blue">NÂNG GMV</span> gói turnkey</td></tr>
+<tr><td><strong>Màng hơi / cốt hơi (curing bladder)</strong></td><td>Chào theo spec</td><td>Vật liệu cao su 40% + gia công 35% + quản lý 25%</td><td>40–50%</td><td>Đơn nhỏ nhưng <strong>lặp lại 6–12 tháng</strong></td><td><span class="badge badge-purple">HÀNG TIÊU HAO</span> tạo doanh thu nền</td></tr>
+</table></div>
+
+<h3>7.2 Biểu đồ so sánh biên gộp (ước tính)</h3>
+<div class="table-wrap"><table>
+<tr><th>Dòng sản phẩm</th><th>Biên gộp ước tính</th><th style="min-width:260px">Mức biên</th></tr>
+<tr><td>Khuôn đắp lốp (retread)</td><td>40–50%</td><td><div class="margin-bar"><i style="width:45%;background:var(--green)"></i></div></td></tr>
+<tr><td>Khuôn thép nguyên khối cao cấp</td><td>40–50%</td><td><div class="margin-bar"><i style="width:45%;background:var(--green)"></i></div></td></tr>
+<tr><td>Màng hơi / cốt hơi</td><td>40–50%</td><td><div class="margin-bar"><i style="width:45%;background:var(--green)"></i></div></td></tr>
+<tr><td>Khuôn lốp xe máy</td><td>35–45%</td><td><div class="margin-bar"><i style="width:40%;background:var(--accent2)"></i></div></td></tr>
+<tr><td>Khuôn săm</td><td>35–45%</td><td><div class="margin-bar"><i style="width:40%;background:var(--accent2)"></i></div></td></tr>
+<tr><td>Khuôn OTR / lốp đặc</td><td>35–45%</td><td><div class="margin-bar"><i style="width:40%;background:var(--accent2)"></i></div></td></tr>
+<tr><td>Khuôn lốp xe đạp</td><td>30–40%</td><td><div class="margin-bar"><i style="width:35%;background:var(--orange)"></i></div></td></tr>
+<tr><td>Máy lưu hóa xe máy</td><td>25–35%</td><td><div class="margin-bar"><i style="width:30%;background:var(--blue)"></i></div></td></tr>
+<tr><td>Máy thành hình xe máy</td><td>25–35%</td><td><div class="margin-bar"><i style="width:30%;background:var(--blue)"></i></div></td></tr>
+<tr><td>Máy lưu hóa đa tầng / OTR</td><td>25–30%</td><td><div class="margin-bar"><i style="width:27%;background:var(--blue)"></i></div></td></tr>
+</table></div>
+
+<h3>7.3 Công thức lợi nhuận khuyến nghị cho gian hàng</h3>
+<div class="table-wrap"><table>
+<tr><th>Chỉ tiêu</th><th>Công thức / Nội dung</th><th>Mục tiêu</th></tr>
+<tr><td>Tỷ trọng doanh thu lý tưởng</td><td>Khuôn 60–70% · Máy móc 20–30% · Hàng tiêu hao (màng hơi, khuôn thay thế) 10–15%</td><td>Khuôn giữ biên cao; máy kéo GMV; tiêu hao tạo đơn lặp lại</td></tr>
+<tr><td>Biên gộp bình quân gian hàng</td><td>Trung bình có trọng số theo cơ cấu trên</td><td>35–40%</td></tr>
+<tr><td>Giá chào khởi điểm</td><td>Giá đối thủ ±0–5%, sau đó đàm phán lên theo độ phức tạp bản vẽ &amp; yêu cầu kỹ thuật</td><td>Bám sát thị trường, giữ đàm phán có lý</td></tr>
+<tr><td>Nguyên tắc không phá giá</td><td>Từ chối đơn yêu cầu biên &lt; 25% trừ khi là khách chiến lược mở đường (kèm cam kết đơn lặp lại)</td><td>Bảo vệ định vị &amp; lợi nhuận dài hạn</td></tr>
+<tr><td>Cross-sell margin</td><td>Khách mua khuôn → chào máy (biên 25–35%) + màng hơi (biên 40–50%)</td><td>Tăng giá trị giỏ hàng 2–3 lần</td></tr>
+</table></div>
+</section>
+<section id="s8">
+<h2><span class="sec-num">8</span> Cơ hội kinh doanh &amp; chu kỳ mua hàng trên Alibaba</h2>
+
+<h3>8.1 Hành trình mua hàng B2B điển hình (Purchase Journey)</h3>
+<div class="timeline">
+  <div class="phase">
+    <div class="dur">GIAI ĐOẠN 1 · TUẦN 0–4</div>
+    <h3>Nhận diện &amp; Tìm kiếm</h3>
+    <p>Người mua (nhà máy lốp / xưởng đắp lốp) tìm kiếm trên Alibaba bằng từ khóa khuôn/máy, lọc "Verified Supplier", so sánh 3–10 nhà cung cấp dựa trên: huy hiệu, năm hoạt động, ảnh sản phẩm, giá, phản hồi. Họ gửi inquiry cho 2–5 nhà cung cấp cùng lúc.</p>
+  </div>
+  <div class="phase">
+    <div class="dur">GIAI ĐOẠN 2 · TUẦN 2–8</div>
+    <h3>Báo giá &amp; Đàm phán kỹ thuật</h3>
+    <p>Trao đổi bản vẽ khuôn (2D/3D), thông số, vật liệu thép, dung sai, yêu cầu hoa văn. Nhà cung cấp phản hồi nhanh (&lt;12–24h) và trả lời kỹ thuật chuẩn sẽ được ưu tiên. Đây là giai đoạn quyết định 60% kết quả — Ngọc Quý có lợi thế lớn nhờ đội kỹ sư 40 năm kinh nghiệm.</p>
+  </div>
+  <div class="phase">
+    <div class="dur">GIAI ĐOẠN 3 · TUẦN 4–12</div>
+    <h3>Mẫu / Thử nghiệm (Proof of Capability)</h3>
+    <p>Với khuôn theo bản vẽ, khách thường yêu cầu 1 khuôn thử hoặc kiểm tra năng lực qua video call nhà máy, tham quan ảo CNC/EDM. Đơn đầu tiên thường nhỏ (1–4 khuôn) để đánh giá chất lượng.</p>
+  </div>
+  <div class="phase">
+    <div class="dur">GIAI ĐOẠN 4 · TUẦN 12–24</div>
+    <h3>Đơn hàng đầu &amp; Giao hàng</h3>
+    <p>Ký hợp đồng, T/T 30% cọc, sản xuất 45–75 ngày, kiểm tra FAT qua video, giao FOB/CIF. Khách đánh giá &amp; để lại review — tài sản niềm tin cho các đơn sau.</p>
+  </div>
+  <div class="phase">
+    <div class="dur">GIAI ĐOẠN 5 · 6–36 THÁNG</div>
+    <h3>Đơn lặp lại &amp; Mở rộng giỏ hàng</h3>
+    <p>Khách quay lại khi: thêm size lốp mới (khuôn mới), khuôn mòn (thay thế 2–5 năm), mở rộng công suất (máy mới), thay màng hơi định kỳ (6–12 tháng). Khách hài lòng giới thiệu đồng nghiệp ngành.</p>
+  </div>
+</div>
+
+<h3>8.2 Chu kỳ mua lặp lại theo từng sản phẩm — nguồn doanh thu nền</h3>
+<div class="table-wrap"><table>
+<tr><th>Sản phẩm</th><th>Chu kỳ mua lại</th><th>Lý do mua lại</th><th>Giá trị trọn đời khách (LTV) ước tính</th></tr>
+<tr><td>Khuôn lốp size mới</td><td>1–3 năm</td><td>Nhà máy thêm size/sê-ri lốp mới</td><td>Mỗi lần $2.000–10.000; 5–10 lần trong quan hệ</td></tr>
+<tr><td>Khuôn thay thế (mòn/hỏng)</td><td>2–5 năm</td><td>Hao mòn do nhiệt &amp; áp lực lưu hóa</td><td>Thay thế định kỳ toàn bộ bộ khuôn nhà máy</td></tr>
+<tr><td>Màng hơi / cốt hơi</td><td><strong>6–12 tháng</strong></td><td>Hàng tiêu hao trong quá trình lưu hóa</td><td>Đơn nhỏ ($500–3.000) nhưng đều đặn — "doanh thu nền"</td></tr>
+<tr><td>Khuôn săm / yếm</td><td>1–2 năm</td><td>Size mới, nâng công suất</td><td>$2.600–10.000/lần</td></tr>
+<tr><td>Máy lưu hóa / máy thành hình</td><td>3–7 năm</td><td>Mở rộng nhà máy, thay máy cũ</td><td>$5.000–30.000/lần; hợp đồng lớn nhất</td></tr>
+<tr><td>Phụ tùng máy</td><td>Hằng năm</td><td>Bảo trì định kỳ</td><td>Giữ chân khách giữa các đơn lớn</td></tr>
+</table></div>
+
+<div class="callout">
+  <strong>Vì sao đây là cơ hội kinh doanh đặc biệt tốt:</strong> Mô hình "khuôn + máy + hàng tiêu hao" tạo ra <strong>3 vòng doanh thu độc lập</strong> từ cùng một khách hàng: (1) đơn dự án lớn khi nhà máy mới/đầu tư, (2) đơn lặp lại định kỳ từ khuôn mới &amp; thay thế, (3) doanh thu nền hàng năm từ màng hơi &amp; phụ tùng. Một khách hàng tốt có thể mang lại USD 50.000–150.000 lũy kế trong 5 năm — so với chi phí gói $1.999/năm, chỉ cần 1 khách hàng trung thành là hoàn vốn cả đời gian hàng.
+</div>
+
+<h3>8.3 Định lượng cơ hội trên nền tảng</h3>
+<div class="table-wrap"><table>
+<tr><th>Chỉ số nhu cầu (khảo sát 08/2026)</th><th>Giá trị</th><th>Ý nghĩa kinh doanh</th></tr>
+<tr><td>Nhà cung cấp trả kết quả tìm kiếm "tire mold"</td><td>124 nhà cung cấp, 200+ listing</td><td>Thị trường sôi động, đủ lớn cho người chơi mới có khác biệt</td></tr>
+<tr><td>Nhà cung cấp trả kết quả "tire curing press" / "tire building machine"</td><td>96 / 139 listing</td><td>Phân khúc máy có nhu cầu tương đương, đơn giá cao gấp 3–10 lần khuôn</td></tr>
+<tr><td>Nhà cung cấp Việt Nam ở vị trí cạnh tranh</td><td><strong>0</strong></td><td>Khoảng trống định vị quốc gia gần như tuyệt đối</td></tr>
+<tr><td>Năm hoạt động trung bình nhà cung cấp top đầu</td><td>8–17 năm</td><td>Người mua ưu tiên nhà cung cấp lâu năm — Ngọc Quý 40 năm vượt trội</td></tr>
+<tr><td>Tăng trưởng thị trường hạ nguồn</td><td>Lốp xe máy ~7,4%/năm; retreading 7,1%/năm</td><td>Cầu khuôn/máy tăng theo — mỗi nhà máy mới là một dự án trọn gói</td></tr>
+<tr><td>Nhu cầu khuôn lốp nội địa Việt Nam</td><td>3.810 lô nhập khẩu khuôn lốp năm 2025 (144 nhà cung cấp)</td><td>Chiếm lại thị phần nội địa ngay lập tức + xuất khẩu song song</td></tr>
+</table></div>
+
+<h3>8.4 Chiến lược rút ngắn chu kỳ &amp; tăng tần suất mua</h3>
+<ul>
+  <li><strong>Rút ngắn giai đoạn 1–2:</strong> trả lời inquiry &lt;12h với bảng hỏi kỹ thuật chuẩn (size, vật liệu, bản vẽ, yêu cầu hoa văn) — khách chốt nhanh với nhà cung cấp phản hồi chuyên nghiệp nhất.</li>
+  <li><strong>Rút ngắn giai đoạn 3:</strong> video call tham quan nhà máy + video EDM/CNC thay cho việc chờ mẫu vật lý; cung cấp mẫu 3D/bản vẽ xác nhận trước khi sản xuất.</li>
+  <li><strong>Tăng tần suất:</strong> sau mỗi đơn giao, chủ động giới thiệu (a) size khuôn bổ sung, (b) gói màng hơi dự trù 6 tháng, (c) gói bảo trì phụ tùng — biến khách đơn lẻ thành khách trọn đời.</li>
+  <li><strong>Duy trì pipeline:</strong> nuôi 50+ inquiry "sống" mỗi tháng; khách chưa chốt quay lại sau 30–45 ngày với tin tức mới (dự án mới, năng lực mới).</li>
+  <li><strong>Tận dụng review:</strong> đề nghị khách đã giao hàng thành công để lại review trên gian hàng — review tốt là "máy bán hàng" mạnh nhất của listing B2B.</li>
+</ul>
+</section>
+
+<section id="s9">
+<h2><span class="sec-num">9</span> Phương án phát triển gian hàng Alibaba (Gói cơ bản $1,999)</h2>
+
+<h3>9.1 Kiến trúc gian hàng theo gói cơ bản</h3>
+<div class="table-wrap"><table>
+<tr><th>Hạng mục</th><th>Khuyến nghị</th><th>Lý do</th></tr>
+<tr><td>Gói thành viên</td><td><strong>Gói cơ bản — $1,999/năm</strong> (Gold Supplier, huy hiệu Verified Supplier, 1 tài khoản gian hàng, bộ công cụ đăng sản phẩm &amp; quản lý RFQ cơ bản)</td><td>Chi phí gia nhập tối thiểu, phù hợp bước đầu chứng minh hiệu quả; có thể nâng cấp gói cao hơn khi doanh thu ổn định</td></tr>
+<tr><td>Tên gian hàng</td><td>Ngoc Quy Mould — Vietnam Tire Mould &amp; Rubber Machinery Manufacturer Since 1986</td><td>Nhồi từ khóa chính + tín hiệu nguồn gốc + di sản</td></tr>
+<tr><td>Danh mục niêm yết</td><td>20–30 SKU chia 4 nhóm: (1) Tire mould (xe đạp/xe máy/ô tô), (2) Inner tube &amp; retread mould, (3) Curing press &amp; rubber machinery, (4) Custom rubber mould (OEM)</td><td>Đủ bề rộng cho tìm kiếm, đủ chiều sâu cho chuyên môn</td></tr>
+<tr><td>Sản phẩm "cửa kính"</td><td>5 SKU flagship: khuôn lốp xe máy, khuôn săm, khuôn đắp lốp, máy lưu hóa xe máy, máy thành hình xe máy</td><td>Tập trung ngân sách ảnh/video/quảng cáo vào sản phẩm chuyển đổi cao nhất</td></tr>
+<tr><td>Nội dung gian hàng</td><td>Video nhà máy CNC/EDM 60–90s; bộ ảnh thực tế (khuôn thành phẩm, quá trình EDM, bàn giao container); case study 6 thị trường đã xuất khẩu; chứng chỉ ISO 9001; thông điệp "Made in Vietnam"</td><td>Niềm tin B2B — đơn hàng USD 5.000–50.000 không thể chốt bằng ảnh minh họa</td></tr>
+<tr><td>Ngôn ngữ</td><td>Tiếng Anh chính; bản sao Tiếng Tây Ban Nha &amp; Bồ Đào Nha cho thị trường Mỹ Latinh</td><td>Khách LatAm thường tìm nguồn không thuần Anh; tăng 15–25% inquiry từ khu vực</td></tr>
+</table></div>
+
+<h3>9.2 Ngân sách 12 tháng (gói cơ bản)</h3>
+<div class="table-wrap"><table>
+<tr><th>Khoản chi</th><th>Ngân sách ước tính</th><th>Ghi chú</th></tr>
+<tr><td>Gói thành viên cơ bản Alibaba</td><td><strong>$1,999/năm</strong></td><td>Chi phí cố định — hoàn vốn chỉ cần 1–2 đơn khuôn</td></tr>
+<tr><td>Quảng cáo P4P (tùy chọn)</td><td>$150–400/tháng (thử nghiệm 3 tháng đầu)</td><td>Có thể tắt nếu inbound SEO/RFQ đủ mạnh</td></tr>
+<tr><td>Nhân sự vận hành gian hàng</td><td>1 người bán thời gian (hoặc kiêm nhiệm)</td><td>Trả lời inquiry, RFQ, cập nhật listing</td></tr>
+<tr><td>Dịch vụ ảnh/video sản phẩm</td><td>$300–800 (một lần)</td><td>Ảnh nền trắng, video nhà máy, ảnh case study</td></tr>
+<tr><td><strong>Tổng năm 1 (tối thiểu)</strong></td><td><strong>~$2.300–3.500</strong></td><td>Chưa kể P4P &amp; chi phí nội bộ</td></tr>
+<tr><td><strong>Điểm hòa vốn</strong></td><td colspan="2">1 đơn khuôn lốp xe máy 2–4 khuôn ($3.000–8.000 giá trị, biên 35–45%) hoặc 1 máy lưu hóa ($4.500–7.000, biên 25–35%)</td></tr>
+</table></div>
+
+<h3>9.3 Bản đồ từ khóa SEO (Alibaba Keyword Map)</h3>
+<div class="table-wrap"><table>
+<tr><th>Nhóm từ khóa</th><th>Từ khóa đề xuất</th><th>Mục đích</th></tr>
+<tr><td>Core product (EN)</td><td>tire mould, tyre mould, motorcycle tire mould, bicycle tyre mould, inner tube mould, retread mould, tire curing press, rubber vulcanizing press, tire building machine, solid tire mould, OTR tyre mould, flap mould, curing bladder mould</td><td>Từ khóa chính — tối ưu title + attributes</td></tr>
+<tr><td>Origin / Value (EN)</td><td>Vietnam tire mould manufacturer, Vietnam rubber machinery factory, OEM tire mould supplier, custom tire mould, ISO 9001 mould factory</td><td>Chiếm sóng "Vietnam + ngành" — không đối thủ đang dùng</td></tr>
+<tr><td>Buyer intent (EN)</td><td>wholesale tire mould, factory price, custom mould OEM, rubber mould manufacturer, tire production line, turnkey tire plant</td><td>Bắt đúng giai đoạn quyết định của người mua</td></tr>
+<tr><td>Market / use case (EN)</td><td>retreading mould, motorcycle tire making machine, bicycle tire curing press, forklift solid tire mould, agricultural tyre mould</td><td>Nhắm persona P2/P3 theo ứng dụng</td></tr>
+<tr><td>Tiếng Tây Ban Nha (LatAm)</td><td>molde de llanta, molde de neumático, prensa de vulcanización, molde de bicicleta, máquina para hacer llantas</td><td>Brazil/Argentina/Mexico — thị trường retreading lớn</td></tr>
+<tr><td>Tiếng Bồ Đào Nha (Brazil)</td><td>molde de pneu, molde de câmara de ar, prensa de vulcanização, reforma de pneus</td><td>Brazil = đắp lốp tăng 9,2%/năm, Ngọc Quý đã có khách</td></tr>
+<tr><td>Tiếng Ấn Độ (EN-local)</td><td>tyre mould manufacturer, motorcycle tyre mould price, retreading mould India</td><td>Thị trường ưu tiên #1 — tối ưu theo thuật ngữ địa phương</td></tr>
+</table></div>
+
+<h3>9.4 Chuẩn nội dung listing (theo benchmark tốt nhất)</h3>
+<ul>
+  <li><strong>Title:</strong> [Sản phẩm] + [Size/Spec] + [Ứng dụng] + [Factory/OEM] + [Vietnam] — ví dụ: "Custom Motorcycle Tire Mould 2.75-18 Retread / OEM Vietnam Factory ISO 9001".</li>
+  <li><strong>Ảnh:</strong> 5–8 ảnh/sản phẩm: khuôn thành phẩm nền trắng + chi tiết hoa văn/ren + máy CNC/EDM gia công + đóng gói/container. Đối thủ chỉ dùng 1–3 ảnh — điểm vượt trội rẻ nhất.</li>
+  <li><strong>Video:</strong> vận hành máy lưu hóa thực tế, quy trình EDM khắc hoa văn — khách quốc tế xác nhận năng lực ngay.</li>
+  <li><strong>Thông số:</strong> size chuẩn (inch), vật liệu thép khuôn (P20/718/NAK80/S136...), độ chính xác (mm), lead time (45–75 ngày), MOQ (1 set), bảo hành, hỗ trợ lắp đặt.</li>
+  <li><strong>Giá:</strong> niêm yết khoảng giá "US$ X–Y / set (MOQ 1 set)" kèm "custom by drawing" — đúng mô hình đối thủ, tạo điểm khởi đầu đàm phán.</li>
+</ul>
+
+<h3>9.5 Kênh thu hút khách hàng (Channel Strategy)</h3>
+<div class="table-wrap"><table>
+<tr><th>Kênh</th><th>Hành động cụ thể</th><th>Kỳ vọng</th><th>Ngân sách</th></tr>
+<tr><td>1. SEO &amp; tự nhiên</td><td>30 SKU tối ưu từ khóa theo 9.3; cập nhật listing hàng tuần; tận dụng huy hiệu Verified Supplier</td><td>40–50% inquiry từ tìm kiếm tự nhiên sau tháng 6</td><td>Trong gói $1.999</td></tr>
+<tr><td>2. RFQ (Báo giá ngược)</td><td>Trả lời RFQ khuôn lốp/máy cao su &lt;12h; theo dõi 100% RFQ có đủ thông tin</td><td>25–35% inquiry từ RFQ; tỷ lệ trúng báo giá 10–20%</td><td>Chi phí nhân sự</td></tr>
+<tr><td>3. Quảng cáo P4P (tùy chọn)</td><td>Chạy 10–15 từ khóa chuyển đổi cao (motorcycle tire mould, tire curing press, retread mould) thử nghiệm 3 tháng</td><td>Tăng 2–3 lần inquiry giai đoạn đầu để có dữ liệu &amp; đánh giá</td><td>$150–400/tháng</td></tr>
+<tr><td>4. Chào hàng chủ động (outreach)</td><td>200–500 nhà máy lốp/xưởng đắp lốp tại Ấn Độ, Bangladesh, Indonesia, Philippines, Brazil, châu Phi; email catalog + video nhà máy; follow-up 3 lần</td><td>5–8% phản hồi; 2–4% inquiry chất lượng</td><td>Nhân sự + email tool ($0–50/tháng)</td></tr>
+<tr><td>5. Hội chợ &amp; danh bạ ngành</td><td>RubberTech, Tire Technology Expo; link về gian hàng Alibaba</td><td>Uy tín + khách hàng lớn</td><td>Tùy quy mô</td></tr>
+</table></div>
+
+<h3>9.6 Chiến lược mẫu (Sample) &amp; thanh toán</h3>
+<ul>
+  <li><strong>Khuôn:</strong> chào giá mẫu theo thiết kế thử (1 khuôn) hoặc giảm giá đơn đầu. Khuôn là sản phẩm theo bản vẽ — mẫu đầu tiên chính là "proof of capability".</li>
+  <li><strong>Máy:</strong> video vận hành, tài liệu kỹ thuật, thử nghiệm trước giao (FAT) qua video call; T/T 30% + 70% trước giao hoặc LC — chuẩn ngành.</li>
+  <li><strong>Điều khoản:</strong> FOB HCM/CIF cảng đích; dùng Trade Assurance trên Alibaba cho đơn nền tảng để tăng niềm tin người mua mới.</li>
+</ul>
+</section>
+<section id="s10">
+<h2><span class="sec-num">10</span> Lộ trình triển khai &amp; Khung KPI</h2>
+
+<h3>10.1 Lộ trình 90 / 180 / 365 ngày</h3>
+<div class="timeline">
+  <div class="phase">
+    <div class="dur">GIAI ĐOẠN 1 · NGÀY 0–90 · XÂY NỀN MÓNG</div>
+    <h3>Khai trương gian hàng gói cơ bản $1,999</h3>
+    <ul>
+      <li>Ký gói cơ bản; hoàn thiện hồ sơ công ty song ngữ, chứng chỉ ISO 9001, video nhà máy, thông điệp "Made in Vietnam".</li>
+      <li>Niêm yết 20–30 SKU theo 4 nhóm; tối ưu từ khóa theo bản đồ 9.3; hoàn tất 5 SKU flagship chuẩn ảnh/video.</li>
+      <li>Thiết lập quy trình phản hồi inquiry &lt;24h (mục tiêu &lt;12h); kịch bản trả lời RFQ; chuẩn bị catalog PDF song ngữ.</li>
+      <li>Chạy thử P4P 10 từ khóa (tùy chọn); bắt đầu xây danh sách outreach 100 khách đầu tiên.</li>
+    </ul>
+    <div class="bar"><i style="width:25%"></i></div>
+  </div>
+  <div class="phase">
+    <div class="dur">GIAI ĐOẠN 2 · NGÀY 90–180 · TẠO DÒNG CHẢY</div>
+    <h3>Thu hút inquiry &amp; chốt đơn đầu tiên</h3>
+    <ul>
+      <li>Tối ưu theo dữ liệu: giữ SKU có impression/click cao, cải thiện SKU trũng; tăng ngân sách P4P cho từ khóa sinh inquiry.</li>
+      <li>Outreach đợt 2: 200 khách (Ấn Độ, Bangladesh, Indonesia, Philippines); gửi kèm video nhà máy &amp; case study.</li>
+      <li>Mục tiêu: 40–60 inquiry/tháng, 3–6 báo giá thành công, 1–2 đơn đầu tiên (ưu tiên khuôn xe máy/săm).</li>
+      <li>Thu thập đánh giá khách hàng đầu tiên — tài sản niềm tin quan trọng nhất cho giai đoạn sau.</li>
+    </ul>
+    <div class="bar"><i style="width:55%"></i></div>
+  </div>
+  <div class="phase">
+    <div class="dur">GIAI ĐOẠN 3 · NGÀY 180–365 · MỞ RỘNG</div>
+    <h3>Chốt hợp đồng trọn gói &amp; mở rộng thị trường</h3>
+    <ul>
+      <li>Chào gói giải pháp trọn gói (khuôn + máy) cho 2–3 nhà máy lốp mới; mục tiêu 1–2 hợp đồng USD 100.000+.</li>
+      <li>Mở rộng sang Brazil/Argentina (khuôn đắp lốp) — tận dụng khách hiện hữu giới thiệu; thêm listing Tây Ban Nha/Bồ Đào Nha.</li>
+      <li>Đánh giá tháng 12: giữ/điều chỉnh danh mục theo doanh số; đánh giá nâng cấp gói thành viên cao hơn nếu P4P/SEO cần mở rộng; lập kế hoạch năm 2 (GMV tăng 50–80%).</li>
+    </ul>
+    <div class="bar"><i style="width:100%"></i></div>
+  </div>
+</div>
+
+<h3>10.2 Khung KPI theo dõi</h3>
+<div class="table-wrap"><table>
+<tr><th>Chỉ số</th><th>Tháng 3</th><th>Tháng 6</th><th>Tháng 12</th><th>Ghi chú</th></tr>
+<tr><td>Impressions/tháng</td><td>10.000–20.000</td><td>30.000–50.000</td><td>60.000–100.000</td><td>Phản ánh hiệu quả SEO + P4P</td></tr>
+<tr><td>Clicks/tháng</td><td>300–600</td><td>900–1.500</td><td>1.800–3.000</td><td>CTR mục tiêu 2–4%</td></tr>
+<tr><td>Inquiries/tháng</td><td>15–25</td><td>40–60</td><td>60–100</td><td>Tỷ lệ inquiry/click 4–6%</td></tr>
+<tr><td>Tỷ lệ phản hồi &lt;24h</td><td>100%</td><td>100%</td><td>100%</td><td>Chỉ số xếp hạng của Alibaba</td></tr>
+<tr><td>Báo giá thành công/tháng</td><td>2–4</td><td>5–8</td><td>10–15</td><td>Báo giá có phản hồi tiếp</td></tr>
+<tr><td>Đơn hàng ký</td><td>0–1</td><td>2–5</td><td>8–15</td><td>Chu kỳ bán khuôn 1–3 tháng</td></tr>
+<tr><td>GMV lũy kế</td><td>USD 0–20.000</td><td>USD 60.000–120.000</td><td>USD 250.000–450.000 (kỳ vọng)</td><td>Theo kịch bản mục 4.3</td></tr>
+<tr><td>Chi phí thu hút khách (CAC)</td><td>—</td><td>&lt;USD 200/khách tiềm năng</td><td>&lt;USD 150/khách tiềm năng</td><td>Bao gồm P4P + nhân sự phân bổ</td></tr>
+<tr><td>ROI gói $1,999</td><td>—</td><td>Hoàn vốn (tháng 3–6)</td><td>Gấp 45–85 lần (kịch bản kỳ vọng)</td><td>GMV × biên gộp 35–40% ÷ chi phí</td></tr>
+</table></div>
+</section>
+
+<section id="s11">
+<h2><span class="sec-num">11</span> Ma trận rủi ro &amp; giải pháp giảm thiểu</h2>
+<div class="table-wrap"><table>
+<tr><th>Rủi ro</th><th>Xác suất</th><th>Mức tác động</th><th>Giải pháp giảm thiểu</th></tr>
+<tr><td>Cạnh tranh giá cụm Thanh Đảo (thấp hơn 15–30% phân khúc khuôn tiêu chuẩn)</td><td><span class="badge badge-red">CAO</span></td><td><span class="badge badge-red">CAO</span></td><td>Không đua giá thuần túy: cạnh tranh bằng chất lượng, giao hàng đúng hạn, hỗ trợ kỹ thuật, gói trọn bộ; nhấn mạnh "China+1" và nguồn gốc Việt Nam; chọn phân khúc ngách (khuôn đắp, khuôn săm)</td></tr>
+<tr><td>Chu kỳ bán hàng dài (khuôn theo bản vẽ: 1–3 tháng/đơn)</td><td><span class="badge badge-orange">TB</span></td><td><span class="badge badge-red">CAO</span></td><td>Duy trì pipeline 50+ inquiry "sống"; nuôi khách bằng nội dung kỹ thuật; bán kèm sản phẩm tiêu hao (màng hơi, khuôn thay thế) để có đơn lặp lại giữa các đơn lớn</td></tr>
+<tr><td>Yêu cầu chứng nhận thị trường (CE cho máy móc EU, ISO/IATF cho ô tô)</td><td><span class="badge badge-orange">TB</span></td><td><span class="badge badge-orange">TB</span></td><td>Ưu tiên thị trường không bắt buộc CE giai đoạn đầu (Ấn Độ, ĐNÁ, châu Phi); chuẩn bị lộ trình CE khi nhắm EU; công bố ISO 9001 ngay</td></tr>
+<tr><td>Rủi ro thanh toán (khách châu Phi/Trung Đông, khách mới)</td><td><span class="badge badge-orange">TB</span></td><td><span class="badge badge-red">CAO</span></td><td>Dùng Trade Assurance cho đơn nền tảng; T/T 30% cọc (khuôn) / 30–50% cọc (máy); LC cho đơn lớn; giới hạn tín dụng khách mới</td></tr>
+<tr><td>Thời gian giao hàng không đạt cam kết</td><td><span class="badge badge-orange">TB</span></td><td><span class="badge badge-orange">TB</span></td><td>Cam kết thực tế (45–75 ngày), không hứa quá; dự trữ thép khuôn tiêu chuẩn; lịch sản xuất ưu tiên đơn xuất khẩu</td></tr>
+<tr><td>Rủi ro sở hữu trí tuệ / thiết kế khuôn của khách</td><td><span class="badge badge-blue">THẤP</span></td><td><span class="badge badge-orange">TB</span></td><td>Hợp đồng NDA chuẩn cho khách gửi bản vẽ; quy trình bảo mật tài liệu nội bộ; không tái sử dụng thiết kế độc quyền</td></tr>
+<tr><td>Phụ thuộc nhân sự vận hành gian hàng</td><td><span class="badge badge-blue">THẤP</span></td><td><span class="badge badge-orange">TB</span></td><td>Đào tạo 1–2 nhân sự chuyên trách; kịch bản trả lời chuẩn hóa; dự phòng nhân sự thứ 2</td></tr>
+<tr><td>Rủi ro tỷ giá &amp; cước vận chuyển</td><td><span class="badge badge-blue">THẤP</span></td><td><span class="badge badge-blue">THẤP</span></td><td>Báo giá FOB theo USD, điều chỉnh nếu tỷ giá biến động &gt;3%; chốt giá cước trước khi ký đơn</td></tr>
+</table></div>
+
+<div class="callout">
+  <strong>Nguyên tắc chốt:</strong> Không nhận đơn "giá rẻ vô điều kiện" trong 12 tháng đầu — một đơn giao trễ/chất lượng kém sẽ phá hủy niềm tin gian hàng mới nhanh hơn 10 đơn thành công tạo ra. Chất lượng hồ sơ năng lực &amp; đúng hạn là 2 tài sản cần bảo vệ tuyệt đối.
+</div>
+</section>
+
+<section id="s12">
+<h2><span class="sec-num">12</span> Nguồn tham khảo &amp; Ghi chú dữ liệu</h2>
+
+<h3>12.1 Nguồn dữ liệu thị trường</h3>
+<ul class="src-list">
+  <li>TechSci Research — Tire Mold Market Size &amp; Outlook 2031: https://www.techsciresearch.com/report/tire-mold-market/28691.html</li>
+  <li>Market Research Future — Tire Mold Market Size, Share &amp; Forecast 2035: https://www.marketresearchfuture.com/reports/tire-mold-market-32186</li>
+  <li>Smithers — The Future of Global Tires to 2030: https://www.smithers.com/services/market-reports/transportation/the-future-of-global-tires-to-2030</li>
+  <li>Fortune Business Insights — Motorcycle Tires Market: https://www.fortunebusinessinsights.com/motorcycle-tire-market-113350</li>
+  <li>Mordor Intelligence — Asia Pacific Two Wheeler Tire Market (12/2024): https://www.mordorintelligence.com/industry-reports/asia-pacific-two-wheeler-tire-market</li>
+  <li>MarkNtel Advisors — Africa Tire Market: https://www.marknteladvisors.com/research-library/africa-tire-market.html</li>
+  <li>Persistence Market Research — Retreaded Tire Market Forecast to 2032: https://www.persistencemarketresearch.com/market-research/retreaded-tire-market.asp</li>
+  <li>Fortune Business Insights — Tire Retreading Market: https://www.fortunebusinessinsights.com/tire-retreading-market-105109</li>
+  <li>TechSci Research — Brazil Retreading Tire Market: https://www.techsciresearch.com/report/brazil-retreading-tire-market/1638.html</li>
+  <li>Vietnam Briefing — Vietnam Rubber Industry (10/2025): https://www.vietnam-briefing.com/news/vietnam-rubber-industry-production-performance-and-potentials.html/</li>
+  <li>VnEconomy — Vietnam's 2025 rubber export revenue estimated at $11 bln (12/2025): https://en.vneconomy.vn/vietnams-2025-rubber-export-revenue-estimated-at-11-bln.htm</li>
+  <li>Sourcing Agent Vietnam — Vietnam Rubber Manufacturers 2025: https://sourcing-agent-vietnam.com/vietnam-rubber-manufacturers/</li>
+  <li>ExportGenius — Top 54 Tire Mold Importers in Vietnam (2025): https://www.exportgenius.in/vietnam-importers-of-tire-mold</li>
+</ul>
+
+<h3>12.2 Nguồn dữ liệu Alibaba (khảo sát trực tiếp nền tảng ngày 05/08/2026)</h3>
+<ul class="src-list">
+  <li>Tìm kiếm "tire mold" — 200 listing khảo sát: đại diện Qingdao Alwin, Qingdao Genron, Qingdao Chaoguangyue, Shanghai Fuyou, Qingdao Honghesheng.</li>
+  <li>Tìm kiếm "tire curing press" — 96 listing: Nanjing Mixer, Qingdao Alwin, Qingdao Suiteque, Qingdao Chaoguangyue, Qingdao Guangyue, Qingdao Huicai, Rizhao Melion.</li>
+  <li>Tìm kiếm "tire building machine" — 139 listing: Qingdao Chaoguangyue, Qingdao Suiteque, MAXRUBBER Malaysia, Changzhou Mokai, TOPOWER Cambodia.</li>
+  <li>Tìm kiếm "motorcycle tire mold retreading" — 165 listing: Taizhou Youneng, Qingdao Respected.</li>
+  <li>Tìm kiếm supplier "tire mold" — 124 nhà cung cấp: hồ sơ công ty Qingdao Alwin (qdalwin.en.alibaba.com), Qingdao Honghesheng (hhsjx.en.alibaba.com), Qingdao Chaoguangyue (chaoguangyue.en.alibaba.com), Shanghai Fuyou (fuyouguomao.en.alibaba.com).</li>
+</ul>
+
+<h3>12.3 Ghi chú chất lượng dữ liệu</h3>
+<ul class="src-list">
+  <li>Giá, MOQ, lead time trên Alibaba được ghi nhận từ listing khảo sát ngày 05/08/2026; giá có thể thay đổi theo thời gian và chỉ mang tính tham chiếu cho đàm phán.</li>
+  <li>Số liệu thị trường từ nhiều nhà nghiên cứu khác nhau có định nghĩa phạm vi khác nhau (khuôn lốp: TechSci 1,78 tỷ USD 2025 vs MRF 4,94 tỷ USD 2025) — báo cáo trình bày cả hai và dùng xu hướng tăng trưởng làm kết luận chính.</li>
+  <li><strong>Cơ cấu chi phí &amp; biên lợi nhuận (mục 7) là mô hình ước tính</strong> dựa trên cấu trúc chi phí điển hình ngành chế tạo khuôn — cần xác nhận với bộ phận sản xuất của Ngọc Quý trước khi sử dụng để chốt giá.</li>
+  <li>Thông tin năng lực Ngọc Quý Mould lấy từ ngocquymould.com (khảo sát 05/08/2026). Các con số GMV dự báo là ước tính dựa trên benchmark ngành.</li>
+  <li>Chi phí gói thành viên $1,999/năm là thông tin do phía kinh doanh cung cấp; cần xác nhận quyền lợi cụ thể của gói với đại diện Alibaba trước khi chào khách.</li>
+</ul>
+</section>
+
+<footer>
+  Phương án kinh doanh Alibaba.com — Gói cơ bản $1,999 · Ngành khuôn lốp &amp; máy móc ngành cao su · Lập ngày 05/08/2026<br>
+  Nguồn dữ liệu: Alibaba.com (khảo sát trực tiếp), ngocquymould.com, các báo cáo thị trường đã dẫn · Màu thương hiệu theo website Ngọc Quý (#cc2c32)
+</footer>
+
+</div>
+</body>
+</html>
