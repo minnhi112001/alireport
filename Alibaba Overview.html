@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alibaba.com — Tổng quan cho doanh nghiệp xuất khẩu</title>
+<style>
+  :root{
+    --navy:#0b2e4f;
+    --navy-2:#123a61;
+    --teal:#0f766e;
+    --teal-l:#14b8a6;
+    --teal-tint:#e7f4f2;
+    --slate:#334155;
+    --slate-l:#64748b;
+    --slate-tint:#f1f5f9;
+    --gold:#c8a45d;
+    --white:#ffffff;
+    --line:#e2e8f0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;
+    background:#eef1f4;
+    color:var(--slate);
+    line-height:1.55;
+    padding:24px;
+  }
+  .sheet{
+    max-width:1040px;margin:0 auto;background:var(--white);
+    box-shadow:0 8px 40px rgba(11,46,79,.12);
+    border-radius:14px;overflow:hidden;
+  }
+  /* ===== HEADER ===== */
+  .header{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 55%,var(--teal) 130%);
+    color:#fff;padding:46px 56px 40px;position:relative;
+  }
+  .header::after{
+    content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;
+    background:radial-gradient(circle,rgba(20,184,166,.28),transparent 70%);
+  }
+  .kicker{
+    display:inline-block;font-size:12px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--teal-l);border:1px solid rgba(20,184,166,.5);border-radius:20px;
+    padding:5px 14px;margin-bottom:18px;
+  }
+  .header h1{font-size:34px;font-weight:700;letter-spacing:.5px;line-height:1.25;}
+  .header h1 span{color:var(--teal-l);}
+  .header p{color:#cfe0ee;font-size:15px;max-width:640px;margin-top:12px;}
+  .header .badge{
+    margin-top:22px;display:flex;flex-wrap:wrap;gap:10px;
+  }
+  .header .badge i{
+    font-style:normal;font-size:12.5px;background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.22);border-radius:20px;padding:5px 14px;color:#e8f1f8;
+  }
+  /* ===== STATS ===== */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:26px 56px;background:var(--teal-tint);border-bottom:1px solid var(--line);}
+  .stat{background:#fff;border:1px solid var(--line);border-top:3px solid var(--teal);border-radius:10px;padding:16px 18px;text-align:center;}
+  .stat b{display:block;font-size:26px;color:var(--navy);font-weight:800;letter-spacing:.5px;}
+  .stat span{font-size:12.5px;color:var(--slate-l);line-height:1.4;display:block;margin-top:4px;}
+  /* ===== SECTION ===== */
+  .sec{padding:34px 56px 10px;}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+  .sec-num{
+    width:38px;height:38px;border-radius:10px;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;flex-shrink:0;
+  }
+  .sec-head h2{font-size:20px;color:var(--navy);letter-spacing:.3px;text-transform:uppercase;}
+  .sec-head .line{flex:1;height:1px;background:var(--line);}
+  /* 01 compare */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .box{border-radius:12px;padding:20px 22px;border:1px solid var(--line);}
+  .box h3{font-size:14px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;}
+  .box p{font-size:14px;}
+  .box b2c{background:var(--slate-tint);}
+  .box b2b{background:var(--teal-tint);border-color:#cfe3df;}
+  .box h3.b2b-t{color:var(--teal);}
+  .box h3.b2c-t{color:var(--slate-l);}
+  .box ul{list-style:none;margin-top:10px;}
+  .box li{font-size:13.5px;padding:4px 0 4px 22px;position:relative;color:var(--slate);}
+  .box.b2b li::before{content:"";position:absolute;left:0;top:10px;width:8px;height:8px;border-radius:50%;background:var(--teal-l);}
+  .box.b2c li::before{content:"";position:absolute;left:0;top:10px;width:8px;height:8px;border-radius:50%;background:#cbd5e1;}
+  /* 02 pipeline */
+  .pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:stretch;}
+  .step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 12px;text-align:center;position:relative;}
+  .step .n{
+    width:30px;height:30px;margin:0 auto 10px;border-radius:50%;background:var(--teal-tint);
+    color:var(--teal);font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;border:1px solid #bcdbd5;
+  }
+  .step b{display:block;font-size:13.5px;color:var(--navy);margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px;}
+  .step span{font-size:11.5px;color:var(--slate-l);line-height:1.45;display:block;}
+  .arrow{display:none;}
+  /* 03 model 4.0 */
+  .model{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .mcard{border-radius:12px;padding:20px 22px;border:1px solid var(--line);background:#fff;position:relative;overflow:hidden;}
+  .mcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--teal);}
+  .mcard .tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);font-weight:700;}
+  .mcard h3{font-size:17px;color:var(--navy);margin:4px 0 8px;}
+  .mcard p{font-size:13.5px;color:var(--slate);}
+  .mcard .key{margin-top:10px;font-size:12.5px;background:var(--teal-tint);border-radius:8px;padding:8px 12px;color:var(--navy);}
+  /* 04 roi */
+  .roi{background:linear-gradient(120deg,var(--navy),var(--teal));border-radius:14px;color:#fff;padding:26px 30px;display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:center;margin-bottom:10px;}
+  .roi .big{font-size:26px;font-weight:800;line-height:1.35;letter-spacing:.3px;}
+  .roi .big span{color:var(--teal-l);}
+  .roi p{font-size:13.5px;color:#dbe9f2;margin-top:10px;max-width:520px;}
+  .roi .rings{display:flex;flex-direction:column;gap:8px;}
+  .ring{display:flex;align-items:center;gap:10px;font-size:13px;color:#e8f1f8;}
+  .ring .dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
+  /* 05 core + cta */
+  .core{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .citem{background:var(--slate-tint);border-radius:12px;padding:20px 20px;border:1px solid var(--line);}
+  .citem b{display:block;color:var(--navy);font-size:14.5px;margin-bottom:6px;}
+  .citem span{font-size:12.5px;color:var(--slate-l);line-height:1.5;display:block;}
+  .cta{margin:26px 0 34px;background:var(--teal-tint);border:1px dashed var(--teal);border-radius:14px;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+  .cta b{font-size:17px;color:var(--navy);display:block;}
+  .cta span{font-size:13px;color:var(--slate);display:block;margin-top:4px;}
+  .cta .btn{
+    background:var(--navy);color:#fff;text-decoration:none;font-size:14px;font-weight:700;
+    padding:13px 26px;border-radius:30px;letter-spacing:.5px;white-space:nowrap;
+  }
+  .contact{margin-top:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .contact .contact-label{
+    font-size:12.5px;text-transform:uppercase;letter-spacing:1.5px;color:var(--teal);font-weight:700;
+  }
+  .contact a{font-size:16px;font-weight:800;color:var(--navy);text-decoration:none;}
+  .contact a:hover{color:var(--teal);}
+  .contact .contact-name{font-size:13px;color:var(--slate);}
+  /* footer */
+  .footer{background:var(--navy);color:#9db4c8;font-size:12px;padding:18px 56px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  /* print */
+  @media print{
+    body{background:#fff;padding:0;}
+    .sheet{box-shadow:none;border-radius:0;}
+    .sec{padding:24px 40px 6px;}
+    .stats{padding:18px 40px;}
+    .header{padding:34px 40px 30px;}
+    .footer{padding:14px 40px;}
+  }
+  @media (max-width:760px){
+    .stats{grid-template-columns:repeat(2,1fr);padding:20px;}
+    .sec{padding:24px 20px 6px;}
+    .header{padding:30px 20px;}
+    .footer{padding:14px 20px;}
+    .pipeline{grid-template-columns:1fr 1fr;}
+    .compare,.model,.core,.roi{grid-template-columns:1fr;}
+    .cta{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- HEADER -->
+  <div class="header">
+    <span class="kicker">Tổng quan dành cho doanh nghiệp xuất khẩu</span>
+    <h1>ALIBABA.COM — <span>Chợ thương mại điện tử B2B lớn nhất thế giới</span></h1>
+    <p>Nơi nhà sản xuất Việt Nam kết nối trực tiếp với nhà nhập khẩu toàn cầu — đưa sản phẩm của bạn ra thế giới, không qua trung gian, hoạt động 24/7.</p>
+    <div class="badge">
+      <i>Không cần vốn lớn ban đầu</i>
+      <i>Giao dịch sỉ &amp; nhập khẩu</i>
+      <i>Bảo vệ thanh toán Trade Assurance</i>
+      <i>Hỗ trợ vận hành AI</i>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat"><b>40 triệu+</b><span>người mua đăng ký trên Alibaba.com</span></div>
+    <div class="stat"><b>200+</b><span>quốc gia &amp; vùng lãnh thổ có người mua</span></div>
+    <div class="stat"><b>~15 tỷ USD</b><span>doanh thu thương mại quốc tế (FY2025)</span></div>
+    <div class="stat"><b>Mỹ #1</b><span>thị trường lớn nhất — ~17,7% lưu lượng truy cập</span></div>
+  </div>
+
+  <!-- 01 -->
+  <div class="sec">
+    <div class="sec-head"><div class="sec-num">01</div><h2>Alibaba.com là gì?</h2><div class="line"></div></div>
+    <div class="compare">
+      <div class="box b2b">
+        <h3 class="b2b-t">Alibaba.com — B2B</h3>
+        <p>Giao dịch <strong>sỉ &amp; nhập khẩu</strong> giữa doanh nghiệp với doanh nghiệp.</p>
+        <ul>
+          <li>Số lượng lớn — đặt hàng theo container</li>
+          <li>Giá xuất khẩu, đàm phán trực tiếp</li>
+          <li>Khách: nhà nhập khẩu, phân phối, chuỗi bán lẻ</li>
+        </ul>
+      </div>
+      <div class="box b2c">
+        <h3 class="b2c-t">Shopee / Lazada / TikTok Shop — B2C</h3>
+        <p>Bán <strong>lẻ cho người tiêu dùng cuối</strong> trong nước.</p>
+        <ul>
+          <li>Đơn nhỏ, giao từng sản phẩm</li>
+          <li>Giá bán lẻ, cạnh tranh khốc liệt</li>
+          <li>Khách: cá nhân mua lẻ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 -->
+  <div class="sec">
+    <div class="sec-head"><div class="sec-num">02</div><h2>Cách Alibaba vận hành — vòng đời bán hàng</h2><div class="line"></div></div>
+    <div class="pipeline">
+      <div class="step"><div class="n">1</div><b>Gian hàng</b><span>Minisite thương hiệu riêng, thể hiện năng lực nhà máy</span></div>
+      <div class="step"><div class="n">2</div><b>Đăng sản phẩm</b><span>Tối ưu từ khóa để khách quốc tế tìm thấy</span></div>
+      <div class="step"><div class="n">3</div><b>Nhận yêu cầu</b><span>Inquiry &amp; RFQ — khách có nhu cầu thực chủ động hỏi giá</span></div>
+      <div class="step"><div class="n">4</div><b>Đàm phán</b><span>Giá, MOQ, mẫu, điều kiện giao hàng FOB/CIF/DDP</span></div>
+      <div class="step"><div class="n">5</div><b>Chốt đơn</b><span>Giao hàng, thanh toán an toàn qua Trade Assurance</span></div>
+    </div>
+  </div>
+
+  <!-- 03 -->
+  <div class="sec">
+    <div class="sec-head"><div class="sec-num">03</div><h2>Mô hình vận hành 4.0 — công thức thành công</h2><div class="line"></div></div>
+    <div class="model">
+      <div class="mcard"><div class="tag">Bước 1</div><h3>Hiển thị</h3><p>Gian hàng Verified Supplier chuyên nghiệp — showroom 24/7 trước hàng triệu nhà nhập khẩu.</p><div class="key">Thay hội chợ truyền thống bằng kênh số luôn mở cửa</div></div>
+      <div class="mcard"><div class="tag">Bước 2</div><h3>Lưu lượng</h3><p>KWA &amp; AI đăng bài — sản phẩm xuất hiện đúng lúc khách tìm kiếm, đúng thị trường mục tiêu.</p><div class="key">Tự động đề xuất sản phẩm đến đúng khách hàng</div></div>
+      <div class="mcard"><div class="tag">Bước 3</div><h3>Kết nối</h3><p>Xử lý Inquiry/RFQ nhanh, báo giá chủ động cho khách có nhu cầu thực.</p><div class="key">Biến nhu cầu thực thành đơn hàng — không chờ đợi thụ động</div></div>
+      <div class="mcard"><div class="tag">Bước 4</div><h3>Tin cậy</h3><p>Trade Assurance &amp; Star Rating xóa rào cản thanh toán quốc tế, tăng uy tín thương hiệu.</p><div class="key">Khách yên tâm đặt cọc — bạn yên tâm nhận tiền đúng hạn</div></div>
+    </div>
+  </div>
+
+  <!-- 04 -->
+  <div class="sec">
+    <div class="sec-head"><div class="sec-num">04</div><h2>Chi phí &amp; lợi ích (ROI)</h2><div class="line"></div></div>
+    <div class="roi">
+      <div>
+        <div class="big">Chỉ <span>1 khách hàng trung thành</span> có thể bù lại toàn bộ phí thành viên năm đầu tiên</div>
+        <p>Nhiều gói thành viên phù hợp quy mô doanh nghiệp. Chi tiết bảng giá và phương án tối ưu chi phí sẽ được tư vấn riêng trong buổi meeting.</p>
+      </div>
+      <div class="rings">
+        <div class="ring"><span class="dot" style="background:#14b8a6;"></span>Đơn hàng đầu tiên</div>
+        <div class="ring"><span class="dot" style="background:#0f766e;"></span>Đơn hàng lặp lại</div>
+        <div class="ring"><span class="dot" style="background:#123a61;"></span>Sản phẩm mở rộng</div>
+        <div class="ring"><span class="dot" style="background:#c8a45d;"></span>Dịch vụ đi kèm</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="sec">
+    <div class="sec-head"><div class="sec-num">05</div><h2>3 điểm cốt lõi</h2><div class="line"></div></div>
+    <div class="core">
+      <div class="citem"><b>Kênh xuất khẩu số hóa lớn nhất</b><span>40 triệu+ nhà nhập khẩu ở hơn 200 quốc gia, thị trường Mỹ dẫn đầu.</span></div>
+      <div class="citem"><b>Không cần vốn lớn ban đầu</b><span>Bắt đầu bằng gian hàng + sản phẩm chuẩn SEO, vận hành bài bản theo mô hình 4.0.</span></div>
+      <div class="citem"><b>Rủi ro thấp, sinh lời bền vững</b><span>Trade Assurance bảo vệ giao dịch — vài khách hàng tốt là hoàn vốn và tăng trưởng.</span></div>
+    </div>
+
+    <div class="cta">
+      <div>
+        <b>Bước tiếp theo: Buổi tư vấn 30–45 phút</b>
+        <span>Đánh giá hiện trạng, đề xuất gói &amp; lộ trình triển khai phù hợp với sản phẩm và mục tiêu xuất khẩu của doanh nghiệp.</span>
+        <div class="contact">
+          <span class="contact-label">WhatsApp / Zalo:</span>
+          <a href="https://wa.me/84974965909">+84 974 965 909</a>
+          <span class="contact-name">— Phạm Nhi (Account Manager)</span>
+        </div>
+      </div>
+      <a class="btn" href="https://wa.me/84974965909">Hẹn meeting tư vấn →</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Alibaba Global Growth Services (GGS) — Đồng hành cùng doanh nghiệp xuất khẩu Việt Nam</span>
+    <span>Liên hệ: Phạm Nhi (Account Manager) — WhatsApp / Zalo +84 974 965 909</span>
+    <span>Nguồn số liệu: seller.alibaba.com (2026), ElectroIQ</span>
+  </div>
+
+</div>
+</body>
+</html>
