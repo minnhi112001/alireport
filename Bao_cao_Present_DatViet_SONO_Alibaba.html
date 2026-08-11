@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAVIFOOD – Cà Phê SONO &amp; Mật Ong Lượng Tử | Bộ Hồ Sơ Trình Bày Alibaba.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f3f7f4; --surface: #ffffff; --surface2: #e9f3ed;
+    --border: #dce8e0; --text: #22322b; --muted: #5d7166;
+    --green: #157347; --green-dark: #0d5a34; --green-deep: #0a4729;
+    --teal: #0f766e; --orange: #c2700a; --red: #c2473c; --blue: #2f6f8f;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Be Vietnam Pro', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.65; font-size: 15px;
+  }
+  .container { max-width: 1180px; margin: 0 auto; padding: 22px; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #0a4729 0%, #0d5a34 45%, #1c8a55 100%);
+    border-bottom: 4px solid #2fa06a; padding: 52px 20px 46px; color: #fff;
+  }
+  .hero-inner { max-width: 1180px; margin: 0 auto; display: flex; gap: 38px; align-items: center; flex-wrap: wrap; }
+  .hero-text { flex: 1.15; min-width: 300px; }
+  .hero-img { flex: 1; min-width: 290px; }
+  .hero-img img { width: 100%; border-radius: 14px; border: 1px solid rgba(255,255,255,0.28); box-shadow: 0 18px 40px rgba(0,0,0,0.35); display: block; }
+  .hero .brand-tag {
+    display: inline-block; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.35);
+    color: #eafff3; padding: 6px 18px; border-radius: 24px; font-weight: 600; font-size: 0.78em;
+    letter-spacing: 1.6px; margin-bottom: 18px; text-transform: uppercase;
+  }
+  .hero h1 { font-size: 2.35em; font-weight: 800; letter-spacing: -0.6px; line-height: 1.22; margin-bottom: 12px; color: #fff; }
+  .hero .subtitle { font-size: 1.08em; color: #cdeedd; margin-bottom: 12px; font-weight: 500; }
+  .hero .meta { font-size: 0.85em; color: #b7d8c6; }
+  .hero .client-line { margin-top: 18px; font-size: 0.88em; color: #d9f2e6; background: rgba(0,0,0,0.18); padding: 12px 16px; border-radius: 10px; border-left: 3px solid #ffd28a; }
+  .hero .client-line strong { color: #fff; }
+
+  /* NAV */
+  nav.toc {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 10px 14px; margin-bottom: 28px; position: sticky; top: 8px; z-index: 20;
+    display: flex; align-items: center; gap: 14px; overflow-x: auto; box-shadow: 0 4px 14px rgba(13,90,52,0.06);
+  }
+  nav.toc h3 { color: var(--green); margin: 0; font-size: 0.72em; text-transform: uppercase; letter-spacing: 1.5px; white-space: nowrap; font-weight: 700; }
+  nav.toc ul { list-style: none; display: flex; align-items: center; gap: 5px; min-width: max-content; margin: 0; }
+  nav.toc li { margin: 0; white-space: nowrap; }
+  nav.toc a { display: block; color: var(--green-dark); text-decoration: none; font-size: 0.76em; padding: 4px 9px; border: 1px solid transparent; border-radius: 6px; font-weight: 500; }
+  nav.toc a:hover { color: var(--green); border-color: var(--green); background: #f0f8f3; }
+
+  /* CARDS */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 15px; margin-bottom: 36px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--green); border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(13,90,52,0.05); }
+  .card .num { font-size: 1.85em; font-weight: 800; color: var(--green-dark); font-variant-numeric: tabular-nums; letter-spacing: -0.4px; }
+  .card .label { font-size: 0.82em; color: var(--muted); margin-top: 5px; line-height: 1.5; }
+  .card .src { font-size: 0.7em; color: #8ba396; margin-top: 7px; font-weight: 500; }
+
+  /* SECTIONS */
+  section { margin-bottom: 44px; }
+  h2 {
+    font-size: 1.5em; font-weight: 800; color: var(--green-dark); border-bottom: 2px solid var(--green);
+    padding-bottom: 9px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; letter-spacing: -0.3px;
+  }
+  h2 .sec-num { font-size: 0.62em; color: #fff; background: var(--green); padding: 3px 11px; border-radius: 6px; letter-spacing: 1px; }
+  h3 { font-size: 1.15em; font-weight: 700; color: var(--green-deep); margin: 24px 0 10px; }
+  h4 { font-size: 1.0em; font-weight: 700; color: var(--green); margin: 16px 0 8px; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 8px 0 16px 24px; }
+  li { margin-bottom: 5px; }
+
+  /* TABLES */
+  .table-wrap { overflow-x: auto; margin: 14px 0 22px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); }
+  table { width: 100%; border-collapse: collapse; min-width: 720px; font-size: 0.88em; }
+  th { background: var(--green-dark); color: #fff; font-weight: 600; padding: 10px 13px; text-align: left; font-size: 0.78em; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+  td { padding: 9px 13px; border-top: 1px solid var(--border); vertical-align: top; }
+  tr:hover td { background: #f2f9f5; }
+  .num-col { text-align: right; font-variant-numeric: tabular-nums; }
+  a { color: var(--green); }
+
+  /* BADGES */
+  .badge { display: inline-block; padding: 2px 9px; border-radius: 12px; font-size: 0.74em; font-weight: 600; margin-right: 4px; white-space: nowrap; }
+  .badge-green { background: #e5f3eb; color: var(--green-dark); }
+  .badge-red { background: #fbeae7; color: var(--red); }
+  .badge-blue { background: #e7f1f6; color: var(--blue); }
+  .badge-orange { background: #f9eeda; color: var(--orange); }
+  .badge-purple { background: #efe9f8; color: #6d4fa3; }
+  .badge-gold { background: #f5edda; color: #8a6d1a; }
+
+  /* CALLOUT */
+  .callout { background: #eef6f1; border-left: 4px solid var(--green); padding: 14px 18px; border-radius: 0 10px 10px 0; margin: 15px 0; }
+  .callout strong { color: var(--green-dark); }
+  .callout-red { background: #fdf1ef; border-left-color: var(--red); }
+  .callout-red strong { color: var(--red); }
+  .callout-green { background: #e9f5ed; border-left-color: var(--green); }
+  .callout-green strong { color: var(--green-dark); }
+
+  /* SCENARIO BOXES */
+  .scenario-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 17px; margin: 20px 0; }
+  .scenario-box { background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--green); border-radius: 12px; padding: 21px; box-shadow: 0 2px 8px rgba(13,90,52,0.05); }
+  .scenario-box.conservative { border-top-color: var(--blue); }
+  .scenario-box.base { border-top-color: var(--green); }
+  .scenario-box.aggressive { border-top-color: var(--orange); }
+  .scenario-box h3 { margin-top: 0; }
+  .scenario-box .big { font-size: 1.6em; font-weight: 800; color: var(--green-dark); letter-spacing: -0.4px; }
+
+  /* ROI BIG */
+  .roi-big {
+    background: linear-gradient(135deg, #e2f2e9, #f2faf6);
+    border: 2px solid var(--green); border-radius: 16px; padding: 26px; text-align: center; margin: 20px 0;
+  }
+  .roi-big .roi-num { font-size: 2.2em; font-weight: 800; color: var(--green-dark); letter-spacing: -0.5px; }
+  .roi-big .roi-sub { color: var(--muted); font-size: 0.92em; margin-top: 6px; }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 30px; border-left: 2px solid var(--green); margin: 20px 0 30px; }
+  .timeline .phase { margin-bottom: 24px; position: relative; }
+  .timeline .phase::before {
+    content: ''; position: absolute; left: -37px; top: 5px; width: 12px; height: 12px;
+    background: var(--green); border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 2px var(--green);
+  }
+  .timeline .phase h4 { margin: 0 0 5px; color: var(--green-deep); }
+
+  /* IMAGES */
+  .img-row { display: flex; flex-wrap: wrap; gap: 16px; margin: 16px 0 22px; align-items: flex-start; }
+  .img-card { flex: 1; min-width: 260px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 10px; }
+  .img-card img { width: 100%; border-radius: 8px; display: block; }
+  .img-card .img-cap { font-size: 0.78em; color: var(--muted); margin-top: 8px; text-align: center; font-weight: 500; }
+
+  /* KEYWORD HEAT */
+  .kw { display: inline-block; margin: 3px 4px 3px 0; padding: 4px 12px; border-radius: 14px; font-size: 0.82em; border: 1px solid var(--border); background: var(--surface); }
+  .kw.hot { background: #fdf0db; color: var(--orange); border-color: #ecc98a; }
+  .kw.warm { background: #e9f5ed; color: var(--green-dark); border-color: #bcdccc; }
+  .kw.norm { background: #eaf2f6; color: var(--blue); border-color: #c3dbe7; }
+
+  /* FOOTER */
+  footer { border-top: 2px solid var(--green); background: var(--surface); padding: 26px 20px; margin-top: 48px; text-align: center; color: var(--muted); font-size: 0.84em; }
+  footer strong { color: var(--green-dark); }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 1.55em; }
+    .hero-inner { gap: 20px; }
+    .card-grid { grid-template-columns: 1fr 1fr; }
+    .scenario-row { grid-template-columns: 1fr; }
+  }
+  @media print {
+    body { background: #fff; }
+    .hero { background: #e9f5ed; color: #0d3d24; }
+    .hero h1 { color: #0d3d24; }
+    nav.toc { display: none; }
+    .card, .scenario-box, table { border-color: #bbb; }
+    th { background: #0d3d24 !important; color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    section { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ====== HERO ====== -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="brand-tag">DAVIFOOD • CÀ PHÊ SONO &amp; MẬT ONG LƯỢNG TỬ</span>
+      <h1>Từ Cà Phê Siêu Âm &amp; Mật Ong Lượng Tử Việt Nam<br>Đến Thị Trường B2B Toàn Cầu</h1>
+      <p class="subtitle">Bộ hồ sơ trình bày hợp tác nền tảng xuất khẩu Alibaba.com</p>
+      <p class="meta">Dành cho khách hàng: DAVIFOOD (ĐẤT VIỆT COMPANY) – divifood.com • Tháng 08/2026 • Người lập: Phạm Nhi – Account Manager</p>
+      <div class="client-line">Hồ sơ khách hàng: DAVIFOOD – Cà phê siêu âm SONO &amp; Mật ong Lượng Tử EZ (công nghệ sóng âm &amp; từ trường, không hóa chất) • ISO 22000 &amp; HACCP • Đã gửi mẫu thử cho khách Trung Quốc &amp; Hàn Quốc • <strong>Chưa có kênh xuất khẩu</strong></div>
+    </div>
+    <div class="hero-img">
+      <img src="https://sc02.alicdn.com/kf/A3d3558cd842c41da865b9f9b8da8c9a6f.png" alt="Cà phê Việt Nam cao cấp" onerror="this.style.display='none'">
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ====== TOC ====== -->
+<nav class="toc">
+  <h3>Mục lục</h3>
+  <ul>
+    <li><a href="#s1">1. Alibaba là gì &amp; độ uy tín</a></li>
+    <li><a href="#s2">2. Thế mạnh sản phẩm</a></li>
+    <li><a href="#s3">3. Nhà bán Việt tương tự</a></li>
+    <li><a href="#s4">4. Thị trường &amp; tệp khách</a></li>
+    <li><a href="#s5">5. Sản phẩm &amp; MOQ</a></li>
+    <li><a href="#s6">6. Dịch vụ hỗ trợ</a></li>
+    <li><a href="#s7">7. Mô hình ROI 1 năm</a></li>
+    <li><a href="#s8">8. Lộ trình 12 tháng</a></li>
+    <li><a href="#s9">9. Nguồn số liệu</a></li>
+  </ul>
+</nav>
+
+<!-- ====== EXEC SUMMARY CARDS ====== -->
+<div class="card-grid">
+  <div class="card">
+    <div class="num">$8,4 tỷ</div>
+    <div class="label">Xuất khẩu cà phê Việt Nam năm 2025 – kỷ lục lịch sử (+60,7% giá trị)</div>
+    <div class="src">Bộ NN-MT Việt Nam, 01/2026</div>
+  </div>
+  <div class="card">
+    <div class="num">40 triệu+</div>
+    <div class="label">Buyer đăng ký trên Alibaba.com, từ 200+ quốc gia – nơi buyer chủ động đi tìm nhà cung cấp</div>
+    <div class="src">BusinessStats, 03/2026</div>
+  </div>
+  <div class="card">
+    <div class="num">+87,1%</div>
+    <div class="label">Tăng trưởng xuất khẩu cà phê VN sang Trung Quốc (5T/2026) – thị phần VN tăng lên 15,3%</div>
+    <div class="src">Thanh Niên, 08/2026</div>
+  </div>
+  <div class="card">
+    <div class="num">1.999</div>
+    <div class="label">Nhà cung cấp cà phê Việt Nam đang bán trên Alibaba.com – nhưng rất ít nhà có "câu chuyện sạch" như SONO</div>
+    <div class="src">Alibaba.com countrysearch</div>
+  </div>
+  <div class="card">
+    <div class="num">~342</div>
+    <div class="label">Container 20ft cà phê Việt Nam xuất khẩu mỗi ngày (1,5 triệu tấn/năm) – minh chứng "công đi" của ngành</div>
+    <div class="src">Tính toán từ số liệu Bộ NN-MT</div>
+  </div>
+  <div class="card">
+    <div class="num">15,3%</div>
+    <div class="label">Thị phần cà phê VN tại Trung Quốc 5T/2026 – gần gấp đôi cùng kỳ (8,8%): đúng thị trường khách đang nhắm</div>
+    <div class="src">Thanh Niên, 08/2026</div>
+  </div>
+</div>
+<!-- ====== S1 ====== -->
+<section id="s1">
+<h2><span class="sec-num">1</span> Alibaba là gì – Uy tín ra sao – Khách hàng từ đâu tới</h2>
+
+<h3>1.1 Alibaba.com trong một câu</h3>
+<p><strong>Alibaba.com là nền tảng thương mại điện tử B2B (bán buôn) toàn cầu lớn nhất thế giới</strong> – nơi <em>người mua chủ động đi tìm nhà cung cấp</em>, chứ không phải nơi người bán phải gõ cửa từng khách. Alibaba.com thuộc Alibaba Group (thành lập 1999 tại Hàng Châu, Trung Quốc – hệ sinh thái thương mại số lớn nhất hành tinh với 1,4 tỷ người tiêu dùng, doanh thu FY2025 vượt 130 tỷ USD).</p>
+
+<div class="card-grid">
+  <div class="card">
+    <div class="num">40 triệu+</div>
+    <div class="label">Buyer đăng ký trên Alibaba.com, hoạt động tại 200+ quốc gia và vùng lãnh thổ</div>
+    <div class="src">BusinessStats 2026</div>
+  </div>
+  <div class="card">
+    <div class="num">~40%</div>
+    <div class="label">Thị phần thương mại bán buôn số toàn cầu do Alibaba.com nắm giữ – dẫn đầu tuyệt đối</div>
+    <div class="src">Alibaba.com Blog 2025</div>
+  </div>
+  <div class="card">
+    <div class="num">190+</div>
+    <div class="label">Quốc gia có người mua hoạt động; 45% tăng trưởng tương tác người dùng năm 2025</div>
+    <div class="src">Alibaba.com Blog 2025</div>
+  </div>
+  <div class="card">
+    <div class="num">$15 tỷ</div>
+    <div class="label">Doanh thu mảng Thương mại Quốc tế Alibaba FY2025 (CAGR ~32%/năm) – tập đoàn đang đổ lực vào toàn cầu hóa</div>
+    <div class="src">Alibaba 20-F / BusinessStats</div>
+  </div>
+</div>
+
+<h3>1.2 Vì sao buyer tin tưởng mua trên Alibaba – "lớp bảo hiểm" giao dịch</h3>
+<div class="table-wrap">
+<table>
+<tr><th style="width:240px">Công cụ bảo vệ</th><th>Ý nghĩa với người bán (và người mua)</th></tr>
+<tr><td><strong>Trade Assurance</strong></td><td>Bảo vệ thanh toán 2 chiều: người mua được hoàn tiền nếu hàng không giao, giao thiếu hoặc lỗi; người bán được đảm bảo nhận thanh toán đúng hạn. <em>Đòn bẩy giúp nhà bán mới không có lịch sử giao dịch vẫn thắng được niềm tin của khách quốc tế.</em></td></tr>
+<tr><td><strong>Verified Supplier / Gold Supplier</strong></td><td>Xác minh hồ sơ doanh nghiệp, nhà máy, năng lực sản xuất bởi bên thứ ba – tăng độ tin cậy hiển thị trên hồ sơ nhà bán.</td></tr>
+<tr><td><strong>Đánh giá 2 chiều &amp; lịch sử giao dịch</strong></td><td>Điểm đánh giá (như IDD 4,5/5 – 19 đánh giá, DETECH 4,6/5) là "thẻ tín nhiệm" hiển thị công khai, giúp khách mới dễ quyết định.</td></tr>
+<tr><td><strong>Kiểm định hàng hóa (Inspection)</strong></td><td>Dịch vụ kiểm tra chất lượng trước giao hàng – khách yên tâm với lô hàng thực phẩm.</td></tr>
+<tr><td><strong>AI hỗ trợ khớp nối</strong></td><td>63% SME dùng AI trong thương mại toàn cầu 2025; công cụ AI sourcing của Alibaba đạt 10 triệu+ người dùng/tháng giữa 2026 – giúp buyer tìm đúng nhà cung cấp nhanh hơn.</td></tr>
+</table>
+</div>
+
+<h3>1.3 Buyer Việt Nam trên Alibaba đến từ đâu?</h3>
+<p>Alibaba.com là sàn "inbound": <strong>hàng triệu nhà nhập khẩu, nhà phân phối, chuỗi cửa hàng chủ động lên sàn tìm kiếm nhà cung cấp Việt Nam mỗi ngày.</strong> Nhóm quốc gia có nhu cầu tìm nguồn hàng Việt Nam nhiều nhất trùng khớp với bản đồ xuất khẩu thực tế của Việt Nam:</p>
+<div class="table-wrap">
+<table>
+<tr><th>Khu vực</th><th>Hành vi tìm nguồn hàng trên Alibaba</th><th>Ý nghĩa với DAVIFOOD</th></tr>
+<tr><td><strong>Mỹ &amp; Canada</strong></td><td>Nhà nhập khẩu &amp; roaster tìm "Vietnam coffee", đặc biệt quan tâm coffee sạch, chứng nhận, câu chuyện nguồn gốc</td><td>Thị trường cà phê Mỹ ~$91 tỷ (2025) – sẵn sàng trả giá cao cho sản phẩm khác biệt</td></tr>
+<tr><td><strong>EU (Đức, Hà Lan, Ý, Tây Ban Nha)</strong></td><td>Nhà nhập khẩu lớn tìm green bean &amp; roasted; EUDR (chống phá rừng) từ cuối 2025 khiến "cà phê sạch, truy xuất được nguồn gốc" trở thành yêu cầu bắt buộc</td><td>ISO 22000 + HACCP + câu chuyện sạch là lợi thế cạnh tranh đúng thời điểm</td></tr>
+<tr><td><strong>Trung Quốc</strong></td><td>Nhà rang xay, chuỗi cà phê (10.336 cửa hàng chỉ riêng Thượng Hải) đang mua mạnh cà phê VN: +87,1% (5T/2026)</td><td>Thị trường khách đã gửi mẫu – cầu đang nóng, cần kênh để đón sóng</td></tr>
+<tr><td><strong>Hàn Quốc</strong></td><td>Distributor, chuỗi cà phê specialty tìm cà phê VN chất lượng cao: +54,8% (5T/2025)</td><td>Thị trường khách đã gửi mẫu – có sẵn mối quan tâm</td></tr>
+<tr><td><strong>Nhật Bản</strong></td><td>Nhà nhập khẩu &amp; roaster khó tính, coi trọng chất lượng &amp; chứng nhận</td><td>Phù hợp định vị premium của SONO</td></tr>
+<tr><td><strong>ASEAN &amp; Trung Đông</strong></td><td>Nhà phân phối khu vực, chuỗi F&amp;B tìm nguồn cà phê khu vực</td><td>Thị trường mở rộng giai đoạn sau</td></tr>
+</table>
+</div>
+
+<div class="callout">
+<strong>Điểm mấu chốt:</strong> Anh không cần phải "đi tìm khách" – Alibaba đưa <strong>hàng triệu khách mua đang có nhu cầu tìm nhà cung cấp Việt Nam</strong> đến với gian hàng của anh mỗi ngày. Nhiệm vụ của chúng ta là xây gian hàng + sản phẩm đúng cách để họ tìm thấy và tin tưởng DAVIFOOD.
+</div>
+</section>
+
+<!-- ====== S2 ====== -->
+<section id="s2">
+<h2><span class="sec-num">2</span> Thế mạnh sản phẩm DAVIFOOD trên Alibaba</h2>
+
+<h3>2.1 Ngành cà phê Việt Nam – "cơn gió" đang thổi đúng hướng</h3>
+<div class="card-grid">
+  <div class="card">
+    <div class="num">#2</div>
+    <div class="label">Việt Nam là nước sản xuất cà phê lớn thứ 2 thế giới (sản lượng 31 triệu bao niên vụ 2025/26 – USDA)</div>
+  </div>
+  <div class="card">
+    <div class="num">1,5 triệu tấn</div>
+    <div class="label">Xuất khẩu cà phê VN năm 2025 – kỷ lục, trị giá 8,4 tỷ USD, tăng 60,7%</div>
+  </div>
+  <div class="card">
+    <div class="num">$5.600+</div>
+    <div class="label">USD/tấn – giá xuất khẩu bình quân 2025, nhiều thời điểm vượt 5.600–5.700 USD/tấn (giá robusta London 8/2026: 3.787 USD/tấn)</div>
+  </div>
+  <div class="card">
+    <div class="num">342 container/ngày</div>
+    <div class="label">Tốc độ xuất khẩu bình quân của ngành (1,5 triệu tấn ÷ 365 ngày ÷ ~12 tấn/container) – "công đi" của cà phê VN là có thật, hàng ngày</div>
+  </div>
+</div>
+
+<h3>2.2 Vị thế cà phê Việt trên sàn Alibaba – category đã được kiểm chứng</h3>
+<div class="table-wrap">
+<table>
+<tr><th>Chỉ số</th><th>Số liệu</th><th>Nguồn</th></tr>
+<tr><td>Nhà cung cấp cà phê Việt Nam trên Alibaba</td><td><strong>1.999 nhà cung cấp</strong>, 5.819 sản phẩm "vietnam coffee supplier"</td><td>Alibaba.com countrysearch (truy cập 08/2026)</td></tr>
+<tr><td>Sản phẩm chủ lực của nhà bán VN</td><td>Roasted coffee bean, ground coffee, instant coffee – MOQ &amp; giá công khai, đa dạng từ commodity đến OEM</td><td>Alibaba.com</td></tr>
+<tr><td>Thương hiệu lớn hiện diện</td><td>Vinacafe (20 nhà cung cấp liên quan, doanh thu khai báo từ $5 triệu), Sai Gon An Thai (&gt;$100 triệu), VILACONIC ($50–100 triệu)</td><td>Alibaba.com supplier search</td></tr>
+<tr><td>Xu hướng cà phê sạch / specialty</td><td>Trung Quốc: thị phần specialty tăng từ 8% (2021) → 31,6% (2025); tiêu thụ/người tăng 16,7 → 28,6 cốc</td><td>Thanh Niên, 08/2026</td></tr>
+</table>
+</div>
+
+<div class="img-row">
+  <div class="img-card">
+    <img src="https://sc02.alicdn.com/kf/Aaeb731e8071141119fcb3d6d4aafca1e3.png" alt="Minh họa công nghệ sóng siêu âm làm sạch hạt cà phê" onerror="this.style.display='none'">
+    <div class="img-cap">Công nghệ sóng siêu âm: đẩy tạp chất, dư lượng thuốc BVTV và nấm mốc ra khỏi hạt – điểm khác biệt độc quyền của SONO</div>
+  </div>
+  <div class="img-card">
+    <img src="https://sc02.alicdn.com/kf/A92467e77f99348e4850e02c872e19949F.png" alt="Mockup bao bì cà phê SONO cao cấp" onerror="this.style.display='none'">
+    <div class="img-cap">Bao bì premium xanh – định vị "Cà phê sạch Việt Nam" cao cấp, khác biệt trên sàn</div>
+  </div>
+</div>
+
+<h3>2.3 Vì sao SONO có "đất diễn" riêng trên Alibaba</h3>
+<p>Trong 1.999 nhà bán cà phê Việt trên sàn, <strong>đại đa số cạnh tranh bằng giá commodity</strong> (green bean, instant 3-in-1 giá rẻ). Rất hiếm nhà bán nào sở hữu:</p>
+<ul>
+  <li><strong>Công nghệ độc quyền có thể kể thành câu chuyện:</strong> sóng siêu âm bóc tách 100% dư lượng thuốc bảo vệ thực vật &amp; tạp chất, triệt tiêu nấm mốc mà không dùng hóa chất – "Sạch từ bản thể" là một <em>USP (điểm bán hàng độc nhất)</em>, không phải là một tính năng thêm vào.</li>
+  <li><strong>Chứng nhận xuất khẩu sẵn sàng:</strong> ISO 22000, HACCP – bộ hồ sơ mà nhà nhập khẩu Mỹ/EU/TQ/Hàn đều yêu cầu ngay ở vòng đầu.</li>
+  <li><strong>Đúng xu hướng thế giới:</strong> người tiêu dùng toàn cầu ngày càng tránh hóa chất trong thực phẩm; cà phê "sạch – êm bụng – không say" là giá trị bán được giá cao hơn hẳn mặt bằng chung.</li>
+  <li><strong>Đã có bằng chứng thị trường:</strong> mẫu thử đã được khách Trung Quốc &amp; Hàn Quốc nhận – tín hiệu sản phẩm "bán được", chỉ thiếu kênh để nhân rộng. Alibaba chính là kênh đó.</li>
+</ul>
+
+<div class="callout-green">
+<strong>Định vị đề xuất trên sàn:</strong> "Vietnam Ultrasonic Clean Coffee – 100% pesticide-free, mold-free, certified ISO 22000 &amp; HACCP – Premium Roasted &amp; Green Coffee from Vietnam". Đừng đua giá với commodity – hãy bán câu chuyện sạch + chứng nhận + công nghệ độc quyền, đúng tệp khách sẵn sàng trả giá cao.
+</div>
+
+<h3>2.4 Sản phẩm chiến lược thứ 2 – Mật Ong Lượng Tử EZ</h3>
+<div class="img-row">
+  <div class="img-card">
+    <img src="https://sc02.alicdn.com/kf/A0b8d3d10176c4e819a40cea3f3c66e37Q.png" alt="Mockup chai Mật Ong Lượng Tử EZ" onerror="this.style.display='none'">
+    <div class="img-cap">Mật Ong Lượng Tử EZ – dòng sản phẩm thứ 2 của DAVIFOOD, cùng triết lý "sạch từ bản thể"</div>
+  </div>
+</div>
+<p><strong>Mật Ong Lượng Tử EZ</strong> là dòng sản phẩm thứ 2 của DAVIFOOD, ứng dụng đúng triết lý "sạch từ bản thể": mật ong được xử lý bằng <strong>sóng âm &amp; từ trường</strong> để bóc tách hoàn toàn kim loại nặng và thuốc trừ sâu, đồng thời tạo cấu trúc nước EZ siêu dẫn giúp dưỡng chất thẩm thấu vào tế bào tức thì.</p>
+<div class="table-wrap">
+<table>
+<tr><th style="width:170px">Đặc điểm</th><th>Mật Ong Lượng Tử EZ</th></tr>
+<tr><td><strong>Công nghệ</strong></td><td>Sóng âm &amp; từ trường – bóc tách 100% kim loại nặng, thuốc trừ sâu; cấu trúc nước EZ siêu dẫn giúp hấp thụ dưỡng chất nhanh</td></tr>
+<tr><td><strong>Công dụng chính</strong></td><td>Phục hồi thể lực sau vận động (5 phút); giải độc bia rượu; bổ não – hỗ trợ học tập, làm việc căng thẳng; hồi sức khi mệt lả, tụt đường huyết</td></tr>
+<tr><td><strong>Cách dùng</strong></td><td>Pha 12–15ml với 200ml nước nguội hoặc ấm (dưới 50°C), lắc mạnh cho mật tan và tạo lớp bọt, uống ngay sau khi lắc</td></tr>
+<tr><td><strong>Lưu ý sử dụng</strong></td><td>Không ăn trực tiếp dạng đậm đặc; <strong>tuyệt đối không pha chung với chanh, cam hoặc thực phẩm chứa Vitamin C</strong></td></tr>
+<tr><td><strong>Vị trí trên Alibaba</strong></td><td>Nhóm Food &amp; Beverage / Health Food – cùng tệp nhà nhập khẩu thực phẩm với cà phê; cross-sell giúp tăng giá trị đơn hàng và mở thêm kênh khách health-conscious</td></tr>
+</table>
+</div>
+<div class="callout">
+<strong>Cơ hội bán hàng:</strong> Xu hướng "clean label" toàn cầu đang đẩy nhu cầu mật ong tự nhiên/sạch tăng đều tại Mỹ, EU, Trung Quốc và Hàn Quốc – đúng tệp khách đang tìm nguồn hàng sạch Việt Nam trên Alibaba. Đề xuất: đăng 3–5 SKU mật ong ngay từ đầu (chai 250g/500g + combo quà tặng), định vị <em>"Ultrasonic &amp; Magnetic Clean Honey – heavy-metal-free &amp; pesticide-free"</em>. Lưu ý hoàn thiện nhãn tiếng Anh, hạn sử dụng và hồ sơ kiểm nghiệm trước khi niêm yết.
+</div>
+</section>
+<!-- ====== S3 ====== -->
+<section id="s3">
+<h2><span class="sec-num">3</span> Các nhà bán cà phê Việt Nam tương tự trên Alibaba</h2>
+<p>Dưới đây là <strong>12 nhà cung cấp cà phê Việt Nam đang bán thật trên Alibaba.com</strong> (dữ liệu lấy từ tìm kiếm supplier trên sàn, 08/2026) – minh chứng: nhà bán Việt hoàn toàn có thể ghi doanh thu từ sàn, ở mọi quy mô từ start-up đến tập đoàn.</p>
+
+<div class="table-wrap">
+<table>
+<tr><th>Công ty (theo hồ sơ Alibaba)</th><th>Khu vực</th><th>Số năm trên sàn</th><th>Doanh thu khai báo</th><th>Sản phẩm chính</th><th>Tín hiệu uy tín</th></tr>
+<tr>
+  <td><strong>SAI GON AN THAI JSC</strong> <a href="https://anthaigroup.trustpass.alibaba.com/company_profile.html">↗</a></td>
+  <td>TP.HCM</td>
+  <td>14 năm</td>
+  <td><span class="badge badge-gold">Trên $100 triệu</span></td>
+  <td>Instant coffee spray-dried, coffee concentrate, 3-in-1</td>
+  <td>Nhà bán lâu năm nhất &amp; lớn nhất trong nhóm cà phê</td>
+</tr>
+<tr>
+  <td><strong>SUNRISE INS CO., LTD</strong></td>
+  <td>TP.HCM</td>
+  <td>6 năm</td>
+  <td><span class="badge badge-gold">Trên $100 triệu</span></td>
+  <td>Gạo, hạt tiêu, cà phê, dừa sấy</td>
+  <td>Tập đoàn nông sản đa ngành</td>
+</tr>
+<tr>
+  <td><strong>VILACONIC</strong></td>
+  <td>Nghệ An</td>
+  <td>13 năm</td>
+  <td><span class="badge badge-gold">$50–100 triệu</span></td>
+  <td>Gạo, gia vị, cà phê, tinh bột sắn</td>
+  <td>4,6/5 (2 đánh giá), 9 đơn</td>
+</tr>
+<tr>
+  <td><strong>NEW SPRING I/E Co.</strong></td>
+  <td>TP.HCM</td>
+  <td>8 năm</td>
+  <td><span class="badge badge-gold">$10–50 triệu</span></td>
+  <td>Gỗ, nội thất, cao su, cà phê, hạt điều</td>
+  <td>Đa ngành, có nguồn cà phê</td>
+</tr>
+<tr>
+  <td><strong>DETECH COFFEE JSC</strong> <a href="https://detechcoffee.trustpass.alibaba.com/company_profile.html">↗</a></td>
+  <td>Hưng Yên</td>
+  <td>7 năm</td>
+  <td><span class="badge badge-gold">$5–10 triệu</span></td>
+  <td>Instant coffee, green beans; brand Konnai</td>
+  <td>4,6/5 (2 đánh giá), 120+ nhân sự, trả lời ≤7h, giao đúng hạn 100%</td>
+</tr>
+<tr>
+  <td><strong>HUCAFOOD</strong> <a href="https://hucafoodvn.trustpass.alibaba.com/company_profile.html">↗</a></td>
+  <td>Khánh Hòa</td>
+  <td>6 năm</td>
+  <td><span class="badge badge-gold">$5–10 triệu</span></td>
+  <td>Roasted beans, instant, 3-in-1</td>
+  <td>Nhà sản xuất, chuyên cà phê rang</td>
+</tr>
+<tr>
+  <td><strong>BAN ME GOLD Co., Ltd</strong></td>
+  <td>TP.HCM</td>
+  <td>8 năm</td>
+  <td><span class="badge badge-gold">$5–10 triệu</span></td>
+  <td>Roasted bean, ground, instant</td>
+  <td>Gắn thương hiệu Buôn Ma Thuột</td>
+</tr>
+<tr>
+  <td><strong>LAM CHAN AU Tea &amp; Coffee</strong></td>
+  <td>An Giang</td>
+  <td>3 năm</td>
+  <td><span class="badge badge-gold">$5–10 triệu</span></td>
+  <td>Coffee powder, roasted beans, trà</td>
+  <td>5,0/5 (1 đánh giá), trả lời ≤1h, 4 đơn</td>
+</tr>
+<tr>
+  <td><strong>IDD CORPORATION (HANCOFFEE)</strong> <a href="https://iddcorporation.trustpass.alibaba.com/company_profile.html">↗</a></td>
+  <td>Hà Nội</td>
+  <td>8 năm</td>
+  <td><span class="badge badge-gold">$2,5–5 triệu</span></td>
+  <td>Green bean, roasted/ground Robusta-Arabica (Gia Lai)</td>
+  <td><strong>4,5/5 (19 đánh giá), 20 đơn</strong> – hồ sơ "cá nhân" đáng học nhất</td>
+</tr>
+<tr>
+  <td><strong>MY VIET INTERNATIONAL</strong> <a href="https://myvietcoffee.trustpass.alibaba.com/company_profile.html">↗</a></td>
+  <td>Đắk Lắk</td>
+  <td>6 năm</td>
+  <td><span class="badge badge-gold">$2,5–5 triệu</span></td>
+  <td>Instant coffee, 3-in-1</td>
+  <td>Nhà máy tại thủ phủ cà phê</td>
+</tr>
+<tr>
+  <td><strong>DAI HOANG THUY GROUP (DHT)</strong></td>
+  <td>TP.HCM</td>
+  <td>7 năm</td>
+  <td><span class="badge badge-gold">$2,5–5 triệu</span></td>
+  <td>Green bean, roasted, ground</td>
+  <td>Trả lời ≤2h</td>
+</tr>
+<tr>
+  <td><strong>ARO BAO KHANH Co., Ltd</strong></td>
+  <td>TP.HCM</td>
+  <td>5 năm</td>
+  <td>Dưới $1 triệu</td>
+  <td>Roasted Arabica/Robusta, capsule coffee</td>
+  <td>ISO 22000; 5 đơn; minh chứng nhà nhỏ vẫn có đơn</td>
+</tr>
+</table>
+</div>
+
+<h3>3.1 Giá &amp; MOQ thực tế của 2 listing "anh em" – chuẩn để anh hình dung</h3>
+<div class="table-wrap">
+<table>
+<tr><th>Listing thực tế trên Alibaba</th><th>Giá niêm yết</th><th>MOQ</th><th>Đóng gói / Container</th><th>Ghi chú</th></tr>
+<tr>
+  <td><strong>IDD Corporation – "Vietnamese Roasted &amp; Ground Robusta &amp; Arabica Instant Coffee Powder 500g/Box"</strong> <a href="https://www.alibaba.com/product-detail/Vietnamese-Roasted-Ground-Robusta-Arabica-Instant_11000011131517.html">↗</a></td>
+  <td>€4,29 (~$4,7)/túi 500g</td>
+  <td>1.000 túi</td>
+  <td>500g/túi; 20 túi/thùng; 470 thùng/container 20ft (≈9.400 túi ≈ 4,7 tấn); lead time 15 ngày</td>
+  <td>60% Arabica 40% Robusta, Gia Lai; OEM/logo riêng từ 960 túi; xếp hạng #18 sản phẩm bán chạy nhóm ground coffee</td>
+</tr>
+<tr>
+  <td><strong>DETECH – "Konnai Vietnamese Instant Coffee"</strong> <a href="https://www.alibaba.com/product-detail/Konnai-Vietnamese-coffee-brand-instant-coffee_10000016197275.html">↗</a></td>
+  <td>€2,45 → €2,28/hộp 240g (giảm theo lượng)</td>
+  <td>90 hộp</td>
+  <td>Hộp 240g; lead time 7 ngày</td>
+  <td>OEM từ 900 hộp; ví dụ điển hình của "bắt đầu nhỏ, mở rộng theo đơn"</td>
+</tr>
+</table>
+</div>
+
+<div class="callout">
+<strong>Bài học rút ra:</strong> ① Nhà bán Việt đang bán được với đủ mọi quy mô – từ start-up (ARO Bao Khanh, dưới $1 triệu) đến tập đoàn (&gt;$100 triệu). ② Giá trị đơn trung bình 1 container 20ft cà phê rang/xay ≈ <strong>$40.000–55.000</strong> – chỉ cần vài container/năm là doanh thu đã 6–7 con số. ③ <strong>Không nhà bán nào trong nhóm này sở hữu câu chuyện "cà phê siêu âm sạch tuyệt đối" như SONO</strong> – khoảng trống định vị premium đang bỏ ngỏ.
+</div>
+</section>
+
+<!-- ====== S4 ====== -->
+<section id="s4">
+<h2><span class="sec-num">4</span> Phân tích thị trường chính &amp; tệp khách hàng mục tiêu</h2>
+
+<h3>4.1 Bản đồ 5 thị trường ưu tiên cho DAVIFOOD</h3>
+<div class="table-wrap">
+<table>
+<tr><th>Thị trường</th><th>Quy mô &amp; tăng trưởng</th><th>Xu hướng liên quan đến DAVIFOOD</th><th>Mức ưu tiên</th></tr>
+<tr>
+  <td><strong>🇨🇳 Trung Quốc</strong></td>
+  <td>Thị trường cà phê ~$3,3 tỷ (2025) → dự báo $5,4 tỷ (2033), CAGR 6,4%; nhập khẩu cà phê VN <strong>+87,1%</strong> (5T/2026); thị phần VN 15,3% (từ 8,8%)</td>
+  <td>Tiêu thụ/người 16,7 → 28,6 cốc; specialty tăng 8% → 31,6%; Thượng Hải 10.336 cửa hàng cà phê; chuộng cà phê sạch, pha trà/nhài</td>
+  <td><span class="badge badge-red">★ Ưu tiên #1</span> – khách đã có mối quan tâm (đã gửi mẫu)</td>
+</tr>
+<tr>
+  <td><strong>🇰🇷 Hàn Quốc</strong></td>
+  <td>Nhập khẩu cà phê VN <strong>+54,8%</strong> (5T/2025, đạt $86,3 triệu); thị trường specialty phát triển nhanh</td>
+  <td>Người Hàn chuộng cà phê chất lượng cao, sạch, đóng gói đẹp, câu chuyện thương hiệu</td>
+  <td><span class="badge badge-red">★ Ưu tiên #1</span> – đã gửi mẫu</td>
+</tr>
+<tr>
+  <td><strong>🇺🇸 Mỹ</strong></td>
+  <td>Thị trường cà phê Mỹ ~$91 tỷ (2025) → $150,9 tỷ (2034), CAGR 5,8%; VN xuất ~$610 triệu/năm sang Mỹ</td>
+  <td>Người Mỹ chi nhiều hơn cho specialty &amp; coffee sạch; nhà nhập khẩu cần khác biệt hóa nguồn cung</td>
+  <td><span class="badge badge-orange">Ưu tiên #2</span> – quy mô lớn, cạnh tranh cao hơn</td>
+</tr>
+<tr>
+  <td><strong>🇪🇺 EU (Đức, Hà Lan, Ý)</strong></td>
+  <td>Đức, Ý là 2 thị trường tiêu thụ lớn nhất của cà phê VN (H1/2026: Đức -21%, Ý -6,5% do giá cao)</td>
+  <td><strong>EUDR từ cuối 2025</strong>: bắt buộc chứng minh cà phê không phá rừng, truy xuất nguồn gốc → cà phê có hồ sơ sạch được hưởng lợi</td>
+  <td><span class="badge badge-orange">Ưu tiên #2</span> – chuẩn bị hồ sơ EUDR</td>
+</tr>
+<tr>
+  <td><strong>🇯🇵 Nhật Bản</strong></td>
+  <td>Top 3 thị trường cà phê VN (H1/2026: -9% do giá)</td>
+  <td>Khách khó tính, trả giá cao cho chất lượng &amp; chứng nhận – đúng định vị SONO</td>
+  <td><span class="badge badge-blue">Ưu tiên #3</span> – giai đoạn sau</td>
+</tr>
+</table>
+</div>
+
+<h3>4.2 Giá thế giới &amp; lưu ý rủi ro</h3>
+<div class="callout">
+<strong>Mặt bằng giá cà phê thế giới (08/2026):</strong> Robusta London <strong>3.787 USD/tấn</strong>, Arabica New York <strong>7.382 USD/tấn</strong>, giá Tây Nguyên ~97.000 đồng/kg. Giá xuất khẩu bình quân cà phê VN 7 tháng đầu 2026 đạt 4.537 USD/tấn (-19,9% so với đỉnh 2025) – <em>giá đang điều chỉnh từ đỉnh lịch sử nhưng vẫn cao hơn hẳn mức trung bình nhiều năm</em>. Với sản phẩm chế biến sâu (rang, xay, đóng gói) biên lợi nhuận ổn định hơn nhiều so với bán hạt thô.
+</div>
+
+<h3>4.3 Tệp khách hàng mục tiêu trên Alibaba (buyer personas)</h3>
+<div class="table-wrap">
+<table>
+<tr><th>#</th><th>Tệp buyer</th><th>Họ mua gì từ DAVIFOOD</th><th>Quy mô đơn điển hình</th><th>Đòn bẩy chốt đơn</th></tr>
+<tr><td>1</td><td><strong>Nhà nhập khẩu cà phê / roaster</strong> (Mỹ, EU, Nhật, Hàn, TQ)</td><td>Green beans sạch + roasted premium; cần chứng nhận, cupping data, nguồn gốc rõ ràng</td><td>1–5 container/năm</td><td>ISO 22000/HACCP, câu chuyện sóng siêu âm, mẫu thử đã được thị trường đón nhận</td></tr>
+<tr><td>2</td><td><strong>Nhà phân phối / chuỗi cà phê</strong> (TQ, Hàn, ASEAN)</td><td>Roasted beans 250g/500g, ground phin 180g; đóng gói sẵn, giao đúng lịch</td><td>2.000–10.000 túi/đơn</td><td>Giá FOB cạnh tranh theo volume, lead time ổn định</td></tr>
+<tr><td>3</td><td><strong>Thương hiệu private label / D2C brand</strong> (Mỹ, Hàn, Nhật)</td><td>OEM/ODM: công thức riêng, bao bì riêng, kể câu chuyện "cà phê sạch Việt Nam"</td><td>1.000+ hộp/túi mỗi SKU</td><td>Năng lực gia công + USP sạch để họ bán giá cao</td></tr>
+<tr><td>4</td><td><strong>Chuỗi khách sạn / resort / office coffee</strong></td><td>Drip bag, gói phin tiện lợi, quà tặng; đóng theo concept</td><td>500–5.000 hộp/dự án</td><td>Bao bì đẹp, câu chuyện sạch cho amenity</td></tr>
+<tr><td>5</td><td><strong>Nhà bán lẻ specialty / E-commerce</strong></td><td>Bao 250g/500g retail, combo quà tặng, mật ong EZ cross-sell</td><td>Đơn thử 50–500 đơn vị</td><td>Ready to ship MOQ thấp – thử nghiệm rủi ro thấp</td></tr>
+</table>
+</div>
+
+<div class="callout-green">
+<strong>Chiến thuật chốt khách trong buổi meeting:</strong> Khách đã gửi mẫu cho TQ &amp; Hàn → đây là <strong>bằng chứng nhu cầu thật</strong>. Trên Alibaba, chính các nhà nhập khẩu từ 2 thị trường này (cộng thêm Mỹ/EU) đang chủ động tìm kiếm nhà cung cấp cà phê Việt mỗi ngày. Lên sàn = biến 2 mối quan tâm lẻ thành dòng khách hàng liên tục.
+</div>
+</section>
+<!-- ====== S5 ====== -->
+<section id="s5">
+<h2><span class="sec-num">5</span> Sản phẩm ưu tiên đăng – MOQ – Cách đăng tải</h2>
+
+<h3>5.1 Ma trận SKU đề xuất (ưu tiên theo thứ tự)</h3>
+<div class="table-wrap">
+<table>
+<tr><th>Thứ tự</th><th>SKU</th><th>Vai trò</th><th>Giá FOB tham khảo</th><th>MOQ đề xuất</th><th>Tệp buyer nhắm tới</th></tr>
+<tr>
+  <td><span class="badge badge-red">1</span></td>
+  <td><strong>Roasted whole bean 250g / 500g</strong> (Arabica &amp; Robusta, rang vừa/đậm)</td>
+  <td>Flagship premium – kể câu chuyện siêu âm, giá trị cao nhất/kg</td>
+  <td>$9–13/kg FOB (định vị sạch cao cấp)</td>
+  <td>500 kg hoặc 1.000 túi</td>
+  <td>Nhà nhập khẩu specialty, roaster, chuỗi cà phê</td>
+</tr>
+<tr>
+  <td><span class="badge badge-red">2</span></td>
+  <td><strong>Ground coffee phin 180g/10 túi</strong> – dòng đặc trưng Việt</td>
+  <td>Volume driver – khác biệt hóa so với instant đại trà</td>
+  <td>$4,5–6/túi bán lẻ (tham chiếu listing VN €4,29/túi 500g)</td>
+  <td>1.000–2.000 túi</td>
+  <td>Nhà phân phối, chuỗi F&amp;B, retail</td>
+</tr>
+<tr>
+  <td><span class="badge badge-orange">3</span></td>
+  <td><strong>Green coffee beans</strong> (Robusta/Arabica Buôn Ma Thuột)</td>
+  <td>Mở cửa cho khách volume lớn; tận dụng giá hạt đang cao</td>
+  <td>Bám giá thị trường ~$4,5–5,7/kg (giá XK bình quân 2025)</td>
+  <td>1 × container 20ft (12–13 tấn)</td>
+  <td>Roaster, nhà nhập khẩu lớn, trader</td>
+</tr>
+<tr>
+  <td><span class="badge badge-orange">4</span></td>
+  <td><strong>Drip bag / gói phin tiện lợi</strong> (phát triển sau 3–6 tháng)</td>
+  <td>Bắt trend specialty + amenity khách sạn</td>
+  <td>$0,45–0,70/gói (premium – tham chiếu báo cáo ngành)</td>
+  <td>200–500 hộp</td>
+  <td>Khách sạn, corporate gifting, e-commerce</td>
+</tr>
+<tr>
+  <td><span class="badge badge-blue">5</span></td>
+  <td><strong>OEM / Private Label</strong> (logo &amp; bao bì khách hàng)</td>
+  <td>"Cánh cửa" vào thương hiệu lớn – biên tốt theo hợp đồng</td>
+  <td>Theo BOM từng đơn</td>
+  <td>1.000 đơn vị/SKU</td>
+  <td>D2C brand, chuỗi khách sạn quốc tế</td>
+</tr>
+<tr>
+  <td><span class="badge badge-blue">6</span></td>
+  <td><strong>Mật ong Lượng Tử EZ</strong> (sản phẩm chiến lược thứ 2)</td>
+  <td>Cross-sell – cùng công nghệ "sạch", tăng giá trị đơn; ngành health food tăng trưởng mạnh</td>
+  <td>$8–15/kg FOB tham khảo (mật ong sạch)</td>
+  <td>100 chai (thử) → 500 chai (volume)</td>
+  <td>Nhà phân phối thực phẩm, health store, private label</td>
+</tr>
+</table>
+</div>
+
+<h3>5.2 Nguyên tắc MOQ – "bắt đầu nhỏ, mở rộng nhanh"</h3>
+<ul>
+  <li><strong>MOQ thấp cho đơn đầu:</strong> 100–200 túi/hộp cho dòng ready-to-ship → khách thử nghiệm dễ dàng, anh có đơn đầu tiên trong 30–60 ngày đầu lên sàn.</li>
+  <li><strong>Bậc giá giảm dần theo volume:</strong> công khai giá theo mốc (như DETECH: 90 hộp €2,45 → 900+ hộp €2,28) → khuyến khích khách tăng lượng, anh tối ưu sản xuất.</li>
+  <li><strong>Container là "cột mốc lớn":</strong> đối với green bean &amp; roasted volume, MOQ 1×20ft; mỗi container ≈ $40.000–65.000 doanh thu.</li>
+  <li><strong>Mẫu thử là lead magnet:</strong> bán mẫu giá ưu đãi kèm catalog + báo cáo kiểm nghiệm (đã có ISO/HACCP) – biến inquiry thành khách thử nhanh nhất.</li>
+</ul>
+
+<h3>5.3 Cách đăng tải – "công thức" listing bán được hàng</h3>
+<div class="table-wrap">
+<table>
+<tr><th style="width:150px">Yếu tố</th><th>Khuyến nghị cho DAVIFOOD</th></tr>
+<tr><td><strong>Tiêu đề (Title)</strong></td><td>Mẫu: <em>"Vietnam Ultrasonic Clean Coffee – 100% Pesticide-Free Roasted Robusta/Arabica Beans | ISO 22000 &amp; HACCP Certified | Private Label OEM | Premium Vietnamese Coffee Supplier"</em> (đủ từ khóa buyer tìm kiếm)</td></tr>
+<tr><td><strong>Hình ảnh</strong></td><td>Tối thiểu 8–10 ảnh: ảnh trắng nền sản phẩm + ảnh quy trình sóng siêu âm + ảnh chứng nhận ISO/HACCP + ảnh nhà máy/đóng gói + ảnh ly cà phê "êm bụng". Ảnh sạch, sáng, chuyên nghiệp là yếu tố quyết định CTR.</td></tr>
+<tr><td><strong>Video</strong></td><td>Video 30–60 giây: hạt cà phê Buôn Ma Thuột → công nghệ siêu âm → rang → đóng gói → khách quốc tế; phụ đề tiếng Anh (thêm Trung/Hàn cho 2 thị trường mục tiêu).</td></tr>
+<tr><td><strong>Mô tả</strong></td><td>Câu chuyện "Sạch từ bản thể": công nghệ độc quyền, kết quả kiểm nghiệm quốc tế, chứng nhận, quy trình 3 bước, đóng gói chuẩn xuất khẩu.</td></tr>
+<tr><td><strong>Chứng nhận</strong></td><td>Đưa ISO 22000, HACCP lên listing &amp; hồ sơ công ty. <em>Lưu ý kiểm chứng số FDA 98765432109 trên website – dạng số cần xác minh với cơ quan cấp trước khi đưa vào hồ sơ xuất khẩu chính thức.</em></td></tr>
+<tr><td><strong>Keywords</strong></td><td><span class="kw hot">vietnam coffee supplier</span> <span class="kw hot">clean coffee</span> <span class="kw hot">pesticide free coffee</span> <span class="kw hot">roasted coffee beans vietnam</span> <span class="kw warm">arabica robusta beans</span> <span class="kw warm">ground coffee phin</span> <span class="kw warm">private label coffee</span> <span class="kw warm">OEM coffee</span> <span class="kw norm">green coffee beans</span> <span class="kw norm">instant coffee</span> <span class="kw norm">drip bag coffee</span> <span class="kw norm">specialty coffee vietnam</span> <span class="kw norm">natural honey</span> <span class="kw norm">clean honey</span></td></tr>
+</table>
+</div>
+
+<div class="callout">
+<strong>Lộ trình đăng tải:</strong> Bắt đầu với 20–30 sản phẩm trong 2 tuần đầu (ưu tiên roasted + ground + green + 3–5 SKU mật ong), hoàn thiện hồ sơ công ty + video + chứng nhận, sau đó mở rộng dần theo dữ liệu từ khóa và inquiry thực tế. Đội ngũ Alibaba sẽ đồng hành từng bước.
+</div>
+</section>
+
+<!-- ====== S6 ====== -->
+<section id="s6">
+<h2><span class="sec-num">6</span> Dịch vụ hỗ trợ đi kèm từ đội ngũ Alibaba</h2>
+<p>Khách hàng không "một mình một chợ" – đội ngũ Alibaba Việt Nam đồng hành toàn diện từ ngày đầu ký hợp đồng:</p>
+<div class="table-wrap">
+<table>
+<tr><th style="width:230px">Dịch vụ</th><th>Nội dung hỗ trợ</th></tr>
+<tr><td><strong>Triển khai gian hàng (Onboarding)</strong></td><td>Hướng dẫn &amp; hỗ trợ dựng gian hàng, thiết kế minisite theo chuẩn Alibaba, kích hoạt tài khoản, đăng ký xác minh doanh nghiệp.</td></tr>
+<tr><td><strong>Hỗ trợ đăng sản phẩm</strong></td><td>Tư vấn danh mục sản phẩm, viết tiêu đề &amp; mô tả chuẩn SEO, tối ưu hình ảnh, cấu trúc listing bán được hàng.</td></tr>
+<tr><td><strong>Đào tạo bán hàng quốc tế</strong></td><td>Bootcamp &amp; coaching định kỳ: cách trả lời inquiry, chốt đơn, xử lý khách nước ngoài, kỹ năng đàm phán B2B, quy trình sample → order → repeat.</td></tr>
+<tr><td><strong>Công cụ quảng cáo P4P &amp; phân tích</strong></td><td>Chạy quảng cáo từ khóa (Pay-for-Performance), báo cáo từ khóa &amp; đối thủ, tối ưu ngân sách theo dữ liệu thực.</td></tr>
+<tr><td><strong>Trade Assurance</strong></td><td>Kích hoạt bảo vệ giao dịch – tăng niềm tin cho khách mua lần đầu, giảm rào cản chốt đơn.</td></tr>
+<tr><td><strong>RFQ &amp; kết nối khách hàng</strong></td><td>Đăng ký nhận yêu cầu báo giá (RFQ) từ buyer đang tìm nguồn cà phê; hệ thống gợi ý khách hàng tiềm năng theo ngành hàng.</td></tr>
+<tr><td><strong>Nội dung đa phương tiện</strong></td><td>Hỗ trợ video sản phẩm, live stream, ảnh 360°, e-showroom – tăng trải nghiệm cho buyer ở nước ngoài không thể thăm nhà máy.</td></tr>
+<tr><td><strong>Công cụ AI</strong></td><td>Tạo mô tả sản phẩm bằng AI, AI trả lời khách hàng, AI sourcing – tiết kiệm thời gian vận hành hàng ngày.</td></tr>
+<tr><td><strong>Chăm sóc &amp; giải quyết khiếu nại</strong></td><td>Quản lý khách hàng thành công (Customer Success), hỗ trợ xử lý tranh chấp, kiểm định hàng hóa, đồng hành dài hạn theo hợp đồng.</td></tr>
+<tr><td><strong>Roadshow &amp; kết nối ngành</strong></td><td>Cơ hội tham gia các chương trình xúc tiến, hội chợ, kết nối với hiệp hội ngành cà phê và nhóm nhà mua quốc tế.</td></tr>
+</table>
+</div>
+
+<div class="callout-green">
+<strong>Cam kết của đội ngũ Alibaba:</strong> Chúng tôi không bàn giao gian hàng rồi "biến mất". Trong 12 tháng đầu, có người phụ trách khách hàng trực tiếp theo dõi hiệu quả (lượt xem, inquiry, đơn hàng), điều chỉnh chiến lược theo từng giai đoạn – mục tiêu chung là <strong>biến gian hàng DAVIFOOD thành kênh doanh thu xuất khẩu ổn định</strong>.
+</div>
+</section>
+<!-- ====== S7 ====== -->
+<section id="s7">
+<h2><span class="sec-num">7</span> Mô hình ROI 1 năm – Anh cần bao nhiêu khách, bao nhiêu container?</h2>
+
+<div class="img-row">
+  <div class="img-card">
+    <img src="https://sc02.alicdn.com/kf/A3a4ee46c127b4a2ea523d1e7b5eebcdcB.png" alt="Cảng container xuất khẩu" onerror="this.style.display='none'">
+    <div class="img-cap">Mỗi ngày Việt Nam xuất ~342 container cà phê – phần chia của DAVIFOOD bắt đầu từ những container đầu tiên trên Alibaba</div>
+  </div>
+</div>
+
+<h3>7.1 "Công đi" của ngành – con số để anh hình dung</h3>
+<div class="card-grid">
+  <div class="card">
+    <div class="num">1.500.000 tấn</div>
+    <div class="label">Cà phê VN xuất khẩu năm 2025 = ~125.000 container 20ft ≈ <strong>342 container mỗi ngày</strong></div>
+  </div>
+  <div class="card">
+    <div class="num">$40.000–65.000</div>
+    <div class="label">Giá trị trung bình 1 container 20ft: roasted premium ~4,7 tấn × $9–13/kg ≈ $42–61K; green ~12,5 tấn × $4,5–5,7/kg ≈ $56–71K</div>
+  </div>
+  <div class="card">
+    <div class="num">$8,4 tỷ / 1,5 tr.tấn</div>
+    <div class="label">Giá XK bình quân 2025 ≈ 5.600 USD/tấn – mặt bằng giá cao nhất lịch sử ngành</div>
+  </div>
+</div>
+
+<h3>7.2 Funnel 1 năm (kịch bản cơ sở – minh họa, không phải cam kết)</h3>
+<div class="table-wrap">
+<table>
+<tr><th>Giai đoạn</th><th>Chỉ số</th><th>Năm 1 (kịch bản cơ sở)</th><th>Giả định chuyển đổi</th></tr>
+<tr><td>1. Hiển thị</td><td>Listing 20–30 sản phẩm, impressions/tháng</td><td>50.000–100.000 lượt hiển thị/tháng (từ Q2)</td><td>Chuẩn ngành cà phê trên sàn, có P4P hỗ trợ</td></tr>
+<tr><td>2. Quan tâm</td><td>CTR listing</td><td>2,5–4%</td><td>Ảnh &amp; tiêu đề chuẩn SEO</td></tr>
+<tr><td>3. Inquiry</td><td>Lượng khách hỏi hàng</td><td><strong>~300–400 inquiry/năm</strong> (10–15/tháng Q1 → 40–60/tháng Q4)</td><td>Trả lời ≤2 giờ – yếu tố quyết định</td></tr>
+<tr><td>4. Mẫu thử</td><td>Inquiry → mẫu thử</td><td><strong>~90–120 mẫu/năm</strong> (25–30%)</td><td>Mẫu giá ưu đãi + catalog + chứng nhận</td></tr>
+<tr><td>5. Đơn thử</td><td>Mẫu → đơn hàng</td><td><strong>20–30 khách đặt đơn thử</strong> (20–25%)</td><td>Trade Assurance + MOQ thấp</td></tr>
+<tr><td>6. Khách lặp lại</td><td>Đơn lặp &amp; mở rộng</td><td><strong>10–15 khách hàng active cuối năm</strong></td><td>Repeat rate 30–50% – chuẩn ngành B2B</td></tr>
+</table>
+</div>
+
+<h3>7.3 3 kịch bản doanh thu năm 1</h3>
+<div class="scenario-row">
+  <div class="scenario-box conservative">
+    <h3>Kịch bản thận trọng</h3>
+    <p>5–7 khách hàng active • 5–6 container/năm</p>
+    <div class="big">~$250.000–300.000</div>
+    <p>Doanh thu FOB năm 1 – đã thu hồi toàn bộ chi phí tham gia từ 1–2 container đầu tiên.</p>
+  </div>
+  <div class="scenario-box base">
+    <h3>Kịch bản cơ sở ★</h3>
+    <p>10–12 khách hàng active • 10 container/năm</p>
+    <div class="big">~$450.000–500.000</div>
+    <p>Doanh thu FOB năm 1 – tương đương 2–3 đơn hàng lớn/tháng, biên gộp 35–55% tùy SKU.</p>
+  </div>
+  <div class="scenario-box aggressive">
+    <h3>Kịch bản tăng tốc</h3>
+    <p>20+ khách hàng • 18–22 container/năm</p>
+    <div class="big">~$850.000–1 triệu</div>
+    <p>Có OEM/private label + đơn chuỗi; cần mở rộng công suất rang đóng gói từ tháng 8–10.</p>
+  </div>
+</div>
+
+<div class="roi-big">
+  <div class="roi-num">1 container đầu = thu hồi chi phí cả năm</div>
+  <div class="roi-sub">Chi phí tham gia Alibaba năm đầu thấp hơn chi phí 1 chuyến đi hội chợ quốc tế – trong khi kênh hoạt động 24/7/365, tiếp cận hàng trăm nghìn buyer.</div>
+</div>
+
+<h3>7.4 KPI kiểm soát theo giai đoạn</h3>
+<div class="table-wrap">
+<table>
+<tr><th>Giai đoạn</th><th>KPI</th><th>Target</th></tr>
+<tr><td rowspan="4"><strong>Nền tảng (Tháng 1–3)</strong></td><td>Sản phẩm đã đăng &amp; hoàn thiện</td><td>≥20–30 sản phẩm, 100% có 8+ ảnh</td></tr>
+<tr><td>Impressions/tháng</td><td>≥5.000 → 15.000</td></tr>
+<tr><td>Inquiry/tháng</td><td>≥10–15</td></tr>
+<tr><td>Hồ sơ công ty + chứng nhận hiển thị</td><td>100% hoàn tất</td></tr>
+<tr><td rowspan="4"><strong>Tăng trưởng (Tháng 4–6)</strong></td><td>Inquiry/tháng</td><td>15–30</td></tr>
+<tr><td>Mẫu thử gửi đi/tháng</td><td>5–10</td></tr>
+<tr><td>Đơn thử đầu tiên</td><td>1–2 đơn (100–500 túi hoặc 1 container thử)</td></tr>
+<tr><td>Doanh thu tích lũy</td><td>$30.000–80.000</td></tr>
+<tr><td rowspan="4"><strong>Ổn định (Tháng 7–12)</strong></td><td>Inquiry/tháng</td><td>40–60</td></tr>
+<tr><td>Khách hàng active</td><td>10–15</td></tr>
+<tr><td>Doanh thu tháng 12</td><td>$40.000–60.000/tháng</td></tr>
+<tr><td>Repeat order rate</td><td>≥30%</td></tr>
+</table>
+</div>
+
+<div class="callout">
+<strong>Đọc đúng con số:</strong> Các mục tiêu trên là <strong>khung lập kế hoạch dựa trên chuẩn ngành và dữ liệu sàn</strong> (khách đã gửi mẫu cho TQ &amp; Hàn = tín hiệu nhu cầu thật), không phải cam kết doanh thu. Chúng tôi cùng anh theo dõi số liệu thực từng tháng và điều chỉnh chiến lược để tiến về phía kịch bản cơ sở.
+</div>
+</section>
+
+<!-- ====== S8 ====== -->
+<section id="s8">
+<h2><span class="sec-num">8</span> Lộ trình 12 tháng – "Từ gian hàng đến container"</h2>
+<div class="timeline">
+  <div class="phase">
+    <h4>Tháng 1 – Khởi động</h4>
+    <p>Ký hợp đồng, onboarding, xác minh doanh nghiệp, dựng gian hàng; đăng 20–30 sản phẩm đầu tiên (roasted + ground + green + mật ong); hoàn thiện hồ sơ chứng nhận ISO 22000/HACCP; quay video công nghệ siêu âm.</p>
+  </div>
+  <div class="phase">
+    <h4>Tháng 2–3 – Tối ưu &amp; thu hút</h4>
+    <p>Rà soát tiêu đề/từ khóa theo dữ liệu sàn; chạy P4P thử 5–10 từ khóa lõi; đăng ký nhận RFQ ngành cà phê; đào tạo đội ngũ trả lời inquiry (template chuẩn, phản hồi ≤2 giờ). Kỳ vọng: 10–15 inquiry/tháng.</p>
+  </div>
+  <div class="phase">
+    <h4>Tháng 4–6 – Đơn hàng đầu tiên</h4>
+    <p>Tăng cường mẫu thử (5–10 mẫu/tháng kèm catalog &amp; kiểm nghiệm); chốt đơn thử đầu tiên; chuẩn bị bộ hồ sơ xuất khẩu (CO, chứng nhận, tờ khai); mở rộng từ khóa sang "clean coffee", "pesticide free", "clean honey".</p>
+  </div>
+  <div class="phase">
+    <h4>Tháng 7–9 – Mở rộng thị trường</h4>
+    <p>Tấn công 2 thị trường khách đã có quan tâm (TQ, Hàn) bằng bộ từ khóa tiếng địa phương + nội dung video phụ đề; thêm dòng drip bag &amp; OEM; chốt 2–3 container; bắt đầu đơn lặp lại từ khách cũ.</p>
+  </div>
+  <div class="phase">
+    <h4>Tháng 10–12 – Ổn định &amp; nhân rộng</h4>
+    <p>Ổn định 10–15 khách active; 3–4 container/quý; phân tích SKU bán chạy để tập trung sản xuất; đánh giá mở rộng công suất; lập kế hoạch năm 2 (mở rộng EU với hồ sơ EUDR, Nhật Bản, Trung Đông).</p>
+  </div>
+</div>
+</section>
+
+<!-- ====== S9 ====== -->
+<section id="s9">
+<h2><span class="sec-num">9</span> Nguồn số liệu &amp; ghi chú</h2>
+<h4>Nguồn tham khảo (truy cập tháng 08/2026)</h4>
+<ol>
+  <li>BusinessStats – "Alibaba Statistics &amp; Facts 2026" (03/2026): 40 triệu+ buyer, 200+ quốc gia, doanh thu quốc tế $15 tỷ FY2025. <a href="https://businesstats.com/alibaba-statistics-facts-2026/">businesstats.com</a></li>
+  <li>Alibaba.com Blog – "Moves To Watch: 2025 Trends Shaping Global Commerce on Alibaba.com" (10/2025): ~40% thị phần bán buôn số toàn cầu, buyer 190+ quốc gia, tăng 45% tương tác. <a href="https://www.alibaba.com/blog/moves-to-watch-the-2025-trends-shaping-alibabacoms-global-commerce-revolution.html">alibaba.com/blog</a></li>
+  <li>Alibaba Seller Blog – "Alibaba.com's Global B2B Influence Guide 2026" (05/2026): AI sourcing 10 triệu+ MAU, 63% SME dùng AI. <a href="https://seller.alibaba.com/blogs/2026/global/b2b-ecommerce/alibaba-com-global-influence-guide-2026">seller.alibaba.com</a></li>
+  <li>Báo Lao Động (14/11/2025) &amp; Báo Mới (02/01/2026) trích Bộ NN-MT: xuất khẩu cà phê VN 2025 đạt 1,5 triệu tấn, 8,4 tỷ USD (+60,7% giá trị). <a href="https://laodong.vn/kinh-doanh/xuat-khau-ca-phe-viet-nam-10-thang-nam-2025-tang-truong-kha-quan-1608696.ldo">laodong.vn</a></li>
+  <li>Báo Thanh Niên (10/08/2026) – "Trung Quốc dẫn đầu tăng trưởng xuất khẩu cà phê của Việt Nam": TQ +76,1% (6T/2026), nhập từ VN $99,6 triệu (+87,1%), thị phần VN 15,3%; số liệu Thượng Hải, specialty share, giá robusta/arabica. <a href="https://thanhnien.vn/trung-quoc-dan-dau-tang-truong-xuat-khau-ca-phe-cua-viet-nam-185260810083227345.htm">thanhnien.vn</a></li>
+  <li>Mekong ASEAN (17/07/2025): cà phê VN xuất Hàn Quốc 5T/2025 đạt $86,3 triệu, +54,8%. <a href="https://mekongasean.vn/ca-phe-viet-xuat-sang-han-quoc-tang-54-ve-kim-ngach-43856.html">mekongasean.vn</a></li>
+  <li>USDA FAS – Vietnam Coffee Annual 2025: sản lượng 31 triệu bao niên vụ 2025/26. <a href="https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Coffee%20Annual_Hanoi_Vietnam_VM2025-0018.pdf">fas.usda.gov</a></li>
+  <li>Custom Market Insights – US Coffee Market: $90,97 tỷ (2025) → $150,88 tỷ (2034), CAGR 5,8%. <a href="https://www.custommarketinsights.com/report/us-coffee-market/">custommarketinsights.com</a></li>
+  <li>Hello5Coffee (11/2025): Mỹ nhập khẩu cà phê VN ~$610 triệu/năm. <a href="https://hello5coffee.com/top-countries-importing-vietnamese-coffee/">hello5coffee.com</a></li>
+  <li>VietnamNet (16/07/2026): giá nhập khẩu bình quân cà phê VN 5.680 USD/tấn, Trung Quốc mua giá cao. <a href="https://vietnamnet.vn/viet-nam-ban-trieu-tan-hat-trung-quoc-o-at-mua-gia-cao-thanh-khach-hang-lon-2535911.html">vietnamnet.vn</a></li>
+  <li>Alibaba.com – Vietnam Coffee Suppliers (1.999 nhà cung cấp, 5.819 sản phẩm). <a href="https://www.alibaba.com/vietnam-coffee-suppliers.html">alibaba.com/vietnam-coffee-suppliers.html</a></li>
+  <li>Tìm kiếm supplier trên Alibaba.com (08/2026) – hồ sơ 12 nhà cung cấp trong Mục 3 (URL trustpass tương ứng từng công ty).</li>
+  <li>Listing IDD Corporation / Hancoffee (€4,29/túi 500g, MOQ 1.000, 20ft = 470 thùng). <a href="https://www.alibaba.com/product-detail/Vietnamese-Roasted-Ground-Robusta-Arabica-Instant_11000011131517.html">link listing</a></li>
+  <li>Listing DETECH / Konnai (€2,45–2,28/hộp, MOQ 90). <a href="https://www.alibaba.com/product-detail/Konnai-Vietnamese-coffee-brand-instant-coffee_10000016197275.html">link listing</a></li>
+  <li>Website khách hàng: <a href="https://divifood.com/">divifood.com</a> (thông tin sản phẩm Cà phê SONO &amp; Mật Ong Lượng Tử EZ, công nghệ sóng âm/từ trường, chứng nhận ISO 22000/HACCP).</li>
+</ol>
+
+<h4>Ghi chú quan trọng</h4>
+<ul>
+  <li>Các mục tiêu inquiry/khách/container/doanh thu trong Mục 7 là <strong>kịch bản lập kế hoạch dựa trên chuẩn ngành và dữ liệu sàn</strong>, không phải cam kết doanh thu của Alibaba hay đội ngũ bán hàng.</li>
+  <li>Giá FOB đề xuất là tham chiếu theo mặt bằng listing hiện tại trên sàn; cần chốt bằng bảng giá chính thức sau khi có cost sheet thực tế.</li>
+  <li>Số FDA "98765432109" đăng trên website khách hàng có dạng số chưa xác minh – cần đối chiếu với cơ quan cấp trước khi sử dụng trong hồ sơ xuất khẩu chính thức.</li>
+  <li>Giá cà phê thế giới biến động; số liệu trong báo cáo phản ánh thời điểm tháng 08/2026.</li>
+</ul>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <p><strong>Bộ hồ sơ trình bày chuẩn bị cho buổi meeting khách hàng DAVIFOOD (Cà Phê SONO &amp; Mật Ong Lượng Tử)</strong></p>
+  <p>Người lập: Phạm Nhi – Account Manager • Đội ngũ Alibaba GGS Việt Nam • Tháng 08/2026 • Số liệu có nguồn tham khảo tại Mục 9</p>
+  <p style="margin-top:8px">"Sạch từ bản thể – Vươn ra thế giới cùng Alibaba"</p>
+</footer>
+
+</div>
+</body>
+</html>
