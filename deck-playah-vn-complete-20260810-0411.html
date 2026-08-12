@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PlayAh — Từ thương hiệu nội địa đến thị trường toàn cầu</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --ink:#2E2029;
+    --bg:#FBF7F2;
+    --card:#FFFFFF;
+    --rose:#C4546F;
+    --rose-soft:#F3DCE2;
+    --gold:#C9A24B;
+    --plum:#4A2B40;
+    --plum-deep:#2A1626;
+    --muted:#8A7B88;
+    --line:#EADFD6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+  .report-section{min-height:100vh;padding:64px 8vw;display:flex;flex-direction:column;justify-content:center;position:relative;}
+  .wrap{max-width:1080px;width:100%;margin:0 auto;}
+  .kicker{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);font-weight:700;margin-bottom:14px;}
+  h1{font-size:52px;line-height:1.12;font-weight:800;letter-spacing:-0.5px;}
+  h2{font-size:40px;line-height:1.15;font-weight:800;letter-spacing:-0.4px;}
+  h3{font-size:24px;font-weight:700;line-height:1.3;}
+  p.lead{font-size:19px;color:#5A4A55;margin-top:18px;max-width:820px;}
+  .num{font-size:56px;font-weight:800;color:var(--rose);letter-spacing:-1px;}
+  .num.gold{color:var(--gold);}
+  .foot{position:absolute;bottom:22px;left:8vw;right:8vw;font-size:11.5px;color:var(--muted);max-width:1080px;margin:0 auto;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 6px 24px rgba(74,43,64,.06);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .tag{display:inline-block;padding:5px 13px;border-radius:999px;font-size:12.5px;font-weight:700;letter-spacing:.5px;}
+  .tag.rose{background:var(--rose-soft);color:var(--rose);}
+  .tag.gold{background:#F6EBD2;color:#96701B;}
+  .tag.plum{background:#E7DDE5;color:var(--plum);}
+  ul.clean{list-style:none;}
+  ul.clean li{padding:9px 0 9px 28px;position:relative;}
+  ul.clean li::before{content:"✦";position:absolute;left:0;color:var(--gold);font-size:13px;top:12px;}
+  .bigline{display:flex;align-items:baseline;gap:14px;}
+  .bigline .label{font-size:15px;color:var(--muted);}
+  /* cover */
+  .cover{background:linear-gradient(150deg,var(--plum-deep) 0%,var(--plum) 55%,#6B3A52 100%);color:#FDF6F0;min-height:100vh;justify-content:center;}
+  .cover .kicker{color:#E8B4C3;}
+  .cover h1{font-size:64px;}
+  .cover h1 .accent{color:#F3B7C6;}
+  .cover p.lead{color:#E4D3DC;}
+  .cover .promise{margin-top:44px;padding:22px 26px;border-left:4px solid var(--gold);background:rgba(255,255,255,.07);border-radius:0 14px 14px 0;max-width:720px;}
+  .cover .promise b{color:var(--gold);}
+  .cover .meta{margin-top:52px;display:flex;gap:34px;flex-wrap:wrap;color:#CBA9BA;font-size:14px;letter-spacing:1px;text-transform:uppercase;}
+  /* 3-level */
+  .levels{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:34px;}
+  .level{padding:24px;border-radius:18px;position:relative;}
+  .level .lv{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;background:var(--plum);padding:4px 12px;border-radius:999px;display:inline-block;margin-bottom:16px;}
+  .level .lv.g{background:var(--rose);}
+  .level .lv.c{background:var(--gold);color:#4A3A10;}
+  .level h3{font-size:19px;margin-bottom:10px;}
+  .level p{font-size:14.5px;color:#5A4A55;}
+  .level.l1{background:#EFE5EC;}
+  .level.l2{background:var(--rose-soft);}
+  .level.l3{background:#F6EBD2;}
+  /* stats row */
+  .stats{display:flex;gap:18px;flex-wrap:wrap;margin-top:30px;}
+  .stat{flex:1;min-width:190px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;}
+  .stat .num{display:block;font-size:40px;}
+  .stat .lab{font-size:13.5px;color:var(--muted);margin-top:6px;}
+  /* SWOT */
+  .swot-icon{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff;margin-bottom:14px;}
+  .swot-icon.s{background:var(--rose);}
+  .swot-icon.w{background:#9A8F9E;}
+  .swot-icon.o{background:var(--gold);}
+  .swot-icon.t{background:var(--plum);}
+  .row-strip{display:flex;align-items:center;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin-bottom:14px;}
+  .row-strip .idx{width:44px;height:44px;border-radius:12px;background:var(--rose-soft);color:var(--rose);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0;}
+  .row-strip b{display:block;font-size:16px;}
+  .row-strip span{font-size:14px;color:#5A4A55;}
+  /* W side by side */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:34px;border-radius:20px;overflow:hidden;border:1px solid var(--line);}
+  .split .col{padding:30px 32px;}
+  .split .now{background:#F4EEF1;}
+  .split .next{background:var(--plum-deep);color:#F7EEEB;}
+  .split .now h3{color:var(--muted);font-size:17px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;}
+  .split .next h3{color:var(--gold);font-size:17px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;}
+  .split ul{list-style:none;}
+  .split li{padding:8px 0 8px 24px;position:relative;font-size:15px;}
+  .split .now li::before{content:"✕";position:absolute;left:0;color:#B0808E;}
+  .split .next li::before{content:"→";position:absolute;left:0;color:var(--gold);}
+  /* opportunity cards */
+  .opp{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;text-align:center;}
+  .opp .num{display:block;font-size:46px;margin-bottom:8px;}
+  .opp .arrow{color:var(--gold);font-size:20px;font-weight:800;}
+  /* threat cards */
+  .threat{background:#FDF5F5;border:1px solid #E8C8C8;border-radius:16px;padding:20px 22px;}
+  .threat b{color:#A94A5A;font-size:15.5px;display:block;margin-bottom:6px;}
+  .threat p{font-size:14px;color:#6E5560;}
+  .threat .fix{margin-top:10px;font-size:13.5px;color:var(--plum);background:#FFF;border-radius:10px;padding:10px 12px;border:1px dashed #D9B8BE;}
+  /* peer cards */
+  .peer{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;}
+  .peer::after{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--rose),var(--gold));}
+  .peer .ptag{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--rose);}
+  .peer .metric{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px dashed var(--line);padding:12px 0;}
+  .peer .metric:last-child{border-bottom:none;}
+  .peer .metric .k{font-size:14px;color:var(--muted);}
+  .peer .metric .v{font-size:22px;font-weight:800;}
+  /* about alibaba */
+  .ab-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px;}
+  .ab-item{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center;}
+  .ab-item .n{font-size:30px;font-weight:800;color:var(--rose);}
+  .ab-item .t{font-size:12.5px;color:var(--muted);margin-top:4px;}
+  .logos{display:flex;gap:26px;align-items:center;flex-wrap:wrap;margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 22px;}
+  .logos img{max-height:40px;max-width:85%;width:auto;height:auto;object-fit:contain;}
+  /* chart & bars */
+  .chart-box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:26px;}
+  .bar-row{display:flex;align-items:center;gap:14px;margin:10px 0;}
+  .bar-row .cname{width:64px;font-size:14px;font-weight:700;color:var(--plum);text-align:right;}
+  .bar-row .track{flex:1;background:#F1E8E4;border-radius:8px;height:26px;overflow:hidden;}
+  .bar-row .fill{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:flex-end;padding-right:10px;color:#fff;font-size:12.5px;font-weight:700;min-width:52px;}
+  /* stairs */
+  .stairs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px;align-items:end;}
+  .step{border-radius:14px;padding:20px;color:#fff;display:flex;flex-direction:column;gap:6px;}
+  .step .t{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;opacity:.85;}
+  .step .d{font-size:15px;font-weight:600;}
+  .step .e{font-size:12.5px;opacity:.9;}
+  .s1{background:#B98CA4;height:150px;}
+  .s2{background:#9E6A8C;height:190px;}
+  .s3{background:#7E4A6E;height:230px;}
+  .s4{background:var(--plum-deep);height:270px;}
+  /* timeline */
+  .timeline{position:relative;margin-top:38px;padding-left:26px;border-left:3px solid var(--rose-soft);}
+  .tl-item{position:relative;padding:0 0 30px 26px;}
+  .tl-item::before{content:"";position:absolute;left:-35px;top:4px;width:17px;height:17px;border-radius:50%;background:var(--gold);border:4px solid var(--bg);}
+  .tl-item .m{font-size:13px;font-weight:800;color:var(--rose);letter-spacing:1px;}
+  .tl-item b{display:block;font-size:17px;margin:4px 0 4px;}
+  .tl-item span{font-size:14.5px;color:#5A4A55;}
+  /* roi table */
+  table.roi{width:100%;border-collapse:collapse;margin-top:24px;background:var(--card);border-radius:16px;overflow:hidden;border:1px solid var(--line);}
+  table.roi th{background:var(--plum-deep);color:#F7EEEB;padding:14px 16px;text-align:left;font-size:13.5px;letter-spacing:.5px;}
+  table.roi td{padding:14px 16px;border-top:1px solid var(--line);font-size:14.5px;}
+  table.roi td.n{font-weight:800;color:var(--rose);font-size:16px;white-space:nowrap;}
+  .note-asm{font-size:12.5px;color:var(--muted);background:#F6F0EC;border-left:3px solid var(--gold);padding:12px 16px;border-radius:0 10px 10px 0;margin-top:18px;}
+  /* action */
+  .acts{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px;}
+  .act{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;position:relative;}
+  .act.main{border:2px solid var(--rose);}
+  .act .star{position:absolute;top:-12px;right:16px;background:var(--rose);color:#fff;font-size:11px;font-weight:800;letter-spacing:1px;padding:4px 12px;border-radius:999px;}
+  .act b{font-size:16px;display:block;margin-bottom:6px;}
+  .act span{font-size:14px;color:#5A4A55;}
+  /* thanks */
+  .thanks{background:linear-gradient(150deg,var(--plum-deep),var(--plum) 60%,#6B3A52);color:#FDF6F0;text-align:center;}
+  .thanks h2{color:#F3B7C6;}
+  .thanks .steps{display:inline-flex;gap:0;margin-top:38px;text-align:left;}
+  .thanks .stp{background:rgba(255,255,255,.08);border-radius:14px;padding:20px 26px;max-width:300px;margin:0 10px;}
+  .thanks .stp .i{width:34px;height:34px;border-radius:50%;background:var(--gold);color:#4A3A10;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+  .thanks .stp b{color:var(--gold);}
+  .thanks .stp span{font-size:14px;color:#E4D3DC;}
+  /* appendix */
+  .appx{min-height:auto;padding:56px 8vw;}
+  .appx-head{display:flex;align-items:center;gap:14px;margin-bottom:8px;}
+  .appx-head .no{width:36px;height:36px;border-radius:10px;background:var(--plum);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;font-size:15px;}
+  .appx-head h3{font-size:26px;}
+  table.tbl{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:14px;margin-top:16px;}
+  table.tbl th{background:var(--plum-deep);color:#F7EEEB;padding:11px 14px;text-align:left;font-size:12.5px;letter-spacing:.4px;}
+  table.tbl td{padding:10px 14px;border-top:1px solid var(--line);}
+  table.tbl tr:nth-child(even) td{background:#FAF4F0;}
+  table.tbl td.hl{font-weight:800;color:var(--rose);}
+  table.tbl td.sub{color:var(--muted);font-size:12.5px;}
+  .kws{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0;}
+  .insight{background:#F6F0EC;border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:14px 18px;font-size:14.5px;color:#5A4A55;margin-top:20px;}
+  @media (max-width:900px){
+    .grid2,.grid3,.grid4,.levels,.split,.ab-bar,.stairs,.acts{grid-template-columns:1fr;}
+    .cover h1{font-size:44px;} h1{font-size:38px;} h2{font-size:30px;}
+    .split .col{padding:22px;}
+    .thanks .steps{flex-direction:column;gap:12px;}
+    table.tbl{font-size:12.5px;} table.tbl th,table.tbl td{padding:8px 10px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ 01 COVER ============ -->
+<section class="report-section cover">
+  <div class="wrap">
+    <div class="kicker">Phân tích ngành &amp; cơ hội tăng trưởng · Alibaba.com</div>
+    <h1>PlayAh — từ thương hiệu<br>nội địa đến <span class="accent">thị trường toàn cầu</span></h1>
+    <p class="lead">Ngành chăm sóc sức khỏe lứa đôi đang bước vào giai đoạn tăng trưởng mạnh nhất trong lịch sử. Bản phân tích này dành riêng cho PlayAh: nơi ngành đang đi, và cách thương hiệu Việt với chuẩn ISO 4074 có thể chiếm lấy phần doanh thu xuất khẩu B2B của riêng mình.</p>
+    <div class="promise">
+      <b>Lời hứa của bản phân tích:</b> bạn không cần rời bỏ kênh D2C đang vận hành tốt — bạn chỉ cần một kênh thứ hai, nơi một đơn hàng xuất khẩu có giá trị bằng hàng chục đơn nội địa.
+    </div>
+    <div class="meta">
+      <span>Ngành: Health Care · Sex Products</span>
+      <span>Thị trường mục tiêu: Toàn cầu</span>
+      <span>Alibaba.com</span>
+    </div>
+    <div style="margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);font-size:14px;color:#E8D5DE;letter-spacing:.5px;">Người chuẩn bị: <b style="color:var(--gold);">Phạm Nhi</b> · Account Manager</div>
+  </div>
+</section>
+
+<!-- ============ 02 STRATEGIC OPPORTUNITY (3 LEVELS) ============ -->
+<section class="report-section">
+  <div class="wrap">
+    <div class="kicker">Cơ hội chiến lược · 3 cấp độ</div>
+    <h2>Một làn sóng toàn cầu,<br>một ngành đang hút nhu cầu,<br>và PlayAh đang đứng ở điểm khởi đầu</h2>
+    <div class="levels">
+      <div class="level l1">
+        <span class="lv">Cấp 1 · Toàn cầu</span>
+        <h3>Thị trường tăng gấp đôi trong một thập kỷ</h3>
+        <p>Thị trường sexual wellness toàn cầu đạt <b>34–51 tỷ USD</b> (2025–2026), tăng trưởng <b>7–9%/năm</b>; riêng bao cao su đạt <b>~13–14 tỷ USD</b>, CAGR 7–9%. Alibaba dự báo mảng này chạm <b>125 tỷ USD</b> vào 2026 với tốc độ 12,4%/năm.</p>
+      </div>
+      <div class="level l2">
+        <span class="lv g">Cấp 2 · Ngành trên Alibaba</span>
+        <h3>Nhu cầu từ người mua B2B đang tăng nhanh</h3>
+        <p>Chỉ số truy cập gian hàng ngành Sex Products tại Việt Nam tăng <b>gần 2,6 lần</b> chỉ trong 4 tháng (04–07/2026). Người mua từ Mỹ, Hàn Quốc, Anh, Thái Lan, Maroc… đang tìm nhà cung cấp.</p>
+      </div>
+      <div class="level l3">
+        <span class="lv c">Cấp 3 · PlayAh</span>
+        <h3>Điều đó nghĩa là gì với công ty bạn</h3>
+        <p>PlayAh đã có sản phẩm chuẩn ISO 4074, thương hiệu đã bán hơn 10 triệu sản phẩm tại Việt Nam — đủ nền tảng để cung cấp cho nhà phân phối, chuỗi bán lẻ và khách OEM toàn cầu. (Nhận định dựa trên dữ liệu công khai, có thể điều chỉnh.)</p>
+      </div>
+    </div>
+    <div class="foot">Nguồn: Mordor Intelligence · IMARC · Grand View Research · Market Research Future, 2026 · Blog chính thức Alibaba.com (seller.alibaba.com), 2026</div>
+  </div>
+</section>
+
+<!-- ============ 03 COMPANY OVERVIEW ============ -->
+<section class="report-section">
+  <div class="wrap">
+    <div class="kicker">Chân dung công ty</div>
+    <h2>PlayAh đã xây được điều<br>khó nhất: một thương hiệu</h2>
+    <div class="grid2" style="margin-top:32px;">
+      <div class="card">
+        <h3>Thương hiệu Việt trong ngành nhạy cảm</h3>
+        <ul class="clean" style="margin-top:14px;">
+          <li>Thương hiệu D2C Việt Nam chuyên chăm sóc sức khỏe lứa đôi: bao cao su (Her Feel), gel bôi trơn, dung dịch vệ sinh nam/nữ, hương thơm.</li>
+          <li>Bán trực tiếp trên Shopify + Shopee, Lazada, TikTok Shop — thuộc nhóm bán chạy trên các sàn.</li>
+          <li>Hơn 10 triệu sản phẩm đã đến tay người dùng; đánh giá 4,8/5.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Nền tảng chất lượng chuẩn quốc tế</h3>
+        <ul class="clean" style="margin-top:14px;">
+          <li>Sản xuất theo <b>ISO 4074</b> — chuẩn quốc tế cho bao cao su, được công nhận tại hầu hết thị trường xuất khẩu.</li>
+          <li>Quy trình kiểm tra 5 bước mỗi lô hàng; nguyên liệu latex tự nhiên, gel gốc nước, không paraben.</li>
+          <li>Hệ thống 3 nhãn hiệu (PlayAh, Her Feel, Memoir) — sẵn sàng cho chiến lược đa dòng khi xuất khẩu.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot">Nguồn: playah.vn (trang chủ chính thức), 08/2026 — thông tin công bố của công ty</div>
+  </div>
+</section>
+
+<!-- ============ 04 STRENGTHS ============ -->
+<section class="report-section">
+  <div class="wrap">
+    <div class="kicker">Điểm mạnh · S</div>
+    <h2>Những gì PlayAh đã dày công xây dựng<br>chính là chìa khóa cho B2B</h2>
+    <div style="margin-top:34px;">
+      <div class="row-strip">
+        <div class="idx">01</div>
+        <div><b>Chuẩn ISO 4074 + quy trình kiểm soát 5 bước</b><span>— yêu cầu đầu tiên mọi nhà nhập khẩu bao cao su kiểm tra; đa số nhà cung cấp giá rẻ không đạt được.</span></div>
+      </div>
+      <div class="row-strip">
+        <div class="idx">02</div>
+        <div><b>Thương hiệu đã được chứng minh ở thị trường khó tính</b><span>— 10 triệu+ sản phẩm, top bán chạy Shopee/Lazada/TikTok Shop: biết cách định vị, bán hàng và giữ uy tín.</span></div>
+      </div>
+      <div class="row-strip">
+        <div class="idx">03</div>
+        <div><b>Danh mục đúng xu hướng nhu cầu B2B</b><span>— bao cao su kéo dài thời gian, siêu mỏng, gel gốc nước, dung dịch vệ sinh: đúng các dòng đang được tìm kiếm trên Alibaba.</span></div>
+      </div>
+      <div class="row-strip">
+        <div class="idx">04</div>
+        <div><b>Năng lực content &amp; giáo dục người dùng</b><span>— The PlayBook, hệ thống blog chăm sóc sức khỏe lứa đôi: tài sản hiếm có giúp khác biệt hóa với đối thủ Trung Quốc.</span></div>
+      </div>
+    </div>
+    <div class="foot">Đánh giá từ dữ liệu công khai của công ty (playah.vn), 08/2026</div>
+  </div>
+</section>
+
+<!-- ============ 05 WEAKNESSES ============ -->
+<section class="report-section">
+  <div class="wrap">
+    <div class="kicker">Khoảng trống hiện tại · W</div>
+    <h2>Kênh nội địa vận hành tốt,<br>nhưng còn một nửa thế giới chưa mở</h2>
+    <div class="split">
+      <div class="col now">
+        <h3>Hiện tại</h3>
+        <ul>
+          <li>Doanh thu tập trung trong nước — chịu giới hạn của một thị trường ~100 triệu dân.</li>
+          <li>Chưa có kênh B2B xuất khẩu: không tiếp cận được nhà phân phối, chuỗi bán lẻ, khách OEM quốc tế.</li>
+          <li>Chứng nhận quốc tế cho thị trường lớn (FDA Mỹ, CE Châu Âu) chưa được triển khai.</li>
+          <li>Đội ngũ tập trung vận hành D2C — chưa có quy trình phục vụ đơn hàng sỉ, mẫu, private label.</li>
+        </ul>
+      </div>
+      <div class="col next">
+        <h3>Khoảng cách có thể rút ngắn</h3>
+        <ul>
+          <li>Một gian hàng Alibaba.com là "showroom xuất khẩu" — chi phí thấp hơn nhiều so với xây kênh phân phối truyền thống.</li>
+          <li>ISO 4074 đã là nền tảng; bổ sung chứng nhận theo thị trường mục tiêu theo từng giai đoạn.</li>
+          <li>Chính sách private label/OEM + mẫu thử bài bản: đúng điều người mua B2B mong đợi.</li>
+          <li>Dữ liệu ngành có sẵn giúp chọn đúng sản phẩm, đúng thị trường ngay từ tháng đầu.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot">Đánh giá từ phân tích dữ liệu công khai — có thể điều chỉnh theo chia sẻ của PlayAh</div>
+  </div>
+</section>
+
+<!-- ============ 06 OPPORTUNITIES ============ -->
+<section class="report-section">
+  <div class="wrap">
+    <div class="kicker">Cơ hội · O</div>
+    <h2>Ba con số cho thấy<br>vì sao thời điểm là bây giờ</h2>
+    <div class="grid3" style="margin-top:36px;">
+      <div class="opp">
+        <span class="num">2,6×</span>
+        <span class="arrow">▲ chỉ số truy cập</span>
+        <p style="margin-top:12px;font-size:14.5px;color:#5A4A55;">Chỉ số truy cập gian hàng ngành Sex Products từ Việt Nam tăng gần 2,6 lần chỉ trong 4 tháng (04/2026 → 07/2026) — nhu cầu đang dồn về kênh online.</p>
+      </div>
+      <div class="opp">
+        <span class="num">~9,5K</span>
+        <span class="arrow">▲ người mua / 6 tháng</span>
+        <p style="margin-top:12px;font-size:14.5px;color:#5A4A55;">Một cửa hàng chuyên dòng kem/xịt kéo dài trên Alibaba đạt gần 9.500 người mua nước ngoài trong 180 ngày — con số này nằm trong tầm với của một nhà cung cấp đạt chuẩn.</p>
+      </div>
+      <div class="opp">
+        <span class="num">~470K</span>
+        <span class="arrow">▲ USD / 180 ngày</span>
+        <p style="margin-top:12px;font-size:14.5px;color:#5A4A55;">Giá trị đơn hàng ghi nhận trên nền tảng của nhà cung cấp top ngành đạt ~470.000 USD mỗi 180 ngày — minh chứng quy mô dòng tiền B2B của ngành.</p>
+      </div>
+    </div>
+    <div class="foot">Nguồn: Phân tích dữ liệu nền tảng Alibaba.com, 07/2026</div>
+  </div>
+</section>
+
+<!-- ============ 07 THREATS ============ -->
+<section class="report-section">
+  <div class="wrap">
+    <div class="kicker">Thách thức · T</div>
+    <h2>Rào cản có thật —<br>và cách PlayAh đã được trang bị để vượt</h2>
+    <div class="grid2" style="margin-top:34px;">
+      <div class="threat">
+        <b>Đối thủ Trung Quốc cạnh tranh giá rẻ</b>
+        <p>Phần lớn nhà cung cấp đang dẫn đầu ngành trên Alibaba đến từ Trung Quốc, với lợi thế giá.</p>
+        <div class="fix">→ PlayAh cạnh tranh bằng chất lượng chuẩn ISO 4074, thương hiệu và câu chuyện "Made in Vietnam" — phân khúc chất lượng, không phải giá rẻ.</div>
+      </div>
+      <div class="threat">
+        <b>Chứng nhận thị trường lớn (FDA, CE)</b>
+        <p>Bao cao su là thiết bị y tế loại II tại Mỹ; cần đăng ký FDA/510(k) để vào thị trường lớn nhất.</p>
+        <div class="fix">→ Lộ trình theo giai đoạn: vào các thị trường chấp nhận ISO 4074 trước, song song chuẩn bị FDA/CE cho thị trường lớn.</div>
+      </div>
+      <div class="threat">
+        <b>Quy định quảng cáo &amp; nội dung nhạy cảm</b>
+        <p>Ngành nhạy cảm cần cách truyền thông chuyên nghiệp, đúng chuẩn nền tảng và pháp lý từng nước.</p>
+        <div class="fix">→ Kinh nghiệm content chuẩn mực của PlayAh (The PlayBook) là lợi thế; Alibaba hỗ trợ quy chuẩn đăng tin B2B chuyên nghiệp.</div>
+      </div>
+      <div class="threat">
+        <b>Người mua B2B cần mẫu &amp; private label</b>
+        <p>Nhà phân phối thường yêu cầu mẫu thử và đóng gói theo nhãn riêng trước khi đặt hàng lớn.</p>
+        <div class="fix">→ Chuẩn bị bộ mẫu, tờ spec kỹ thuật và chính sách OEM/private label — đúng kỳ vọng của người mua trên nền tảng.</div>
+      </div>
+    </div>
+    <div class="foot">Đánh giá từ dữ liệu ngành và quy định thị trường công khai (FDA, 2026) · Phân tích dữ liệu nền tảng Alibaba.com, 07/2026</div>
+  </div>
+</section>
+
+<!-- ============ 08 PROVEN MODEL ============ -->
+<section class="report-section">
+  <div class="wrap">
+    <div class="kicker">Mô hình đã được chứng minh</div>
+    <h2>Những cửa hàng cùng ngành<br>đã chứng minh mô hình có thể chạy</h2>
+    <p class="lead">Hai nhóm sản phẩm của PlayAh — dòng kéo dài thời gian và gel bôi trơn — trùng khớp với hai nhóm nhà cung cấp đang vận hành thành công trên nền tảng (số liệu 180 ngày gần nhất).</p>
+    <div class="grid2" style="margin-top:32px;">
+      <div class="peer">
+        <div class="ptag">Nhóm 1 · Kem / xịt kéo dài thời gian</div>
+        <h3 style="margin:10px 0 6px;">Cửa hàng chuyên dòng delay (Trung Quốc)</h3>
+        <div class="metric"><span class="k">Đơn hàng đặt cọc / 180 ngày</span><span class="v">1.261</span></div>
+        <div class="metric"><span class="k">Người mua nước ngoài / 180 ngày</span><span class="v">~9.500</span></div>
+        <div class="metric"><span class="k">Giá trị đơn ghi nhận / 180 ngày</span><span class="v">~136K USD</span></div>
+        <div class="metric"><span class="k">Chi phí mỗi người mua mới</span><span class="v">~0,33 USD</span></div>
+      </div>
+      <div class="peer">
+        <div class="ptag">Nhóm 2 · Gel bôi trơn &amp; sản phẩm an toàn</div>
+        <h3 style="margin:10px 0 6px;">Cửa hàng chuyên lube / safer sex (Trung Quốc)</h3>
+        <div class="metric"><span class="k">Đơn hàng đặt cọc / 180 ngày</span><span class="v">488</span></div>
+        <div class="metric"><span class="k">Người mua nước ngoài / 180 ngày</span><span class="v">~5.400</span></div>
+        <div class="metric"><span class="k">Giá trị đơn ghi nhận / 180 ngày</span><span class="v">~42K USD</span></div>
+        <div class="metric"><span class="k">Chi phí mỗi người mua mới</span><span class="v">~2,11 USD</span></div>
+      </div>
+    </div>
+    <div class="foot">Nguồn: Phân tích dữ liệu nền tảng Alibaba.com (cửa hàng đầu ngành, 180 ngày, 07/2026) · tên cửa hàng được ẩn theo quy định</div>
+  </div>
+</section>
+
+<!-- ============ 09 ABOUT ALIBABA.COM ============ -->
+<section class="report-section">
+  <div class="wrap">
+    <div class="kicker">Kênh phân phối</div>
+    <h2>Alibaba.com — nơi người mua B2B<br>tìm nhà cung cấp mỗi ngày</h2>
+    <div class="ab-bar">
+      <div class="ab-item"><div class="n">190+</div><div class="t">Quốc gia &amp; vùng lãnh thổ có người mua</div></div>
+      <div class="ab-item"><div class="n">B2B</div><div class="t">Người mua là nhà phân phối, chuỗi, OEM — đơn hàng lớn, lặp lại</div></div>
+      <div class="ab-item"><div class="n">RFQ</div><div class="t">Hệ thống báo giá: người mua đăng nhu cầu, nhà cung cấp chào giá</div></div>
+      <div class="ab-item"><div class="n">Bảo vệ</div><div class="t">Cơ chế bảo vệ thanh toán cho cả hai phía</div></div>
+    </div>
+    <div class="logos">
+      <img src="data:image/png;base64,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" alt="Alibaba.com">
+      <img src="data:image/png;base64,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" alt="Trade Assurance">
+      <img src="data:image/png;base64,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" alt="Smart Assistant">
+      <img src="data:image/png;base64,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" alt="Alibaba Guaranteed">
+    </div>
+    <div class="foot">Thông tin nền tảng công khai · Alibaba.com</div>
+  </div>
+</section>
+
+<!-- ============ 10 INDUSTRY OUTLOOK ============ -->
+<section class="report-section">
+  <div class="wrap">
+    <div class="kicker">Triển vọng ngành trên Alibaba · Dữ liệu thực</div>
+    <h2>Nhu cầu tại Việt Nam đang tăng nhanh<br>hơn tốc độ trung bình của nền tảng</h2>
+    <div class="chart-box">
+      <canvas id="trafficChart" height="110"></canvas>
+    </div>
+    <div class="grid3" style="margin-top:22px;">
+      <div class="stat"><span class="num">2803</span><span class="lab">Chỉ số truy cập gian hàng ngành Sex Products từ VN, 07/2026</span></div>
+      <div class="stat"><span class="num">2250</span><span class="lab">Chỉ số người mua hoạt động từ VN, 06–07/2026</span></div>
+      <div class="stat"><span class="num">5.4–7K</span><span class="lab">Chỉ số truy cập toàn cầu ngành duy trì mức cao và ổn định</span></div>
+    </div>
+    <div class="foot">Nguồn: Phân tích dữ liệu nền tảng Alibaba.com, chỉ số chuẩn hóa 0–10.000 · snapshot 07/2026</div>
+  </div>
+</section>
+
+<!-- ============ 11 BUYER COUNTRIES ============ -->
+<section class="report-section">
+  <div class="wrap">
+    <div class="kicker">Người mua của ngành · từ thị trường Việt Nam</div>
+    <h2>Người mua đến từ khắp thế giới —<br>Mỹ dẫn đầu về chỉ số truy cập</h2>
+    <div class="chart-box">
+      <div class="bar-row"><div class="cname">Mỹ</div><div class="track"><div class="fill" style="width:100%;">3333</div></div></div>
+      <div class="bar-row"><div class="cname">Việt Nam</div><div class="track"><div class="fill" style="width:84%;">2800</div></div></div>
+      <div class="bar-row"><div class="cname">Maroc</div><div class="track"><div class="fill" style="width:67%;">2222</div></div></div>
+      <div class="bar-row"><div class="cname">Pakistan</div><div class="track"><div class="fill" style="width:65%;">2174</div></div></div>
+      <div class="bar-row"><div class="cname">Iraq</div><div class="track"><div class="fill" style="width:64%;">2143</div></div></div>
+      <div class="bar-row"><div class="cname">Hàn Quốc</div><div class="track"><div class="fill" style="width:60%;">2000</div></div></div>
+      <div class="bar-row"><div class="cname">Anh</div><div class="track"><div class="fill" style="width:50%;">1667</div></div></div>
+      <div class="bar-row"><div class="cname">Thái Lan</div><div class="track"><div class="fill" style="width:50%;">1667</div></div></div>
+    </div>
+    <p style="margin-top:20px;font-size:15px;color:#5A4A55;">Các thị trường Trung Đông &amp; Bắc Phi (Maroc, Iraq, UAE, Ả Rập Xê Út) và châu Á (Hàn Quốc, Thái Lan) cũng đang truy cập tích cực — ngành bao cao su có nhu cầu xuyên văn hóa, ít chịu biến động theo mùa.</p>
+    <div class="foot">Nguồn: Phân tích dữ liệu nền tảng Alibaba.com, chỉ số truy cập 30 ngày của người mua theo quốc gia, 07/2026</div>
+  </div>
+</section>
+
+<!-- ============ 12 TRENDING KEYWORDS ============ -->
+<section class="report-section">
+  <div class="wrap">
+    <div class="kicker">Từ khóa &amp; sản phẩm đang hot</div>
+    <h2>Người mua đang tìm đúng<br>dòng sản phẩm PlayAh đang có</h2>
+    <div class="grid2" style="margin-top:32px;">
+      <div class="card">
+        <h3>Từ khóa tìm kiếm nóng trên nền tảng</h3>
+        <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;">
+          <span class="tag rose">women's intimates</span>
+          <span class="tag rose">condom</span>
+          <span class="tag rose">sex toys</span>
+          <span class="tag gold">kondom</span>
+          <span class="tag gold">silicon condom</span>
+          <span class="tag plum">dildo</span>
+          <span class="tag plum">water based lubricant</span>
+        </div>
+        <p style="margin-top:16px;font-size:14.5px;color:#5A4A55;">"Condom" nằm trong nhóm từ khóa tìm kiếm hàng đầu của ngành tại Việt Nam và toàn cầu; dòng "delay", "lubricant", "ultra thin" là các biến thể đang tăng nhanh.</p>
+      </div>
+      <div class="card">
+        <h3>Dòng sản phẩm nhu cầu cao, đúng danh mục PlayAh</h3>
+        <ul class="clean" style="margin-top:14px;">
+          <li>Bao cao su dòng kéo dài / có gai gân (delay &amp; textured condom)</li>
+          <li>Gel gốc nước &amp; gel bôi trơn cá nhân (water-based lube)</li>
+          <li>Sản phẩm chăm sóc &amp; tăng cảm xúc (intimate care)</li>
+          <li>Kem/xịt kéo dài (delay cream &amp; spray) — nhóm tăng trưởng mạnh</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot">Nguồn: Phân tích dữ liệu nền tảng Alibaba.com — từ khóa tìm kiếm &amp; sản phẩm nhu cầu cao, 07/2026</div>
+  </div>
+</section>
+
+<!-- ============ 13 BUYER TIERS ============ -->
+<section class="report-section">
+  <div class="wrap">
+    <div class="kicker">Chân dung người mua</div>
+    <h2>Bốn tầng khách hàng B2B<br>một gian hàng có thể phục vụ</h2>
+    <div class="stairs">
+      <div class="step s1"><div class="t">Tầng 1</div><div class="d">Nhà bán lẻ / người mua thử</div><div class="e">Đơn nhỏ, mua mẫu, xây đánh giá đầu tiên</div></div>
+      <div class="step s2"><div class="t">Tầng 2</div><div class="d">Nhà phân phối / bán buôn</div><div class="e">Đơn lặp lại theo tháng, MOQ vừa phải</div></div>
+      <div class="step s3"><div class="t">Tầng 3</div><div class="d">Nhà nhập khẩu / chuỗi bán lẻ</div><div class="e">Đơn lớn, hợp đồng, cần chứng nhận đầy đủ</div></div>
+      <div class="step s4"><div class="t">Tầng 4</div><div class="d">OEM / Private label</div><div class="e">Đóng gói nhãn riêng, hợp tác dài hạn, giá trị cao nhất</div></div>
+    </div>
+    <p style="margin-top:26px;font-size:15px;color:#5A4A55;">PlayAh đi lên từng tầng: bắt đầu từ đơn thử nhỏ để xây uy tín gian hàng, sau đó mở rộng lên nhà phân phối và OEM — đúng lộ trình của các cửa hàng dẫn đầu ngành hiện nay.</p>
+  </div>
+</section>
+
+<!-- ============ 14 ROADMAP ============ -->
+<section class="report-section">
+  <div class="wrap">
+    <div class="kicker">Lộ trình 12 tháng</div>
+    <h2>Từ gian hàng đầu tiên<br>đến dòng doanh thu xuất khẩu</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="m">Tháng 1 – 2</div>
+        <b>Chuẩn bị nền móng</b>
+        <span>Chọn 2–3 dòng sản phẩm xuất khẩu chủ lực, chuẩn hóa hồ sơ năng lực, spec kỹ thuật, chính sách mẫu &amp; MOQ.</span>
+      </div>
+      <div class="tl-item">
+        <div class="m">Tháng 3 – 4</div>
+        <b>Ra mắt gian hàng</b>
+        <span>Đăng sản phẩm chuẩn SEO với từ khóa ngành (condom, delay, water-based lubricant), tối ưu ảnh &amp; video, đăng ký chứng nhận nổi bật.</span>
+      </div>
+      <div class="tl-item">
+        <div class="m">Tháng 5 – 7</div>
+        <b>Thu hút người mua</b>
+        <span>Chạy quảng cáo tìm kiếm, chủ động báo giá RFQ, xây đánh giá từ đơn thử đầu tiên — mục tiêu ổn định 10–20 đơn/tháng.</span>
+      </div>
+      <div class="tl-item">
+        <div class="m">Tháng 8 – 12</div>
+        <b>Mở rộng &amp; tối ưu</b>
+        <span>Mở rộng sang gel, dung dịch vệ sinh, hương thơm; triển khai private label; gia tăng thị trường Mỹ, Hàn Quốc, Trung Đông.</span>
+      </div>
+    </div>
+    <div class="foot">Lộ trình đề xuất — điều chỉnh theo năng lực và nguồn lực thực tế của PlayAh</div>
+  </div>
+</section>
+
+<!-- ============ 15 ROI ILLUSTRATION ============ -->
+<section class="report-section">
+  <div class="wrap">
+    <div class="kicker">Tăng trưởng lợi nhuận · Minh họa</div>
+    <h2>Kênh xuất khẩu có thể tạo ra<br>dòng doanh thu thứ hai đáng kể</h2>
+    <p class="lead">Minh họa dựa trên mức vận hành thực tế của các cửa hàng cùng ngành trên nền tảng (giá trị đơn bình quân ~87–108 USD trong nhóm sản phẩm tiêu dùng).</p>
+    <table class="roi">
+      <tr><th>Kịch bản (năm đầu)</th><th>Đơn / tháng</th><th>Giá trị trung bình</th><th>Doanh thu minh họa / năm</th><th>Chi phí vận hành nền tảng*</th></tr>
+      <tr><td>Thận trọng — xây dựng</td><td>20</td><td>~90 USD</td><td class="n">~21.000 USD</td><td>~4.000–6.000 USD</td></tr>
+      <tr><td>Cơ sở — tăng trưởng ổn định</td><td>45</td><td>~95 USD</td><td class="n">~51.000 USD</td><td>~7.000–10.000 USD</td></tr>
+      <tr><td>Lạc quan — đạt mức cửa hàng dẫn đầu</td><td>80</td><td>~100 USD</td><td class="n">~96.000 USD</td><td>~10.000–15.000 USD</td></tr>
+    </table>
+    <div class="note-asm">
+      * Chi phí vận hành tham chiếu mức chi tiêu của các cửa hàng đầu ngành (3.000–31.000 USD / 180 ngày); chi phí tiếp cận mỗi người mua mới chỉ ~0,33–2,11 USD — thấp hơn nhiều so với chi phí giành khách D2C. <b>Đây là minh họa dựa trên dữ liệu ngành, không phải cam kết doanh thu.</b>
+    </div>
+    <div class="foot">Nguồn: Phân tích dữ liệu nền tảng Alibaba.com, 07/2026 · tính toán minh họa của bộ phận tư vấn</div>
+  </div>
+</section>
+
+<!-- ============ 16 ACTION PLAN ============ -->
+<section class="report-section">
+  <div class="wrap">
+    <div class="kicker">Kế hoạch hành động</div>
+    <h2>Bốn việc PlayAh có thể<br>bắt đầu ngay hôm nay</h2>
+    <div class="acts">
+      <div class="act main"><span class="star">Ưu tiên</span><b>Rà soát danh mục xuất khẩu</b><span>Chọn 2–3 dòng chủ lực có lợi thế cạnh tranh (delay, ultra thin, gel gốc nước) và chuẩn hóa hồ sơ spec bằng tiếng Anh.</span></div>
+      <div class="act main"><span class="star">Ưu tiên</span><b>Xây dựng bộ mẫu &amp; chính sách OEM</b><span>Chuẩn bị mẫu thử chuyên nghiệp, đóng gói kín đáo và chính sách private label — yếu tố quyết định với người mua B2B.</span></div>
+      <div class="act"><b>Lập kế hoạch chứng nhận theo thị trường</b><span>Ưu tiên thị trường chấp nhận ISO 4074 trước; lộ trình FDA/CE cho Mỹ và EU khi doanh số đủ lớn.</span></div>
+      <div class="act"><b>Thử nghiệm kênh với nguồn lực nhỏ</b><span>Bắt đầu với gói gian hàng cơ bản, học vận hành 2–3 tháng đầu trước khi mở rộng đầu tư quảng cáo.</span></div>
+    </div>
+    <div class="foot">Đề xuất từ phân tích — PlayAh quyết định mức độ và thời điểm triển khai</div>
+  </div>
+</section>
+
+<!-- ============ 17 THANKS / NEXT STEP ============ -->
+<section class="report-section thanks">
+  <div class="wrap">
+    <div class="kicker" style="color:#E8B4C3;">Bước tiếp theo</div>
+    <h2>Ngành đang tăng trưởng.<br>Thương hiệu đã sẵn sàng.</h2>
+    <p class="lead" style="color:#E4D3DC;margin:0 auto;">Câu hỏi không phải là "có nên tham gia hay không" — mà là làm sao để PlayAh đi đúng ngay từ bước đầu tiên, với chi phí thấp nhất.</p>
+    <div class="steps" style="margin-top:44px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+      <div class="stp"><div class="i">1</div><b>Buổi tư vấn 1:1</b><br><span>Đánh giá cụ thể danh mục, thị trường mục tiêu và mức đầu tư phù hợp với PlayAh.</span></div>
+      <div class="stp"><div class="i">2</div><b>Demo gian hàng mẫu</b><br><span>Xem trước cách sản phẩm PlayAh được trình bày cho người mua quốc tế.</span></div>
+      <div class="stp"><div class="i">3</div><b>Lộ trình triển khai</b><br><span>Kế hoạch 90 ngày đầu: danh mục, từ khóa, mẫu, đối tác vận hành.</span></div>
+    </div>
+    <div style="margin-top:52px;font-size:14px;color:#CBA9BA;letter-spacing:1px;text-transform:uppercase;">Người chuẩn bị: Phạm Nhi · Account Manager</div>
+    <div style="margin-top:10px;font-size:14px;color:#CBA9BA;letter-spacing:1px;text-transform:uppercase;">PlayAh · Alibaba.com · Cùng nhau mở cánh cửa thị trường toàn cầu</div>
+  </div>
+</section>
+
+<!-- ============ PHỤ LỤC DỮ LIỆU ============ -->
+<section class="report-section appx">
+  <div class="wrap">
+    <div class="appx-head"><div class="no">A</div><h3>Phụ lục 1 · Traffic chi tiết (ngành Sex Products)</h3></div>
+    <p style="color:#5A4A55;font-size:14.5px;margin-bottom:6px;">Chỉ số chuẩn hóa 0–10.000 của nền tảng — dùng để nhìn xu hướng, không phải số lượt truy cập tuyệt đối.</p>
+    <table class="tbl">
+      <tr><th>Tháng</th><th>VN — PV gian hàng</th><th>VN — Người mua hoạt động</th><th>Toàn cầu — PV</th><th>Toàn cầu — Người mua</th></tr>
+      <tr><td>2025-08</td><td class="sub">chưa đủ dữ liệu</td><td class="sub">–</td><td>5.730</td><td>5.336</td></tr>
+      <tr><td>2025-09</td><td class="sub">chưa đủ dữ liệu</td><td class="sub">–</td><td>5.569</td><td>5.448</td></tr>
+      <tr><td>2025-10</td><td class="sub">chưa đủ dữ liệu</td><td class="sub">–</td><td>5.571</td><td>6.042</td></tr>
+      <tr><td>2025-11</td><td class="sub">chưa đủ dữ liệu</td><td class="sub">–</td><td>5.596</td><td>6.013</td></tr>
+      <tr><td>2025-12</td><td class="sub">chưa đủ dữ liệu</td><td class="sub">–</td><td>5.586</td><td>6.316</td></tr>
+      <tr><td>2026-01</td><td class="sub">chưa đủ dữ liệu</td><td class="sub">–</td><td>5.314</td><td>5.975</td></tr>
+      <tr><td>2026-02</td><td class="sub">chưa đủ dữ liệu</td><td class="sub">–</td><td>5.805</td><td>7.078</td></tr>
+      <tr><td>2026-03</td><td class="sub">chưa đủ dữ liệu</td><td class="sub">–</td><td>6.062</td><td>7.010</td></tr>
+      <tr><td>2026-04</td><td>1.082</td><td class="sub">–</td><td>5.913</td><td>6.629</td></tr>
+      <tr><td>2026-05</td><td>2.084</td><td>2.000</td><td>6.981</td><td>6.787</td></tr>
+      <tr><td>2026-06</td><td>2.084</td><td>2.250</td><td>6.513</td><td>6.522</td></tr>
+      <tr><td>2026-07</td><td class="hl">2.803</td><td class="hl">2.250</td><td>5.437</td><td>5.858</td></tr>
+    </table>
+    <div class="insight"><b>Đọc nhanh:</b> chỉ số truy cập VN tăng ~2,6 lần trong 4 tháng (1.082 → 2.803, 04→07/2026); người mua hoạt động +12,5% (2.000 → 2.250). Toàn cầu ổn định ở mức cao (5,3–7,0K).</div>
+    <div class="foot">Nguồn: Phân tích dữ liệu nền tảng Alibaba.com · snapshot 07/2026</div>
+  </div>
+</section>
+
+<section class="report-section appx">
+  <div class="wrap">
+    <div class="appx-head"><div class="no">B</div><h3>Phụ lục 2 · Người mua theo quốc gia (Sex Products, từ VN)</h3></div>
+    <table class="tbl">
+      <tr><th>Hạng</th><th>Quốc gia</th><th>Chỉ số PV</th><th></th><th>Hạng</th><th>Quốc gia</th><th>Chỉ số PV</th></tr>
+      <tr><td>1</td><td>Mỹ (US)</td><td class="hl">3.333</td><td></td><td>8</td><td>Hàn Quốc (KR)</td><td>2.000</td></tr>
+      <tr><td>2</td><td>Việt Nam (VN)</td><td>2.800</td><td></td><td>9</td><td>Anh (GB)</td><td>1.667</td></tr>
+      <tr><td>3</td><td>Bolivia (BO)</td><td>3.333</td><td></td><td>10</td><td>Thái Lan (TH)</td><td>1.667</td></tr>
+      <tr><td>4</td><td>Zambia (ZM)</td><td>3.333</td><td></td><td>11</td><td>Ai Cập (EG)</td><td>1.622</td></tr>
+      <tr><td>5</td><td>Maroc (MA)</td><td>2.222</td><td></td><td>12</td><td>Bangladesh (BD)</td><td>1.250</td></tr>
+      <tr><td>6</td><td>Pakistan (PK)</td><td>2.174</td><td></td><td>13</td><td>UAE (AE)</td><td>1.111</td></tr>
+      <tr><td>7</td><td>Iraq (IQ)</td><td>2.143</td><td></td><td>14</td><td>Ả Rập Xê Út (SA)</td><td>1.000</td></tr>
+      <tr><td colspan="7" class="sub">Kế tiếp: Úc 833 · Uzbekistan 833 · Indonesia 789 · Canada 625 · Philippines 588 · Ấn Độ 556 · Nga 476 ...</td></tr>
+    </table>
+    <div class="insight"><b>Đọc nhanh:</b> Mỹ dẫn đầu; nhóm Trung Đông – Bắc Phi (Maroc, Iraq, UAE, Ả Rập Xê Út) là cụm thị trường nhu cầu xuyên văn hóa, ít cạnh tranh — phù hợp vào trước.</div>
+    <div class="foot">Nguồn: Phân tích dữ liệu nền tảng Alibaba.com, chỉ số truy cập 30 ngày của người mua, 07/2026</div>
+  </div>
+</section>
+
+<section class="report-section appx">
+  <div class="wrap">
+    <div class="appx-head"><div class="no">C</div><h3>Phụ lục 3 · Sản phẩm bán chạy &amp; tăng trưởng cao</h3></div>
+    <p style="color:#5A4A55;font-size:14.5px;margin-top:6px;"><b>Từ khóa tìm kiếm nóng:</b></p>
+    <div class="kws">
+      <span class="tag rose">women's intimates</span><span class="tag rose">condom</span><span class="tag rose">sex toys</span>
+      <span class="tag gold">kondom</span><span class="tag gold">silicon condom</span><span class="tag plum">dildo</span><span class="tag plum">water based lubricant</span>
+    </div>
+    <table class="tbl">
+      <tr><th>Sản phẩm hiển thị cao nhất</th><th>Chỉ số hiển thị/30 ngày</th><th>Thị trường</th></tr>
+      <tr><td>Lecenia Modern Muse Persona 169cm (silicone doll)</td><td>5.023 / 4.799</td><td>CN / Toàn cầu</td></tr>
+      <tr><td>Men's Energy Private Nourishing Repair Liquid</td><td>2.856</td><td>VN</td></tr>
+      <tr><td>Jumbo Big Penis Dildos</td><td>2.784</td><td>IN</td></tr>
+      <tr><td>Lifelike Full Body Silicone Doll</td><td>1.715</td><td>HK</td></tr>
+      <tr><td class="hl">Maxus XXL Ultra Thin Reusable Magic Condom-Delay</td><td>914</td><td>AE</td></tr>
+      <tr><td>Qianzi QZ-114 Half-Body Male Sex Doll</td><td>141</td><td>US</td></tr>
+    </table>
+    <table class="tbl">
+      <tr><th>Sản phẩm tăng trưởng cao (GMV thu được)</th><th>USD</th></tr>
+      <tr><td>Multi Speeds Automatic Sex Machine</td><td>75.884</td></tr>
+      <tr><td>VIBECONNECT Vibrator Wand</td><td>60.789</td></tr>
+      <tr><td>Gelances First Love Lips Rose Vibrator</td><td>57.401</td></tr>
+      <tr><td>Netphi PVC Adult Games Stool</td><td>11.452</td></tr>
+      <tr><td class="hl">Factory Free Sample Delay Dotted Condom</td><td>3.979</td></tr>
+      <tr><td class="hl">Water Based Gay Personal Sex Lube (gel gốc nước)</td><td>3.056</td></tr>
+      <tr><td>Silicone Kegel Balls</td><td>2.812</td></tr>
+    </table>
+    <div class="insight"><b>Đọc nhanh:</b> dòng delay condom và gel gốc nước nằm trong nhóm tăng trưởng có doanh thu thực — đúng danh mục hiện tại của PlayAh.</div>
+    <div class="foot">Nguồn: Phân tích dữ liệu nền tảng Alibaba.com, 07/2026</div>
+  </div>
+</section>
+
+<section class="report-section appx">
+  <div class="wrap">
+    <div class="appx-head"><div class="no">D</div><h3>Phụ lục 4 · Sản phẩm nhu cầu cao (lượt khách xem)</h3></div>
+    <table class="tbl">
+      <tr><th>Sản phẩm nhu cầu cao — toàn cầu</th><th>Lượt khách</th><th></th><th>Sản phẩm nhu cầu cao — VN</th><th>Lượt khách</th></tr>
+      <tr><td>Sexy Penis Vibrator 3-in-1</td><td>18.723</td><td></td><td class="hl">Aphrodisiac Female Libido Gel Spray</td><td>469</td></tr>
+      <tr><td>Electric Penis Pump</td><td>16.342</td><td></td><td>Leech Essential Oil Cream</td><td>96</td></tr>
+      <tr><td>Lifelike Full Body Silicone Doll</td><td>12.854</td><td></td><td class="hl">Wolf Tooth Crystal Ribbed Dotted Condoms</td><td>46</td></tr>
+      <tr><td class="hl">Delay Ejaculation Glow-in-Dark Cock Ring</td><td>12.696</td><td></td><td>Big Strawberry Anal Plug</td><td>24</td></tr>
+      <tr><td>Vibrator Enlargement Sleeve</td><td>11.211</td><td></td><td class="hl">Delay Ejaculation Cocks Ring</td><td>11</td></tr>
+      <tr><td>Double Channel Mini Masturbator</td><td>11.127</td><td></td><td>Titan Gel Cream &amp; Extender</td><td>11</td></tr>
+      <tr><td>Telescopic Heating Dildo</td><td>9.232</td><td></td><td class="hl">2019 Cheapest Condom Dotted</td><td>6</td></tr>
+      <tr><td>1.69lb 3-in-1 Masturbator</td><td>8.064</td><td></td><td>Breast Beauty Equipment</td><td>13</td></tr>
+      <tr><td>Remote Control Wearable Clitoris</td><td>6.422</td><td></td><td>Men's Max Penis Enlargement Oil</td><td>14</td></tr>
+    </table>
+    <div class="insight"><b>Đọc nhanh:</b> bao cao su gai gân (textured), dòng kéo dài thời gian và gel tăng cảm xúc là các cụm sản phẩm PlayAh có thể khai thác ngay — nhu cầu xem cao, cạnh tranh giá rẻ thấp hơn nhóm toys.</div>
+    <div class="foot">Nguồn: Phân tích dữ liệu nền tảng Alibaba.com, 07/2026</div>
+  </div>
+</section>
+
+<section class="report-section appx">
+  <div class="wrap">
+    <div class="appx-head"><div class="no">E</div><h3>Phụ lục 5 · Benchmark — top 10 cửa hàng dẫn đầu (180 ngày)</h3></div>
+    <table class="tbl">
+      <tr><th>Gian hàng</th><th>Lĩnh vực</th><th>Đơn đặt cọc</th><th>Người mua nước ngoài</th><th>Giá trị đơn ghi nhận (USD)</th><th>CPAB (USD/người mua)</th><th>Trả lời (giờ)</th></tr>
+      <tr><td>gelance</td><td>Vibrators</td><td>862</td><td>11.733</td><td class="hl">469.638</td><td>2,65</td><td>0,9</td></tr>
+      <tr><td>dkktech</td><td>Vibrators</td><td>487</td><td>5.303</td><td>214.407</td><td>1,09</td><td>4,8</td></tr>
+      <tr><td>wellwanted</td><td>Vibrators</td><td>1.077</td><td>5.541</td><td>195.836</td><td>0,99</td><td>2,3</td></tr>
+      <tr><td class="hl">szeds</td><td class="hl">Delay cream &amp; spray</td><td class="hl">1.261</td><td class="hl">9.529</td><td class="hl">136.190</td><td class="hl">0,33</td><td>2,3</td></tr>
+      <tr><td>evosox</td><td>Sex Dolls</td><td>1.337</td><td>15.496</td><td>127.845</td><td>0,45</td><td>2,4</td></tr>
+      <tr><td>dsshuitoys</td><td>Vibrators</td><td>481</td><td>5.069</td><td>92.328</td><td>0,50</td><td>1,6</td></tr>
+      <tr><td>safiman</td><td>Vibrators</td><td>594</td><td>7.943</td><td>91.077</td><td>2,56</td><td>1,2</td></tr>
+      <tr><td>cnbaiaoo</td><td>Vibrators</td><td>461</td><td>5.443</td><td>77.568</td><td>1,38</td><td>0,6</td></tr>
+      <tr><td class="hl">lovexotic</td><td class="hl">Safer Sex / Lubricants</td><td class="hl">488</td><td class="hl">5.447</td><td class="hl">42.331</td><td class="hl">2,11</td><td>1,7</td></tr>
+      <tr><td>skinyang</td><td>Vibrators</td><td>432</td><td>7.266</td><td>24.978</td><td>0,30</td><td>7,7</td></tr>
+    </table>
+    <div class="insight"><b>Đọc nhanh:</b> giá trị đơn ghi nhận trên nền tảng 25K–470K USD/180 ngày (quy năm ~50K–940K USD). Nhóm trùng danh mục PlayAh: delay (1.261 đơn, chi phí chỉ 0,33 USD/người mua) và lube/safer sex (488 đơn, ~87 USD/đơn). 100% top 10 đến từ Trung Quốc — khoảng trống "Made in Vietnam" còn bỏ ngỏ.</div>
+    <div class="foot">Nguồn: Phân tích dữ liệu nền tảng Alibaba.com, 180 ngày, 07/2026 · tên gian hàng được ẩn khi trình bày cho khách</div>
+  </div>
+</section>
+
+<section class="report-section appx">
+  <div class="wrap">
+    <div class="appx-head"><div class="no">F</div><h3>Phụ lục 6 · RFQ gần nhất &amp; thị trường toàn cầu</h3></div>
+    <p style="color:#5A4A55;font-size:14.5px;margin-top:6px;"><b>RFQ trong 5 ngày gần nhất (cấp Health Care — nhóm kế cận):</b></p>
+    <table class="tbl">
+      <tr><th>RFQ</th><th>Quốc gia</th><th>SL</th><th>Ngày</th></tr>
+      <tr><td>OEM Wholesale Male Enhancement Pills</td><td>Mỹ</td><td>10 sets</td><td>05/08/2026</td></tr>
+      <tr><td>Vitamin C Chewable 1000mg (tùy chỉnh bao bì)</td><td>Mỹ</td><td>2.000 pcs</td><td>04/08/2026</td></tr>
+      <tr><td>2026 Full Body Shiatsu Massage Cushion</td><td>Mỹ</td><td>50 pcs</td><td>07/08/2026</td></tr>
+      <tr><td>Vitamin C &amp; E Tablets (OEM bao bì)</td><td>Mỹ</td><td>2.000 pcs</td><td>04/08/2026</td></tr>
+      <tr><td>Vegan Organic Collagen Powder</td><td>Nam Phi</td><td>3 cases</td><td>04/08/2026</td></tr>
+    </table>
+    <p style="color:#5A4A55;font-size:14.5px;margin-top:22px;"><b>Thị trường toàn cầu (báo cáo độc lập 2025–2026):</b></p>
+    <table class="tbl">
+      <tr><th>Chỉ số</th><th>Giá trị</th><th>Nguồn</th></tr>
+      <tr><td>Sexual wellness toàn cầu</td><td class="hl">34–51 tỷ USD (2025–26), CAGR 7–9%</td><td>Mordor Intelligence · MRFR · R&amp;M 2026</td></tr>
+      <tr><td>Dự báo sexual wellness (Alibaba)</td><td class="hl">125 tỷ USD vào 2026, CAGR 12,4%</td><td>Blog chính thức seller.alibaba.com</td></tr>
+      <tr><td>Bao cao su toàn cầu</td><td>~13–14 tỷ USD (2025), CAGR 7–9%</td><td>IMARC · Mordor · MRFR 2026</td></tr>
+      <tr><td>Gel bôi trơn toàn cầu</td><td>~1,7 tỷ USD (2025) → 3,8 tỷ USD (2033)</td><td>Grand View Research 2026</td></tr>
+      <tr><td>Thị trường Mỹ</td><td>23,25 tỷ USD (2025) → 49,92 tỷ USD (2035)</td><td>Nova One Advisor 2026</td></tr>
+      <tr><td>Quy định Mỹ</td><td>Bao cao su = thiết bị y tế Class II, cần FDA 510(k)</td><td>fda.gov</td></tr>
+    </table>
+    <div class="insight"><b>Đọc nhanh:</b> người mua Mỹ đang chủ động tìm nhà cung cấp OEM/private label trong ngành Health Care; thị trường tăng trưởng 2 con số — thời điểm tham gia thuận lợi.</div>
+    <div class="foot">Nguồn: Phân tích dữ liệu nền tảng Alibaba.com 07/2026 · báo cáo nghiên cứu thị trường độc lập 2025–2026</div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var chartBox = document.getElementById('trafficChart');
+  if(!chartBox) return;
+  new Chart(chartBox, {
+    type: 'line',
+    data: {
+      labels: ['04/2026','05/2026','06/2026','07/2026'],
+      datasets: [
+        { label: 'Việt Nam — chỉ số truy cập gian hàng (Sex Products)', data: [1082,2084,2084,2803], borderColor: '#C4546F', backgroundColor: 'rgba(196,84,111,.12)', fill: true, tension: .3, borderWidth: 3, pointRadius: 5, pointBackgroundColor: '#C4546F' },
+        { label: 'Toàn cầu — chỉ số truy cập gian hàng (Sex Products)', data: [5913,6981,6513,5437], borderColor: '#C9A24B', backgroundColor: 'rgba(201,162,75,.10)', fill: false, tension: .3, borderWidth: 2, borderDash: [6,4], pointRadius: 4, pointBackgroundColor: '#C9A24B' }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: 8, font: { size: 12 } } }
+      },
+      scales: {
+        y: { beginAtZero: false, grid: { color: '#F1E8E4' }, ticks: { color: '#8A7B88' } },
+        x: { grid: { display: false }, ticks: { color: '#5A4A55' } }
+      }
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
+
