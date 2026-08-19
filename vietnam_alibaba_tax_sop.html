@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>越南 Alibaba.com 卖家报税与退税 SOP | Tax Filing & Refund SOP | Quy trình khai thuế và hoàn thuế</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);color:white;padding:40px;border-radius:16px;margin-bottom:24px}
+    header h1{font-size:30px;margin-bottom:12px}
+    header .subtitle{font-size:15px;opacity:0.9}
+    .lang-bar{display:flex;gap:16px;margin:20px 0 8px;flex-wrap:wrap}
+    .lang-btn{background:rgba(255,255,255,0.15);color:white;border:2px solid rgba(255,255,255,0.4);padding:10px 28px;border-radius:28px;font-size:16px;font-weight:500;cursor:pointer;transition:all 0.2s}
+    .lang-btn:hover{background:rgba(255,255,255,0.3)}
+    .lang-btn.active{background:white;color:#1e3a8a;font-weight:700;border-color:white}
+    .card{background:white;border-radius:12px;padding:28px;margin-bottom:24px;box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+    .card h2{color:#1e3a8a;font-size:22px;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #e2e8f0}
+    .card h3{color:#334155;font-size:18px;margin:24px 0 12px}
+    .card p{margin-bottom:12px}
+    .svg-wrapper{overflow-x:auto;padding:16px 0}
+    svg{display:block;margin:0 auto;min-width:900px}
+    table{width:100%;border-collapse:collapse;font-size:14px;margin:16px 0}
+    th,td{padding:12px;text-align:left;border-bottom:1px solid #e2e8f0;vertical-align:top}
+    th{background:#f1f5f9;font-weight:600}
+    .tag{display:inline-block;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:500;margin-right:6px;margin-bottom:4px}
+    .tag-platform{background:#dcfce7;color:#166534}
+    .tag-bank{background:#dbeafe;color:#1e40af}
+    .tag-seller{background:#fef3c7;color:#92400e}
+    .step-list{counter-reset:step;list-style:none}
+    .step-list li{position:relative;padding-left:56px;margin-bottom:20px;padding-top:4px}
+    .step-list li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:36px;height:36px;background:#2563eb;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
+    .link-box{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:16px;margin:12px 0}
+    .link-box a{color:#2563eb;text-decoration:none;word-break:break-all}
+    .link-box a:hover{text-decoration:underline}
+    .warning{background:#fff7ed;border-left:4px solid #f97316;padding:16px;border-radius:4px;margin:16px 0}
+    .warning-title{font-weight:700;color:#c2410c;margin-bottom:6px}
+    .disclaimer{background:#fef2f2;border-left:4px solid #ef4444;padding:20px;border-radius:4px;font-size:14px}
+    .download-table td:first-child{font-weight:500}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    [data-lang]{display:none}
+    [data-lang].active{display:block}
+    @media(max-width:768px){.two-col{grid-template-columns:1fr}svg{min-width:700px}.lang-bar{flex-wrap:wrap}}
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div data-lang="cn" class="active">
+      <h1>越南 Alibaba.com 卖家报税与退税 SOP</h1>
+      <div class="subtitle">适用对象：通过 Alibaba.com Trade Assurance 线上收款的越南本地卖家（网站运营主体：新加坡阿里巴巴；资金结算主体：阿里巴巴香港）</div>
+    </div>
+    <div data-lang="en">
+      <h1>Vietnam Alibaba.com Seller Tax Filing &amp; Refund SOP</h1>
+      <div class="subtitle">For Vietnam-based sellers receiving payments via Alibaba.com Trade Assurance (Website operator: Alibaba Singapore; Settlement entity: Alibaba Hong Kong)</div>
+    </div>
+    <div data-lang="vn">
+      <h1>Quy trình khai thuế và hoàn thuế cho người bán Alibaba.com Việt Nam</h1>
+      <div class="subtitle">Áp dụng cho người bán tại Việt Nam nhận thanh toán qua Trade Assurance trên Alibaba.com (Chủ thể vận hành: Alibaba Singapore; Chủ thể quyết toán: Alibaba Hong Kong)</div>
+    </div>
+    <div class="lang-bar">
+      <button class="lang-btn active" onclick="switchLang('cn')">中文</button>
+      <button class="lang-btn" onclick="switchLang('en')">English</button>
+      <button class="lang-btn" onclick="switchLang('vn')">Tiếng Việt</button>
+    </div>
+  </header>
+
+  <!-- ==================== CHINESE ==================== -->
+  <div data-lang="cn" class="active">
+
+    <div class="card">
+      <h2>一、核心规则摘要</h2>
+      <div class="two-col">
+        <div>
+          <h3>业务背景</h3>
+          <ul style="margin-left:20px">
+            <li>越南买家/卖家在 <strong>Alibaba.com</strong> 平台完成交易。</li>
+            <li>买家通过 <strong>Trade Assurance</strong> 线上付款，资金由 <strong>阿里巴巴香港</strong> 通过花旗银行等合作银行收汇。</li>
+            <li>卖家提款时，由 <strong>Yeepay（底层渠道 appotapay）</strong> 汇兑并结算至越南境内账户。</li>
+            <li>平台生成买卖家电子合同；卖家可在平台下载手续费等费用发票及电子用印的平台协议。</li>
+          </ul>
+        </div>
+        <div>
+          <h3>税务规则</h3>
+          <ul style="margin-left:20px">
+            <li><strong>第 117/2025/NĐ-CP 号法令</strong>：2025 年 7 月 1 日起，具备支付功能的电商平台须为个人/个体户卖家代扣代缴增值税（GTGT）和个人所得税（TNCN）。</li>
+            <li><strong>公司主体</strong>（LLC/JSC）不适用平台代扣，按企业税务规则自行申报。</li>
+            <li><strong>出口销售</strong>可适用 <strong>0% VAT</strong>，但须备齐出口合同、报关单、运输单据、非现金支付凭证等。</li>
+            <li><strong>退税条件</strong>：累计可抵扣进项 VAT 余额超过 <strong>3 亿越南盾</strong>，或其他法定退税情形。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>二、完整流程图</h2>
+      <div class="svg-wrapper">
+        <svg viewBox="0 0 1000 1500" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker></defs>
+          <rect x="20" y="20" width="960" height="180" rx="8" fill="#eff6ff" opacity="0.6"/>
+          <rect x="20" y="220" width="960" height="260" rx="8" fill="#f0fdf4" opacity="0.6"/>
+          <rect x="20" y="500" width="960" height="200" rx="8" fill="#eff6ff" opacity="0.6"/>
+          <rect x="20" y="720" width="960" height="220" rx="8" fill="#fff7ed" opacity="0.6"/>
+          <rect x="20" y="960" width="960" height="240" rx="8" fill="#eff6ff" opacity="0.6"/>
+          <rect x="20" y="1220" width="960" height="250" rx="8" fill="#fef2f2" opacity="0.6"/>
+          <text x="50" y="50" font-size="16" font-weight="bold" fill="#1e40af">阶段 1：交易与合同</text>
+          <text x="50" y="250" font-size="16" font-weight="bold" fill="#166534">阶段 2：履约与出口单证</text>
+          <text x="50" y="530" font-size="16" font-weight="bold" fill="#1e40af">阶段 3：收款与结算</text>
+          <text x="50" y="750" font-size="16" font-weight="bold" fill="#9a3412">阶段 4：税务判定</text>
+          <text x="50" y="990" font-size="16" font-weight="bold" fill="#1e40af">阶段 5：纳税申报</text>
+          <text x="50" y="1250" font-size="16" font-weight="bold" fill="#991b1b">阶段 6：退税申请</text>
+          <rect x="320" y="70" width="360" height="80" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="500" y="100" text-anchor="middle" font-size="14" font-weight="600" fill="#1e40af">1. 买家下单并选择 Trade Assurance</text>
+          <text x="500" y="120" text-anchor="middle" font-size="12" fill="#475569">平台生成电子买卖合同</text>
+          <line x1="500" y1="150" x2="500" y2="220" stroke="#64748b" stroke-width="2" marker-end="url(#a1)"/>
+          <rect x="320" y="230" width="360" height="80" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="500" y="260" text-anchor="middle" font-size="14" font-weight="600" fill="#1e40af">2. 卖家备货、发货、办理出口报关</text>
+          <text x="500" y="280" text-anchor="middle" font-size="12" fill="#475569">取得报关单、提单/运单</text>
+          <line x1="500" y1="310" x2="500" y2="350" stroke="#64748b" stroke-width="2" marker-end="url(#a1)"/>
+          <rect x="320" y="350" width="360" height="80" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+          <text x="500" y="380" text-anchor="middle" font-size="14" font-weight="600" fill="#166534">3. 开具出口 0% VAT 发票</text>
+          <text x="500" y="400" text-anchor="middle" font-size="12" fill="#475569">通过 GDT 电子发票系统开具</text>
+          <line x1="500" y1="430" x2="500" y2="500" stroke="#64748b" stroke-width="2" marker-end="url(#a1)"/>
+          <rect x="320" y="510" width="360" height="80" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="500" y="540" text-anchor="middle" font-size="14" font-weight="600" fill="#1e40af">4. 买家线上付款</text>
+          <text x="500" y="560" text-anchor="middle" font-size="12" fill="#475569">资金进入阿里巴巴香港合作银行（花旗银行）</text>
+          <line x1="500" y1="590" x2="500" y2="630" stroke="#64748b" stroke-width="2" marker-end="url(#a1)"/>
+          <rect x="320" y="630" width="360" height="80" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="500" y="660" text-anchor="middle" font-size="14" font-weight="600" fill="#1e40af">5. 卖家提款</text>
+          <text x="500" y="680" text-anchor="middle" font-size="12" fill="#475569">Yeepay/appotapay 汇兑结算至越南账户</text>
+          <line x1="500" y1="710" x2="500" y2="760" stroke="#64748b" stroke-width="2" marker-end="url(#a1)"/>
+          <polygon points="500,760 620,810 500,860 380,810" fill="#fed7aa" stroke="#ea580c" stroke-width="2"/>
+          <text x="500" y="800" text-anchor="middle" font-size="13" font-weight="600" fill="#9a3412">卖家主体类型？</text>
+          <line x1="380" y1="810" x2="220" y2="810" stroke="#64748b" stroke-width="2" marker-end="url(#a1)"/>
+          <line x1="620" y1="810" x2="780" y2="810" stroke="#64748b" stroke-width="2" marker-end="url(#a1)"/>
+          <rect x="50" y="780" width="170" height="60" rx="6" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+          <text x="135" y="805" text-anchor="middle" font-size="13" font-weight="600" fill="#991b1b">个人 / 个体户</text>
+          <rect x="780" y="780" width="170" height="60" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="865" y="805" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">公司 / 企业</text>
+          <line x1="135" y1="840" x2="135" y2="960" stroke="#64748b" stroke-width="2" marker-end="url(#a1)"/>
+          <line x1="865" y1="840" x2="865" y2="960" stroke="#64748b" stroke-width="2" marker-end="url(#a1)"/>
+          <rect x="50" y="960" width="170" height="110" rx="6" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+          <text x="135" y="985" text-anchor="middle" font-size="12" font-weight="600" fill="#991b1b">6.1 个人/个体户申报</text>
+          <text x="135" y="1005" text-anchor="middle" font-size="11" fill="#7f1d1d">GTGT + TNCN</text>
+          <text x="135" y="1025" text-anchor="middle" font-size="11" fill="#991b1b">平台是否代扣需确认</text>
+          <text x="135" y="1045" text-anchor="middle" font-size="11" fill="#7f1d1d">若无凭证则自行申报</text>
+          <rect x="780" y="960" width="170" height="110" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="865" y="985" text-anchor="middle" font-size="12" font-weight="600" fill="#1e40af">6.2 企业申报</text>
+          <text x="865" y="1005" text-anchor="middle" font-size="11" fill="#374151">GTGT 0% + TNDN</text>
+          <text x="865" y="1025" text-anchor="middle" font-size="11" fill="#1e40af">按月/季度/年度申报</text>
+          <text x="865" y="1045" text-anchor="middle" font-size="11" fill="#374151">抵扣进项 VAT</text>
+          <line x1="135" y1="1070" x2="500" y2="1120" stroke="#64748b" stroke-width="2" marker-end="url(#a1)"/>
+          <line x1="865" y1="1070" x2="500" y2="1120" stroke="#64748b" stroke-width="2" marker-end="url(#a1)"/>
+          <rect x="320" y="1120" width="360" height="80" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+          <text x="500" y="1150" text-anchor="middle" font-size="14" font-weight="600" fill="#166534">7. 整理资料并提交纳税申报</text>
+          <text x="500" y="1170" text-anchor="middle" font-size="12" fill="#475569">通过越南电子税务系统提交</text>
+          <line x1="500" y1="1200" x2="500" y2="1250" stroke="#64748b" stroke-width="2" marker-end="url(#a1)"/>
+          <polygon points="500,1250 620,1300 500,1350 380,1300" fill="#fed7aa" stroke="#ea580c" stroke-width="2"/>
+          <text x="500" y="1290" text-anchor="middle" font-size="13" font-weight="600" fill="#9a3412">是否符合退税条件？</text>
+          <text x="500" y="1310" text-anchor="middle" font-size="12" fill="#7c2d12">进项 VAT &gt; 3 亿 VND?</text>
+          <line x1="380" y1="1300" x2="220" y2="1300" stroke="#64748b" stroke-width="2" marker-end="url(#a1)"/>
+          <line x1="620" y1="1300" x2="780" y2="1300" stroke="#64748b" stroke-width="2" marker-end="url(#a1)"/>
+          <rect x="50" y="1270" width="170" height="60" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+          <text x="135" y="1295" text-anchor="middle" font-size="13" font-weight="600" fill="#166534">是 → 提交退税申请</text>
+          <rect x="780" y="1270" width="170" height="60" rx="6" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+          <text x="865" y="1295" text-anchor="middle" font-size="13" font-weight="600" fill="#475569">否 → 结转下期</text>
+          <line x1="135" y1="1330" x2="135" y2="1390" stroke="#64748b" stroke-width="2" marker-end="url(#a1)"/>
+          <line x1="865" y1="1330" x2="865" y2="1390" stroke="#64748b" stroke-width="2" marker-end="url(#a1)"/>
+          <rect x="320" y="1370" width="360" height="50" rx="25" fill="#1e3a8a"/>
+          <text x="500" y="1400" text-anchor="middle" font-size="15" font-weight="600" fill="white">完成</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>三、分步操作说明</h2>
+      <ol class="step-list">
+        <li><strong>交易确认与合同下载</strong><br>买家在 Alibaba.com 下单并选择 Trade Assurance 后，平台自动生成电子买卖合同。卖家应在 <strong>My Alibaba → Orders → All Orders</strong> 中找到对应订单，下载并保存电子合同。同时下载平台交易协议（电子用印版）。</li>
+        <li><strong>履约并获取出口单证</strong><br>卖家按订单备货、发货，并委托报关行办理出口报关。务必取得：<strong>出口报关单</strong>、<strong>提单/空运单/陆运单（BL/AWB/CMR）</strong>、<strong>商业发票（Commercial Invoice）</strong>、<strong>装箱单（Packing List）</strong>。</li>
+        <li><strong>开具 0% VAT 电子发票</strong><br>登录 <a href="https://hoadondientu.gdt.gov.vn/" target="_blank">hoadondientu.gdt.gov.vn</a>，为出口销售开具 <strong>Hóa đơn GTGT 0%</strong>。发票需经税务总局（GDT）系统验证，信息须与合同、报关单、运输单据一致。</li>
+        <li><strong>收款与结算凭证留存</strong><br>买家付款后，资金进入阿里巴巴香港合作银行（花旗银行）。卖家在平台发起提款，Yeepay（appotapay）将外汇汇兑并结算至越南境内账户。请留存：<strong>平台结算单、Yeepay/appotapay 结算记录、越南银行账户入账流水</strong>。</li>
+        <li><strong>判定税务处理方式</strong><br>
+          <ul style="margin-left:20px;margin-top:8px">
+            <li><strong>公司</strong>：自行申报 GTGT（出口 0%）和 TNDN（企业所得税），抵扣进项 VAT。</li>
+            <li><strong>个人/个体户</strong>：须确认新加坡 Alibaba 是否按第 117 号法令履行代扣代缴。若平台提供代扣凭证，用于抵扣或年度汇算；若无，则自行申报。</li>
+          </ul>
+        </li>
+        <li><strong>按期提交纳税申报</strong><br>通过 <a href="https://thuedientu.gdt.gov.vn/" target="_blank">thuedientu.gdt.gov.vn</a> 提交申报表。公司使用 <strong>01/GTGT</strong>（月度/季度 VAT）和 <strong>03/TNDN</strong>（季度暂缴）；个人/个体户使用 <strong>05/KK-TNCN</strong> 等相应表格。</li>
+        <li><strong>申请退税（如符合条件）</strong><br>当累计可抵扣进项 VAT 余额超过 3 亿越南盾，通过电子税务系统提交退税申请（<strong>01/HTBT</strong>）。</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>四、报税与退税材料清单</h2>
+      <table class="download-table">
+        <thead><tr><th style="width:28%">材料名称</th><th style="width:14%">来源</th><th style="width:34%">用途</th><th style="width:24%">获取方式 / 下载链接</th></tr></thead>
+        <tbody>
+          <tr><td>电子买卖合同</td><td><span class="tag tag-platform">Alibaba 平台</span></td><td>证明交易真实性及交易条款</td><td>My Alibaba → Orders → All Orders → 查看/下载合同</td></tr>
+          <tr><td>平台交易协议（电子用印版）</td><td><span class="tag tag-platform">Alibaba 平台</span></td><td>证明卖家与平台之间的服务关系</td><td>My Alibaba → Account → Contracts / Agreements</td></tr>
+          <tr><td>平台费用发票（会员费/广告费/手续费）</td><td><span class="tag tag-platform">Alibaba 平台</span></td><td>作为费用支出凭证，用于进项抵扣</td><td>My Alibaba → Billing Center → Invoices → Download</td></tr>
+          <tr><td>Trade Assurance 结算单 / 支付记录</td><td><span class="tag tag-platform">Alibaba 平台</span></td><td>证明境外收入及平台扣费明细</td><td>My Alibaba → Transactions &amp; Logistics → Alibaba.com Pay → Statements</td></tr>
+          <tr><td>香港合作银行收款凭证</td><td><span class="tag tag-bank">花旗银行</span></td><td>证明外汇资金来源</td><td>由银行或平台提供的收款通知书（Credit Advice）</td></tr>
+          <tr><td>Yeepay / appotapay 结算记录</td><td><span class="tag tag-bank">支付机构</span></td><td>证明外汇已汇兑并结算至越南账户</td><td>平台提款记录或支付机构提供的结算单据</td></tr>
+          <tr><td>越南银行账户入账流水</td><td><span class="tag tag-bank">越南银行</span></td><td>证明资金已入境；非现金支付凭证</td><td>网上银行下载或银行柜台打印</td></tr>
+          <tr><td>商业发票（Commercial Invoice）</td><td><span class="tag tag-seller">卖家</span></td><td>报关、收款、税务申报依据</td><td>自行开具，须与合同、报关单一致</td></tr>
+          <tr><td>装箱单（Packing List）</td><td><span class="tag tag-seller">卖家</span></td><td>辅助报关与物流</td><td>自行开具</td></tr>
+          <tr><td>出口报关单</td><td><span class="tag tag-seller">海关/报关行</span></td><td>适用 0% VAT 与退税的核心凭证</td><td>通过越南海关电子系统或报关行获取</td></tr>
+          <tr><td>运输单据（BL/AWB/CMR）</td><td><span class="tag tag-seller">货代/承运人</span></td><td>证明货物实际离境</td><td>向货代或承运人索取</td></tr>
+          <tr><td>0% VAT 电子发票</td><td><span class="tag tag-seller">卖家</span></td><td>出口销售开票，申报 0% VAT</td><td><a href="https://hoadondientu.gdt.gov.vn/" target="_blank">hoadondientu.gdt.gov.vn</a></td></tr>
+          <tr><td>采购/费用进项发票</td><td><span class="tag tag-seller">供应商</span></td><td>抵扣进项 VAT</td><td>向供应商索取合法有效的增值税发票</td></tr>
+          <tr><td>税务登记证明 / 营业执照</td><td><span class="tag tag-seller">政府机关</span></td><td>证明纳税主体身份</td><td>越南企业登记机关核发</td></tr>
+          <tr><td>代扣税款凭证（如适用）</td><td><span class="tag tag-platform">Alibaba 平台</span></td><td>用于抵扣或年度汇算</td><td>若平台执行代扣，由平台提供；目前待确认</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>五、官方申报入口与表格下载</h2>
+      <div class="link-box"><strong>越南税务总局（GDT）英文官网</strong><br><a href="https://www.gdt.gov.vn/wps/portal/english" target="_blank">https://www.gdt.gov.vn/wps/portal/english</a><br><span style="color:#64748b;font-size:13px">可获取最新税法通知、表格模板、申报指南。</span></div>
+      <div class="link-box"><strong>越南电子税务系统（e-tax Portal）</strong><br><a href="https://thuedientu.gdt.gov.vn/" target="_blank">https://thuedientu.gdt.gov.vn/</a><br><span style="color:#64748b;font-size:13px">用于在线提交 VAT、CIT、PIT 申报表及退税申请。登录后可下载 01/GTGT、03/TNDN、05/KK-TNCN、01/HTBT 等表格。</span></div>
+      <div class="link-box"><strong>越南电子发票门户（e-Invoice Portal）</strong><br><a href="https://hoadondientu.gdt.gov.vn/" target="_blank">https://hoadondientu.gdt.gov.vn/</a><br><span style="color:#64748b;font-size:13px">用于注册、开具、查询和下载 0% VAT 电子发票。</span></div>
+      <div class="link-box"><strong>iTaxviewer（税务 XML 文件阅读器）</strong><br><span style="color:#64748b;font-size:13px">在 GDT 官网搜索 "iTaxviewer" 即可下载，用于查看税务机关下发的 XML 格式税务文件。</span></div>
+      <div class="link-box"><strong>Alibaba.com 卖家登录入口</strong><br><a href="https://seller.alibaba.com/" target="_blank">https://seller.alibaba.com/</a> 或 <a href="https://passport.alibaba.com/" target="_blank">https://passport.alibaba.com/</a><br><span style="color:#64748b;font-size:13px">登录后可进入 Orders、Billing Center、Alibaba.com Pay 下载合同、发票和结算单。</span></div>
+    </div>
+
+    <div class="card">
+      <h2>六、不同主体的申报要点</h2>
+      <table>
+        <thead><tr><th style="width:18%">主体</th><th style="width:42%">申报义务</th><th style="width:40%">关键注意事项</th></tr></thead>
+        <tbody>
+          <tr><td><strong>个人卖家</strong></td><td>按个人经营所得申报 TNCN；若平台未代扣则需自行申报 GTGT 与 TNCN。</td><td>确认新加坡 Alibaba 是否按第 117 号法令代扣代缴。若平台提供代扣凭证，可用于抵扣；若无，需自行申报。</td></tr>
+          <tr><td><strong>个体户（Hộ KD）</strong></td><td>按个体户规则申报 GTGT 与 TNCN；出口销售可适用 0% VAT。</td><td>确保已完成电子发票注册；保留出口报关单、运输单据、收款凭证；确认平台是否提供代扣代缴凭证。</td></tr>
+          <tr><td><strong>公司（LLC/JSC）</strong></td><td>按企业规则申报 GTGT（出口 0%）和 TNDN；进项 VAT 可抵扣；符合条件可申请退税。</td><td>确认与新加坡/香港主体的合同关系、收入确认时点、Yeepay 结算性质；完整归档平台费用发票用于抵扣。</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>七、退税申请条件与流程</h2>
+      <div class="warning"><div class="warning-title">退税门槛</div>累计可抵扣进项 VAT 余额超过 <strong>3 亿越南盾</strong>，或存在税务机关认可的其他多缴税款情形，方可申请退税。未达到门槛的，进项 VAT 可结转至下期继续抵扣。</div>
+      <h3>退税申请步骤</h3>
+      <ol style="margin-left:20px;line-height:2">
+        <li>整理退税资料：退税申请表（01/HTBT）、0% VAT 发票、出口报关单、运输单据、境外收款凭证、进项发票、银行入账流水、税务登记证明等。</li>
+        <li>登录 <a href="https://thuedientu.gdt.gov.vn/" target="_blank">thuedientu.gdt.gov.vn</a>，选择退税申请功能并上传资料。</li>
+        <li>税务机关审核单证一致性，可能要求补充资料或进行实地核查。</li>
+        <li>审核通过后，税款退回指定账户；未通过的，按审核意见补充资料或结转下期。</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>八、关键风险提示</h2>
+      <div class="warning"><div class="warning-title">0% VAT 凭证链必须完整</div>若缺少出口报关单、运输单据或非现金支付凭证（单笔超过 500 万越南盾），税务机关可能拒绝适用 0% VAT，并影响进项抵扣和退税资格。</div>
+      <div class="warning"><div class="warning-title">平台代扣代缴状态待确认</div>由于越南 Alibaba.com 网站运营主体为新加坡阿里巴巴、资金结算主体为阿里巴巴香港，其是否会被越南税务机关认定为第 117 号法令下的代扣代缴义务主体，需由持牌越南税务顾问确认。</div>
+      <div class="warning"><div class="warning-title">电子合同与单证一致性</div>平台生成的电子合同、商业发票、报关单、运输单据、收款凭证上的商品名称、数量、金额、买卖双方信息必须保持一致，否则可能影响退税审核。</div>
+    </div>
+
+    <div class="card disclaimer">
+      <h2 style="color:#991b1b;border:none;padding:0;margin-bottom:12px">免责声明</h2>
+      <p>本 SOP 基于越南第 117/2025/NĐ-CP 号法令、越南增值税法、企业所得税法、个人所得税法及相关公开信息整理，旨在为 Alibaba.com 越南卖家提供报税与退税的操作指引，不构成法律或税务意见。</p>
+      <p>由于贵司业务模式涉及新加坡运营主体、香港资金结算、Yeepay/appotapay 支付结算等特殊安排，且越南税法及平台执行细则可能变化，建议贵司将本 SOP 提交给持牌越南税务师、会计师事务所或律师事务所审阅，根据实际交易结构和最新法规进行补充、调整和完善。</p>
+    </div>
+
+  </div>
+
+  <!-- ==================== ENGLISH ==================== -->
+  <div data-lang="en">
+
+    <div class="card">
+      <h2>1. Key Rules Summary</h2>
+      <div class="two-col">
+        <div>
+          <h3>Business Context</h3>
+          <ul style="margin-left:20px">
+            <li>Buyers and sellers transact on <strong>Alibaba.com</strong>.</li>
+            <li>Buyers pay online through <strong>Trade Assurance</strong>; funds collected by <strong>Alibaba Hong Kong</strong> via partner banks such as Citibank.</li>
+            <li>When sellers request withdrawal, <strong>Yeepay (underlying channel: appotapay)</strong> converts and settles the foreign currency to the seller's Vietnam bank account.</li>
+            <li>The platform generates electronic buyer-seller contracts; sellers can download platform transaction agreements (e-stamped) and fee invoices.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tax Rules</h3>
+          <ul style="margin-left:20px">
+            <li><strong>Decree 117/2025/NĐ-CP</strong>: Effective 1 July 2025, e-commerce platforms with payment functions must withhold, declare, and pay VAT and PIT on behalf of individual/household sellers.</li>
+            <li><strong>Corporate sellers</strong> (LLC/JSC) follow enterprise tax rules and are not subject to platform withholding.</li>
+            <li><strong>Export sales</strong> may apply <strong>0% VAT</strong> if supported by export contract, customs declaration, transport documents, and non-cash payment proof.</li>
+            <li><strong>Refund threshold</strong>: Accumulated deductible input VAT balance exceeds <strong>VND 300 million</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>2. End-to-End Flowchart</h2>
+      <div class="svg-wrapper">
+        <svg viewBox="0 0 1000 1500" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker></defs>
+          <rect x="20" y="20" width="960" height="180" rx="8" fill="#eff6ff" opacity="0.6"/>
+          <rect x="20" y="220" width="960" height="260" rx="8" fill="#f0fdf4" opacity="0.6"/>
+          <rect x="20" y="500" width="960" height="200" rx="8" fill="#eff6ff" opacity="0.6"/>
+          <rect x="20" y="720" width="960" height="220" rx="8" fill="#fff7ed" opacity="0.6"/>
+          <rect x="20" y="960" width="960" height="240" rx="8" fill="#eff6ff" opacity="0.6"/>
+          <rect x="20" y="1220" width="960" height="250" rx="8" fill="#fef2f2" opacity="0.6"/>
+          <text x="50" y="50" font-size="16" font-weight="bold" fill="#1e40af">Phase 1: Order &amp; Contract</text>
+          <text x="50" y="250" font-size="16" font-weight="bold" fill="#166534">Phase 2: Fulfillment &amp; Export Docs</text>
+          <text x="50" y="530" font-size="16" font-weight="bold" fill="#1e40af">Phase 3: Payment &amp; Settlement</text>
+          <text x="50" y="750" font-size="16" font-weight="bold" fill="#9a3412">Phase 4: Tax Determination</text>
+          <text x="50" y="990" font-size="16" font-weight="bold" fill="#1e40af">Phase 5: Tax Filing</text>
+          <text x="50" y="1250" font-size="16" font-weight="bold" fill="#991b1b">Phase 6: Refund Application</text>
+          <rect x="320" y="70" width="360" height="80" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="500" y="100" text-anchor="middle" font-size="14" font-weight="600" fill="#1e40af">1. Buyer places order via Trade Assurance</text>
+          <text x="500" y="120" text-anchor="middle" font-size="12" fill="#475569">Platform generates electronic sales contract</text>
+          <line x1="500" y1="150" x2="500" y2="220" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+          <rect x="320" y="230" width="360" height="80" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="500" y="260" text-anchor="middle" font-size="14" font-weight="600" fill="#1e40af">2. Seller ships and completes export customs</text>
+          <text x="500" y="280" text-anchor="middle" font-size="12" fill="#475569">Obtain customs declaration and transport docs</text>
+          <line x1="500" y1="310" x2="500" y2="350" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+          <rect x="320" y="350" width="360" height="80" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+          <text x="500" y="380" text-anchor="middle" font-size="14" font-weight="600" fill="#166534">3. Issue 0% VAT e-invoice</text>
+          <text x="500" y="400" text-anchor="middle" font-size="12" fill="#475569">Through GDT e-invoice portal</text>
+          <line x1="500" y1="430" x2="500" y2="500" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+          <rect x="320" y="510" width="360" height="80" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="500" y="540" text-anchor="middle" font-size="14" font-weight="600" fill="#1e40af">4. Buyer pays online</text>
+          <text x="500" y="560" text-anchor="middle" font-size="12" fill="#475569">Funds received by Alibaba Hong Kong partner bank</text>
+          <line x1="500" y1="590" x2="500" y2="630" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+          <rect x="320" y="630" width="360" height="80" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="500" y="660" text-anchor="middle" font-size="14" font-weight="600" fill="#1e40af">5. Seller requests withdrawal</text>
+          <text x="500" y="680" text-anchor="middle" font-size="12" fill="#475569">Yeepay/appotapay settles to Vietnam account</text>
+          <line x1="500" y1="710" x2="500" y2="760" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+          <polygon points="500,760 620,810 500,860 380,810" fill="#fed7aa" stroke="#ea580c" stroke-width="2"/>
+          <text x="500" y="800" text-anchor="middle" font-size="13" font-weight="600" fill="#9a3412">Seller entity type?</text>
+          <line x1="380" y1="810" x2="220" y2="810" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+          <line x1="620" y1="810" x2="780" y2="810" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+          <rect x="50" y="780" width="170" height="60" rx="6" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+          <text x="135" y="805" text-anchor="middle" font-size="13" font-weight="600" fill="#991b1b">Individual / Household</text>
+          <rect x="780" y="780" width="170" height="60" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="865" y="805" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">Company / Enterprise</text>
+          <line x1="135" y1="840" x2="135" y2="960" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+          <line x1="865" y1="840" x2="865" y2="960" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+          <rect x="50" y="960" width="170" height="110" rx="6" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+          <text x="135" y="985" text-anchor="middle" font-size="12" font-weight="600" fill="#991b1b">6.1 Individual/Household filing</text>
+          <text x="135" y="1005" text-anchor="middle" font-size="11" fill="#7f1d1d">VAT + PIT</text>
+          <text x="135" y="1025" text-anchor="middle" font-size="11" fill="#991b1b">Confirm platform withholding</text>
+          <text x="135" y="1045" text-anchor="middle" font-size="11" fill="#7f1d1d">Self-declare if no certificate</text>
+          <rect x="780" y="960" width="170" height="110" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="865" y="985" text-anchor="middle" font-size="12" font-weight="600" fill="#1e40af">6.2 Enterprise filing</text>
+          <text x="865" y="1005" text-anchor="middle" font-size="11" fill="#374151">0% VAT + CIT</text>
+          <text x="865" y="1025" text-anchor="middle" font-size="11" fill="#1e40af">Monthly/Quarterly/Annual</text>
+          <text x="865" y="1045" text-anchor="middle" font-size="11" fill="#374151">Deduct input VAT</text>
+          <line x1="135" y1="1070" x2="500" y2="1120" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+          <line x1="865" y1="1070" x2="500" y2="1120" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+          <rect x="320" y="1120" width="360" height="80" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+          <text x="500" y="1150" text-anchor="middle" font-size="14" font-weight="600" fill="#166534">7. Prepare documents and file returns</text>
+          <text x="500" y="1170" text-anchor="middle" font-size="12" fill="#475569">Submit via Vietnam e-tax system</text>
+          <line x1="500" y1="1200" x2="500" y2="1250" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+          <polygon points="500,1250 620,1300 500,1350 380,1300" fill="#fed7aa" stroke="#ea580c" stroke-width="2"/>
+          <text x="500" y="1290" text-anchor="middle" font-size="13" font-weight="600" fill="#9a3412">Eligible for refund?</text>
+          <text x="500" y="1310" text-anchor="middle" font-size="12" fill="#7c2d12">Input VAT &gt; VND 300M?</text>
+          <line x1="380" y1="1300" x2="220" y2="1300" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+          <line x1="620" y1="1300" x2="780" y2="1300" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+          <rect x="50" y="1270" width="170" height="60" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+          <text x="135" y="1295" text-anchor="middle" font-size="13" font-weight="600" fill="#166534">Yes → File refund claim</text>
+          <rect x="780" y="1270" width="170" height="60" rx="6" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+          <text x="865" y="1295" text-anchor="middle" font-size="13" font-weight="600" fill="#475569">No → Carry forward</text>
+          <line x1="135" y1="1330" x2="135" y2="1390" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+          <line x1="865" y1="1330" x2="865" y2="1390" stroke="#64748b" stroke-width="2" marker-end="url(#a2)"/>
+          <rect x="320" y="1370" width="360" height="50" rx="25" fill="#1e3a8a"/>
+          <text x="500" y="1400" text-anchor="middle" font-size="15" font-weight="600" fill="white">Complete</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>3. Step-by-Step Operating Instructions</h2>
+      <ol class="step-list">
+        <li><strong>Confirm transaction and download contract</strong><br>After the buyer places an order and selects Trade Assurance, Alibaba.com automatically generates an electronic sales contract. Go to <strong>My Alibaba → Orders → All Orders</strong>, locate the order, and download/save the electronic contract. Also download the platform transaction agreement (e-stamped version).</li>
+        <li><strong>Fulfill order and obtain export documents</strong><br>The seller prepares and ships the goods and engages a customs broker to complete export customs clearance. Obtain: <strong>Export customs declaration</strong>, <strong>Bill of Lading / Air Waybill / CMR</strong>, <strong>Commercial Invoice</strong>, and <strong>Packing List</strong>.</li>
+        <li><strong>Issue 0% VAT e-invoice</strong><br>Log in to <a href="https://hoadondientu.gdt.gov.vn/" target="_blank">hoadondientu.gdt.gov.vn</a> and issue a <strong>Hóa đơn GTGT 0%</strong> for the export sale. The invoice must be validated by the GDT system.</li>
+        <li><strong>Retain payment and settlement records</strong><br>After the buyer pays, funds are received by Alibaba Hong Kong's partner bank (Citibank). When the seller requests withdrawal, Yeepay (appotapay) converts and settles the FX to the Vietnam account. Retain: <strong>platform settlement statement, Yeepay/appotapay settlement record, and Vietnam bank account credit advice</strong>.</li>
+        <li><strong>Determine tax treatment</strong><br>
+          <ul style="margin-left:20px;margin-top:8px">
+            <li><strong>Company</strong>: Self-declare VAT (0% for exports) and CIT; deduct input VAT.</li>
+            <li><strong>Individual / Household</strong>: Confirm whether Alibaba Singapore withholds tax under Decree 117. If a withholding certificate is provided, use it for offset; otherwise self-declare VAT and PIT.</li>
+          </ul>
+        </li>
+        <li><strong>File tax returns on time</strong><br>Submit returns through <a href="https://thuedientu.gdt.gov.vn/" target="_blank">thuedientu.gdt.gov.vn</a>. Companies use <strong>Form 01/GTGT</strong> (monthly/quarterly VAT), <strong>Form 03/TNDN</strong> (quarterly CIT provisional), and <strong>Form 03-1A/TNDN</strong> (annual CIT finalization). Individuals/households use applicable forms such as <strong>05/KK-TNCN</strong>.</li>
+        <li><strong>Apply for refund if eligible</strong><br>When accumulated deductible input VAT exceeds VND 300 million, submit a refund application (Form 01/HTBT) through the e-tax system.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>4. Tax Filing &amp; Refund Document Checklist</h2>
+      <table class="download-table">
+        <thead><tr><th style="width:28%">Document</th><th style="width:14%">Source</th><th style="width:34%">Purpose</th><th style="width:24%">How to Obtain / Link</th></tr></thead>
+        <tbody>
+          <tr><td>Electronic sales contract</td><td><span class="tag tag-platform">Alibaba platform</span></td><td>Proves transaction authenticity and terms</td><td>My Alibaba → Orders → All Orders → View/Download Contract</td></tr>
+          <tr><td>Platform transaction agreement (e-stamped)</td><td><span class="tag tag-platform">Alibaba platform</span></td><td>Proves service relationship between seller and platform</td><td>My Alibaba → Account → Contracts / Agreements</td></tr>
+          <tr><td>Platform fee invoices (membership / ads / commission)</td><td><span class="tag tag-platform">Alibaba platform</span></td><td>Expense evidence for input VAT deduction</td><td>My Alibaba → Billing Center → Invoices → Download</td></tr>
+          <tr><td>Trade Assurance settlement statement / payment record</td><td><span class="tag tag-platform">Alibaba platform</span></td><td>Proves overseas income and platform fee deductions</td><td>My Alibaba → Transactions &amp; Logistics → Alibaba.com Pay → Statements</td></tr>
+          <tr><td>Hong Kong partner bank receipt advice</td><td><span class="tag tag-bank">Citibank</span></td><td>Proves source of foreign currency funds</td><td>Credit advice provided by bank or platform</td></tr>
+          <tr><td>Yeepay / appotapay settlement record</td><td><span class="tag tag-bank">Payment provider</span></td><td>Proves FX conversion and settlement to Vietnam account</td><td>Withdrawal record on platform or settlement document from provider</td></tr>
+          <tr><td>Vietnam bank account credit advice</td><td><span class="tag tag-bank">Vietnam bank</span></td><td>Proves funds entered Vietnam; non-cash payment evidence</td><td>Download from internet banking or request at branch</td></tr>
+          <tr><td>Commercial Invoice</td><td><span class="tag tag-seller">Seller</span></td><td>Basis for customs clearance, payment, and tax filing</td><td>Issued by seller; must match contract and customs declaration</td></tr>
+          <tr><td>Packing List</td><td><span class="tag tag-seller">Seller</span></td><td>Supports customs and logistics</td><td>Issued by seller</td></tr>
+          <tr><td>Export customs declaration</td><td><span class="tag tag-seller">Customs / broker</span></td><td>Core evidence for 0% VAT and refund claims</td><td>Obtained via Vietnam customs e-system or customs broker</td></tr>
+          <tr><td>Transport documents (BL / AWB / CMR)</td><td><span class="tag tag-seller">Freight forwarder / carrier</span></td><td>Proves goods actually left Vietnam</td><td>Request from freight forwarder or carrier</td></tr>
+          <tr><td>0% VAT e-invoice</td><td><span class="tag tag-seller">Seller</span></td><td>Export sales invoice; declare 0% VAT</td><td><a href="https://hoadondientu.gdt.gov.vn/" target="_blank">hoadondientu.gdt.gov.vn</a></td></tr>
+          <tr><td>Purchase / expense input invoices</td><td><span class="tag tag-seller">Suppliers</span></td><td>Deduct input VAT</td><td>Request valid VAT invoices from suppliers</td></tr>
+          <tr><td>Tax registration / business registration certificate</td><td><span class="tag tag-seller">Government</span></td><td>Proves taxpayer identity</td><td>Issued by Vietnam business registration authority</td></tr>
+          <tr><td>Tax withholding certificate (if applicable)</td><td><span class="tag tag-platform">Alibaba platform</span></td><td>Used for tax offset or year-end settlement</td><td>Provided by platform if withholding applies; currently to be confirmed</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>5. Official Filing Portals &amp; Form Downloads</h2>
+      <div class="link-box"><strong>General Department of Taxation of Vietnam (English)</strong><br><a href="https://www.gdt.gov.vn/wps/portal/english" target="_blank">https://www.gdt.gov.vn/wps/portal/english</a><br><span style="color:#64748b;font-size:13px">Access latest tax circulars, form templates, and filing guidance.</span></div>
+      <div class="link-box"><strong>Vietnam e-Tax Portal</strong><br><a href="https://thuedientu.gdt.gov.vn/" target="_blank">https://thuedientu.gdt.gov.vn/</a><br><span style="color:#64748b;font-size:13px">Submit VAT, CIT, PIT returns and refund applications online. After logging in, download forms 01/GTGT, 03/TNDN, 05/KK-TNCN, 01/HTBT, etc.</span></div>
+      <div class="link-box"><strong>Vietnam e-Invoice Portal</strong><br><a href="https://hoadondientu.gdt.gov.vn/" target="_blank">https://hoadondientu.gdt.gov.vn/</a><br><span style="color:#64748b;font-size:13px">Register, issue, query, and download 0% VAT e-invoices.</span></div>
+      <div class="link-box"><strong>iTaxviewer (XML tax file reader)</strong><br><span style="color:#64748b;font-size:13px">Search "iTaxviewer" on the GDT website to download the tool for reading XML tax files issued by the tax authority.</span></div>
+      <div class="link-box"><strong>Alibaba.com Seller Login</strong><br><a href="https://seller.alibaba.com/" target="_blank">https://seller.alibaba.com/</a> or <a href="https://passport.alibaba.com/" target="_blank">https://passport.alibaba.com/</a><br><span style="color:#64748b;font-size:13px">Access Orders, Billing Center, and Alibaba.com Pay to download contracts, invoices, and settlement statements.</span></div>
+    </div>
+
+    <div class="card">
+      <h2>6. Filing Points by Seller Type</h2>
+      <table>
+        <thead><tr><th style="width:18%">Entity Type</th><th style="width:42%">Filing Obligations</th><th style="width:40%">Key Considerations</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Individual seller</strong></td><td>Declare PIT on business income; self-declare VAT and PIT if platform does not withhold.</td><td>Confirm whether Alibaba Singapore withholds tax under Decree 117. If a withholding certificate is provided, use it for offset; otherwise self-declare.</td></tr>
+          <tr><td><strong>Household business</strong></td><td>Declare VAT and PIT under household business rules; export sales may apply 0% VAT.</td><td>Ensure e-invoice registration is completed; retain export customs declaration, transport documents, and payment evidence.</td></tr>
+          <tr><td><strong>Company (LLC / JSC)</strong></td><td>Declare VAT (0% for exports) and CIT; deduct input VAT; apply for refund if conditions are met.</td><td>Confirm contractual relationship and revenue recognition with Singapore/Hong Kong entities; characterize Yeepay settlement; archive platform fee invoices for deduction.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>7. Refund Application Conditions &amp; Process</h2>
+      <div class="warning"><div class="warning-title">Refund Threshold</div>A refund can be claimed when accumulated deductible input VAT exceeds <strong>VND 300 million</strong>, or in other statutory cases of overpaid tax. If the threshold is not met, input VAT can be carried forward to future periods.</div>
+      <h3>Refund Steps</h3>
+      <ol style="margin-left:20px;line-height:2">
+        <li>Prepare refund documents: refund application (Form 01/HTBT), 0% VAT invoices, export customs declarations, transport documents, overseas payment evidence, input invoices, bank credit advice, and tax registration certificate.</li>
+        <li>Log in to <a href="https://thuedientu.gdt.gov.vn/" target="_blank">thuedientu.gdt.gov.vn</a>, select the refund function, and upload documents.</li>
+        <li>The tax authority reviews document consistency and may request additional documents or conduct an on-site inspection.</li>
+        <li>Upon approval, the refund is credited to the designated account. If rejected, supplement documents as instructed or carry forward the input VAT.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>8. Key Risk Alerts</h2>
+      <div class="warning"><div class="warning-title">Complete 0% VAT evidence chain is mandatory</div>Missing export customs declaration, transport documents, or non-cash payment proof (for transactions over VND 5 million) may result in denial of 0% VAT and loss of input VAT deduction / refund eligibility.</div>
+      <div class="warning"><div class="warning-title">Platform withholding status is to be confirmed</div>Because the Vietnam Alibaba.com website is operated by Alibaba Singapore and funds are settled by Alibaba Hong Kong, whether it is treated as a withholding platform under Decree 117 must be confirmed by a licensed Vietnamese tax advisor.</div>
+      <div class="warning"><div class="warning-title">Consistency across documents</div>Product names, quantities, amounts, and buyer/seller information on the platform contract, Commercial Invoice, customs declaration, transport documents, and payment records must be consistent to avoid refund review issues.</div>
+    </div>
+
+    <div class="card disclaimer">
+      <h2 style="color:#991b1b;border:none;padding:0;margin-bottom:12px">Disclaimer</h2>
+      <p>This SOP is compiled based on Vietnam Decree 117/2025/NĐ-CP, the Law on Value Added Tax, the Law on Corporate Income Tax, the Law on Personal Income Tax, and related publicly available information. It is intended as operational guidance for Vietnam-based Alibaba.com sellers and does not constitute legal or tax advice.</p>
+      <p>Because your business model involves a Singapore operating entity, Hong Kong fund settlement, and Yeepay/appotapay payment settlement, and because Vietnamese tax law and platform implementation details may change, please have this SOP reviewed by a licensed Vietnamese tax advisor, accounting firm, or law firm, and supplement or adjust it according to actual transaction structure and the latest regulations.</p>
+    </div>
+
+  </div>
+
+  <!-- ==================== VIETNAMESE ==================== -->
+  <div data-lang="vn">
+
+    <div class="card">
+      <h2>I. Tóm tắt quy định chính</h2>
+      <div class="two-col">
+        <div>
+          <h3>Bối cảnh kinh doanh</h3>
+          <ul style="margin-left:20px">
+            <li>Người mua và người bán giao dịch trên <strong>Alibaba.com</strong>.</li>
+            <li>Người mua thanh toán trực tuyến qua <strong>Trade Assurance</strong>; tiền được <strong>Alibaba Hong Kong</strong> thu hộ thông qua ngân hàng đối tác như Citibank.</li>
+            <li>Khi người bán yêu cầu rút tiền, <strong>Yeepay (kênh cơ sở: appotapay)</strong> chuyển đổi ngoại tệ và quyết toán về tài khoản tại Việt Nam.</li>
+            <li>Nền tảng tạo hợp đồng điện tử giữa người mua và người bán; người bán có thể tải thỏa thuận giao dịch với nền tảng (bản điện tử có đóng dấu) và hóa đơn phí từ nền tảng.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Quy định thuế</h3>
+          <ul style="margin-left:20px">
+            <li><strong>Nghị định 117/2025/NĐ-CP</strong>: Từ ngày 01/07/2025, sàn thương mại điện tử có chức năng thanh toán phải khấu trừ, khai thay và nộp thay thuế GTGT và thuế TNCN cho cá nhân/hộ kinh doanh.</li>
+            <li><strong>Doanh nghiệp</strong> (LLC/JSC) không thuộc diện khấu trừ thuế của nền tảng; thực hiện theo quy định thuế doanh nghiệp.</li>
+            <li><strong>Bán hàng xuất khẩu</strong> có thể áp dụng <strong>GTGT 0%</strong> nếu đầy đủ hợp đồng xuất khẩu, tờ khai hải quan, chứng từ vận chuyển và chứng từ thanh toán không dùng tiền mặt.</li>
+            <li><strong>Điều kiện hoàn thuế</strong>: Số thuế GTGT đầu vào được khấu trừ chưa hết tích lũy vượt quá <strong>300 triệu đồng</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>II. Sơ đồ quy trình trọn vẹn</h2>
+      <div class="svg-wrapper">
+        <svg viewBox="0 0 1000 1500" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker></defs>
+          <rect x="20" y="20" width="960" height="180" rx="8" fill="#eff6ff" opacity="0.6"/>
+          <rect x="20" y="220" width="960" height="260" rx="8" fill="#f0fdf4" opacity="0.6"/>
+          <rect x="20" y="500" width="960" height="200" rx="8" fill="#eff6ff" opacity="0.6"/>
+          <rect x="20" y="720" width="960" height="220" rx="8" fill="#fff7ed" opacity="0.6"/>
+          <rect x="20" y="960" width="960" height="240" rx="8" fill="#eff6ff" opacity="0.6"/>
+          <rect x="20" y="1220" width="960" height="250" rx="8" fill="#fef2f2" opacity="0.6"/>
+          <text x="50" y="50" font-size="16" font-weight="bold" fill="#1e40af">Giai đoạn 1: Giao dịch và hợp đồng</text>
+          <text x="50" y="250" font-size="16" font-weight="bold" fill="#166534">Giai đoạn 2: Thực hiện và chứng từ xuất khẩu</text>
+          <text x="50" y="530" font-size="16" font-weight="bold" fill="#1e40af">Giai đoạn 3: Thu tiền và quyết toán</text>
+          <text x="50" y="750" font-size="16" font-weight="bold" fill="#9a3412">Giai đoạn 4: Xác định nghĩa vụ thuế</text>
+          <text x="50" y="990" font-size="16" font-weight="bold" fill="#1e40af">Giai đoạn 5: Khai thuế</text>
+          <text x="50" y="1250" font-size="16" font-weight="bold" fill="#991b1b">Giai đoạn 6: Hoàn thuế</text>
+          <rect x="320" y="70" width="360" height="80" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="500" y="100" text-anchor="middle" font-size="14" font-weight="600" fill="#1e40af">1. Người mua đặt hàng và chọn Trade Assurance</text>
+          <text x="500" y="120" text-anchor="middle" font-size="12" fill="#475569">Nền tảng tạo hợp đồng bán hàng điện tử</text>
+          <line x1="500" y1="150" x2="500" y2="220" stroke="#64748b" stroke-width="2" marker-end="url(#a3)"/>
+          <rect x="320" y="230" width="360" height="80" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="500" y="260" text-anchor="middle" font-size="14" font-weight="600" fill="#1e40af">2. Người bán giao hàng và làm thủ tục hải quan</text>
+          <text x="500" y="280" text-anchor="middle" font-size="12" fill="#475569">Nhận tờ khai hải quan và vận đơn</text>
+          <line x1="500" y1="310" x2="500" y2="350" stroke="#64748b" stroke-width="2" marker-end="url(#a3)"/>
+          <rect x="320" y="350" width="360" height="80" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+          <text x="500" y="380" text-anchor="middle" font-size="14" font-weight="600" fill="#166534">3. Xuất hóa đơn GTGT 0%</text>
+          <text x="500" y="400" text-anchor="middle" font-size="12" fill="#475569">Thông qua cổng hóa đơn điện tử của Tổng cục Thuế</text>
+          <line x1="500" y1="430" x2="500" y2="500" stroke="#64748b" stroke-width="2" marker-end="url(#a3)"/>
+          <rect x="320" y="510" width="360" height="80" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="500" y="540" text-anchor="middle" font-size="14" font-weight="600" fill="#1e40af">4. Người mua thanh toán trực tuyến</text>
+          <text x="500" y="560" text-anchor="middle" font-size="12" fill="#475569">Tiền vào ngân hàng đối tác của Alibaba Hong Kong (Citibank)</text>
+          <line x1="500" y1="590" x2="500" y2="630" stroke="#64748b" stroke-width="2" marker-end="url(#a3)"/>
+          <rect x="320" y="630" width="360" height="80" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="500" y="660" text-anchor="middle" font-size="14" font-weight="600" fill="#1e40af">5. Người bán yêu cầu rút tiền</text>
+          <text x="500" y="680" text-anchor="middle" font-size="12" fill="#475569">Yeepay/appotapay quyết toán về tài khoản Việt Nam</text>
+          <line x1="500" y1="710" x2="500" y2="760" stroke="#64748b" stroke-width="2" marker-end="url(#a3)"/>
+          <polygon points="500,760 620,810 500,860 380,810" fill="#fed7aa" stroke="#ea580c" stroke-width="2"/>
+          <text x="500" y="800" text-anchor="middle" font-size="13" font-weight="600" fill="#9a3412">Loại hình người bán?</text>
+          <line x1="380" y1="810" x2="220" y2="810" stroke="#64748b" stroke-width="2" marker-end="url(#a3)"/>
+          <line x1="620" y1="810" x2="780" y2="810" stroke="#64748b" stroke-width="2" marker-end="url(#a3)"/>
+          <rect x="50" y="780" width="170" height="60" rx="6" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+          <text x="135" y="805" text-anchor="middle" font-size="13" font-weight="600" fill="#991b1b">Cá nhân / Hộ KD</text>
+          <rect x="780" y="780" width="170" height="60" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="865" y="805" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">Doanh nghiệp</text>
+          <line x1="135" y1="840" x2="135" y2="960" stroke="#64748b" stroke-width="2" marker-end="url(#a3)"/>
+          <line x1="865" y1="840" x2="865" y2="960" stroke="#64748b" stroke-width="2" marker-end="url(#a3)"/>
+          <rect x="50" y="960" width="170" height="110" rx="6" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+          <text x="135" y="985" text-anchor="middle" font-size="12" font-weight="600" fill="#991b1b">6.1 Khai theo cá nhân/HKD</text>
+          <text x="135" y="1005" text-anchor="middle" font-size="11" fill="#7f1d1d">GTGT + TNCN</text>
+          <text x="135" y="1025" text-anchor="middle" font-size="11" fill="#991b1b">Xác nhận nền tảng khấu trừ</text>
+          <text x="135" y="1045" text-anchor="middle" font-size="11" fill="#7f1d1d">Nếu không thì tự khai</text>
+          <rect x="780" y="960" width="170" height="110" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+          <text x="865" y="985" text-anchor="middle" font-size="12" font-weight="600" fill="#1e40af">6.2 Khai theo doanh nghiệp</text>
+          <text x="865" y="1005" text-anchor="middle" font-size="11" fill="#374151">GTGT 0% + TNDN</text>
+          <text x="865" y="1025" text-anchor="middle" font-size="11" fill="#1e40af">Khai theo tháng/quý/năm</text>
+          <text x="865" y="1045" text-anchor="middle" font-size="11" fill="#374151">Khấu trừ GTGT đầu vào</text>
+          <line x1="135" y1="1070" x2="500" y2="1120" stroke="#64748b" stroke-width="2" marker-end="url(#a3)"/>
+          <line x1="865" y1="1070" x2="500" y2="1120" stroke="#64748b" stroke-width="2" marker-end="url(#a3)"/>
+          <rect x="320" y="1120" width="360" height="80" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+          <text x="500" y="1150" text-anchor="middle" font-size="14" font-weight="600" fill="#166534">7. Chuẩn bị hồ sơ và nộp tờ khai</text>
+          <text x="500" y="1170" text-anchor="middle" font-size="12" fill="#475569">Nộp qua hệ thống thuế điện tử Việt Nam</text>
+          <line x1="500" y1="1200" x2="500" y2="1250" stroke="#64748b" stroke-width="2" marker-end="url(#a3)"/>
+          <polygon points="500,1250 620,1300 500,1350 380,1300" fill="#fed7aa" stroke="#ea580c" stroke-width="2"/>
+          <text x="500" y="1290" text-anchor="middle" font-size="13" font-weight="600" fill="#9a3412">Đủ điều kiện hoàn thuế?</text>
+          <text x="500" y="1310" text-anchor="middle" font-size="12" fill="#7c2d12">GTGT đầu vào &gt; 300 triệu?</text>
+          <line x1="380" y1="1300" x2="220" y2="1300" stroke="#64748b" stroke-width="2" marker-end="url(#a3)"/>
+          <line x1="620" y1="1300" x2="780" y2="1300" stroke="#64748b" stroke-width="2" marker-end="url(#a3)"/>
+          <rect x="50" y="1270" width="170" height="60" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+          <text x="135" y="1295" text-anchor="middle" font-size="13" font-weight="600" fill="#166534">Có → Nộp hồ sơ hoàn thuế</text>
+          <rect x="780" y="1270" width="170" height="60" rx="6" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+          <text x="865" y="1295" text-anchor="middle" font-size="13" font-weight="600" fill="#475569">Không → Chuyển kỳ sau</text>
+          <line x1="135" y1="1330" x2="135" y2="1390" stroke="#64748b" stroke-width="2" marker-end="url(#a3)"/>
+          <line x1="865" y1="1330" x2="865" y2="1390" stroke="#64748b" stroke-width="2" marker-end="url(#a3)"/>
+          <rect x="320" y="1370" width="360" height="50" rx="25" fill="#1e3a8a"/>
+          <text x="500" y="1400" text-anchor="middle" font-size="15" font-weight="600" fill="white">Hoàn tất</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>III. Hướng dẫn từng bước</h2>
+      <ol class="step-list">
+        <li><strong>Xác nhận giao dịch và tải hợp đồng</strong><br>Sau khi người mua đặt hàng và chọn Trade Assurance, Alibaba.com tự động tạo hợp đồng bán hàng điện tử. Người bán vào <strong>My Alibaba → Orders → All Orders</strong>, tìm đơn hàng tương ứng và tải/lưu hợp đồng điện tử. Đồng thờ tải thỏa thuận giao dịch với nền tảng (bản điện tử có đóng dấu).</li>
+        <li><strong>Thực hiện hợp đồng và lấy chứng từ xuất khẩu</strong><br>Người bán chuẩn bị và giao hàng, ủy thác cho đại lý hải quan làm thủ tục xuất khẩu. Cần đảm bảo có: <strong>Tờ khai hải quan xuất khẩu</strong>, <strong>Vận đơn (BL/AWB/CMR)</strong>, <strong>Commercial Invoice</strong>, <strong>Packing List</strong>.</li>
+        <li><strong>Xuất hóa đơn GTGT 0%</strong><br>Đăng nhập <a href="https://hoadondientu.gdt.gov.vn/" target="_blank">hoadondientu.gdt.gov.vn</a> để xuất <strong>Hóa đơn GTGT 0%</strong> cho giao dịch xuất khẩu. Hóa đơn phải được hệ thống của Tổng cục Thuế xác thực.</li>
+        <li><strong>Lưu giữ chứng từ thu tiền và quyết toán</strong><br>Sau khi người mua thanh toán, tiền được nhận tại ngân hàng đối tác của Alibaba Hong Kong (Citibank). Khi người bán yêu cầu rút tiền, Yeepay (appotapay) chuyển đổi ngoại tệ và quyết toán về tài khoản tại Việt Nam. Cần lưu: <strong>bản sao kê quyết toán của nền tảng, biên lai quyết toán của Yeepay/appotapay, và sao kê tài khoản ngân hàng Việt Nam</strong>.</li>
+        <li><strong>Xác định cách thức khai thuế</strong><br>
+          <ul style="margin-left:20px;margin-top:8px">
+            <li><strong>Doanh nghiệp</strong>: Tự khai GTGT (0% đối với xuất khẩu) và TNDN; khấu trừ GTGT đầu vào.</li>
+            <li><strong>Cá nhân / Hộ kinh doanh</strong>: Xác nhận xem Alibaba Singapore có khấu trừ thuế theo Nghị định 117 hay không. Nếu nền tảng cung cấp chứng từ khấu trừ, dùng để bù trừ hoặc quyết toán cuối năm; nếu không, tự khai GTGT và TNCN.</li>
+          </ul>
+        </li>
+        <li><strong>Nộp tờ khai thuế đúng hạn</strong><br>Nộp tờ khai qua <a href="https://thuedientu.gdt.gov.vn/" target="_blank">thuedientu.gdt.gov.vn</a>. Doanh nghiệp sử dụng <strong>Mẫu 01/GTGT</strong> (khai tháng/quý), <strong>Mẫu 03/TNDN</strong> (tạm tính quý) và <strong>Mẫu 03-1A/TNDN</strong> (quyết toán năm). Cá nhân/hộ kinh doanh sử dụng các mẫu tờ khai tương ứng như <strong>05/KK-TNCN</strong>.</li>
+        <li><strong>Đề nghị hoàn thuế nếu đủ điều kiện</strong><br>Khi số thuế GTGT đầu vào được khấu trừ chưa hết tích lũy vượt quá 300 triệu đồng, nộp đơn đề nghị hoàn thuế (mẫu <strong>01/HTBT</strong>) qua hệ thống thuế điện tử.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>IV. Danh mục hồ sơ khai thuế và hoàn thuế</h2>
+      <table class="download-table">
+        <thead><tr><th style="width:28%">Chứng từ</th><th style="width:14%">Nguồn</th><th style="width:34%">Mục đích</th><th style="width:24%">Cách lấy / Link tải</th></tr></thead>
+        <tbody>
+          <tr><td>Hợp đồng bán hàng điện tử</td><td><span class="tag tag-platform">Nền tảng Alibaba</span></td><td>Chứng minh tính thật và điều khoản giao dịch</td><td>My Alibaba → Orders → All Orders → Xem/Tải hợp đồng</td></tr>
+          <tr><td>Thỏa thuận giao dịch với nền tảng (bản điện tử có đóng dấu)</td><td><span class="tag tag-platform">Nền tảng Alibaba</span></td><td>Chứng minh quan hệ dịch vụ giữa người bán và nền tảng</td><td>My Alibaba → Account → Contracts / Agreements</td></tr>
+          <tr><td>Hóa đơn phí nền tảng (phí thành viên / quảng cáo / hoa hồng)</td><td><span class="tag tag-platform">Nền tảng Alibaba</span></td><td>Chứng từ chi phí để khấu trừ GTGT đầu vào</td><td>My Alibaba → Billing Center → Invoices → Download</td></tr>
+          <tr><td>Bản sao kê / chứng từ thanh toán Trade Assurance</td><td><span class="tag tag-platform">Nền tảng Alibaba</span></td><td>Chứng minh doanh thu nước ngoài và chi tiết khấu trừ phí</td><td>My Alibaba → Transactions &amp; Logistics → Alibaba.com Pay → Statements</td></tr>
+          <tr><td>Chứng từ thu tiền từ ngân hàng đối tác Hong Kong</td><td><span class="tag tag-bank">Citibank</span></td><td>Chứng minh nguồn gốc ngoại tệ</td><td>Thông báo có tiền (Credit Advice) do ngân hàng hoặc nền tảng cung cấp</td></tr>
+          <tr><td>Biên lai quyết toán của Yeepay / appotapay</td><td><span class="tag tag-bank">Đơn vị thanh toán</span></td><td>Chứng minh ngoại tệ đã được chuyển đổi và quyết toán về Việt Nam</td><td>Lịch sử rút tiền trên nền tảng hoặc chứng từ quyết toán của đơn vị thanh toán</td></tr>
+          <tr><td>Sao kê tài khoản ngân hàng Việt Nam</td><td><span class="tag tag-bank">Ngân hàng Việt Nam</span></td><td>Chứng minh tiền đã về Việt Nam; chứng từ thanh toán không dùng tiền mặt</td><td>Tải từ ngân hàng điện tử hoặc in tại quầy</td></tr>
+          <tr><td>Commercial Invoice</td><td><span class="tag tag-seller">Người bán</span></td><td>Căn cứ hải quan, thu tiền và khai thuế</td><td>Tự lập, phải khớp với hợp đồng và tờ khai hải quan</td></tr>
+          <tr><td>Packing List</td><td><span class="tag tag-seller">Người bán</span></td><td>Hỗ trợ hải quan và logistics</td><td>Tự lập</td></tr>
+          <tr><td>Tờ khai hải quan xuất khẩu</td><td><span class="tag tag-seller">Hải quan / Đại lý HQ</span></td><td>Chứng từ cốt lõi để áp dụng GTGT 0% và hoàn thuế</td><td>Lấy qua hệ thống điện tử của Hải quan Việt Nam hoặc đại lý hải quan</td></tr>
+          <tr><td>Chứng từ vận chuyển (BL / AWB / CMR)</td><td><span class="tag tag-seller">Forwarder / Hãng vận chuyển</span></td><td>Chứng minh hàng hóa đã thực tế xuất cảnh</td><td>Yêu cầu từ forwarder hoặc hãng vận chuyển</td></tr>
+          <tr><td>Hóa đơn GTGT 0%</td><td><span class="tag tag-seller">Người bán</span></td><td>Xuất hóa đơn bán hàng xuất khẩu; khai GTGT 0%</td><td><a href="https://hoadondientu.gdt.gov.vn/" target="_blank">hoadondientu.gdt.gov.vn</a></td></tr>
+          <tr><td>Hóa đơn đầu vào mua hàng / chi phí</td><td><span class="tag tag-seller">Nhà cung cấp</span></td><td>Khấu trừ thuế GTGT đầu vào</td><td>Yêu cầu hóa đơn GTGT hợp lệ từ nhà cung cấp</td></tr>
+          <tr><td>Giấy chứng nhận đăng ký thuế / đăng ký doanh nghiệp</td><td><span class="tag tag-seller">Cơ quan nhà nước</span></td><td>Chứng minh chủ thể nộp thuế</td><td>Do cơ quan đăng ký kinh doanh Việt Nam cấp</td></tr>
+          <tr><td>Chứng từ khấu trừ thuế (nếu có)</td><td><span class="tag tag-platform">Nền tảng Alibaba</span></td><td>Dùng để bù trừ hoặc quyết toán thuế</td><td>Do nền tảng cung cấp nếu thực hiện khấu trừ; hiện đang cần xác nhận</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>V. Cổng khai thuế và link tải biểu mẫu</h2>
+      <div class="link-box"><strong>Trang web chính thức của Tổng cục Thuế Việt Nam</strong><br><a href="https://www.gdt.gov.vn/" target="_blank">https://www.gdt.gov.vn/</a><br><span style="color:#64748b;font-size:13px">Cập nhật thông tư thuế mới nhất, biểu mẫu và hướng dẫn khai thuế.</span></div>
+      <div class="link-box"><strong>Hệ thống thuế điện tử (e-tax Portal)</strong><br><a href="https://thuedientu.gdt.gov.vn/" target="_blank">https://thuedientu.gdt.gov.vn/</a><br><span style="color:#64748b;font-size:13px">Nộp tờ khai GTGT, TNDN, TNCN và đề nghị hoàn thuế trực tuyến. Sau khi đăng nhập có thể tải các mẫu 01/GTGT, 03/TNDN, 05/KK-TNCN, 01/HTBT.</span></div>
+      <div class="link-box"><strong>Cổng thông tin hóa đơn điện tử</strong><br><a href="https://hoadondientu.gdt.gov.vn/" target="_blank">https://hoadondientu.gdt.gov.vn/</a><br><span style="color:#64748b;font-size:13px">Đăng ký, xuất, tra cứu và tải hóa đơn GTGT điện tử 0%.</span></div>
+      <div class="link-box"><strong>iTaxviewer (phần mềm đọc hồ sơ thuế XML)</strong><br><span style="color:#64748b;font-size:13px">Tìm kiếm "iTaxviewer" trên trang web của Tổng cục Thuế để tải phần mềm đọc các tệp thuế định dạng XML do cơ quan thuế phát hành.</span></div>
+      <div class="link-box"><strong>Trang đăng nhập dành cho người bán Alibaba.com</strong><br><a href="https://seller.alibaba.com/" target="_blank">https://seller.alibaba.com/</a> hoặc <a href="https://passport.alibaba.com/" target="_blank">https://passport.alibaba.com/</a><br><span style="color:#64748b;font-size:13px">Truy cập Orders, Billing Center, Alibaba.com Pay để tải hợp đồng, hóa đơn và sao kê quyết toán.</span></div>
+    </div>
+
+    <div class="card">
+      <h2>VI. Điểm cần lưu ý theo từng loại hình</h2>
+      <table>
+        <thead><tr><th style="width:18%">Loại hình</th><th style="width:42%">Nghĩa vụ khai thuế</th><th style="width:40%">Lưu ý quan trọng</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Cá nhân</strong></td><td>Khai TNCN từ thu nhập kinh doanh; nếu nền tảng không khấu trừ thì tự khai GTGT và TNCN.</td><td>Xác nhận xem Alibaba Singapore có khấu trừ thuế theo Nghị định 117 hay không. Nếu có chứng từ khấu trừ thì dùng để bù trừ; nếu không thì tự khai với cơ quan thuế Việt Nam.</td></tr>
+          <tr><td><strong>Hộ kinh doanh</strong></td><td>Khai GTGT và TNCN theo quy định hộ kinh doanh; bán hàng xuất khẩu có thể áp dụng GTGT 0%.</td><td>Đảm bảo đã đăng ký sử dụng hóa đơn điện tử; lưu giữ tờ khai hải quan xuất khẩu, chứng từ vận chuyển, chứng từ thu tiền.</td></tr>
+          <tr><td><strong>Doanh nghiệp (LLC/JSC)</strong></td><td>Khai GTGT (0% đối với xuất khẩu) và TNDN; khấu trừ GTGT đầu vào; đủ điều kiện thì hoàn thuế.</td><td>Xác nhận quan hệ hợp đồng và thờ điểm xác nhận doanh thu với chủ thể Singapore/Hong Kong; xác định bản chất việc quyết toán qua Yeepay; lưu trữ hóa đơn phí nền tảng để khấu trừ.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>VII. Điều kiện và quy trình hoàn thuế</h2>
+      <div class="warning"><div class="warning-title">Ngưỡng hoàn thuế</div>Có thể đề nghị hoàn thuế khi số thuế GTGT đầu vào được khấu trừ chưa hết tích lũy vượt quá <strong>300 triệu đồng</strong>, hoặc trong các trường hợp hoàn thuế khác theo quy định. Nếu chưa đủ ngưỡng, GTGT đầu vào có thể chuyển kỳ sau tiếp tục khấu trừ.</div>
+      <h3>Các bước hoàn thuế</h3>
+      <ol style="margin-left:20px;line-height:2">
+        <li>Chuẩn bị hồ sơ: Đơn đề nghị hoàn thuế (mẫu 01/HTBT), hóa đơn GTGT 0%, tờ khai hải quan xuất khẩu, chứng từ vận chuyển, chứng từ thu tiền từ nước ngoài, hóa đơn đầu vào, sao kê ngân hàng, giấy chứng nhận đăng ký thuế.</li>
+        <li>Đăng nhập <a href="https://thuedientu.gdt.gov.vn/" target="_blank">thuedientu.gdt.gov.vn</a>, chọn chức năng đề nghị hoàn thuế và tải hồ sơ lên.</li>
+        <li>Cơ quan thuế rà soát tính nhất quán của chứng từ, có thể yêu cầu bổ sung hoặc kiểm tra thực tế.</li>
+        <li>Sau khi phê duyệt, tiền hoàn thuế được chuyển vào tài khoản chỉ định; nếu không đồng ý, bổ sung theo hướng dẫn hoặc chuyển kỳ sau.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>VIII. Cảnh báo rủi ro chính</h2>
+      <div class="warning"><div class="warning-title">Chuỗi chứng từ GTGT 0% phải đầy đủ</div>Nếu thiếu tờ khai hải quan xuất khẩu, chứng từ vận chuyển hoặc chứng từ thanh toán không dùng tiền mặt (đối với giao dịch trên 5 triệu đồng), cơ quan thuế có thể từ chối áp dụng GTGT 0% và từ chối khấu trừ/hoàn thuế GTGT đầu vào.</div>
+      <div class="warning"><div class="warning-title">Trạng thái khấu trừ thuế của nền tảng cần được xác nhận</div>Do website Alibaba.com Việt Nam do Alibaba Singapore vận hành và tiền được quyết toán bởi Alibaba Hong Kong, việc chủ thể này có bị coi là nền tảng phải khấu trừ thuế theo Nghị định 117 hay không cần được xác nhận bởi cố vấn thuế được cấp phép tại Việt Nam.</div>
+      <div class="warning"><div class="warning-title">Tính nhất quán giữa các chứng từ</div>Tên hàng, số lượng, giá trị, thông tin người mua/người bán trên hợp đồng nền tảng, Commercial Invoice, tờ khai hải quan, vận đơn và chứng từ thu tiền phải khớp nhau để tránh bị từ chối trong quá trình hoàn thuế.</div>
+    </div>
+
+    <div class="card disclaimer">
+      <h2 style="color:#991b1b;border:none;padding:0;margin-bottom:12px">Tuyên bố miễn trừ</h2>
+      <p>Quy trình này được biên soạn dựa trên Nghị định 117/2025/NĐ-CP, Luật Thuế giá trị gia tăng, Luật Thuế thu nhập doanh nghiệp, Luật Thuế thu nhập cá nhân và các thông tin công khai liên quan. Mục đích là hướng dẫn vận hành cho người bán Alibaba.com tại Việt Nam, không phải là tư vấn pháp lý hoặc thuế.</p>
+      <p>Do mô hình kinh doanh của quý công ty liên quan đến chủ thể vận hành tại Singapore, quyết toán tiền tại Hong Kong và thanh toán qua Yeepay/appotapay, đồng thờ pháp luật thuế Việt Nam và cách thức thực thi của nền tảng có thể thay đổi, vui lòng đưa quy trình này cho công ty tư vấn thuế/kế toán/luật được cấp phép tại Việt Nam rà soát, bổ sung và điều chỉnh theo cấu trúc giao dịch thực tế và quy định mới nhất.</p>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;color:#64748b;font-size:13px;padding:24px">
+    <span data-lang="cn" class="active">越南 Alibaba.com 报税与退税 SOP · 中文版 · 生成日期：2026-06-26</span>
+    <span data-lang="en">Vietnam Alibaba.com Tax Filing &amp; Refund SOP · English Version · Generated: 2026-06-26</span>
+    <span data-lang="vn">Quy trình khai thuế và hoàn thuế Alibaba.com Việt Nam · Bản tiếng Việt · Ngày tạo: 26/06/2026</span>
+  </div>
+</div>
+
+<script>
+function switchLang(lang){
+  document.querySelectorAll('[data-lang]').forEach(function(el){
+    el.classList.remove('active');
+    if(el.dataset.lang===lang) el.classList.add('active');
+  });
+  document.querySelectorAll('.lang-btn').forEach(function(btn){
+    btn.classList.remove('active');
+    var t=btn.textContent.trim();
+    if((lang==='cn'&&t==='中文')||(lang==='en'&&t==='English')||(lang==='vn'&&t==='Tiếng Việt')){
+      btn.classList.add('active');
+    }
+  });
+  document.documentElement.lang=lang==='vn'?'vi':lang==='en'?'en':'zh-CN';
+}
+switchLang('cn');
+</script>
+</body>
+</html>
