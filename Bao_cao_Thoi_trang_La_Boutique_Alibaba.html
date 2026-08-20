@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Báo cáo Chiến lược: 20 Hero Products Thời trang Nữ trên Alibaba.com — La Boutique (09/2026)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --p: #3D1F2E;      /* Deep Plum - đỏ rượu vang thanh lịch */
+      --s: #C9A063;      /* Champagne Gold */
+      --g: #B8860B;      /* Gold đậm cho accent */
+      --bg: #FAF6F4;
+      --text: #3A2E33;
+      --sidebar-bg: #260F1A;
+      --card-bg: #FFFFFF;
+      --sw: 280px;
+      --border-radius: 12px;
+      --transition: all 0.3s ease;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Lexend', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* Sidebar */
+    .sidebar { position: fixed; top: 0; left: 0; width: var(--sw); height: 100vh; background: linear-gradient(180deg, var(--sidebar-bg) 0%, var(--p) 100%); color: #fff; padding: 2rem 1.5rem; overflow-y: auto; z-index: 100; box-shadow: 4px 0 15px rgba(0,0,0,0.1); }
+    .brand { display: flex; align-items: center; gap: 10px; font-size: 1.25rem; font-weight: 700; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .brand i { color: var(--s); }
+    .sidebar nav ul { list-style: none; }
+    .sidebar nav ul li { margin-bottom: 0.5rem; }
+    .sidebar nav ul li a { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.7); text-decoration: none; padding: 0.75rem 1rem; border-radius: var(--border-radius); font-size: 0.9rem; font-weight: 500; transition: var(--transition); }
+    .sidebar nav ul li a:hover, .sidebar nav ul li a.active { color: #fff; background-color: rgba(255,255,255,0.1); border-left: 4px solid var(--s); }
+
+    /* Main Layout */
+    .main-content { margin-left: var(--sw); padding: 2.5rem 3rem; max-width: 1400px; }
+
+    /* Header Banner */
+    .header-banner {
+      background: linear-gradient(135deg, rgba(38, 15, 26, 0.94) 0%, rgba(61, 31, 46, 0.88) 100%), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80') no-repeat center/cover;
+      color: #fff;
+      padding: 3.5rem 2.5rem;
+      border-radius: var(--border-radius);
+      position: relative;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 25px rgba(61,31,46,0.15);
+    }
+    .badge { display: inline-block; background-color: var(--s); color: #260F1A; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 50px; margin-bottom: 1rem; }
+    .title { font-size: 2.1rem; font-weight: 800; margin-bottom: 0.5rem; line-height: 1.3; }
+    .subtitle { font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.9); margin-bottom: 1rem; }
+    .meta { display: flex; flex-wrap: wrap; gap: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.85); border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1rem; margin-top: 1.5rem; }
+    .meta span i { color: var(--s); margin-right: 5px; }
+
+    /* Cards & Content */
+    .section-card { background-color: var(--card-bg); border-radius: var(--border-radius); padding: 2.5rem; margin-bottom: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.02); }
+    .section-title { font-size: 1.4rem; font-weight: 700; color: var(--p); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--bg); padding-bottom: 0.75rem; }
+    .section-title i { color: var(--s); }
+    .sub-title { font-size: 1.1rem; font-weight: 600; color: var(--p); margin: 1.25rem 0 0.5rem 0; }
+    p { margin-bottom: 1rem; color: #576574; }
+    .highlight { background-color: #F7F1EE; border-left: 4px solid var(--s); padding: 1rem 1.25rem; border-radius: 0 var(--border-radius) var(--border-radius) 0; margin-bottom: 1.25rem; }
+    .highlight.alert { background-color: #FFF9E6; border-left-color: var(--g); }
+
+    /* Grids */
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; }
+
+    /* Info Cards */
+    .info-card { background-color: var(--bg); border-radius: var(--border-radius); padding: 1.25rem; border: 1px solid rgba(0,0,0,0.04); cursor: pointer; transition: var(--transition); }
+    .info-card:hover { transform: translateY(-4px); box-shadow: 0 8px 18px rgba(61,31,46,0.05); border-color: var(--s); }
+    .info-icon { font-size: 1.5rem; color: var(--p); margin-bottom: 0.75rem; }
+    .info-val { font-size: 1.35rem; font-weight: 800; color: var(--p); }
+    .info-lbl { font-size: 0.8rem; font-weight: 600; color: var(--s); margin-top: 0.25rem; }
+
+    /* Product Cards */
+    .prod-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; }
+    .prod-card { background-color: var(--card-bg); border-radius: var(--border-radius); overflow: hidden; border: 1px solid rgba(0,0,0,0.06); transition: var(--transition); display: flex; flex-direction: column; }
+    .prod-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(61,31,46,0.08); border-color: var(--s); }
+    .prod-hdr { background: linear-gradient(120deg, var(--p) 0%, #5C3040 100%); color: #fff; padding: 0.9rem 1.2rem; display: flex; justify-content: space-between; align-items: center; }
+    .prod-num { background-color: var(--s); color: #260F1A; font-weight: 800; font-size: 0.75rem; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .prod-name { font-size: 0.98rem; font-weight: 700; line-height: 1.35; padding: 0 0.5rem; }
+    .prod-body { padding: 1.1rem 1.2rem; flex-grow: 1; display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.82rem; }
+    .prod-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 0.25rem; }
+    .prod-tag { background-color: #F3EBE6; color: var(--p); font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 4px; font-weight: 600; }
+    .prod-tag.gold { background-color: #F6EFDC; color: #8B6914; }
+    .prod-row { display: flex; justify-content: space-between; gap: 8px; }
+    .prod-row b { color: var(--p); font-weight: 600; }
+    .prod-why { color: #576574; line-height: 1.5; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.8rem; }
+    table th { background-color: var(--p); color: #fff; font-weight: 600; text-align: left; padding: 0.6rem 0.8rem; border: 1px solid rgba(0,0,0,0.05); }
+    table td { padding: 0.6rem 0.8rem; border: 1px solid rgba(0,0,0,0.05); }
+    table tr:nth-child(even) { background-color: #FAF6F4; }
+    .table-container { overflow-x: auto; margin-top: 1.5rem; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08); }
+    .chart-box { background-color: #FFF; border: 1px solid rgba(0,0,0,0.05); border-radius: var(--border-radius); padding: 1rem; height: 320px; position: relative; }
+    .citation { color: var(--s); text-decoration: none; font-weight: 600; border-bottom: 1px dashed var(--s); }
+    .citation:hover { color: var(--p); border-bottom-style: solid; }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .timeline::before { content: ''; position: absolute; left: 6px; top: 4px; bottom: 4px; width: 2px; background: linear-gradient(180deg, var(--s), var(--p)); }
+    .tl-item { position: relative; margin-bottom: 1.1rem; }
+    .tl-item::before { content: ''; position: absolute; left: -1.42rem; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--s); border: 2px solid #fff; box-shadow: 0 0 0 2px var(--s); }
+    .tl-item b { color: var(--p); display: block; }
+    .tl-item span { font-size: 0.82rem; color: #576574; }
+
+    @media (max-width: 1100px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .prod-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 900px) {
+      .sidebar { position: static; width: 100%; height: auto; }
+      .main-content { margin-left: 0; padding: 1.5rem; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+    @media print {
+      .sidebar { display: none; }
+      .main-content { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand"><i class="fas fa-gem"></i> La Boutique x Alibaba</div>
+    <nav>
+      <ul>
+        <li><a href="#exec"><i class="fas fa-chart-line"></i> Tổng quan</a></li>
+        <li><a href="#market"><i class="fas fa-globe"></i> Thị trường</a></li>
+        <li><a href="#hero"><i class="fas fa-star"></i> 20 Hero Products</a></li>
+        <li><a href="#pricing"><i class="fas fa-tags"></i> Giá & MOQ</a></li>
+        <li><a href="#seo"><i class="fas fa-search"></i> SEO Keywords</a></li>
+        <li><a href="#buyer"><i class="fas fa-users"></i> Buyer Persona</a></li>
+        <li><a href="#launch"><i class="fas fa-rocket"></i> Kế hoạch tháng 9</a></li>
+        <li><a href="#risk"><i class="fas fa-shield-alt"></i> Rủi ro</a></li>
+        <li><a href="#sources"><i class="fas fa-book"></i> Nguồn dữ liệu</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Header -->
+    <header class="header-banner">
+      <span class="badge">Kế hoạch lên sàn tháng 9/2026</span>
+      <h1 class="title">20 Hero Products Thời trang Nữ — Chiến lược Alibaba.com</h1>
+      <p class="subtitle">Nghiên cứu thị trường thời trang trên Alibaba & lựa chọn danh mục sản phẩm chủ lực để tối đa hóa lượt xem (viewer) và lượt hỏi hàng (inquiry) cho La Boutique</p>
+      <div class="meta">
+        <span><i class="fas fa-calendar"></i> Ngày báo cáo: 19/08/2026</span>
+        <span><i class="fas fa-industry"></i> Ngành: Thời trang nữ (Silk, Loungewear, Knitwear, Sets, Phụ kiện)</span>
+        <span><i class="fas fa-map-marker-alt"></i> Doanh nghiệp: La Boutique — Việt Nam</span>
+        <span><i class="fas fa-tag"></i> Chế độ: Full Intelligence Report</span>
+      </div>
+    </header>
+
+    <!-- Executive Summary -->
+    <section class="section-card" id="exec">
+      <h2 class="section-title"><i class="fas fa-chart-line"></i> 1. Tổng quan điều hành (Executive Summary)</h2>
+      <div class="grid-4">
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-star"></i></div>
+          <div class="info-val">20</div>
+          <div class="info-lbl">Hero products được chọn</div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-percentage"></i></div>
+          <div class="info-val">7.9%</div>
+          <div class="info-lbl">CAGR thị trường silk clothing (2026-2033)</div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-tshirt"></i></div>
+          <div class="info-val">5</div>
+          <div class="info-lbl">Nhóm sản phẩm chiến lược (Silk / Loungewear / Fall-Winter / Sets / Phụ kiện)</div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-calendar-plus"></i></div>
+          <div class="info-val">Sep→Nov</div>
+          <div class="info-lbl">Cửa sổ vàng đăng sản phẩm cho mùa Fall/Winter 2026 + Q4 gifting</div>
+        </div>
+      </div>
+      <div class="highlight">
+        <b>Kết luận chính:</b> Thời trang là 1 trong 5 nhóm danh mục lớn nhất trên Alibaba.com. Với năng lực hiện có của La Boutique (silk + comfy wear), ngách <b>silk/satin loungewear & sleepwear</b> là điểm vào tối ưu: nhu cầu tăng trưởng (CAGR 7.9%), ít nhà cung cấp "real silk" hơn so với hàng polyester thường, và giá trị đơn hàng cao. Launch tháng 9 bắt kịp đúng chu kỳ mua hàng Fall/Winter 2026 (nhà nhập khẩu đặt hàng trước 2-3 tháng) và chuẩn bị cho mùa quà tặng Q4 (Black Friday, Christmas).
+      </div>
+      <div class="highlight alert">
+        <b>Lưu ý chiến lược:</b> Mục tiêu "nhiều viewer + nhiều inquiry" đòi hỏi cơ cấu danh mục 2 tầng: (1) <b>Volume heroes</b> — từ khóa dung lượng cao, giá cạnh tranh (loungewear set, satin blouse, knit sweater) để kéo traffic; (2) <b>Niche heroes</b> — sản phẩm khác biệt, ít cạnh tranh (silk pajamas cao cấp, kaftan resort, bridal silk robe) để tăng tỷ lệ inquiry. Tỷ lệ đề xuất: 60% volume / 40% niche.
+      </div>
+    </section>
+
+    <!-- Market Overview -->
+    <section class="section-card" id="market">
+      <h2 class="section-title"><i class="fas fa-globe"></i> 2. Tổng quan thị trường & tín hiệu nhu cầu</h2>
+      <div class="grid-2">
+        <div>
+          <h3 class="sub-title">Bối cảnh ngành thời trang trên Alibaba</h3>
+          <ul style="margin-left:1.2rem; margin-bottom:1rem; font-size:0.88rem;">
+            <li>Apparel là 1 trong 5 danh mục lớn nhất trên Alibaba.com (cùng Consumer Electronics, Home & Garden, Health & Beauty, Industrial Supplies).</li>
+            <li>Trong phân khúc apparel, các thiết kế "seamless" và vải bền vững (organic cotton blends) là điểm khác biệt tăng trưởng mạnh nhất.</li>
+            <li>Thị trường silk clothing dự báo CAGR <b>7.9%</b> giai đoạn 2026-2033 — tăng trưởng ổn định, ít biến động theo fad.</li>
+            <li>Loungewear & sleepwear: phân khúc dẫn đầu về tăng trưởng nhờ xu hướng work-from-home kéo dài; "washable silk dresses" là sản phẩm nổi bật.</li>
+            <li>Mùa mua Fall/Winter 2026: satin, romantic blouses (lace, puff sleeve), matching sets, relaxed tailoring, moody maroon, cashmere cardigan là các trend được giới bán buôn ưu tiên.</li>
+          </ul>
+          <div class="highlight">
+            <b>Ý nghĩa với La Boutique:</b> Vị thế hiện có (silk + comfy) trùng khớp 2 trong số các xu hướng lớn nhất 2026: <b>satin/silk</b> và <b>loungewear</b>. Đây không phải là lựa chọn "đi sau trend" mà là tận dụng đúng sóng cầu đang tăng.
+          </div>
+        </div>
+        <div>
+          <h3 class="sub-title">Khối lượng cung trên Alibaba theo danh mục (tìm kiếm thực tế 08/2026)</h3>
+          <div class="chart-box">
+            <canvas id="demandChart"></canvas>
+          </div>
+          <p style="font-size:0.75rem; color:#7f8c8d; margin-top:0.5rem;">Số sản phẩm trả về khi tìm kiếm theo từ khóa chính trên Alibaba.com (ngày 19/08/2026). Cột càng cao = dung lượng thị trường càng lớn; "perfect match" thấp = ngách càng ít cạnh tranh.</p>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Ma trận cơ hội — Volume vs Niche</h3>
+      <div class="table-container">
+        <table>
+          <tr><th>Danh mục</th><th>Kết quả tìm kiếm (≈)</th><th>Khoảng giá tham khảo (USD)</th><th>MOQ điển hình</th><th>Vai trò trong danh mục</th></tr>
+          <tr><td>Women silk dress</td><td>200+ (30 perfect match)</td><td>9 – 280</td><td>1 – 50 pcs</td><td>Volume + giá trị cao</td></tr>
+          <tr><td>Women loungewear set</td><td>200+ (30 perfect match)</td><td>5.99 – 23</td><td>1 – 100 sets</td><td>Volume hero (traffic)</td></tr>
+          <tr><td>Washable silk pajamas set</td><td>181 (4 perfect match)</td><td>39.50 – 145</td><td>1 – 300 sets</td><td>Niche — inquiry cao</td></tr>
+          <tr><td>Women satin blouse</td><td>200+ (30 perfect match)</td><td>3.13 – 51.78</td><td>1 – 500 pcs</td><td>Volume hero (fall trend)</td></tr>
+          <tr><td>Women knit sweater</td><td>200+ (30 perfect match)</td><td>1.75 – 88 (cashmere)</td><td>1 – 200 pcs</td><td>Volume hero (mùa đông)</td></tr>
+          <tr><td>Women two piece set</td><td>200+ (30 perfect match)</td><td>4.33 – 18.50</td><td>1 – 100 sets</td><td>Volume hero (matching sets)</td></tr>
+          <tr><td>Silk kimono robe</td><td>148 (27 perfect match)</td><td>4.60 – 89.30</td><td>1 – 300 pcs</td><td>Niche — bridal/gift</td></tr>
+          <tr><td>Women silk scarf</td><td>200+ (24 perfect match)</td><td>0.29 – 14.79</td><td>1 – 300 pcs</td><td>Volume + margin cao</td></tr>
+        </table>
+      </div>
+      <p style="font-size:0.75rem; color:#7f8c8d;">Nguồn: tìm kiếm sản phẩm trực tiếp trên Alibaba.com ngày 19/08/2026. Giá chưa gồm cước vận chuyển; Incoterm thông dụng FOB. Dữ liệu cung không phải dữ liệu cầu — cần kết hợp với phần SEO & buyer persona ở dưới để ước lượng nhu cầu.</p>
+    </section>
+
+    <!-- Hero Products -->
+    <section class="section-card" id="hero">
+      <h2 class="section-title"><i class="fas fa-star"></i> 3. 20 Hero Products cho Launch tháng 9/2026</h2>
+      <p>Mỗi sản phẩm được chọn theo 4 tiêu chí: (1) nhu cầu thị trường & xu hướng 2026; (2) mùa vụ đúng thời điểm launch tháng 9 (Fall/Winter 2026 + Q4 gifting); (3) mức cạnh tranh (volume vs ngách); (4) phù hợp năng lực La Boutique (silk + comfy wear). Kỳ vọng <b>viewer</b> (lượt xem) và <b>inquiry</b> (hỏi hàng) được đánh giá theo thang Cao / Trung bình.</p>
+
+      <h3 class="sub-title">Nhóm A — Silk Core (DNA thương hiệu) — 5 sản phẩm</h3>
+      <div class="prod-grid">
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Silk Slip Dress 19-22mm Mulberry</span><span class="prod-num">1</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Volume Hero</span><span class="prod-tag gold">Q4 Party</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $27-50/pc</span><span><b>MOQ:</b> 2-50 pcs</span></div>
+            <div class="prod-why">Sản phẩm core của La Boutique. Từ khóa "silk dress" có dung lượng 200+ listing với 30 perfect match — nhu cầu ổn định quanh năm, tăng mạnh vào mùa party Q4. Đây là sản phẩm giới thiệu thương hiệu (flagship listing).</div>
+            <div class="prod-row"><span><b>Viewer:</b> Cao</span><span><b>Inquiry:</b> Cao</span></div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Silk Camisole Top (OEM/Private Label)</span><span class="prod-num">2</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Volume Hero</span><span class="prod-tag gold">Quanh năm</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $8-15/pc</span><span><b>MOQ:</b> 50 pcs</span></div>
+            <div class="prod-why">Item basic, dễ custom màu/logo, phù hợp khách private label. Nhu cầu dàn trải quanh năm, giúp listing tích lũy dữ liệu và tăng ranking từ sớm.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Cao</span><span><b>Inquiry:</b> Trung bình</span></div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Silk Nightgown / Sleep Dress</span><span class="prod-num">3</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Volume + Niche</span><span class="prod-tag gold">Q4 Gifting</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $35-49/pc</span><span><b>MOQ:</b> 2-50 pcs</span></div>
+            <div class="prod-why">Sleepwear là phân khúc tăng trưởng hàng đầu (loungewear/sleepwear dẫn dắt). Silk nightgown là món quà cao cấp dịp lễ — kết hợp từ khóa "silk night dress" + "gift" để bắt nhu cầu Q4.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Cao</span><span><b>Inquiry:</b> Trung bình</span></div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Silk/Satin Long-Sleeve Blouse</span><span class="prod-num">4</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Volume Hero</span><span class="prod-tag gold">Fall 2026</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $6-14 (satin) / $50+ (real silk)</span><span><b>MOQ:</b> 2-50 pcs</span></div>
+            <div class="prod-why">"Romantic blouses" là trend fall 2026 được giới bán buôn ưu tiên. Từ khóa "satin blouse" có 200+ listing. La Boutique chơi ở phân khúc real silk để tránh đại trà polyester giá rẻ.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Cao</span><span><b>Inquiry:</b> Trung bình</span></div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Silk Maxi Evening Dress (occasion)</span><span class="prod-num">5</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Niche</span><span class="prod-tag gold">Q4 Events</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $47-75/pc</span><span><b>MOQ:</b> 2-30 pcs</span></div>
+            <div class="prod-why">Sản phẩm high-ticket cho phân khúc occasion (party, wedding season). Ít đối thủ real-silk ở tầm giá này; inquiry chất lượng cao, giá trị đơn lớn.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Trung bình</span><span><b>Inquiry:</b> Cao</span></div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Nhóm B — Loungewear & Comfy (thế mạnh COMFY) — 5 sản phẩm</h3>
+      <div class="prod-grid">
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Washable Silk Pajama Set 2-Piece</span><span class="prod-num">6</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Niche Hero</span><span class="prod-tag gold">Q4 Gifting</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $40-70/set</span><span><b>MOQ:</b> 2-50 sets</span></div>
+            <div class="prod-why">Chỉ 4/181 listing đạt "perfect match" cho từ khóa washable silk pajamas — ngách hiếm. Sản phẩm quà tặng cao cấp cho Black Friday & Christmas; từ khóa "washable" bắt đúng nỗi đau người mua (dễ giặt, không hư lụa).</div>
+            <div class="prod-row"><span><b>Viewer:</b> Trung bình</span><span><b>Inquiry:</b> Rất cao</span></div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Bamboo Modal Ribbed Loungewear Set</span><span class="prod-num">7</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Volume Hero</span><span class="prod-tag gold">Sustainable</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $17-21/set</span><span><b>MOQ:</b> 50-100 sets</span></div>
+            <div class="prod-why">Vải bền vững (bamboo modal) là điểm khác biệt được Alibaba ghi nhận. Phân khúc giữa (không rẻ nhất) giúp né cuộc đua giá polyester; câu chuyện "sustainable" tăng tỷ lệ chuyển đổi cho khách nhập khẩu châu Âu.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Cao</span><span><b>Inquiry:</b> Trung bình</span></div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Cotton Ribbed 2-Piece Set (Custom Logo)</span><span class="prod-num">8</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Volume Hero</span><span class="prod-tag gold">Private Label</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $6-16/set</span><span><b>MOQ:</b> 50 sets</span></div>
+            <div class="prod-why">Từ khóa loungewear set dung lượng lớn nhất (200+ listing). Đây là "cửa ngõ traffic": giá cạnh tranh + option custom logo để hút khách private label nhỏ lẻ (boutique US/EU) — đúng mục tiêu inquiry.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Rất cao</span><span><b>Inquiry:</b> Cao</span></div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Plus-Size Loungewear Set</span><span class="prod-num">9</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Niche Hero</span><span class="prod-tag gold">Inclusive Sizing</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $9-20/set</span><span><b>MOQ:</b> 50 sets</span></div>
+            <div class="prod-why">Inclusive sizing là trend bán buôn 2026 nhưng nguồn cung plus-size còn mỏng (ít listing perfect match). Ngách ít đối thủ, khách hàng trung thành, tỷ lệ inquiry cao.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Trung bình</span><span><b>Inquiry:</b> Cao</span></div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Silk Kimono Robe (Luxury/Bridal)</span><span class="prod-num">10</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Niche Hero</span><span class="prod-tag gold">Wedding/Gift</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $20-60/pc</span><span><b>MOQ:</b> 2-20 pcs</span></div>
+            <div class="prod-why">148 listing, 27 perfect match — ngách thị trường cưới (bridesmaid robes) và luxury loungewear. Sản phẩm này có thể bán theo "bridal set" (robe + pajamas) tăng giá trị đơn hàng.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Trung bình</span><span><b>Inquiry:</b> Rất cao</span></div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Nhóm C — Fall/Winter 2026 (mùa vụ launch) — 5 sản phẩm</h3>
+      <div class="prod-grid">
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Cashmere Blend V-Neck Sweater</span><span class="prod-num">11</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Volume Hero</span><span class="prod-tag gold">Fall/Winter</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $8.50-14.50/pc</span><span><b>MOQ:</b> 2-50 pcs</span></div>
+            <div class="prod-why">Cashmere cardigan/sweater là trend fall 2026 (theo JOOR & Whowhatwear). Cotton-cashmere blend giữ giá hợp lý nhưng vẫn kể được câu chuyện chất liệu cao cấp.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Cao</span><span><b>Inquiry:</b> Trung bình</span></div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Chunky Knit Crop Sweater</span><span class="prod-num">12</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Volume Hero</span><span class="prod-tag gold">Fall Trend</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $7.80-13.79/pc</span><span><b>MOQ:</b> 2-50 pcs</span></div>
+            <div class="prod-why">Hot-selling trong search "knit sweater" (5.0/5 rating). Mẫu chunky crop bắt đúng trend "soft volume" fall 2026, phù hợp khách boutique trẻ.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Cao</span><span><b>Inquiry:</b> Trung bình</span></div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Long Knit Cardigan (open front)</span><span class="prod-num">13</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Volume Hero</span><span class="prod-tag gold">Fall Layering</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $8-16/pc</span><span><b>MOQ:</b> 2-50 pcs</span></div>
+            <div class="prod-why">Item layering nền tảng của tủ đồ thu. Kết hợp bán chéo (cross-sell) với silk camisole bên trong — tăng AOV và giữ chân khách.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Cao</span><span><b>Inquiry:</b> Trung bình</span></div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Turtleneck / High-Collar Knit</span><span class="prod-num">14</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Volume Hero</span><span class="prod-tag gold">Winter Volume</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $5-12/pc</span><span><b>MOQ:</b> 50 pcs</span></div>
+            <div class="prod-why">Từ khóa dung lượng cao nhất nhóm knit cho thị trường ôn đới (US/EU/Nga). Giá cạnh tranh, đặt nền traffic mùa đông; kết hợp mixed-color để tăng giá trị container.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Rất cao</span><span><b>Inquiry:</b> Trung bình</span></div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Satin Puff-Sleeve Blouse</span><span class="prod-num">15</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Volume Hero</span><span class="prod-tag gold">Fall Romantic</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $6.50-9.80/pc</span><span><b>MOQ:</b> 2-50 pcs</span></div>
+            <div class="prod-why">Romantic blouse trend (lace, puff sleeve, bow) được giới bán buôn 2026 ưu tiên hàng đầu. Dùng vải satin nhẹ để mở rộng nhu cầu quanh năm, không giới hạn thu đông.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Cao</span><span><b>Inquiry:</b> Trung bình</span></div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Nhóm D — Matching Sets & Dresses — 3 sản phẩm</h3>
+      <div class="prod-grid">
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Two-Piece Matching Set (top + pants)</span><span class="prod-num">16</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Volume Hero</span><span class="prod-tag gold">Trend 2026</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $8-18/set</span><span><b>MOQ:</b> 2-100 sets</span></div>
+            <div class="prod-why">"Matching sets" nằm trong top xu hướng bán buôn 2026 (hubventory). Set dễ phối, giảm rủi ro tồn kho cho nhà bán lẻ — điểm bán hàng mạnh khi trả lời inquiry.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Rất cao</span><span><b>Inquiry:</b> Cao</span></div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Satin Midi Slip Dress</span><span class="prod-num">17</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Volume Hero</span><span class="prod-tag gold">Q4 Party</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $15-35/pc</span><span><b>MOQ:</b> 2-50 pcs</span></div>
+            <div class="prod-why">"Buying: Satin" là trend fall 2026 được Whowhatwear xác nhận. Slip dress midi là item chuyển mùa hoàn hảo: mặc đơn cho party, layer với knit cardigan cho thu — 2 mùa trong 1 sản phẩm.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Cao</span><span><b>Inquiry:</b> Trung bình</span></div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Silk Kaftan / Resort Cover-Up</span><span class="prod-num">18</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Niche Hero</span><span class="prod-tag gold">Middle East/Resort</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $20-40/pc</span><span><b>MOQ:</b> 20-50 pcs</span></div>
+            <div class="prod-why">Resort wear đang lên (2026 surge) và nhu cầu thị trường Trung Đông (abaya-adjacent, modest fashion) ổn định quanh năm. Ít đối thủ real-silk; từ khóa "silk kaftan" chưa bão hòa.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Trung bình</span><span><b>Inquiry:</b> Rất cao</span></div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Nhóm E — Phụ kiện & Gifting (margin cao, inquiry nhanh) — 2 sản phẩm</h3>
+      <div class="prod-grid">
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Silk Square Scarf 90x90 (Custom Print)</span><span class="prod-num">19</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Volume + Margin</span><span class="prod-tag gold">Quanh năm</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $0.50-3 (faux) / $6-15 (real)</span><span><b>MOQ:</b> 10-50 pcs</span></div>
+            <div class="prod-why">Phụ kiện có margin cao nhất, custom digital print dễ dàng — công cụ tăng inquiry nhanh từ khách nhãn hiệu (brand merch, corporate gift). 200+ listing nhưng nhu cầu "custom your design" rất mạnh.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Cao</span><span><b>Inquiry:</b> Rất cao</span></div>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-hdr"><span class="prod-name">Silk Skinny Scarf / Hair Accessory Set</span><span class="prod-num">20</span></div>
+          <div class="prod-body">
+            <div class="prod-tags"><span class="prod-tag">Volume Hero</span><span class="prod-tag gold">TikTok Trend</span></div>
+            <div class="prod-row"><span><b>Giá TK:</b> $0.60-1.50/pc</span><span><b>MOQ:</b> 10-30 pcs</span></div>
+            <div class="prod-why">Skinny scarf/hair bow đang viral trên TikTok, MOQ thấp, giá rẻ — sản phẩm "dẫn dụ" giúp khách thử đơn nhỏ trước khi nâng lên đơn lớn. Đặc biệt hiệu quả cho khách dropshipping & TikTok sellers.</div>
+            <div class="prod-row"><span><b>Viewer:</b> Rất cao</span><span><b>Inquiry:</b> Cao</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <b>Tỷ lệ danh mục đề xuất cho 20 SKU:</b> Silk Core 25% (5) | Loungewear & Comfy 25% (5) | Fall/Winter 25% (5) | Sets & Dresses 15% (3) | Phụ kiện & Gifting 10% (2). Trong đó Volume heroes: 11 sản phẩm (kéo traffic) và Niche heroes: 9 sản phẩm (kéo inquiry & biên lợi nhuận).
+      </div>
+    </section>
+
+    <!-- Pricing Intelligence -->
+    <section class="section-card" id="pricing">
+      <h2 class="section-title"><i class="fas fa-tags"></i> 4. Thông tin giá & MOQ (Pricing Intelligence)</h2>
+      <div class="table-container">
+        <table>
+          <tr><th>Nhóm</th><th>Khoảng giá FOB tham khảo (USD)</th><th>MOQ điển hình</th><th>Ghi chú định vị cho La Boutique</th></tr>
+          <tr><td>Silk slip dress / nightgown (19-22mm)</td><td>$27 – $50</td><td>2 – 50 pcs</td><td>Định vị tầm trung-cao, cạnh tranh trực tiếp nhà cung cấp Chiết Giang/Ôn Châu</td></tr>
+          <tr><td>Real silk blouse / camisole</td><td>$8 – $15 (OEM satin); $50+ (100% silk)</td><td>2 – 50 pcs</td><td>Phân khúc real silk ít đối thủ giá rẻ; kể câu chuyện 100% mulberry</td></tr>
+          <tr><td>Washable silk pajamas set</td><td>$40 – $70</td><td>2 – 50 sets</td><td>Ngách "washable" gần như trống — chốt từ khóa này sớm</td></tr>
+          <tr><td>Bamboo modal loungewear set</td><td>$17 – $21</td><td>50 – 100 sets</td><td>Giá trung bình + câu chuyện sustainable cho khách EU</td></tr>
+          <tr><td>Cotton ribbed 2-piece set</td><td>$6 – $16</td><td>50 sets</td><td>Giá entry cạnh tranh, custom logo để nâng giá trị</td></tr>
+          <tr><td>Knit sweater (cotton/cashmere blend)</td><td>$5 – $14.50</td><td>2 – 50 pcs</td><td>Cashmere blend $8.5-14.5 là điểm ngọt giá trị/cầu</td></tr>
+          <tr><td>Silk kimono robe</td><td>$20 – $60</td><td>2 – 20 pcs</td><td>Bridal set (robe+pajamas) tăng giá trị đơn 30-50%</td></tr>
+          <tr><td>Silk scarf (real silk, custom print)</td><td>$6 – $15</td><td>10 – 50 pcs</td><td>Faux silk $0.3-3 — chỉ nên chơi real silk để giữ định vị</td></tr>
+        </table>
+      </div>
+      <div class="highlight alert">
+        <b>Lưu ý cạnh tranh giá:</b> Đối thủ Trung Quốc (Ôn Châu, Hàng Châu, Tô Châu) là nhà sản xuất lụa lớn nhất thế giới với nhà máy 5-19 năm kinh nghiệm trên Alibaba. Lợi thế La Boutique không nằm ở giá FOB mà ở: (1) chất lượng ổn định + thiết kế riêng; (2) giá trị "Made in Vietnam" cho khách tìm nguồn cung đa dạng hóa (China+1); (3) tốc độ phản hồi inquiry và tùy biến (OEM/ODM) tốt hơn nhà máy lớn. Không nên đua giá với polyester đại trà $1-3.
+      </div>
+    </section>
+
+    <!-- SEO Map -->
+    <section class="section-card" id="seo">
+      <h2 class="section-title"><i class="fas fa-search"></i> 5. Bản đồ SEO Keywords cho Listing</h2>
+      <div class="grid-2">
+        <div>
+          <h3 class="sub-title">Từ khóa chính (Primary — cho tiêu đề listing)</h3>
+          <div class="table-container">
+            <table>
+              <tr><th>Từ khóa</th><th>Loại</th><th>Gắn với sản phẩm</th></tr>
+              <tr><td>100% mulberry silk dress</td><td>Core + Material</td><td>#1, #5</td></tr>
+              <tr><td>washable silk pajamas set women</td><td>Core + Benefit</td><td>#6</td></tr>
+              <tr><td>women loungewear set wholesale</td><td>Core + Buyer intent</td><td>#7, #8, #9</td></tr>
+              <tr><td>silk satin blouse women long sleeve</td><td>Core + Variant</td><td>#4, #15</td></tr>
+              <tr><td>women knit sweater fall winter</td><td>Core + Season</td><td>#11-14</td></tr>
+              <tr><td>silk kimono robe bridesmaid</td><td>Core + Use case</td><td>#10</td></tr>
+              <tr><td>custom silk scarf digital print</td><td>Core + Custom</td><td>#19</td></tr>
+              <tr><td>silk kaftan resort wear women</td><td>Core + Market</td><td>#18</td></tr>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h3 class="sub-title">Từ khóa dài & buyer-intent (cho mô tả + RFQ)</h3>
+          <div class="table-container">
+            <table>
+              <tr><th>Nhóm</th><th>Ví dụ từ khóa</th></tr>
+              <tr><td>Buyer intent</td><td>wholesale, bulk, OEM, ODM, private label, custom logo, ready to ship, factory price, drop shipping</td></tr>
+              <tr><td>Material/Process</td><td>19 momme, 22 momme, 6A grade, mulberry, sand washed, satin, bamboo modal, cashmere blend, ribbed</td></tr>
+              <tr><td>Market/Use case</td><td>bridesmaid, wedding, party, evening, office, business casual, resort, loungewear, sleepwear, plus size, tall girl</td></tr>
+              <tr><td>Origin/Value</td><td>Vietnam silk supplier, Vietnam garment manufacturer, Made in Vietnam, sustainable, eco-friendly</td></tr>
+              <tr><td>Compliance (chỉ khi có thật)</td><td>OEKO-TEX, GOTS, BSCI — chỉ đưa vào nếu có chứng nhận thực tế</td></tr>
+            </table>
+          </div>
+          <div class="highlight">
+            <b>Quy tắc từ khóa:</b> Tiêu đề tối đa 128 ký tự, 2-3 từ khóa chính + 1 từ khóa lợi ích (washable, breathable). Mỗi listing chỉ tập trung 1 sản phẩm, không nhồi nhiều chủng loại vào 1 tiêu đề (giảm điểm match).
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buyer Persona -->
+    <section class="section-card" id="buyer">
+      <h2 class="section-title"><i class="fas fa-users"></i> 6. Buyer Persona — Ai đang hỏi hàng?</h2>
+      <div class="grid-3">
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-store"></i></div>
+          <div class="info-val">Boutique Owner</div>
+          <div class="info-lbl">US / EU / Úc — mua 50-300 pcs/lần</div>
+          <p style="font-size:0.78rem; margin-top:0.5rem;">Tìm mẫu độc, MOQ thấp, giao nhanh. Ưu tiên: satin blouse, matching sets, knitwear. Trả lời inquiry trong &lt;24h và gửi lookbook sẽ quyết định chốt đơn.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-tags"></i></div>
+          <div class="info-val">Private Label Brand</div>
+          <div class="info-lbl">Bắc Mỹ / châu Âu — OEM/ODM</div>
+          <p style="font-size:0.78rem; margin-top:0.5rem;">Cần custom logo, tag, packaging. Silk scarf, camisole, loungewear custom là cửa ngõ. Yêu cầu: ảnh mẫu thật, bảng màu, báo giá tier theo số lượng.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-gift"></i></div>
+          <div class="info-val">Distributor / Gift Buyer</div>
+          <div class="info-lbl">Toàn cầu — Q4 gifting (T11-12)</div>
+          <p style="font-size:0.78rem; margin-top:0.5rem;">Mua silk pajamas, robe, scarf theo set quà. Chốt đơn từ tháng 9-10. Cần đóng gói gift-ready (hộp quà, ribbon) — đầu tư packaging ngay từ launch.</p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-cart-plus"></i></div>
+          <div class="info-val">TikTok / Dropship Seller</div>
+          <div class="info-lbl">US / Đông Nam Á — đơn nhỏ, lặp lại</div>
+          <p style="font-size:0.78rem; margin-top:0.5rem;">Mua skinny scarf, hair accessories, loungewear giá rẻ, "ready to ship". Thích sản phẩm có video trend sẵn. Cung cấp ảnh/video marketing giúp tăng đơn lặp lại.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-mosque"></i></div>
+          <div class="info-val">Modest Fashion Importer</div>
+          <div class="info-lbl">Trung Đông / Nam Á — kaftan, abaya-adjacent</div>
+          <p style="font-size:0.78rem; margin-top:0.5rem;">Nhu cầu silk kaftan, robe dài quanh năm, ít nhạy giá hơn. Cần size lớn hơn, tay dài, độ che phủ — tùy biến theo thị trường này là lợi thế ngách.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-ring"></i></div>
+          <div class="info-val">Wedding Planner / Bridal</div>
+          <div class="info-lbl">US / UK / Úc — bridesmaid robes, sets</div>
+          <p style="font-size:0.78rem; margin-top:0.5rem;">Mua silk kimono robe theo bộ (4-12 chiếc) cho phù dâu. Season cưới: T4-6 & T9-11. Đặt hàng trước 2-3 tháng — khớp hoàn hảo với launch tháng 9.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Launch Plan -->
+    <section class="section-card" id="launch">
+      <h2 class="section-title"><i class="fas fa-rocket"></i> 7. Kế hoạch hành động Launch tháng 9/2026</h2>
+      <h3 class="sub-title">Lộ trình 12 tuần (đăng sản phẩm ngay tuần 1 để kịp chu kỳ mua Q4)</h3>
+      <div class="timeline">
+        <div class="tl-item">
+          <b>Tuần 1 (01-07/09): Setup & Ảnh sản phẩm</b>
+          <span>Chuẩn bị 20 SKU: 5-8 ảnh/listing (ảnh nền trắng + 2-3 ảnh lifestyle), video 15-30s mặc thử. Ưu tiên 5 flagship đầu tiên: silk slip dress, washable silk pajamas, loungewear set, satin blouse, silk scarf.</span>
+        </div>
+        <div class="tl-item">
+          <b>Tuần 2 (08-14/09): Đăng listing & Tối ưu từ khóa</b>
+          <span>Đăng đủ 20 SKU với tiêu đề theo bản đồ SEO. Đặt giá theo chiến lược "giá neo" (giá gốc cao + giảm 10-15%) để tăng CTR. Bật "Ready to Ship" cho các SKU có hàng sẵn.</span>
+        </div>
+        <div class="tl-item">
+          <b>Tuần 3 (15-21/09): Bổ sung thông tin & Điểm uy tín</b>
+          <span>Hoàn thiện 100% thông tin thương hiệu, chứng nhận (nếu có), video nhà máy, ảnh team. Mua gói Verified Supplier / Gold Supplier để tăng trust badge — yếu tố quyết định inquiry.</span>
+        </div>
+        <div class="tl-item">
+          <b>Tuần 4-5 (22/09-05/10): Kích hoạt inquiry</b>
+          <span>Chạy RFQ & Marketing (Promo) cho 5 flagship. Trả lời mọi inquiry &lt;24h, kèm báo giá 3 cấp (sample/trial/container). Đăng sản phẩm mới 2-3 SKU/tuần để duy trì "freshness" điểm ranking.</span>
+        </div>
+        <div class="tl-item">
+          <b>Tuần 6-8 (06/10-26/10): Tối ưu theo dữ liệu</b>
+          <span>Phân tích Analytics: SKU nào nhiều view nhưng ít inquiry → sửa ảnh/giá; SKU nào ít view → đổi từ khóa. Tăng ngân sách P4P cho 5 SKU có tỷ lệ chuyển đổi tốt nhất.</span>
+        </div>
+        <div class="tl-item">
+          <b>Tuần 9-12 (27/10-23/11): Peak mùa Q4</b>
+          <span>Chốt đơn Black Friday (tuần cuối T11). Bổ sung gói "Gift Set" (robe + pajamas + scarf) cho mùa quà tặng. Đánh giá KPI tháng đầu: mục tiêu 2.000-5.000 view/tháng và 40-80 inquiry cho gian hàng mới 60 ngày.</span>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Chiến lược kênh & bán chéo</h3>
+      <div class="grid-2">
+        <div>
+          <ul style="margin-left:1.2rem; font-size:0.88rem;">
+            <li><b>Traffic tự nhiên:</b> 20 SKU đúng bản đồ từ khóa + đăng đều đặn = nền tảng view bền vững.</li>
+            <li><b>P4P (Sponsored):</b> Chỉ chạy cho 5-8 SKU volume hero; ngân sách nhỏ tuần đầu, scale theo ROAS.</li>
+            <li><b>RFQ:</b> Trả lời RFQ ngành thời trang mỗi ngày — nguồn inquiry chất lượng, không tốn phí.</li>
+            <li><b>Sample strategy:</b> Bán sample giá thật (không free) để lọc khách nghiêm túc, thu phí ship.</li>
+            <li><b>Cross-sell:</b> Mỗi listing gắn 2-3 "related products" (blouse + cardigan + camisole).</li>
+            <li><b>Bundling:</b> Gói quà Q4 (pajamas + robe + scarf) — AOV tăng 40-60%.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="highlight">
+            <b>KPI mục tiêu 90 ngày đầu (gian hàng mới):</b><br>
+            • Lượt xem: 3.000-8.000 view/tháng (tùy ngân sách P4P)<br>
+            • Inquiry: 60-120/tháng với tỷ lệ phản hồi 100% trong 24h<br>
+            • Tỷ lệ inquiry → sample: 15-25%<br>
+            • Sample → đơn lặp lại: 30%+<br>
+            • Mục tiêu đạt 1-2 Sao (Star Rating) trong 90 ngày
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Risk -->
+    <section class="section-card" id="risk">
+      <h2 class="section-title"><i class="fas fa-shield-alt"></i> 8. Phân tích rủi ro & kiểm soát</h2>
+      <div class="table-container">
+        <table>
+          <tr><th>Rủi ro</th><th>Mức độ</th><th>Giải pháp</th></tr>
+          <tr><td>Cạnh tranh giá từ nhà máy lụa Trung Quốc (Tô Châu, Hàng Châu, Ôn Châu — 5-19 năm kinh nghiệm)</td><td>Cao</td><td>Không đua giá; định vị quality + design + "Made in Vietnam" (đa dạng hóa nguồn cung China+1); phản hồi nhanh hơn</td></tr>
+          <tr><td>Tồn kho mùa (dead stock) nếu dự báo sai</td><td>Trung bình</td><td>Bắt đầu MOQ thấp (2-50 pcs), pre-order theo inquiry, mở rộng dần; dữ liệu Shopify khuyến cáo không đặt &gt;500 pcs/design khi chưa có pre-order</td></tr>
+          <tr><td>Claim chất liệu "100% silk" không đúng sự thật</td><td>Cao (pháp lý)</td><td>Chỉ ghi 100% mulberry khi có kiểm định; dùng "silk feel/satin" cho hàng polyester; chuẩn bị test report (SGS/Intertek) cho khách lớn</td></tr>
+          <tr><td>Thiếu chứng nhận xuất khẩu (OEKO-TEX, GOTS, BSCI)</td><td>Trung bình</td><td>Đăng ký OEKO-TEX cho vải lụa & knit là ưu tiên hàng đầu; BSCI nếu nhắm khách EU lớn</td></tr>
+          <tr><td>Dữ liệu cung ≠ dữ liệu cầu (số listing không phản ánh trực tiếp nhu cầu)</td><td>Trung bình</td><td>Xác nhận bằng RFQ activity, Alibaba search trends, tham khảo thêm dữ liệu xuất khẩu dệt may Việt Nam</td></tr>
+          <tr><td>Inquiry chất lượng thấp (giá dìm, đơn ảo)</td><td>Thấp</td><td>Bộ lọc khách: yêu cầu thông tin công ty, mẫu báo giá chuẩn, không trả lời dưới mức giá sàn</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <!-- Sources -->
+    <section class="section-card" id="sources">
+      <h2 class="section-title"><i class="fas fa-book"></i> 9. Nguồn dữ liệu & ghi chú chất lượng</h2>
+      <div class="table-container">
+        <table>
+          <tr><th>Nguồn</th><th>Nội dung sử dụng</th><th>Ngày thu thập</th></tr>
+          <tr><td>Tìm kiếm sản phẩm Alibaba.com (8 từ khóa: silk dress, loungewear set, silk pajamas, satin blouse, knit sweater, two piece set, kimono robe, silk scarf)</td><td>Số listing, giá FOB, MOQ, nhà cung cấp, rating</td><td>19/08/2026</td></tr>
+          <tr><td><a class="citation" href="https://www.alibaba.com/product-insights/2026-fall-clothing-trends-top-selling-items-data-backed-insights.html" target="_blank">Alibaba Product Insights — 2026 Fall Clothing Trends</a></td><td>Xu hướng thu 2026 trên nền tảng</td><td>19/08/2026</td></tr>
+          <tr><td><a class="citation" href="https://www.accio.com/business/best-selling-products-on-alibaba" target="_blank">Accio — Best Selling Products on Alibaba 2026</a></td><td>Top 5 danh mục Alibaba; apparel 54% YoY; seamless; sustainable fabrics</td><td>19/08/2026</td></tr>
+          <tr><td><a class="citation" href="https://www.linkedin.com/pulse/anticipated-cagr-79-silk-clothing-market-analysis-fc90e" target="_blank">Silk Clothing Market — CAGR 7.9% (2026-2033)</a></td><td>Tăng trưởng thị trường silk</td><td>19/08/2026</td></tr>
+          <tr><td><a class="citation" href="https://argusapparel.com/blog/loungewear-guide/" target="_blank">Argus Apparel — 2026 Loungewear Guide</a></td><td>Washable silk dresses; xu hướng loungewear</td><td>19/08/2026</td></tr>
+          <tr><td><a class="citation" href="https://www.joor.com/insights/womens-fall-fashion-trend-report" target="_blank">JOOR — Women's Fall 2026 Trend Report</a></td><td>Nouveau tailoring, moody maroon, leather bombers</td><td>19/08/2026</td></tr>
+          <tr><td><a class="citation" href="https://www.whowhatwear.com/fashion/shopping/fall-2026-fashion-trends" target="_blank">WhoWhatWear — 8 Trends for Fall 2026</a></td><td>Satin, two-tone, satin basics</td><td>19/08/2026</td></tr>
+          <tr><td><a class="citation" href="https://hubventory.com/blog/2026-wholesale-trends-what-buyers-are-looking-for-how-wholesalers-can-lean-in/" target="_blank">Hubventory — 2026 Wholesale Trends</a></td><td>Romantic blouses, lace, matching sets, relaxed denim</td><td>19/08/2026</td></tr>
+          <tr><td><a class="citation" href="https://laboutique.vn/" target="_blank">laboutique.vn (website công ty)</a></td><td>Định vị: Silk Clothes + Comfy collections, thời trang nữ</td><td>19/08/2026</td></tr>
+        </table>
+      </div>
+      <p style="font-size:0.75rem; color:#7f8c8d;">Ghi chú chất lượng: Dữ liệu giá/MOQ là tham chiếu từ listing thực tế trên Alibaba.com tại thời điểm thu thập, có thể thay đổi. Các khuyến nghị phân tích được tách bạch khỏi dữ liệu xác minh. Chưa kiểm chứng được dữ liệu chính thức về khối lượng inquiry theo danh mục của Alibaba (không công bố công khai) — các ước lượng kỳ vọng viewer/inquiry dựa trên dung lượng cung + xu hướng thị trường, cần đối chiếu sau 30 ngày vận hành.</p>
+    </section>
+
+  </div>
+
+  <script>
+    const ctx = document.getElementById('demandChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Silk dress', 'Loungewear set', 'Silk pajamas', 'Satin blouse', 'Knit sweater', '2-Piece set', 'Kimono robe', 'Silk scarf'],
+        datasets: [{
+          label: 'Số listing trả về (≈)',
+          data: [200, 200, 181, 200, 200, 200, 148, 200],
+          backgroundColor: ['#3D1F2E', '#5C3040', '#C9A063', '#3D1F2E', '#5C3040', '#C9A063', '#5C3040', '#3D1F2E'],
+          borderRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { beginAtZero: true, title: { display: true, text: 'Số listing' } },
+          x: { ticks: { font: { size: 9 } } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
