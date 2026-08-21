@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLOBAL INDUSTRIAL VIETNAM — 2026年7月月度报告暨8-9月行动计划（目标2星）· Monthly Report & Action Plan Jul 2026 · Target 2★</title>
+<style>
+  :root{
+    --navy:#0B2545; --navy2:#13315C; --navy3:#1D3E6E;
+    --teal:#1F8A82; --teal-dark:#176B65; --teal-light:#E3F1EF;
+    --slate:#44505A; --line:#DCE3E9; --bg:#F4F7F9; --card:#FFFFFF;
+    --green:#1E8E5A; --green-bg:#E7F5EC; --red:#C0392B; --red-bg:#FCEBEA;
+    --amber:#B7791F; --amber-bg:#FDF3E0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"Segoe UI","Microsoft YaHei","PingFang SC","Helvetica Neue",Arial,sans-serif; background:var(--bg); color:var(--slate); line-height:1.7; font-size:14px;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 20px 60px;}
+
+  .cover{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 55%,var(--navy3) 100%); color:#fff; padding:52px 20px 44px; border-bottom:5px solid var(--teal);}
+  .cover .inner{max-width:1080px; margin:0 auto;}
+  .cover .brand{font-size:13px; letter-spacing:2px; color:#9FB8D9; text-transform:uppercase; margin-bottom:14px;}
+  .cover h1{font-size:30px; font-weight:700; line-height:1.35; margin-bottom:8px;}
+  .cover h2{font-size:16px; font-weight:400; color:#C7D6EA; margin-bottom:22px;}
+  .cover .meta{display:flex; flex-wrap:wrap; gap:12px; margin-top:20px;}
+  .cover .chip{background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.22); border-radius:8px; padding:8px 14px; font-size:13px;}
+  .cover .chip b{color:#7FE0D6; font-weight:600;}
+  .cover .tagline{margin-top:18px; font-size:13px; color:#AFC4DE;}
+
+  section{margin-top:36px;}
+  .sec-head{display:flex; align-items:center; gap:14px; margin-bottom:16px;}
+  .sec-num{background:var(--navy); color:#fff; font-weight:700; font-size:15px; width:36px; height:36px; border-radius:9px; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .sec-head h3{font-size:20px; color:var(--navy); font-weight:700;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px 22px; box-shadow:0 1px 3px rgba(11,37,69,.05);}
+
+  .verdicts{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin-bottom:18px;}
+  .verdict{border-radius:12px; padding:16px 18px; border:1px solid var(--line); background:var(--card);}
+  .verdict .v-icon{font-size:20px;}
+  .verdict .v-title{font-weight:700; color:var(--navy); font-size:14px; margin:4px 0 6px;}
+  .verdict p{font-size:12.5px; color:var(--slate);}
+  .verdict.good{border-top:4px solid var(--green);}
+  .verdict.warn{border-top:4px solid var(--amber);}
+  .verdict.bad{border-top:4px solid var(--red);}
+  .verdict.info{border-top:4px solid var(--teal);}
+  .verdict b{color:var(--navy);}
+
+  .top5{background:linear-gradient(135deg,var(--navy2),var(--navy3)); border-radius:14px; padding:22px 24px; color:#fff; margin-top:18px;}
+  .top5 h4{font-size:16px; margin-bottom:14px; color:#fff;}
+  .top5 ol{margin:0; padding:0; list-style:none; counter-reset:p;}
+  .top5 li{counter-increment:p; display:flex; gap:14px; padding:10px 0; border-bottom:1px dashed rgba(255,255,255,.18); align-items:flex-start;}
+  .top5 li:last-child{border-bottom:none;}
+  .top5 li::before{content:counter(p); background:var(--teal); color:#fff; font-weight:700; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:13px; margin-top:2px;}
+  .top5 li .t{font-size:13.5px;}
+  .top5 li .t b{color:#7FE0D6;}
+
+  .tbl-wrap{overflow-x:auto;}
+  table{width:100%; border-collapse:collapse; font-size:12.8px; background:#fff;}
+  thead th{background:var(--navy); color:#fff; font-weight:600; padding:10px; text-align:left; white-space:nowrap; font-size:12.3px;}
+  tbody td{padding:9px 10px; border-bottom:1px solid #EBF0F4; vertical-align:top;}
+  tbody tr:nth-child(even){background:#F8FAFC;}
+  td.num, th.num{text-align:right; font-variant-numeric:tabular-nums;}
+  .pos{color:var(--green); font-weight:600;}
+  .neg{color:var(--red); font-weight:600;}
+  .sub-row td{color:#7A8894; font-size:11.8px;}
+  .note-line{font-size:11.8px; color:#7A8894; margin-top:8px;}
+
+  .badge{display:inline-block; padding:2px 10px; border-radius:20px; font-size:11.5px; font-weight:600; white-space:nowrap;}
+  .b-A{background:var(--navy); color:#fff;}
+  .b-B{background:#5B7FA6; color:#fff;}
+  .b-C{background:var(--teal); color:#fff;}
+  .b-D{background:#8E6BB3; color:#fff;}
+  .b-ok{background:var(--green-bg); color:var(--green);}
+  .b-warn{background:var(--amber-bg); color:var(--amber);}
+  .b-stop{background:var(--red-bg); color:var(--red);}
+  .b-mid{background:#EEF2F6; color:var(--slate);}
+  .star-now{color:var(--amber); font-weight:700; font-size:16px;}
+
+  .cols{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media(max-width:820px){.cols{grid-template-columns:1fr;}}
+  .col{border-radius:12px; padding:16px 18px; border:1px solid var(--line); background:var(--card);}
+  .col h5{font-size:14px; margin-bottom:10px;}
+  .col.g h5{color:var(--green);} .col.w h5{color:var(--red);}
+  .col ul{margin:0; padding-left:18px; font-size:12.8px;}
+  .col li{margin-bottom:8px;}
+  .col li b{color:var(--navy);}
+
+  .stars{display:inline-flex; gap:6px; margin:0 8px; vertical-align:middle;}
+  .stars span{width:22px; height:22px; transform:rotate(45deg); display:inline-block;}
+  .stars .on{background:var(--amber);}
+  .stars .off{background:#D7DEE5;}
+
+  .goals{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-bottom:16px;}
+  .goal{background:#F8FAFC; border:1px solid var(--line); border-left:4px solid var(--teal); border-radius:10px; padding:12px 14px;}
+  .goal .g-title{font-size:12px; color:#7A8894; margin-bottom:4px;}
+  .goal .g-val{font-size:15px; font-weight:700; color:var(--navy);}
+
+  .footer{text-align:center; color:#7A8894; font-size:11.5px; margin-top:40px; padding-top:18px; border-top:1px solid var(--line);}
+  @media print{ body{background:#fff;} .cover{-webkit-print-color-adjust:exact; print-color-adjust:exact;} section{page-break-inside:avoid;} }
+  .sum-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media(max-width:820px){.sum-grid{grid-template-columns:1fr;}}
+  .sum-item{background:#F8FAFC; border:1px solid var(--line); border-radius:10px; padding:14px 16px;}
+  .sum-item h5{font-size:13.5px; color:var(--navy); margin-bottom:8px; display:flex; align-items:center; gap:8px;}
+  .sum-item ul{margin:0; padding-left:18px; font-size:12.6px;}
+  .sum-item li{margin-bottom:6px;}
+  .b-p1{background:#E8F0FB; color:#2E5E9E;}
+  .b-p2{background:#E3F1EF; color:#1F8A82;}
+</style>
+<style>
+.langbar{position:sticky; top:0; z-index:1000; background:rgba(11,37,69,.94); color:#fff; display:flex; justify-content:flex-end; align-items:center; padding:10px 26px; border-bottom:1px solid rgba(255,255,255,.15);}
+.langbar .hint{font-size:12px; color:#AFC4DE; margin-right:14px;}
+.lang-radio{position:absolute; opacity:0; pointer-events:none;}
+.langbtn{cursor:pointer; border:1px solid #7FE0D6; background:transparent; color:#7FE0D6; font-weight:600; font-size:13px; padding:6px 20px; border-radius:20px; transition:all .2s; font-family:inherit; margin-left:8px;}
+.langbtn:hover{background:#1F8A82; color:#fff; border-color:#1F8A82;}
+#lang-en:checked ~ .langbar .lb-en, #lang-zh:checked ~ .langbar .lb-zh{background:#1F8A82; color:#fff; border-color:#1F8A82;}
+#lang-en:checked ~ #v-zh{display:none;}
+#lang-en:checked ~ #v-en{display:block;}
+#v-en{display:none;}
+</style>
+</head>
+<body>
+<input type="radio" id="lang-zh" name="gs-lang" class="lang-radio" checked>
+<input type="radio" id="lang-en" name="gs-lang" class="lang-radio">
+<div class="langbar"><span class="hint">Language / 语言</span><label for="lang-zh" class="langbtn lb-zh">中文</label><label for="lang-en" class="langbtn lb-en">EN</label></div>
+<div id="v-zh">
+
+
+<!-- ================= 封面 ================= -->
+<div class="cover">
+  <div class="inner">
+    <div class="brand">Alibaba.com · 平台月度服务报告</div>
+    <h1>GLOBAL INDUSTRIAL VIETNAM COMPANY LIMITED<br>2026年7月月度报告暨8月行动计划</h1>
+    <h2>中文版</h2>
+    <div class="meta">
+      <div class="chip">主营类目：<b>Home &amp; Garden 家居园艺</b></div>
+      <div class="chip">经营年限：<b>2 年</b></div>
+      <div class="chip">信用保障：<b>已开通</b></div>
+      <div class="chip">账号经理：<b>LÊ THỊ THƯỜNG</b> · thng.l@alibaba-inc.com</div>
+    </div>
+    <div class="tagline">报告期：2026年7月</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ================= 01 总览 ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">01</div>
+    <h3>总览</h3>
+  </div>
+
+  <div class="verdicts">
+    <div class="verdict good"><div class="v-icon">✅</div><div class="v-title">流量上升</div><p>搜索曝光 <b>33,314</b>（+13.6%）、页面浏览 <b>1,125</b>（+32.7%）、搜索点击 <b>463</b>（+19.6%），自然流量创月度新高。</p></div>
+    <div class="verdict bad"><div class="v-icon">⚠️</div><div class="v-title">转化薄弱</div><p>询盘仅 <b>5</b> 条（行业均值 26，仅占 19%）；平均回复 <b>11 小时</b>（行业 4 小时）；180 天零成交订单。</p></div>
+    <div class="verdict warn"><div class="v-icon">⭐</div><div class="v-title">星级 1 星</div><p>5–7 月连续 <b>3 个月 1 星</b>；短板为 GMV（0）与回复买家数（12/30）。</p></div>
+    <div class="verdict info"><div class="v-icon">🎯</div><div class="v-title">8–9月战略：冲 2 星</div><p><b>8 月内完成首笔信用保障订单（GMV 0→1）</b>，9 月底前<b>升到 2 星</b>：打通「流量→询盘→成交」漏斗，让星级四维度全部达标。</p></div>
+  </div>
+
+  <div class="card">
+    <h4 style="color:var(--navy); margin-bottom:10px;">KPI 主表</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>指标</th><th class="num">7月</th><th class="num">环比</th><th class="num">行业均值</th><th class="num">行业领先</th><th class="num">占均值</th></tr></thead>
+      <tbody>
+        <tr><td>搜索曝光</td><td class="num">33,314</td><td class="num pos">+13.56%</td><td class="num">39,122</td><td class="num">284,078</td><td class="num">85.2%</td></tr>
+        <tr><td>页面浏览量</td><td class="num">1,125</td><td class="num pos">+32.67%</td><td class="num">2,738</td><td class="num">19,510</td><td class="num">41.1%</td></tr>
+        <tr><td>询盘</td><td class="num">5</td><td class="num pos">+25.00%</td><td class="num">26</td><td class="num">270</td><td class="num">19.2%</td></tr>
+        <tr><td>TM 消息</td><td class="num">29</td><td class="num neg">−19.44%</td><td class="num">185</td><td class="num">1,952</td><td class="num">15.7%</td></tr>
+        <tr><td>店铺回复率</td><td class="num">84.00%</td><td class="num pos">+15.5 pp</td><td class="num">92.83%</td><td class="num">99.37%</td><td class="num">90.5%</td></tr>
+        <tr><td>平均回复时间（小时）</td><td class="num">11</td><td class="num pos">−16.72%*</td><td class="num">4</td><td class="num">2</td><td class="num">275%（慢）</td></tr>
+        <tr><td>30天独立访客</td><td class="num">661</td><td class="num">—</td><td class="num">—（星级目标 1,000）</td><td class="num">—</td><td class="num">66.1%（对目标）</td></tr>
+        <tr><td>商机</td><td class="num">28</td><td class="num">—</td><td class="num">291</td><td class="num">12,776</td><td class="num">9.6%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line">*回复时间环比下降 = 响应变快，但仍远慢于行业均值（11h vs 4h）。</div>
+    <div class="note-line">平台新规下，高星级需 GMV 支撑；8–9 月目标为升到 2 星，前提是 8 月完成首笔信用保障订单（GMV 0→1）。</div>
+  </div>
+
+  <div class="top5">
+    <h4>🚀 5 大优先行动（立即执行）</h4>
+    <ol>
+      <li><div class="t"><b>回复速度：平均回复时间 11h → ≤6h（目标 4h）</b>，店铺回复率 84% → 90%+；开启 Smart Assistant 自动接待 + 人工跟进。</div></li>
+      <li><div class="t"><b>完成星级任务：优化 110 个竞争产品（80+30）</b>，修复虚假低价（0.01 USD 挂钩等），清理高风险内容（裸体油画类）。</div></li>
+      <li><div class="t"><b>每月上新 ≥30 个产品</b>（7月仅 3 个），优先已起量类目：水族箱、仿真花、收纳托盘。</div></li>
+      <li><div class="t"><b>100% 跟进 28 个商机</b>：48 小时内联系、24 小时内报价；RFQ 额度全部用完（上月 52/52）。</div></li>
+      <li><div class="t"><b>促成首笔信用保障订单（GMV 0 → 1）</b>，建立成交记录 —— 这是 8–9 月升 2 星的硬门槛。</div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= 02 三个月趋势 ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">02</div>
+    <h3>三个月趋势</h3>
+  </div>
+  <div class="card">
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>指标</th><th class="num">5月</th><th class="num">6月</th><th class="num">7月</th><th class="num">环比</th><th class="num">行业均值</th><th>评价</th></tr></thead>
+      <tbody>
+        <tr><td>搜索曝光</td><td class="num">—</td><td class="num">—</td><td class="num">33,314</td><td class="num pos">+13.56%</td><td class="num">39,122</td><td>上升，接近行业均值</td></tr>
+        <tr><td>页面浏览</td><td class="num">—</td><td class="num">—</td><td class="num">1,125</td><td class="num pos">+32.67%</td><td class="num">2,738</td><td>上升但仅为行业 41%</td></tr>
+        <tr><td>询盘</td><td class="num">—</td><td class="num">—</td><td class="num">5</td><td class="num pos">+25.00%</td><td class="num">26</td><td>上升但基数极低</td></tr>
+        <tr><td>TM 消息</td><td class="num">—</td><td class="num">—</td><td class="num">29</td><td class="num neg">−19.44%</td><td class="num">185</td><td>下降，需关注</td></tr>
+        <tr><td>回复率</td><td class="num">—</td><td class="num">—</td><td class="num">84.00%</td><td class="num pos">+15.5 pp</td><td class="num">92.83%</td><td>显著改善</td></tr>
+        <tr><td>回复时间（小时）</td><td class="num">—</td><td class="num">—</td><td class="num">11</td><td class="num pos">−16.72%</td><td class="num">4</td><td>改善但仍慢 2.75 倍</td></tr>
+        <tr><td>星级</td><td class="num">1★</td><td class="num">1★</td><td class="num">1★</td><td class="num">—</td><td class="num">—</td><td>连续 3 个月 1 星</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line">星级历史（2026年1–6月）：1月 2★ → 2月 1★ → 3月 1★ → 4月 2★ → 5月 1★ → 6月 1★。产品维度一直较强（4–5 星），营销与服务维度反复掉分。</div>
+  </div>
+</section>
+
+<!-- ================= 03 产品 ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">03</div>
+    <h3>产品</h3>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">产品结构（2026年7月）</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>指标</th><th class="num">数值</th><th class="num">环比</th></tr></thead>
+      <tbody>
+        <tr><td>在线产品</td><td class="num">1,551</td><td class="num neg">−7.24%</td></tr>
+        <tr><td>有曝光产品</td><td class="num">1,163</td><td class="num pos">+4.30%</td></tr>
+        <tr><td>有点击产品</td><td class="num">233</td><td class="num pos">+21.99%</td></tr>
+        <tr><td>有报价产品</td><td class="num">12</td><td class="num neg">−25.00%</td></tr>
+        <tr><td>新发产品</td><td class="num">3</td><td class="num pos">新增</td></tr>
+        <tr><td>顶展产品</td><td class="num">19</td><td class="num">—</td></tr>
+        <tr><td>Super 产品</td><td class="num">0</td><td class="num">—</td></tr>
+        <tr><td>重复产品</td><td class="num">0</td><td class="num">—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line">有点击产品占比 233/1,163 = <b>20.0%</b>。产品总量 1,551，但仅 233 个产品产生点击、12 个产生报价 —— 大量产品在“吃灰”，应先集中优化现有产品，而非盲目堆量。</div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">曝光 Top 10 产品</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>产品 ID</th><th>产品名</th><th class="num">曝光</th><th class="num">点击</th><th class="num">CTR</th></tr></thead>
+      <tbody>
+        <tr><td>1601428492529</td><td>PU 仿真花（百合/兰花）玻璃花瓶</td><td class="num">1,712</td><td class="num">0</td><td class="num neg">0%</td></tr>
+        <tr><td>1601428778347</td><td>常青藤花环</td><td class="num">932</td><td class="num">0</td><td class="num neg">0%</td></tr>
+        <tr><td>1601428737650</td><td>玻璃鱼缸</td><td class="num">626</td><td class="num">7</td><td class="num">1.12%</td></tr>
+        <tr><td>1601428745773</td><td>亚克力鱼缸</td><td class="num">570</td><td class="num">12</td><td class="num">2.11%</td></tr>
+        <tr><td>1601428859035</td><td>马蹄莲仿真花束</td><td class="num">365</td><td class="num">1</td><td class="num">0.27%</td></tr>
+        <tr><td>1601428799343</td><td>几何玻璃吊饰花器</td><td class="num">361</td><td class="num">0</td><td class="num neg">0%</td></tr>
+        <tr><td>1601428819208</td><td>户外花园流水摆件</td><td class="num">323</td><td class="num">8</td><td class="num">2.48%</td></tr>
+        <tr><td>1601428765638</td><td>玩具火车轨道</td><td class="num">300</td><td class="num">6</td><td class="num">2.00%</td></tr>
+        <tr><td>1601428870018</td><td>圆柱亚克力鱼缸</td><td class="num">280</td><td class="num">2</td><td class="num">0.71%</td></tr>
+        <tr><td>1601428797232</td><td>蝴蝶兰仿真盆栽</td><td class="num">274</td><td class="num">0</td><td class="num neg">0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line"><b>关键发现：</b>Top 曝光产品 CTR 仅 0–2.5%（目标 ≥3%），仿真花/花环类曝光高但点击为 0 —— 主图与标题竞争力不足，是最大的流量浪费点。</div>
+  </div>
+
+  <div class="card">
+    <h4 style="color:var(--navy); margin-bottom:10px;">需处理产品</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>问题</th><th>产品组</th><th>价格区间</th><th>处理方向</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge b-stop">虚假低价</span></td><td>不锈钢窗帘挂钩（0.01 USD）等五金组</td><td>0.01；0.14~0.88；0.4~1.0</td><td>改为真实批发价 + 设置合理 MOQ</td></tr>
+        <tr><td><span class="badge b-stop">内容风险</span></td><td>裸体油画类（Home &amp; Garden 装饰画）</td><td>0.9~10.0</td><td>评估平台内容政策，调整或下架，避免流量处罚</td></tr>
+        <tr><td><span class="badge b-warn">定价混乱</span></td><td>PU 皮收纳托盘</td><td>1.65~16.35</td><td>规范定价梯度，避免价差混乱</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 星级评定 ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">04</div>
+    <h3>星级评定</h3>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">当前星级：
+      <span class="star-now">1 星</span>
+      <span class="stars"><span class="on"></span><span class="off"></span><span class="off"></span><span class="off"></span><span class="off"></span></span>
+    </h4>
+    <div class="note-line">注：平台 AI 建议文案提及“2 星”，与当前后台显示 1 星不一致，以星级中心实时数据为准。</div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">四维度拆解（7月）</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>维度</th><th>星级</th><th class="num">当前值</th><th class="num">目标值</th><th>差距</th></tr></thead>
+      <tbody>
+        <tr><td>产品：质量分 ≥4.2 产品数</td><td><span class="badge b-ok">3★</span></td><td class="num">769</td><td class="num">800</td><td><span class="badge b-ok">差 31 ✅ 接近</span></td></tr>
+        <tr><td>营销：30天独立访客</td><td><span class="badge b-mid">2★</span></td><td class="num">661</td><td class="num">1,000</td><td>差 339</td></tr>
+        <tr><td>服务：30天回复买家数</td><td><span class="badge b-mid">2★</span></td><td class="num">12</td><td class="num">30</td><td>差 18</td></tr>
+        <tr><td>销售 GMV：90天成交额</td><td><span class="badge b-mid">2★</span></td><td class="num">0</td><td class="num">1</td><td><span class="badge b-stop">差 1（无成交）</span></td></tr>
+        <tr><td>Service Capacity</td><td><span class="badge b-mid">2★</span></td><td class="num">10.33</td><td class="num">12</td><td>差 1.67</td></tr>
+        <tr><td>Trade Capacity</td><td><span class="badge b-mid">2★</span></td><td class="num">0</td><td class="num">1</td><td><span class="badge b-stop">差 1（无交易）</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line"><b>结论：</b>产品维度（3★）是唯一接近满分的强项；GMV 与 Trade Capacity 为 0 是升星硬门槛 —— 8 月首要任务就是突破它（首笔订单），9 月底冲刺 2 星。</div>
+  </div>
+
+  <div class="card">
+    <h4 style="color:var(--navy); margin-bottom:10px;">星级任务进度与8月可行性</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>任务</th><th class="num">进度</th><th class="num">分值</th><th>8月可行性</th></tr></thead>
+      <tbody>
+        <tr><td>优化 80 个竞争产品</td><td class="num">0/80</td><td class="num">2</td><td><span class="badge b-ok">✅ 可行（核心任务）</span></td></tr>
+        <tr><td>优化 30 个竞争产品</td><td class="num">0/30</td><td class="num">2</td><td><span class="badge b-ok">✅ 可行（核心任务）</span></td></tr>
+        <tr><td>每月登录 7 天</td><td class="num">5/7</td><td class="num">1</td><td><span class="badge b-ok">✅ 可行（已接近）</span></td></tr>
+        <tr><td>开启自动接单功能</td><td class="num">—</td><td class="num">1</td><td><span class="badge b-ok">✅ 可行（一键开启）</span></td></tr>
+        <tr><td>平均询盘回复 &lt; 8 小时</td><td class="num">—</td><td class="num">3</td><td><span class="badge b-ok">✅ 可行（需优化流程）</span></td></tr>
+        <tr><td>回复速度 &lt; 4 小时（Priority Boost）</td><td class="num">—</td><td class="num">2</td><td><span class="badge b-ok">✅ 可行（目标值）</span></td></tr>
+        <tr><td>20 个新 RTS 产品（PIS ≥ 4.2）</td><td class="num">0/20</td><td class="num">3</td><td><span class="badge b-warn">⚠️ 仅当有现货可发</span></td></tr>
+        <tr><td>发布 10 个 RTS 趋势新品</td><td class="num">0/10</td><td class="num">2</td><td><span class="badge b-warn">⚠️ 仅当有现货可发</span></td></tr>
+        <tr><td>信用保障订单（首2单手续费5折）</td><td class="num">0/2</td><td class="num">—</td><td><span class="badge b-warn">⚠️ 与 GMV 目标联动</span></td></tr>
+        <tr><td>完成 1 笔信用保障订单付款</td><td class="num">—</td><td class="num">5</td><td><span class="badge b-warn">⚠️ 与 GMV 目标联动</span></td></tr>
+        <tr><td>KWA 关键词广告投放 250 万 VND</td><td class="num">—</td><td class="num">3</td><td><span class="badge b-warn">⚠️ 仅当确认广告预算</span></td></tr>
+        <tr><td>欧盟化妆品/食品/饲料声明</td><td class="num">—</td><td class="num">0</td><td><span class="badge b-mid">➖ 本店类目不涉及（家居园艺）</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line"><b>RTS 说明：</b>店铺目前 RTS 产品为 0。若公司有标准现货可发，则执行 RTS 任务；若为定制生产模式，则跳过 RTS 任务，不影响整体计划。</div>
+  </div>
+</section>
+
+<!-- ================= 05 营销与商机 ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">05</div>
+    <h3>营销与商机</h3>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">广告状态（7月）</h4>
+    <p>总花费 <b>VND 0</b>，预算 <b>VND 0</b>，曝光/点击/商机均为 0 —— 当前为纯自然流量运营。建议：在预算允许时小规模测试 KWA（如 250 万 VND 档位，可同时完成星级任务），<b>不作为 8 月必选项</b>。</p>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">商机与买家质量（7月）</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>指标</th><th class="num">店铺</th><th class="num">行业均值</th><th class="num">行业领先</th><th class="num">占均值</th></tr></thead>
+      <tbody>
+        <tr><td>商机</td><td class="num">28</td><td class="num">291</td><td class="num">12,776</td><td class="num">9.6%</td></tr>
+        <tr><td>询盘</td><td class="num">5</td><td class="num">37</td><td class="num">1,539</td><td class="num">13.5%</td></tr>
+        <tr><td>消息</td><td class="num">23</td><td class="num">239</td><td class="num">10,806</td><td class="num">9.6%</td></tr>
+        <tr><td>回复率（商机口径）</td><td class="num">73.53%</td><td class="num">86.65%</td><td class="num">100%</td><td class="num">84.9%</td></tr>
+        <tr><td>活跃买家</td><td class="num">27</td><td class="num">258</td><td class="num">11,369</td><td class="num">10.5%</td></tr>
+        <tr><td>L2+ 买家</td><td class="num">14</td><td class="num">193</td><td class="num">9,266</td><td class="num">7.3%</td></tr>
+        <tr><td>付费买家</td><td class="num">15</td><td class="num">171</td><td class="num">8,197</td><td class="num">8.8%</td></tr>
+        <tr><td>订单 ≥ 1 万美元买家</td><td class="num">6</td><td class="num">56</td><td class="num">1,565</td><td class="num">10.7%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line">注：店铺概览口径回复率 84.00%（环比 +15.5pp）与商机口径 73.53% 取数范围不同，均低于行业均值，需一并改善。</div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">会员权益使用</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>权益</th><th class="num">可用</th><th class="num">已用</th><th class="num">使用率</th></tr></thead>
+      <tbody>
+        <tr><td>RFQ 询盘额度</td><td class="num">52</td><td class="num">52</td><td class="num"><span class="badge b-ok">100% ✅</span></td></tr>
+        <tr><td>Showcase 展位</td><td class="num">20</td><td class="num">20</td><td class="num"><span class="badge b-ok">100% ✅</span></td></tr>
+        <tr><td>AI 总点数</td><td class="num">660</td><td class="num">0</td><td class="num"><span class="badge b-stop">0% ❌</span></td></tr>
+        <tr class="sub-row"><td>　— AI 图片生成</td><td class="num">50</td><td class="num">0</td><td class="num">0%</td></tr>
+        <tr class="sub-row"><td>　— AI 视频生成</td><td class="num">5</td><td class="num">0</td><td class="num">0%</td></tr>
+        <tr class="sub-row"><td>　— AI 数据分析</td><td class="num">5</td><td class="num">0</td><td class="num">0%</td></tr>
+        <tr class="sub-row"><td>　— AI 文本</td><td class="num">600</td><td class="num">0</td><td class="num">0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line"><b>关键机会：</b>660 个 AI 点数 100% 未使用 —— 可用于批量升级产品主图、生成产品视频，直接提升点击率，成本为零。</div>
+  </div>
+
+  <div class="card">
+    <h4 style="color:var(--navy); margin-bottom:10px;">询盘样例（供跟进）</h4>
+    <p style="font-size:12.8px;">询盘 #3：买家 <b>93*****72</b>，历史订单金额 <b>163,419.21</b>；产品：圣诞树（ID 1601428522183，类目 Christmas Trees）；时间 2026-07-27 23:03。标题：“Factory Wholesale Arbol De Navidad Artificial Xmas Christmas Decoration Tree”。<b>→ 8月首个跟进对象。</b></p>
+  </div>
+</section>
+
+<!-- ================= 06 优势与差距 ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">06</div>
+    <h3>优势与差距</h3>
+  </div>
+  <div class="cols">
+    <div class="col g">
+      <h5>✅ 优势</h5>
+      <ul>
+        <li>搜索曝光 33,314，环比 +13.6%，达行业均值 <b>85%</b></li>
+        <li>浏览量 +32.7%、搜索点击 +19.6%，流量增长强劲</li>
+        <li>产品维度星级 <b>3★</b>（769/800，接近满分）</li>
+        <li>RFQ（52/52）与 Showcase（20/20）<b>100% 使用</b></li>
+        <li>回复率 84%，环比 +15.5pp，服务在改善</li>
+        <li>有 <b>6 个订单 ≥ $10K</b> 的历史买家可复购</li>
+        <li>AI 点数 660 个未使用，零成本提效空间大</li>
+      </ul>
+    </div>
+    <div class="col w">
+      <h5>⚠️ 差距 / 风险</h5>
+      <ul>
+        <li>询盘仅 5 条，仅为行业均值 <b>19%</b></li>
+        <li>回复时间 11h（行业 4h，慢 2.75 倍），错失询盘</li>
+        <li>GMV = 0，180 天零订单，星级卡在 <b>1 星</b></li>
+        <li>7月新发产品仅 <b>3 个</b>，产品更新停滞</li>
+        <li>商机（28）仅为行业均值 <b>9.6%</b>，买家池小</li>
+        <li>Top 曝光产品 CTR 0–2.5%，主图/标题需优化</li>
+        <li>虚假低价（0.01 USD）与内容风险产品影响信任与流量</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 07 8月行动计划 ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">07</div>
+    <h3>2026年8–9月行动计划 · 目标 2 星</h3>
+  </div>
+
+    <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">🎯 星级目标 / Star Target：1★ → <span style="color:#B7791F;">2★（2026年9月底前）</span></h4>
+    <p style="font-size:12.8px;">升 2 星的前提（硬门槛）：<b>8 月内完成 ≥1 笔信用保障订单，GMV 从 0 起步</b> —— 平台新规下 GMV 是维持/提升高星级的必要条件，而当前 GMV = 0 是唯一卡在 0 的维度。产品、营销、服务三方面达标后，GMV 一到位即可冲 2 星。<br>Reaching 2 stars is gated on GMV: close ≥1 Trade Assurance order in August — it is the only dimension currently at 0.</p>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">星级维度路线图 / Star Dimension Roadmap</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>维度 Dimension</th><th class="num">7月 Current</th><th class="num">8月底 Aug 31</th><th class="num">9月底 Sep 30（2★目标）</th><th>说明 Note</th></tr></thead>
+      <tbody>
+        <tr><td>产品：质量分 ≥4.2 产品数</td><td class="num">769</td><td class="num">800</td><td class="num">850+</td><td>维持 3★ 产品维度</td></tr>
+        <tr><td>营销：30天独立访客</td><td class="num">661</td><td class="num">800</td><td class="num">1,000</td><td>达标 2★→3★ 门槛</td></tr>
+        <tr><td>服务：30天回复买家数</td><td class="num">12</td><td class="num">20</td><td class="num">30</td><td>回复率 + 速度双提升</td></tr>
+        <tr><td>销售：GMV（90天）</td><td class="num">0</td><td class="num">1 单</td><td class="num">2+ 单</td><td><span class="badge b-stop">升星硬门槛</span></td></tr>
+        <tr><td>Trade Capacity</td><td class="num">0</td><td class="num">1</td><td class="num">1+</td><td>需完成交易</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4 style="color:var(--navy); margin-bottom:12px;">行动摘要 / Action Summary（8月冲刺 + 9月达标）</h4>
+    <div class="sum-grid">
+      <div class="sum-item">
+        <h5><span class="badge b-A">A 星级</span> 任务分 &amp; 守维度</h5>
+        <ul>
+          <li><span class="badge b-p1">8月</span> 完成星级任务：优化 110 个竞争产品（80+30，+4 分）；登录 ≥25 天；开启自动接单（+1 分）</li>
+          <li><span class="badge b-p2">9月</span> 质量分 ≥4.2 产品数 800 → 850+；继续登录 ≥25 天</li>
+          <li><span class="badge b-p2">9月</span> 回复 &lt;8h（+3 分）与 &lt;4h（+2 分）冲分；有预算可投 KWA 250万 VND（+3 分）</li>
+          <li>RTS 任务仅当有现货可发；欧盟声明不涉及（家居园艺）</li>
+        </ul>
+      </div>
+      <div class="sum-item">
+        <h5><span class="badge b-B">B 产品</span> 提质 + 增量</h5>
+        <ul>
+          <li><span class="badge b-p1">8月</span> 修复虚假低价（0.01 USD 挂钩等）+ 清理裸体油画类；Top 10 主图/标题 CTR → ≥3%</li>
+          <li><span class="badge b-p1">8月</span> 新发 ≥15 个；<span class="badge b-p2">9月</span> 新发 ≥30 个（优先鱼缸、仿真花、收纳托盘）</li>
+          <li><span class="badge b-p2">9月</span> AI 点数用到 ≥300/660，批量升级图片与视频</li>
+        </ul>
+      </div>
+      <div class="sum-item">
+        <h5><span class="badge b-C">C 营销</span> 抓商机</h5>
+        <ul>
+          <li><span class="badge b-p1">8月</span> 100% 跟进 28 个商机（48h 联系 / 24h 报价）；RFQ 52 条全用</li>
+          <li><span class="badge b-p1">8月</span> 刷新 20 个 Showcase 展位为 Top 产品</li>
+          <li><span class="badge b-p2">9月</span> 维护 L2+（14）与付费买家（15）：每人 ≥2 次触达，挖复购；RFQ 新额度全用</li>
+        </ul>
+      </div>
+      <div class="sum-item">
+        <h5><span class="badge b-D">D 服务</span> 促成交（升星关键）</h5>
+        <ul>
+          <li><span class="badge b-p1">8月</span> 回复时间 11h → ≤6h；回复率 → ≥90%；开启 Smart Assistant</li>
+          <li><span class="badge b-p1">8月</span> <b>促成首笔信用保障订单（GMV 0 → 1）——升星硬门槛</b></li>
+          <li><span class="badge b-p2">9月</span> 完成 2+ 笔订单（Trade Capacity ≥1）；优先跟进圣诞树询盘（买家 93*****72）24h 报价</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 08 月末KPI承诺 ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">08</div>
+    <h3>月末 KPI 承诺（8月 / 9月）</h3>
+  </div>
+  <div class="card">
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>指标</th><th class="num">7月结果</th><th class="num">8月底目标</th><th class="num">9月底目标（2★）</th></tr></thead>
+      <tbody>
+        <tr><td>星级</td><td class="num">1★</td><td class="num">守住 1★</td><td class="num"><b>2★</b></td></tr>
+        <tr><td>搜索曝光</td><td class="num">33,314</td><td class="num">38,000</td><td class="num">45,000</td></tr>
+        <tr><td>搜索点击</td><td class="num">463</td><td class="num">≥ 700</td><td class="num">≥ 900</td></tr>
+        <tr><td>页面浏览量</td><td class="num">1,125</td><td class="num">≥ 1,500</td><td class="num">≥ 2,000</td></tr>
+        <tr><td>30天独立访客</td><td class="num">661</td><td class="num">≥ 800</td><td class="num">≥ 1,000</td></tr>
+        <tr><td>询盘</td><td class="num">5</td><td class="num">15–20</td><td class="num">≥ 25</td></tr>
+        <tr><td>TM 消息</td><td class="num">29</td><td class="num">≥ 50</td><td class="num">≥ 80</td></tr>
+        <tr><td>店铺回复率</td><td class="num">84.00%</td><td class="num">≥ 90%</td><td class="num">≥ 92%</td></tr>
+        <tr><td>平均回复时间</td><td class="num">11 h</td><td class="num">≤ 6 h</td><td class="num">≤ 4 h</td></tr>
+        <tr><td>新发产品</td><td class="num">3</td><td class="num">≥ 15（8/21 起）</td><td class="num">≥ 30</td></tr>
+        <tr><td>质量分 ≥4.2 产品数</td><td class="num">769</td><td class="num">800</td><td class="num">850+</td></tr>
+        <tr><td>GMV（信用保障订单）</td><td class="num">0</td><td class="num">1 单（首笔）</td><td class="num">2+ 单</td></tr>
+        <tr><td>Trade Capacity</td><td class="num">0</td><td class="num">1</td><td class="num">1+</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line">⚠️ KPI 目标为推荐运营阈值（基线 + 行业参考），非结果承诺。</div>
+  </div>
+</section>
+
+<!-- ================= 09 跟进机制 ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">09</div>
+    <h3>跟进机制</h3>
+  </div>
+  <div class="card">
+    <ul style="padding-left:18px; font-size:13px;">
+      <li><b>每周</b>：运营会议（30 分钟）核对任务进度 + 首单跟进，更新任务 tracker。</li>
+      <li><b>8/31</b>：核对 8 月 KPI 与 GMV 首单状态，启动 9 月冲刺。</li>
+      <li><b>9/30</b>：复核星级（目标 2★）与全部 KPI，输出 10 月计划。</li>
+      <li><b>AM 支持</b>：账号经理 LÊ THỊ THƯỜNG（thng.l@alibaba-inc.com），广告/活动支持请通过 AM 提报。</li>
+    </ul>
+  </div>
+</section>
+
+<div class="footer">
+  数据来源：GLOBAL INDUSTRIAL VIETNAM CO., LTD. 2026年7月 Alibaba.com 月度服务报告（店铺概览、星级中心、产品分析、商机分析、会员权益、广告后台）。衍生指标（CTR、占行业均值%）由展示数值计算；缺失历史绝对值标注 NO_RESULT；未使用任何推测数据。
+</div>
+
+</div>
+
+</div>
+<div id="v-en">
+
+<!-- ================= COVER ================= -->
+<div class="cover">
+  <div class="inner">
+    <div class="brand">Alibaba.com · GGS Monthly Performance Report</div>
+    <h1>GLOBAL INDUSTRIAL VIETNAM COMPANY LIMITED<br>Monthly Report &amp; Action Plan — July 2026</h1>
+    <h2>English Version</h2>
+    <div class="meta">
+      <div class="chip">Main Category：<b>Home &amp; Garden</b></div>
+      <div class="chip">Years on Platform：<b>2 yrs</b></div>
+      <div class="chip">Trade Assurance：<b>ON</b></div>
+      <div class="chip">Account Manager：<b>LÊ THỊ THƯỜNG</b> · thng.l@alibaba-inc.com</div>
+    </div>
+    <div class="tagline">Reporting Period：July 2026</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ================= 01 EXECUTIVE SUMMARY ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">01</div>
+    <h3>Executive Summary</h3>
+  </div>
+
+  <div class="verdicts">
+    <div class="verdict good"><div class="v-icon">✅</div><div class="v-title">Traffic Growing</div><p>Search impressions <b>33,314</b> (+13.6%), page views <b>1,125</b> (+32.7%), search clicks <b>463</b> (+19.6%) — a monthly record driven by organic traffic.</p></div>
+    <div class="verdict bad"><div class="v-icon">⚠️</div><div class="v-title">Weak Conversion</div><p>Only <b>5</b> inquiries (industry avg 26, just 19% of it); avg reply time <b>11 hours</b> (industry 4h); zero orders in the last 180 days.</p></div>
+    <div class="verdict warn"><div class="v-icon">⭐</div><div class="v-title">Star Rating 1★</div><p>1 star for <b>3 consecutive months</b> (May–Jul); key gaps are GMV (0) and responded buyers (12/30).</p></div>
+    <div class="verdict info"><div class="v-icon">🎯</div><div class="v-title">Aug–Sep Strategy: aim for 2★</div><p><b>Close the first Trade Assurance order in August (GMV 0→1)</b> and <b>reach 2 stars by end of September</b>: unlock the traffic → inquiry → order funnel and bring all four star dimensions to target.</p></div>
+  </div>
+
+  <div class="card">
+    <h4 style="color:var(--navy); margin-bottom:10px;">Key KPI Table</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Metric</th><th class="num">July</th><th class="num">MoM</th><th class="num">Industry Avg</th><th class="num">Industry Leader</th><th class="num">% of Avg</th></tr></thead>
+      <tbody>
+        <tr><td>Search impressions</td><td class="num">33,314</td><td class="num pos">+13.56%</td><td class="num">39,122</td><td class="num">284,078</td><td class="num">85.2%</td></tr>
+        <tr><td>Page views</td><td class="num">1,125</td><td class="num pos">+32.67%</td><td class="num">2,738</td><td class="num">19,510</td><td class="num">41.1%</td></tr>
+        <tr><td>Inquiries</td><td class="num">5</td><td class="num pos">+25.00%</td><td class="num">26</td><td class="num">270</td><td class="num">19.2%</td></tr>
+        <tr><td>TM messages</td><td class="num">29</td><td class="num neg">−19.44%</td><td class="num">185</td><td class="num">1,952</td><td class="num">15.7%</td></tr>
+        <tr><td>Store response rate</td><td class="num">84.00%</td><td class="num pos">+15.5 pp</td><td class="num">92.83%</td><td class="num">99.37%</td><td class="num">90.5%</td></tr>
+        <tr><td>Avg reply time (h)</td><td class="num">11</td><td class="num pos">−16.72%*</td><td class="num">4</td><td class="num">2</td><td class="num">275% (slower)</td></tr>
+        <tr><td>Unique visitors (30d)</td><td class="num">661</td><td class="num">—</td><td class="num">— (star target 1,000)</td><td class="num">—</td><td class="num">66.1% (vs target)</td></tr>
+        <tr><td>Business opportunities</td><td class="num">28</td><td class="num">—</td><td class="num">291</td><td class="num">12,776</td><td class="num">9.6%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line">*Reply time decreased MoM (faster) but remains far above the industry average (11h vs 4h).</div>
+    <div class="note-line">Under the platform's new rule, high star ratings require GMV. The Aug–Sep target is to reach 2 stars, gated on closing the first Trade Assurance order in August (GMV 0→1).</div>
+  </div>
+
+  <div class="top5">
+    <h4>🚀 TOP 5 PRIORITY ACTIONS (Execute Now)</h4>
+    <ol>
+      <li><div class="t"><b>Response speed: cut avg reply time from 11h to ≤6h (target 4h)</b>; raise response rate from 84% to 90%+; enable Smart Assistant for first touch + human follow-up. </div></li>
+      <li><div class="t"><b>Complete star tasks: optimize 110 competitive products (80+30)</b>; fix fake low prices (e.g. 0.01 USD curtain hooks); review high-risk content (nude oil paintings). </div></li>
+      <li><div class="t"><b>Post ≥30 new products per month</b> (only 3 in July), prioritizing categories already ranking: aquariums, artificial flowers, valet trays. </div></li>
+      <li><div class="t"><b>Follow up 100% of the 28 business opportunities</b>: contact within 48h, quote within 24h; use 100% of the RFQ quota (52/52 last month). </div></li>
+      <li><div class="t"><b>Close the first Trade Assurance order (GMV 0 → 1)</b> to build transaction history and buyer trust — the hard gate for reaching 2 stars in Aug–Sep. </div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= 02 3-MONTH TREND ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">02</div>
+    <h3>3-Month Trend</h3>
+  </div>
+  <div class="card">
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Metric</th><th class="num">May</th><th class="num">Jun</th><th class="num">Jul</th><th class="num">MoM</th><th class="num">Industry Avg</th><th>Assessment</th></tr></thead>
+      <tbody>
+        <tr><td>Search impressions</td><td class="num">—</td><td class="num">—</td><td class="num">33,314</td><td class="num pos">+13.56%</td><td class="num">39,122</td><td>Up, close to industry avg</td></tr>
+        <tr><td>Page views</td><td class="num">—</td><td class="num">—</td><td class="num">1,125</td><td class="num pos">+32.67%</td><td class="num">2,738</td><td>Up but only 41% of industry</td></tr>
+        <tr><td>Inquiries</td><td class="num">—</td><td class="num">—</td><td class="num">5</td><td class="num pos">+25.00%</td><td class="num">26</td><td>Up but very low base</td></tr>
+        <tr><td>TM messages</td><td class="num">—</td><td class="num">—</td><td class="num">29</td><td class="num neg">−19.44%</td><td class="num">185</td><td>Down, needs attention</td></tr>
+        <tr><td>Response rate</td><td class="num">—</td><td class="num">—</td><td class="num">84.00%</td><td class="num pos">+15.5 pp</td><td class="num">92.83%</td><td>Significant improvement</td></tr>
+        <tr><td>Reply time (h)</td><td class="num">—</td><td class="num">—</td><td class="num">11</td><td class="num pos">−16.72%</td><td class="num">4</td><td>Better but still 2.75x slower</td></tr>
+        <tr><td>Star rating</td><td class="num">1★</td><td class="num">1★</td><td class="num">1★</td><td class="num">—</td><td class="num">—</td><td>1 star for 3 months straight</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line">Star history (Jan–Jun 2026): Jan 2★ → Feb 1★ → Mar 1★ → Apr 2★ → May 1★ → Jun 1★. The product dimension has consistently been the strong pillar (4–5 stars); marketing and service dimensions keep dropping.</div>
+  </div>
+</section>
+
+<!-- ================= 03 PRODUCTS ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">03</div>
+    <h3>Products</h3>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">Product Portfolio (July 2026)</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Metric</th><th class="num">Value</th><th class="num">MoM</th></tr></thead>
+      <tbody>
+        <tr><td>Active products</td><td class="num">1,551</td><td class="num neg">−7.24%</td></tr>
+        <tr><td>Products with impressions</td><td class="num">1,163</td><td class="num pos">+4.30%</td></tr>
+        <tr><td>Products with clicks</td><td class="num">233</td><td class="num pos">+21.99%</td></tr>
+        <tr><td>Products with quote requests</td><td class="num">12</td><td class="num neg">−25.00%</td></tr>
+        <tr><td>New products posted</td><td class="num">3</td><td class="num pos">New</td></tr>
+        <tr><td>Top products</td><td class="num">19</td><td class="num">—</td></tr>
+        <tr><td>Super products</td><td class="num">0</td><td class="num">—</td></tr>
+        <tr><td>Duplicate products</td><td class="num">0</td><td class="num">—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line">Products with clicks: 233/1,163 = <b>20.0%</b>. Of 1,551 total products, only 233 generate clicks and 12 generate quote requests — a large share of listings is dormant. Prioritize optimizing existing listings over adding volume.</div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">Top 10 Products by Impressions</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Product ID</th><th>Product Name</th><th class="num">Impressions</th><th class="num">Clicks</th><th class="num">CTR</th></tr></thead>
+      <tbody>
+        <tr><td>1601428492529</td><td>PU Artificial Flowers Lily Latex Orchids in Glass Vase</td><td class="num">1,712</td><td class="num">0</td><td class="num neg">0%</td></tr>
+        <tr><td>1601428778347</td><td>Advent Wreath Artificial Greenery</td><td class="num">932</td><td class="num">0</td><td class="num neg">0%</td></tr>
+        <tr><td>1601428737650</td><td>Table Glass Aquarium Fish Tank</td><td class="num">626</td><td class="num">7</td><td class="num">1.12%</td></tr>
+        <tr><td>1601428745773</td><td>Acrylic Fish Tank Aquarium</td><td class="num">570</td><td class="num">12</td><td class="num">2.11%</td></tr>
+        <tr><td>1601428859035</td><td>Calla Lily Artificial Flowers</td><td class="num">365</td><td class="num">1</td><td class="num">0.27%</td></tr>
+        <tr><td>1601428799343</td><td>Geometric Glass Terrarium</td><td class="num">361</td><td class="num">0</td><td class="num neg">0%</td></tr>
+        <tr><td>1601428819208</td><td>Garden Water Pump Fountain</td><td class="num">323</td><td class="num">8</td><td class="num">2.48%</td></tr>
+        <tr><td>1601428765638</td><td>Toy Train Track</td><td class="num">300</td><td class="num">6</td><td class="num">2.00%</td></tr>
+        <tr><td>1601428870018</td><td>Cylinder Acrylic Fish Aquarium</td><td class="num">280</td><td class="num">2</td><td class="num">0.71%</td></tr>
+        <tr><td>1601428797232</td><td>Phalaenopsis Orchid Plant</td><td class="num">274</td><td class="num">0</td><td class="num neg">0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line"><b>Key finding:</b> Top-exposure products have CTR of only 0–2.5% (target ≥3%); artificial flower/wreath items get high impressions but zero clicks — main images and titles are not competitive. This is the biggest traffic leak.</div>
+  </div>
+
+  <div class="card">
+    <h4 style="color:var(--navy); margin-bottom:10px;">Products Requiring Action</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Issue</th><th>Product Group</th><th>Price Range</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge b-stop">Fake low price</span></td><td>Curtain hardware (0.01 USD pin hooks, etc.)</td><td>0.01; 0.14~0.88; 0.4~1.0</td><td>Reset to real wholesale prices + set reasonable MOQ</td></tr>
+        <tr><td><span class="badge b-stop">Content risk</span></td><td>Nude oil paintings (Home &amp; Garden wall art)</td><td>0.9~10.0</td><td>Review against platform content policy; adjust or delist to avoid traffic penalties</td></tr>
+        <tr><td><span class="badge b-warn">Price inconsistency</span></td><td>PU leather valet trays</td><td>1.65~16.35</td><td>Standardize price tiers to avoid confusing spreads</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 STAR RATING ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">04</div>
+    <h3>Star Rating</h3>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">Current Rating：
+      <span class="star-now">1 Star</span>
+      <span class="stars"><span class="on"></span><span class="off"></span><span class="off"></span><span class="off"></span><span class="off"></span></span>
+    </h4>
+    <div class="note-line">Note: The platform AI suggestion text mentions "2 stars", which conflicts with the current backend display of 1 star; the star center is authoritative.</div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">Star Dimensions (July)</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Dimension</th><th>Stars</th><th class="num">Current</th><th class="num">Target</th><th>Gap</th></tr></thead>
+      <tbody>
+        <tr><td>Product: products with quality score ≥4.2</td><td><span class="badge b-ok">3★</span></td><td class="num">769</td><td class="num">800</td><td><span class="badge b-ok">31 to go ✅ close</span></td></tr>
+        <tr><td>Marketing: unique visitors in 30 days</td><td><span class="badge b-mid">2★</span></td><td class="num">661</td><td class="num">1,000</td><td>339 to go</td></tr>
+        <tr><td>Service: buyers responded in 30 days</td><td><span class="badge b-mid">2★</span></td><td class="num">12</td><td class="num">30</td><td>18 to go</td></tr>
+        <tr><td>Sales: GMV in 90 days</td><td><span class="badge b-mid">2★</span></td><td class="num">0</td><td class="num">1</td><td><span class="badge b-stop">1 (no sales)</span></td></tr>
+        <tr><td>Service Capacity</td><td><span class="badge b-mid">2★</span></td><td class="num">10.33</td><td class="num">12</td><td>1.67 to go</td></tr>
+        <tr><td>Trade Capacity</td><td><span class="badge b-mid">2★</span></td><td class="num">0</td><td class="num">1</td><td><span class="badge b-stop">1 (no transactions)</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line"><b>Conclusion:</b> The product dimension (3★) is the only near-full strength; GMV and Trade Capacity at 0 are the hard gate for a star upgrade — breaking it with the first order in August is the #1 priority, targeting 2★ by end of September.</div>
+  </div>
+
+  <div class="card">
+    <h4 style="color:var(--navy); margin-bottom:10px;">Star Mission Progress &amp; August Feasibility</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Mission</th><th class="num">Progress</th><th class="num">Points</th><th>August Feasibility</th></tr></thead>
+      <tbody>
+        <tr><td>Optimize 80 competitive products</td><td class="num">0/80</td><td class="num">2</td><td><span class="badge b-ok">✅ Feasible (core task)</span></td></tr>
+        <tr><td>Optimize 30 competitive products</td><td class="num">0/30</td><td class="num">2</td><td><span class="badge b-ok">✅ Feasible (core task)</span></td></tr>
+        <tr><td>Log in 7 days per month</td><td class="num">5/7</td><td class="num">1</td><td><span class="badge b-ok">✅ Feasible (almost done)</span></td></tr>
+        <tr><td>Turn on auto-receive function</td><td class="num">—</td><td class="num">1</td><td><span class="badge b-ok">✅ Feasible (one click)</span></td></tr>
+        <tr><td>Avg inquiry reply &lt; 8 hours</td><td class="num">—</td><td class="num">3</td><td><span class="badge b-ok">✅ Feasible (process change)</span></td></tr>
+        <tr><td>Reply speed &lt; 4 hours (Priority Boost)</td><td class="num">—</td><td class="num">2</td><td><span class="badge b-ok">✅ Feasible (target)</span></td></tr>
+        <tr><td>List 20 new RTS products (PIS ≥ 4.2)</td><td class="num">0/20</td><td class="num">3</td><td><span class="badge b-warn">⚠️ Only if ready stock available</span></td></tr>
+        <tr><td>Publish 10 new RTS trending products</td><td class="num">0/10</td><td class="num">2</td><td><span class="badge b-warn">⚠️ Only if ready stock available</span></td></tr>
+        <tr><td>Trade Assurance orders (50% fee off first 2)</td><td class="num">0/2</td><td class="num">—</td><td><span class="badge b-warn">⚠️ Tied to GMV goal</span></td></tr>
+        <tr><td>Payment for 1 completed credit-guarantee order</td><td class="num">—</td><td class="num">5</td><td><span class="badge b-warn">⚠️ Tied to GMV goal</span></td></tr>
+        <tr><td>Spend VND 2,500,000 on keyword ads (KWA)</td><td class="num">—</td><td class="num">3</td><td><span class="badge b-warn">⚠️ Only if ad budget confirmed</span></td></tr>
+        <tr><td>EU self-declarations (cosmetics/food/feed)</td><td class="num">—</td><td class="num">0</td><td><span class="badge b-mid">➖ Not applicable (Home &amp; Garden)</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line"><b>RTS note:</b> The store currently has 0 RTS products. If the company can ship ready-made stock, execute the RTS tasks; if it is a custom-production model, skip them — the overall plan is unaffected.</div>
+  </div>
+</section>
+
+<!-- ================= 05 MARKETING & OPPORTUNITIES ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">05</div>
+    <h3>Marketing &amp; Opportunities</h3>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">Advertising (July)</h4>
+    <p>Total spend <b>VND 0</b>, budget <b>VND 0</b>; impressions, clicks and opportunities all at 0 — currently pure organic operations. Recommendation: test KWA at a small scale (e.g. the VND 2,500,000 tier, which also completes a star task) only when budget allows; <b>not mandatory in August</b>.</p>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">Opportunities &amp; Buyer Quality (July)</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Metric</th><th class="num">Store</th><th class="num">Industry Avg</th><th class="num">Industry Leader</th><th class="num">% of Avg</th></tr></thead>
+      <tbody>
+        <tr><td>Business opportunities</td><td class="num">28</td><td class="num">291</td><td class="num">12,776</td><td class="num">9.6%</td></tr>
+        <tr><td>Inquiries</td><td class="num">5</td><td class="num">37</td><td class="num">1,539</td><td class="num">13.5%</td></tr>
+        <tr><td>Messages</td><td class="num">23</td><td class="num">239</td><td class="num">10,806</td><td class="num">9.6%</td></tr>
+        <tr><td>Response rate (opportunity scope)</td><td class="num">73.53%</td><td class="num">86.65%</td><td class="num">100%</td><td class="num">84.9%</td></tr>
+        <tr><td>Active buyers</td><td class="num">27</td><td class="num">258</td><td class="num">11,369</td><td class="num">10.5%</td></tr>
+        <tr><td>L2+ buyers</td><td class="num">14</td><td class="num">193</td><td class="num">9,266</td><td class="num">7.3%</td></tr>
+        <tr><td>Paying buyers</td><td class="num">15</td><td class="num">171</td><td class="num">8,197</td><td class="num">8.8%</td></tr>
+        <tr><td>Buyers with orders ≥ $10K</td><td class="num">6</td><td class="num">56</td><td class="num">1,565</td><td class="num">10.7%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line">Note: The store-overview response rate (84.00%, +15.5pp MoM) and the opportunity-scope rate (73.53%) come from different dashboard scopes; both are below the industry average and should both be improved.</div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">Membership Benefits Usage</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Benefit</th><th class="num">Available</th><th class="num">Used</th><th class="num">Usage</th></tr></thead>
+      <tbody>
+        <tr><td>RFQ quota</td><td class="num">52</td><td class="num">52</td><td class="num"><span class="badge b-ok">100% ✅</span></td></tr>
+        <tr><td>Showcase slots</td><td class="num">20</td><td class="num">20</td><td class="num"><span class="badge b-ok">100% ✅</span></td></tr>
+        <tr><td>AI total credits</td><td class="num">660</td><td class="num">0</td><td class="num"><span class="badge b-stop">0% ❌</span></td></tr>
+        <tr class="sub-row"><td>　— AI image generation</td><td class="num">50</td><td class="num">0</td><td class="num">0%</td></tr>
+        <tr class="sub-row"><td>　— AI video generation</td><td class="num">5</td><td class="num">0</td><td class="num">0%</td></tr>
+        <tr class="sub-row"><td>　— AI data analysis</td><td class="num">5</td><td class="num">0</td><td class="num">0%</td></tr>
+        <tr class="sub-row"><td>　— AI text credits</td><td class="num">600</td><td class="num">0</td><td class="num">0%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line"><b>Key opportunity:</b> 660 AI credits are 100% unused — a zero-cost lever to batch-upgrade product images and generate product videos to lift CTR.</div>
+  </div>
+
+  <div class="card">
+    <h4 style="color:var(--navy); margin-bottom:10px;">Sample Inquiry (for follow-up)</h4>
+    <p style="font-size:12.8px;">Inquiry #3: buyer <b>93*****72</b>, previous order amount <b>163,419.21</b>; product: Christmas Tree (ID 1601428522183, category Christmas Trees); time 2026-07-27 23:03. Title: "Factory Wholesale Arbol De Navidad Artificial Xmas Christmas Decoration Tree". <b>→ First follow-up target in August.</b></p>
+  </div>
+</section>
+
+<!-- ================= 06 STRENGTHS & GAPS ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">06</div>
+    <h3>Strengths &amp; Gaps</h3>
+  </div>
+  <div class="cols">
+    <div class="col g">
+      <h5>✅ Strengths</h5>
+      <ul>
+        <li>Search impressions 33,314 (+13.6% MoM), reaching <b>85%</b> of industry average</li>
+        <li>Page views +32.7%, search clicks +19.6% — strong traffic growth</li>
+        <li>Product dimension at <b>3★</b> (769/800, near full score)</li>
+        <li>RFQ (52/52) and Showcase (20/20) at <b>100% usage</b></li>
+        <li>Response rate 84%, +15.5pp MoM — service improving</li>
+        <li><b>6 historical buyers with orders ≥ $10K</b> available for repeat business</li>
+        <li>660 unused AI credits — zero-cost efficiency upside</li>
+      </ul>
+    </div>
+    <div class="col w">
+      <h5>⚠️ Gaps &amp; Risks</h5>
+      <ul>
+        <li>Only 5 inquiries — <b>19%</b> of industry average</li>
+        <li>Reply time 11h vs industry 4h (2.75x slower) — inquiries being lost</li>
+        <li>GMV = 0, zero orders in 180 days, star stuck at <b>1★</b></li>
+        <li>Only <b>3 new products</b> posted in July — listing momentum stalled</li>
+        <li>Opportunities (28) at only <b>9.6%</b> of industry average — small buyer pool</li>
+        <li>Top-exposure products at 0–2.5% CTR — main images/titles need work</li>
+        <li>Fake low prices (0.01 USD) and content-risk listings damage trust and traffic</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 07 ACTION PLAN ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">07</div>
+    <h3>Action Plan — August–September 2026 · Target: 2 Stars</h3>
+  </div>
+
+    <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">🎯 Star Target：1★ → <span style="color:#B7791F;">2★ (by end of September 2026)</span></h4>
+    <p style="font-size:12.8px;">The hard gate for 2 stars: <b>close ≥1 Trade Assurance order in August so GMV moves off zero</b> — under the platform's new rule, GMV is required to sustain/raise star ratings, and it is the only dimension currently at 0. Once product, marketing and service are on target, the first order unlocks the upgrade to 2★.<br>升 2 星的前提是 8 月完成 ≥1 笔信用保障订单（GMV 从 0 起步）——这是当前唯一为 0 的维度。</p>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;">
+    <h4 style="color:var(--navy); margin-bottom:10px;">Star Dimension Roadmap</h4>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Dimension</th><th class="num">Jul</th><th class="num">Aug 31</th><th class="num">Sep 30 (2★ target)</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td>Product: products with quality ≥4.2</td><td class="num">769</td><td class="num">800</td><td class="num">850+</td><td>Keep the 3★ product dimension</td></tr>
+        <tr><td>Marketing: UV in 30 days</td><td class="num">661</td><td class="num">800</td><td class="num">1,000</td><td>Hit the 2★→3★ threshold</td></tr>
+        <tr><td>Service: responded buyers in 30 days</td><td class="num">12</td><td class="num">20</td><td class="num">30</td><td>Raise response rate + speed</td></tr>
+        <tr><td>Sales: GMV (90 days)</td><td class="num">0</td><td class="num">1 order</td><td class="num">2+ orders</td><td><span class="badge b-stop">Hard gate for 2★</span></td></tr>
+        <tr><td>Trade Capacity</td><td class="num">0</td><td class="num">1</td><td class="num">1+</td><td>Needs a completed transaction</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4 style="color:var(--navy); margin-bottom:12px;">Action Summary (August push + September delivery)</h4>
+    <div class="sum-grid">
+      <div class="sum-item">
+        <h5><span class="badge b-A">A Star</span> Tasks &amp; dimensions</h5>
+        <ul>
+          <li><span class="badge b-p1">Aug</span> Complete star tasks: optimize 110 competitive products (80+30, +4 pts); log in ≥25 days; turn on auto-receive (+1 pt)</li>
+          <li><span class="badge b-p2">Sep</span> Products with quality ≥4.2: 800 → 850+; keep logging in ≥25 days</li>
+          <li><span class="badge b-p2">Sep</span> Reply &lt;8h (+3 pts) and &lt;4h (+2 pts); run KWA (VND 2.5M tier, +3 pts) if budget allows</li>
+          <li>RTS tasks only if ready stock available; EU declarations not applicable (Home &amp; Garden)</li>
+        </ul>
+      </div>
+      <div class="sum-item">
+        <h5><span class="badge b-B">B Products</span> Quality &amp; volume</h5>
+        <ul>
+          <li><span class="badge b-p1">Aug</span> Fix fake low prices (0.01 USD hooks, etc.) + clean up nude-painting listings; Top-10 images/titles, CTR → ≥3%</li>
+          <li><span class="badge b-p1">Aug</span> Post ≥15 new; <span class="badge b-p2">Sep</span> post ≥30 new (aquariums, artificial flowers, valet trays)</li>
+          <li><span class="badge b-p2">Sep</span> Use ≥300 of 660 AI credits for images and videos</li>
+        </ul>
+      </div>
+      <div class="sum-item">
+        <h5><span class="badge b-C">C Marketing</span> Capture opportunities</h5>
+        <ul>
+          <li><span class="badge b-p1">Aug</span> Follow up 100% of the 28 opportunities (contact 48h / quote 24h); use all 52 RFQs</li>
+          <li><span class="badge b-p1">Aug</span> Refresh the 20 Showcase slots with top products</li>
+          <li><span class="badge b-p2">Sep</span> Nurture L2+ (14) and paying buyers (15): ≥2 touches each; use the new RFQ quota fully</li>
+        </ul>
+      </div>
+      <div class="sum-item">
+        <h5><span class="badge b-D">D Service</span> Close deals (key to the upgrade)</h5>
+        <ul>
+          <li><span class="badge b-p1">Aug</span> Reply time 11h → ≤6h; response rate → ≥90%; enable Smart Assistant</li>
+          <li><span class="badge b-p1">Aug</span> <b>Close the first Trade Assurance order (GMV 0 → 1) — the hard gate for 2★</b></li>
+          <li><span class="badge b-p2">Sep</span> Complete 2+ orders (Trade Capacity ≥1); prioritize the Christmas Tree inquiry (buyer 93*****72) with a 24h quote</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 08 KPI COMMITMENTS ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">08</div>
+    <h3>KPI Commitments (Aug &amp; Sep)</h3>
+  </div>
+  <div class="card">
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Metric</th><th class="num">July Actual</th><th class="num">Aug 31 Target</th><th class="num">Sep 30 Target (2★)</th></tr></thead>
+      <tbody>
+        <tr><td>Star rating</td><td class="num">1★</td><td class="num">Hold 1★</td><td class="num"><b>2★</b></td></tr>
+        <tr><td>Search impressions</td><td class="num">33,314</td><td class="num">38,000</td><td class="num">45,000</td></tr>
+        <tr><td>Search clicks</td><td class="num">463</td><td class="num">≥ 700</td><td class="num">≥ 900</td></tr>
+        <tr><td>Page views</td><td class="num">1,125</td><td class="num">≥ 1,500</td><td class="num">≥ 2,000</td></tr>
+        <tr><td>Unique visitors (30d)</td><td class="num">661</td><td class="num">≥ 800</td><td class="num">≥ 1,000</td></tr>
+        <tr><td>Inquiries</td><td class="num">5</td><td class="num">15–20</td><td class="num">≥ 25</td></tr>
+        <tr><td>TM messages</td><td class="num">29</td><td class="num">≥ 50</td><td class="num">≥ 80</td></tr>
+        <tr><td>Store response rate</td><td class="num">84.00%</td><td class="num">≥ 90%</td><td class="num">≥ 92%</td></tr>
+        <tr><td>Avg reply time</td><td class="num">11 h</td><td class="num">≤ 6 h</td><td class="num">≤ 4 h</td></tr>
+        <tr><td>New products posted</td><td class="num">3</td><td class="num">≥ 15 (from Aug 21)</td><td class="num">≥ 30</td></tr>
+        <tr><td>Products with quality ≥4.2</td><td class="num">769</td><td class="num">800</td><td class="num">850+</td></tr>
+        <tr><td>GMV (Trade Assurance orders)</td><td class="num">0</td><td class="num">1 order (first)</td><td class="num">2+ orders</td></tr>
+        <tr><td>Trade Capacity</td><td class="num">0</td><td class="num">1</td><td class="num">1+</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note-line">⚠️ KPI targets are recommended operating thresholds (baseline + industry reference), not guaranteed results.</div>
+  </div>
+</section>
+
+<!-- ================= 09 CADENCE ================= -->
+<section>
+  <div class="sec-head">
+    <div class="sec-num">09</div>
+    <h3>Cadence</h3>
+  </div>
+  <div class="card">
+    <ul style="padding-left:18px; font-size:13px;">
+      <li><b>Weekly</b>: 30-minute operations meeting to review task progress and first-order follow-up, updating the task tracker.</li>
+      <li><b>Aug 31</b>: verify August KPIs and the GMV first-order status; launch the September push.</li>
+      <li><b>Sep 30</b>: re-check the star rating (target 2★) and all KPIs; draft the October plan.</li>
+      <li><b>AM support</b>: Account Manager LÊ THỊ THƯỜNG (thng.l@alibaba-inc.com); channel advertising/campaign requests through the AM.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="footer">
+  Data source: GLOBAL INDUSTRIAL VIETNAM CO., LTD. — Alibaba.com July 2026 monthly service report (store overview, star center, product analysis, opportunity analysis, membership benefits, advertising backend). Derived metrics (CTR, % of industry avg) are computed from displayed figures; missing historical absolutes are marked NO_RESULT; no speculative data used.
+</div>
+
+</div>
+</div>
+<script>
+(function(){
+  var zh=document.getElementById('lang-zh'), en=document.getElementById('lang-en');
+  try{
+    var s=localStorage.getItem('gs-report-lang');
+    if(s==='en'){en.checked=true;}else{zh.checked=true;}
+    document.addEventListener('change',function(e){
+      if(e.target===zh){try{localStorage.setItem('gs-report-lang','zh');}catch(x){} document.documentElement.lang='zh-CN';}
+      else if(e.target===en){try{localStorage.setItem('gs-report-lang','en');}catch(x){} document.documentElement.lang='en';}
+    });
+  }catch(err){}
+})();
+</script></body>
+</html>
