@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DINGXIN | In-Service Report — EN / 中文 (switchable)</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  /* default palette: ocean (TPT blue) — override via :root { --c-h1:#0b5394;--c-h2:#1a73e8;--c-h3:#34a853;--c-heading:#0b5394;--c-line:#e8f0fe;--c-metric-a:#f8f9ff;--c-metric-b:#e8f0fe;--c-metric-border:#d2e3fc;--c-hover:#e8f0fe; } */
+  --c-h1: #0b5394; --c-h2: #1a73e8; --c-h3: #34a853;
+  --c-heading: #0b5394;
+  --c-line: #e8f0fe;
+  --c-metric-a: #f8f9ff; --c-metric-b: #e8f0fe; --c-metric-border: #d2e3fc;
+  --c-hover: #e8f0fe;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; color: #1a1a2e; line-height: 1.6; overflow-x: hidden; }
+.container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+/* Header */
+.header { background: linear-gradient(135deg, var(--c-h1) 0%, var(--c-h2) 50%, var(--c-h3) 100%); color: #fff; padding: 40px 30px; border-radius: 16px; margin-bottom: 24px; position: relative; overflow: hidden; }
+.header::after { content: ''; position: absolute; top: -50%; right: -20%; width: 400px; height: 400px; background: rgba(255,255,255,0.05); border-radius: 50%; }
+.header h1 { font-size: 28px; margin-bottom: 4px; }
+.header .subtitle { font-size: 16px; opacity: 0.9; }
+.header .company-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; margin-top: 12px; font-size: 13px; }
+
+/* Cards */
+.card { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.card h2 { font-size: 18px; color: var(--c-heading); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--c-line); }
+.card h3 { font-size: 15px; color: #333; margin: 16px 0 10px; }
+
+/* Metrics Grid */
+.metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 20px; }
+.metric-card { background: linear-gradient(135deg, var(--c-metric-a) 0%, var(--c-metric-b) 100%); border-radius: 10px; padding: 16px; text-align: center; border: 1px solid var(--c-metric-border); }
+.metric-card.positive { background: linear-gradient(135deg, #f0fdf0 0%, #d4edda 100%); border-color: #b7e4c7; }
+.metric-card.warning { background: linear-gradient(135deg, #fff8e1 0%, #fff3cd 100%); border-color: #ffc107; }
+.metric-card.danger { background: linear-gradient(135deg, #fef0f0 0%, #fde0e0 100%); border-color: #ea4335; }
+.metric-card .value { font-size: 28px; font-weight: 700; color: var(--c-heading); }
+.metric-card .label { font-size: 12px; color: #666; margin-top: 4px; }
+.metric-card .change { font-size: 13px; font-weight: 600; margin-top: 6px; }
+.change.up { color: #34a853; }
+.change.down { color: #ea4335; }
+.change.neutral { color: #C8A96A; }
+
+/* Table */
+.data-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+.data-table th { background: var(--c-heading); color: #fff; padding: 10px 12px; text-align: center; }
+.data-table td { padding: 8px 12px; border-bottom: 1px solid #e8eaed; text-align: center; }
+.data-table tr:nth-child(even) { background: #f8f9fa; }
+.data-table tr:hover { background: var(--c-hover); }
+.data-table .highlight { background: #d4edda !important; font-weight: 600; }
+.data-table .danger-row { background: #fef0f0 !important; }
+.data-table .left { text-align: left; }
+
+/* Star Rating */
+.star-section { display: flex; gap: 20px; flex-wrap: wrap; }
+.star-card { flex: 1; min-width: 240px; background: var(--c-metric-a); border-radius: 10px; padding: 16px; border: 1px solid var(--c-metric-border); }
+.star-card h4 { color: var(--c-heading); margin-bottom: 8px; }
+.star-bar { height: 8px; background: #e8eaed; border-radius: 4px; margin: 6px 0; overflow: hidden; }
+.star-bar .fill { height: 100%; border-radius: 4px; transition: width 0.5s; }
+.star-bar .fill.green { background: #34a853; }
+.star-bar .fill.blue { background: #1a73e8; }
+.star-bar .fill.orange { background: #f9ab00; }
+.star-bar .fill.red { background: #ea4335; }
+
+/* Bottleneck */
+.bottleneck-box { background: #fef0f0; border: 2px solid #ea4335; border-radius: 12px; padding: 20px; margin: 16px 0; }
+.bottleneck-box h3 { color: #C0392B; margin-bottom: 12px; }
+.bottleneck-meter { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+.bottleneck-meter .meter-label { width: 150px; font-size: 13px; font-weight: 600; }
+.bottleneck-meter .meter-bar { flex: 1; height: 20px; background: #e8eaed; border-radius: 10px; overflow: hidden; position: relative; }
+.bottleneck-meter .meter-fill { height: 100%; border-radius: 10px; }
+.bottleneck-meter .meter-value { font-size: 13px; font-weight: 700; width: 130px; text-align: right; }
+
+/* Recommendation */
+.rec-item { display: flex; gap: 14px; padding: 14px; margin: 8px 0; background: #f8f9fa; border-radius: 8px; border-left: 4px solid var(--c-heading); }
+.rec-item.priority-high { border-left-color: #ea4335; }
+.rec-item.priority-med { border-left-color: #f9ab00; }
+.rec-item.priority-low { border-left-color: #34a853; }
+.rec-item .rec-icon { font-size: 24px; flex-shrink: 0; }
+.rec-item .rec-title { font-weight: 600; font-size: 14px; }
+.rec-item .rec-desc { font-size: 13px; color: #555; margin-top: 4px; }
+.rec-badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; margin-left: 8px; }
+.rec-badge.p0 { background: #fce8e6; color: #c5221f; }
+.rec-badge.p1 { background: #fef7e0; color: #e37400; }
+.rec-badge.p2 { background: #e6f4ea; color: #137333; }
+
+/* Chart container */
+.chart-container { position: relative; height: 300px; margin: 16px 0; }
+.chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 768px) { .chart-row { grid-template-columns: 1fr; } }
+
+/* Bright spots */
+.bright-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.bright-item { background: #e6f4ea; border: 1px solid #b7e4c7; border-radius: 10px; padding: 14px; }
+.bright-item .check { color: #34a853; font-size: 20px; margin-bottom: 6px; }
+.bright-item .title { font-weight: 600; font-size: 13px; color: #137333; }
+.bright-item .detail { font-size: 12px; color: #555; margin-top: 4px; }
+
+/* Notice box */
+.notice { background: #e8f0fe; border-left: 4px solid #1a73e8; border-radius: 8px; padding: 14px 16px; margin: 14px 0; font-size: 13px; color: #333; }
+.notice.gold { background: #fdf6e3; border-left-color: #C8A96A; }
+
+/* Funnel */
+.funnel { display: flex; align-items: stretch; gap: 0; margin: 22px 0; }
+.funnel-step { flex: 1; text-align: center; padding: 16px 8px; color: #fff; position: relative; clip-path: polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%, 8% 50%); margin-left: -10px; }
+.funnel-step:first-child { clip-path: polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%); margin-left: 0; }
+.funnel-step:last-child { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 8% 50%); }
+.funnel-step .num { font-size: 22px; font-weight: 700; display: block; }
+.funnel-step .desc { font-size: 12px; display: block; margin-top: 4px; opacity: 0.95; }
+.step1 { background: #0b5394; }
+.step2 { background: #1a73e8; }
+.step3 { background: #f9ab00; }
+.step4 { background: #ea4335; }
+
+/* Callout */
+.callout { background: #e8f0fe; padding: 16px; border-radius: 10px; margin-bottom: 16px; }
+.callout strong { color: var(--c-heading); }
+.red { color: #ea4335; font-weight: 600; }
+.green { color: #34a853; font-weight: 600; }
+.orange { color: #e37400; font-weight: 600; }
+.blue { color: #1a73e8; font-weight: 600; }
+
+/* Footer */
+.footer { text-align: center; padding: 20px; color: #999; font-size: 12px; }
+:root { --c-h1:#0b5394;--c-h2:#1a73e8;--c-h3:#34a853;--c-heading:#0b5394;--c-line:#e8f0fe;--c-metric-a:#f8f9ff;--c-metric-b:#e8f0fe;--c-metric-border:#d2e3fc;--c-hover:#e8f0fe; }
+
+/* language switcher */
+.lang-switch { position: fixed; top: 14px; right: 14px; z-index: 9999; display: flex; gap: 4px;
+  background: rgba(255,255,255,0.95); border: 1px solid #d2e3fc; border-radius: 999px;
+  padding: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.12); }
+.lang-switch button { border: 0; background: transparent; padding: 7px 16px; border-radius: 999px;
+  font-size: 13px; font-weight: 700; color: #0b5394; cursor: pointer; font-family: inherit; }
+.lang-switch button.active { background: #0b5394; color: #fff; }
+.lang-switch button:hover:not(.active) { background: #e8f0fe; }
+@media print { .lang-switch { display: none !important; } }
+
+</style>
+
+</head>
+<body>
+<div class="lang-switch">
+  <button id="btn-en" class="active" onclick="__setLang('en')">EN</button>
+  <button id="btn-zh" onclick="__setLang('zh')">中文</button>
+</div>
+<div id="view-en" class="lang-view">
+<div class="container">
+<div class="header">
+<h1>DINGXIN</h1>
+<div class="subtitle">In-Service Report | Latest 30-Day Performance (as of 07/09/2026) — Action Plan for September 2026</div>
+<div class="company-badge">Construction &amp; Real Estate · Alibaba.com | Store health: Healthy · Forecast star rating: 4/5 (Product 4.0 · Marketing 5.0 · Service 3.0)</div>
+</div>
+
+<div class="card">
+<h2>Executive Summary — Latest 30 Days</h2>
+
+<p>The store maintains a <strong>Healthy</strong> status with excellent search traffic (26.0% of all sources vs 17.51% industry average) and full Showcase utilization (60/60). Fulfillment is perfect: 100% on-time delivery and 0 seller-caused cancellations. However, three issues cap growth: <strong>① 799 risk products out of 834 valid products (95.8%)</strong> — a compliance and visibility problem; <strong>② 0 Trade Assurance orders and 0.0% payment conversion</strong> despite 71 business opportunities and 64 active buyers; <strong>③ Service star (3.0) is the bottleneck</strong> for star-rating upgrade, with average response time slowing to 5.46 hours (industry average 4.81h, previous period 2.01h). In addition, RFQ quota (60/month) is completely unused and AI Assistant credits are only 1% utilized.</p>
+<div class="metrics-grid" style="margin-top:16px">
+<div class="metric-card positive">
+<div class="value">74,979</div>
+<div class="label">Impressions (30 days)</div>
+<div class="change up">+21% MoM · visits 1,872 (+13%)</div>
+</div>
+<div class="metric-card danger">
+<div class="value">71</div>
+<div class="label">Business opportunities</div>
+<div class="change down">-27% MoM · industry average 172.3</div>
+</div>
+<div class="metric-card danger">
+<div class="value">64</div>
+<div class="label">Active buyers</div>
+<div class="change down">down from 93 · industry average 153.9</div>
+</div>
+<div class="metric-card warning">
+<div class="value">23</div>
+<div class="label">L2+ buyers</div>
+<div class="change">stable · industry average 96</div>
+</div>
+<div class="metric-card positive">
+<div class="value">93%</div>
+<div class="label">24h response rate</div>
+<div class="change up">Industry average 87% · top sellers 100%</div>
+</div>
+<div class="metric-card danger">
+<div class="value">5.46h</div>
+<div class="label">Average response time</div>
+<div class="change down">was 2.01h · industry average 4.81h</div>
+</div>
+<div class="metric-card danger">
+<div class="value">0</div>
+<div class="label">Trade Assurance orders · GMV 0</div>
+<div class="change down">payment conversion 0.0%</div>
+</div>
+<div class="metric-card danger">
+<div class="value">799/834</div>
+<div class="label">Risk products / valid products</div>
+<div class="change down">95.8% — critical compliance issue</div>
+</div>
+<div class="metric-card positive">
+<div class="value">60/60</div>
+<div class="label">Showcase slots used</div>
+<div class="change up">100% utilization</div>
+</div>
+<div class="metric-card danger">
+<div class="value">0/60</div>
+<div class="label">RFQ quotes used this month</div>
+<div class="change down">0% — fully unused</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>Performance &amp; Industry Comparison — Latest 30 Days</h2>
+
+<div class="chart-row">
+<div>
+<div class="chart-container"><canvas id="chart0"></canvas></div>
+</div>
+<div>
+<div class="chart-container"><canvas id="chart1"></canvas></div>
+</div>
+</div>
+<table class="data-table">
+<thead>
+<tr><th class="left">Metric</th><th>Latest 30 days</th><th>MoM change</th><th>Industry average / leaders</th><th>Assessment</th></tr>
+</thead>
+<tbody>
+<tr class="highlight"><td class="left">Impressions</td><td>74,979</td><td class="change up">+21%</td><td>—</td><td>Traffic growing</td></tr>
+<tr><td class="left">Visits</td><td>1,872</td><td class="change up">+13%</td><td>—</td><td>Growing</td></tr>
+<tr class="danger-row"><td class="left">Business opportunities</td><td>71</td><td class="change down">-27%</td><td>172.3</td><td>Well below industry</td></tr>
+<tr class="danger-row"><td class="left">Active buyers</td><td>64</td><td class="change down">-31%</td><td>153.86 / 2,649.8</td><td>Falling, far below industry</td></tr>
+<tr class="highlight"><td class="left">L2+ buyers</td><td>23</td><td>0%</td><td>96 / 1,506</td><td>Stable but limited scale</td></tr>
+<tr><td class="left">Inquiries</td><td>24</td><td class="change down">-8%</td><td>26 / 776</td><td>Close to industry average</td></tr>
+<tr class="highlight"><td class="left">24h response rate</td><td>93%</td><td class="change up">+6%</td><td>87% / 100%</td><td>Beats industry average</td></tr>
+<tr class="danger-row"><td class="left">Average response time</td><td>5.46 h</td><td class="change down">+172%</td><td>4.81 h / best 0 h</td><td>Slower than industry — fix now</td></tr>
+<tr class="danger-row"><td class="left">Trade Assurance orders</td><td>0</td><td class="change down">-100%</td><td>—</td><td>No transactions</td></tr>
+<tr class="danger-row"><td class="left">AB→payment conversion rate</td><td>0.0%</td><td class="change down">-4%</td><td>—</td><td>Leads not converting to payment</td></tr>
+<tr><td class="left">Lead→order conversion rate</td><td>2.05%</td><td class="change down">slight decrease</td><td>—</td><td>Weak conversion</td></tr>
+<tr class="highlight"><td class="left">30-day on-time delivery rate</td><td>100%</td><td>0%</td><td>—</td><td>Perfect fulfillment</td></tr>
+<tr><td class="left">Valid products</td><td>834</td><td class="change up">+16%</td><td>—</td><td>Catalog expanding</td></tr>
+<tr><td class="left">Products with impressions</td><td>781</td><td class="change up">+17%</td><td>—</td><td>Good exposure</td></tr>
+<tr class="danger-row"><td class="left">Products with clicks</td><td>126</td><td class="change up">+2%</td><td>—</td><td>Exposure-to-click drop-off</td></tr>
+<tr><td class="left">Products with active buyers</td><td>23</td><td class="change down">-18%</td><td>—</td><td>Engagement declining</td></tr>
+<tr class="highlight"><td class="left">Newly posted products (30 days)</td><td>117</td><td class="change up">+21%</td><td>—</td><td>Good posting pace</td></tr>
+<tr class="highlight"><td class="left">Top products</td><td>19</td><td class="change up">+46%</td><td>—</td><td>Growing</td></tr>
+<tr><td class="left">Super products</td><td>2</td><td class="change up">+100%</td><td>—</td><td>Growing</td></tr>
+<tr class="danger-row"><td class="left">RTS products</td><td>0</td><td>0%</td><td>recommended ≥50% of catalog</td><td>Below recommendation</td></tr>
+<tr class="danger-row"><td class="left">Top buyer regions (my store)</td><td>US 38.45% · Vietnam 15.36% · China 9.09% · Sudan 7.25% · Colombia 3.93%</td><td>—</td><td>US 27.72% · China 9.25% · Italy 4.71% · Philippines 4.40% · Mexico 4.30%</td><td>Regional mismatch — developed markets missing</td></tr>
+<tr class="highlight"><td class="left">Top traffic sources (my store)</td><td>Other 34.75% · Search 26.01% · Recommendation 16.10% · In-store 9.44% · Direct 8.51%</td><td>—</td><td>Other 30.06% · Search 17.51% · Recommendation 14.44% · In-store 14.48% · Direct 11.00%</td><td>Search traffic well above industry</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<strong>Insight:</strong> Impressions and visits are growing (+21% / +13%) and L2+ buyers are stable at 23, but the buyer scale and conversion are falling: business opportunities -27%, active buyers down from 93 to 64, and 0 payment conversion. The store attracts traffic but fails to convert it — the gap is in buyer follow-up, product quality/compliance (799 risk products) and response speed (5.46h).
+</div>
+</div>
+
+<div class="card">
+<h2>Bottlenecks &amp; Root Causes</h2>
+
+<div class="bottleneck-box">
+<h3>Conversion stopped while traffic kept growing</h3>
+<p style="font-size:13px;color:#555;margin-bottom:12px">Four bottlenecks cap store growth. Fixing them in priority order unlocks star rating and orders.</p>
+<div class="bottleneck-meter">
+<div class="meter-label">Risk products (799 / 834 valid = 95.8%)</div>
+<div class="meter-bar"><div class="meter-fill" style="width:96%;background:#ea4335"></div></div>
+<div class="meter-value" style="color:#ea4335">Compliance risk — highest priority</div>
+</div>
+<div class="bottleneck-meter">
+<div class="meter-label">Payment conversion (0.0% vs target > 0%)</div>
+<div class="meter-bar"><div class="meter-fill" style="width:2%;background:#ea4335"></div></div>
+<div class="meter-value" style="color:#ea4335">0 TA orders — leads not converting</div>
+</div>
+<div class="bottleneck-meter">
+<div class="meter-label">Service star (3.0 / 5.0) — star-rating bottleneck</div>
+<div class="meter-bar"><div class="meter-fill" style="width:60%;background:#f9ab00"></div></div>
+<div class="meter-value" style="color:#e37400">Needs +22 buyers with a second reply</div>
+</div>
+<div class="bottleneck-meter">
+<div class="meter-label">RFQ quota used (0 / 60)</div>
+<div class="meter-bar"><div class="meter-fill" style="width:2%;background:#ea4335"></div></div>
+<div class="meter-value" style="color:#ea4335">60 monthly quotes unused</div>
+</div>
+<div class="bottleneck-meter">
+<div class="meter-label">AI Assistant credits used (416 / 39,996 = 1%)</div>
+<div class="meter-bar"><div class="meter-fill" style="width:1%;background:#f9ab00"></div></div>
+<div class="meter-value" style="color:#e37400">Digital human risk-control switch disabled</div>
+</div>
+<div class="bottleneck-meter">
+<div class="meter-label">Product star (4.0 / 5.0)</div>
+<div class="meter-bar"><div class="meter-fill" style="width:80%;background:#f9ab00"></div></div>
+<div class="meter-value" style="color:#e37400">Needs +170 quality products</div>
+</div>
+</div>
+<h3>Root causes to fix in September</h3>
+<div class="rec-item priority-high">
+<div class="rec-icon">&#9888;</div>
+<div>
+<div class="rec-title">799 risk products block visibility and traffic quality <span class="rec-badge p0">P0</span></div>
+<div class="rec-desc">95.8% of the valid catalog is flagged as risk. Audit every flagged item (images, certifications, category, brand/IP, price) and fix or remove it. This is a compliance prerequisite for both traffic quality and star rating.</div>
+</div>
+</div>
+<div class="rec-item priority-high">
+<div class="rec-icon">&#128172;</div>
+<div>
+<div class="rec-title">Response time slowed 2.01h → 5.46h <span class="rec-badge p0">P0</span></div>
+<div class="rec-desc">Slower than the industry average (4.81h) and the direct cause of the Service star bottleneck. Enable notifications and Smart Assistant, assign reception shifts, and reply within 4 hours during business hours.</div>
+</div>
+</div>
+<div class="rec-item priority-high">
+<div class="rec-icon">&#128176;</div>
+<div>
+<div class="rec-title">Leads exist but never become paid orders <span class="rec-badge p0">P0</span></div>
+<div class="rec-desc">71 business opportunities, 64 active buyers, 24 inquiries and 23 L2+ buyers, yet 0 TA orders and 0.0% payment conversion. Follow up every inquiry with a quotation, sample offer and Trade Assurance terms.</div>
+</div>
+</div>
+<div class="rec-item priority-med">
+<div class="rec-icon">&#127760;</div>
+<div>
+<div class="rec-title">Traffic region mismatch &amp; unused rights <span class="rec-badge p1">P1</span></div>
+<div class="rec-desc">Traffic skews to developing regions (Sudan 7.25%, Colombia 3.93%) while developed markets active in your category (Italy, Spain, Australia, United Kingdom) are missing. Reallocate ads/keywords and start using the 60 monthly RFQ quotes.</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>Conversion Funnel — Latest 30 Days</h2>
+
+<div class="funnel">
+<div class="funnel-step step1"><span class="num">74,979</span><span class="desc">Impressions<br>30 days</span></div>
+<div class="funnel-step step2"><span class="num">1,872</span><span class="desc">Visits<br>+13% MoM</span></div>
+<div class="funnel-step step3"><span class="num">24</span><span class="desc">Inquiries<br>(71 business opportunities)</span></div>
+<div class="funnel-step step4"><span class="num">0</span><span class="desc">TA orders<br>payment conversion 0.0%</span></div>
+</div>
+<p><span class="red">Break point:</span> 74,979 impressions produced only 1,872 visits and 24 inquiries, then <strong>0 Trade Assurance orders</strong>. Lead→order conversion is 2.05% but <strong>payment conversion is 0.0%</strong> — inquiries and drafted orders are not being closed. Combined with 799 risk products and a 5.46h response time, the funnel is blocked at the two final steps: product qualification and buyer follow-up.</p>
+</div>
+
+<div class="card">
+<h2>Star Rating Analysis — 4 Stars (forecast) toward 5 Stars</h2>
+
+<div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;flex-wrap:wrap">
+<div style="background:#fff3cd;padding:16px 24px;border-radius:12px;text-align:center;flex:1;min-width:140px;border:2px dashed #f9ab00;">
+<div style="font-size:12px;color:#666">Current</div>
+<div style="font-size:36px;font-weight:700;color:#f9ab00">&#9733;&#9733;&#9733;&#9733;</div>
+<div style="font-size:14px;font-weight:600;color:#e37400">4 Stars (forecast)</div>
+</div>
+<div style="font-size:28px;color:#0b5394;font-weight:700">&#10140;</div>
+<div style="background:#e8f0fe;padding:16px 24px;border-radius:12px;text-align:center;flex:1;min-width:140px;">
+<div style="font-size:12px;color:#666">September target</div>
+<div style="font-size:36px;font-weight:700;color:#1a73e8">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div style="font-size:14px;font-weight:600;color:#0b5394">5 Stars</div>
+</div>
+</div>
+<div class="notice"><strong>Why 5 stars is within reach:</strong> ① Store health is <strong>Healthy</strong> — the prerequisite to hold any star rating. ② Current forecast is <strong>4 stars</strong>: Product 4.0, Marketing <strong>5.0 (maximum)</strong>, Service <strong>3.0 (bottleneck)</strong>. As a Vietnam-region seller, the final rating equals the lowest of these three metrics (Sales star is not counted). ③ Gaps to close: <strong>Service +22 buyers with a second reply</strong>, then <strong>Product +170 quality products</strong>. Marketing already meets the threshold (1,089 unique visitors vs 0 needed).</div>
+<h3>Star-rating metrics — current vs needed to reach the next level</h3>
+<div class="star-section">
+<div class="star-card">
+<h4>Product star — 4.0</h4>
+<p>Quality products: <strong>830</strong> · needs <strong>+170 products</strong></p>
+<div class="star-bar"><div class="fill orange" style="width:80%"></div></div>
+<p style="font-size:12px">Optimize listings to standard quality level (PIS ≥ 5.0; top/hot products ≥ 5.5): images, specs, certifications, price/MOQ — and clear the 799 risk products first.</p>
+</div>
+<div class="star-card">
+<h4>Marketing star — 5.0 (maximum)</h4>
+<p>Unique visitors in 30 days: <strong>1,089</strong> · needs <strong>0</strong></p>
+<div class="star-bar"><div class="fill green" style="width:100%"></div></div>
+<p style="font-size:12px;color:#34a853;font-weight:600">&#10003; Maxed out — protect it by keeping impressions growing.</p>
+</div>
+<div class="star-card">
+<h4>Service star — 3.0 (bottleneck)</h4>
+<p>Buyers who replied: <strong>28</strong> · needs <strong>+22 buyers with a second reply</strong></p>
+<div class="star-bar"><div class="fill red" style="width:45%"></div></div>
+<p style="font-size:12px;color:#ea4335;font-weight:700">Top priority: follow up each buyer until a second reply. Also cut average response time from 5.46h to &lt; 4h.</p>
+</div>
+<div class="star-card">
+<h4>Sales star — GMV 90 days</h4>
+<p>GMV in 90 days: <strong>330 USD</strong> · needs <strong>+170 USD</strong></p>
+<div class="star-bar"><div class="fill orange" style="width:65%"></div></div>
+<p style="font-size:12px">Not counted for Vietnam-region final rating, but every Trade Assurance order improves store weight — capture the first TA orders.</p>
+</div>
+</div>
+<h3>Star-rating tasks — required to reach the next level</h3>
+<table class="data-table">
+<thead>
+<tr><th>Metric</th><th>Indicator</th><th>Needed to reach next level</th></tr>
+</thead>
+<tbody>
+<tr class="danger-row"><td>Service</td><td>Buyers who replied: 28 (30 days)</td><td><strong>+22 buyers with a second reply</strong></td></tr>
+<tr class="danger-row"><td>Product</td><td>Quality products: 830</td><td><strong>+170 products</strong></td></tr>
+<tr><td>Sales</td><td>GMV in 90 days: 330 USD</td><td><strong>+170 USD</strong></td></tr>
+<tr><td>Marketing</td><td>Unique visitors in 30 days: 1,089</td><td><span style="color:#137333;font-weight:700">0 — already met (5.0)</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card">
+<h2>Bright Spots to Protect</h2>
+
+<div class="bright-grid">
+<div class="bright-item">
+<div class="check">&#10003;</div>
+<div class="title">Healthy store status</div>
+<div class="detail">The prerequisite for holding any star rating without disqualification risk.</div>
+</div>
+<div class="bright-item">
+<div class="check">&#10003;</div>
+<div class="title">Search traffic above industry</div>
+<div class="detail">Search accounts for 26.01% of traffic vs 17.51% industry average — listings and store infrastructure are well established.</div>
+</div>
+<div class="bright-item">
+<div class="check">&#10003;</div>
+<div class="title">Showcase fully utilized</div>
+<div class="detail">60/60 slots used (100%) — maximum product traffic weight.</div>
+</div>
+<div class="bright-item">
+<div class="check">&#10003;</div>
+<div class="title">Perfect fulfillment</div>
+<div class="detail">100% on-time delivery and 0 seller-caused cancellations.</div>
+</div>
+<div class="bright-item">
+<div class="check">&#10003;</div>
+<div class="title">Marketing star at maximum</div>
+<div class="detail">5.0 — already meets the 5-star threshold (1,089 unique visitors).</div>
+</div>
+<div class="bright-item">
+<div class="check">&#10003;</div>
+<div class="title">24h response rate beats industry</div>
+<div class="detail">93% vs 87% industry average.</div>
+</div>
+<div class="bright-item">
+<div class="check">&#10003;</div>
+<div class="title">Catalog and product quality improving</div>
+<div class="detail">Valid products 834 (+16%), new posts 117 (+21%), Top products 19 (+46%), Super products 2 (+100%).</div>
+</div>
+<div class="bright-item">
+<div class="check">&#10003;</div>
+<div class="title">Stable premium buyer base</div>
+<div class="detail">23 L2+ buyers sustained — a solid base for follow-up conversion.</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>September 2026 Action Plan — Fix Compliance, Convert Leads, Unlock 5 Stars</h2>
+
+<div class="rec-item priority-high">
+<div class="rec-icon">&#9888;</div>
+<div>
+<div class="rec-title">Resolve the 799 risk products — compliance first <span class="rec-badge p0">P0 - NO.1 PRIORITY</span></div>
+<div class="rec-desc">799 of 834 valid products are flagged as risk. Export the risk-product list, then fix each item within 2 weeks: images, required certifications, category mapping, brand/IP authorization, price validity. Remove items that cannot be corrected. Target: <strong>risk products ≤ 50 by 30/09</strong>, and 0 by mid-October. This is the single biggest unlock for traffic quality and star rating.</div>
+</div>
+</div>
+<div class="rec-item priority-high">
+<div class="rec-icon">&#128172;</div>
+<div>
+<div class="rec-title">Fix the Service star bottleneck: +22 second replies &amp; faster response <span class="rec-badge p0">P0</span></div>
+<div class="rec-desc">The Service star (3.0) is the bottleneck for the 5-star upgrade. Actions: ① assign reception shifts and reply within <strong>4 hours</strong> during business hours (currently 5.46h, worse than industry 4.81h); ② follow up every buyer until a <strong>second reply</strong> — need +22 buyers in 30 days (currently 28); ③ enable mobile notifications and the full Smart Assistant with manual backup for returning buyers; ④ keep the 24h response rate at ≥93%.</div>
+</div>
+</div>
+<div class="rec-item priority-high">
+<div class="rec-icon">&#128176;</div>
+<div>
+<div class="rec-title">Convert existing leads into the first Trade Assurance orders <span class="rec-badge p0">P0</span></div>
+<div class="rec-desc">You have 71 business opportunities, 64 active buyers, 24 inquiries and 23 L2+ buyers but 0 orders and 0.0% payment conversion. Actions: ① contact all 24 inquiries and 23 L2+ buyers within 48 hours with a quotation, sample offer and Trade Assurance terms; ② revive drafted/abandoned orders with a follow-up offer; ③ target: <strong>≥ 1 TA order</strong> in September (each order also feeds the Sales star). Target list: prioritize buyers in the United States (38.45% of traffic).</div>
+</div>
+</div>
+<div class="rec-item priority-high">
+<div class="rec-icon">&#129309;</div>
+<div>
+<div class="rec-title">Use the full RFQ quota: 0/60 → 60/60 <span class="rec-badge p0">P0</span></div>
+<div class="rec-desc">60 monthly RFQ quotes are completely unused (0%) while business opportunities fell 27%. Filter RFQs by your category (Construction &amp; Real Estate), quote within 24 hours with catalog, MOQ, lead time and Trade Assurance terms, and re-quote follow-ups every 2–3 days. Target: <strong>60/60 RFQ quoted</strong>.</div>
+</div>
+</div>
+<div class="rec-item priority-high">
+<div class="rec-icon">&#128230;</div>
+<div>
+<div class="rec-title">Product star: add +170 quality products <span class="rec-badge p0">P0</span></div>
+<div class="rec-desc">Product star is 4.0 and needs +170 quality products for the next level. Optimize continuously: complete attributes, 6–8 HD images + video, full specifications, certifications and clear price/MOQ. Apply the current product-quality standard: <strong>standard products PIS ≥ 5.0, top/hot products PIS ≥ 5.5</strong>. Prioritize the 126 products that already get clicks — raising their quality lifts both CTR and star score.</div>
+</div>
+</div>
+<div class="rec-item priority-high">
+<div class="rec-icon">&#128221;</div>
+<div>
+<div class="rec-title">Weekly posting &amp; optimization plan <span class="rec-badge p0">P0 - POSTING PLAN</span></div>
+<div class="rec-desc"><strong>How to post every week:</strong><br>• <strong>Monday &amp; Thursday:</strong> publish/refresh 8-10 products — each with 6-8 HD images (product, detail, packaging, loading), a spec table and 1 short video; title structure [Product + Material + Size/Spec + Application], e.g. "Prefab Steel Structure Warehouse, Galvanized Steel Frame, 1,000 sqm, Industrial Building".<br>• <strong>Wednesday:</strong> publish 2-3 products matched to hot RFQs of the week, and refresh keywords on the products with the highest impressions.<br>• <strong>Weekend:</strong> review PIS &amp; CTR by product — products below quality standard get fixed attributes/description/images; products between standard and top level get video + certification added.<br>• <strong>RTS:</strong> standardize 10-20 ready-to-ship items as RTS to lift the catalog's RTS ratio (currently 0 vs recommended ≥50%).<br>• Keep Showcase 60/60 rotating weekly toward products with inquiries.</div>
+</div>
+</div>
+<div class="rec-item priority-med">
+<div class="rec-icon">&#127919;</div>
+<div>
+<div class="rec-title">Shift traffic to developed markets <span class="rec-badge p1">P1</span></div>
+<div class="rec-desc">Traffic skews to developing regions (Sudan 7.25%, Colombia 3.93%) while developed markets active in your category are missing. Reallocate advertising budget and keyword focus to the <strong>United States, Italy, Spain, Australia and the United Kingdom</strong>; add those countries' keywords and shipping terms to top products; consider targeted campaigns for Europe and North America.</div>
+</div>
+</div>
+<div class="rec-item priority-med">
+<div class="rec-icon">&#129302;</div>
+<div>
+<div class="rec-title">Turn on the AI Assistant and remaining sub-accounts <span class="rec-badge p1">P1</span></div>
+<div class="rec-desc">Smart Assistant credits: only 416 of 39,996 used (1%), and the risk-control switch is still disabled. Enable all switches (digital human, messaging, risk control) and let AI handle first replies to new buyers; activate the remaining <strong>5 sub-accounts</strong> (5/10 in use) to cover more hours and languages.</div>
+</div>
+</div>
+<div class="rec-item priority-med">
+<div class="rec-icon">&#128200;</div>
+<div>
+<div class="rec-title">Improve CTR and engagement on existing listings <span class="rec-badge p1">P1</span></div>
+<div class="rec-desc">781 products get impressions but only 126 get clicks and 23 get active buyers. Improve the exposure→click step: A/B test main images, add price/MOQ visible data, use model/scene images, and rewrite titles with high-intent keywords for the top 50 impression products.</div>
+</div>
+</div>
+<div class="rec-item priority-low">
+<div class="rec-icon">&#128197;</div>
+<div>
+<div class="rec-title">Track progress mid-month and at month-end <span class="rec-badge p2">P2</span></div>
+<div class="rec-desc">Review on 15/09 and 30/09: risk products count, RFQ quoted (target 60/60), TA orders, Service star buyers (+22), response time, and developed-market traffic share. Contact your Account Manager Huỳnh Anh Trúc (anhtruc.huynh@alibaba-inc.com) for support.</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>September 2026 KPI Tracker</h2>
+
+<table class="data-table">
+<thead>
+<tr><th class="left">KPI</th><th>Current (latest 30 days)</th><th>September target</th></tr>
+</thead>
+<tbody>
+<tr class="danger-row"><td class="left"><strong>Risk products</strong></td><td>799 / 834</td><td><strong>≤ 50</strong></td></tr>
+<tr class="highlight"><td class="left"><strong>Trade Assurance orders</strong></td><td>0</td><td><strong>≥ 1 order</strong></td></tr>
+<tr><td class="left">Payment conversion rate (AB→payment)</td><td>0.0%</td><td>> 0%</td></tr>
+<tr><td class="left">RFQ quotes used</td><td>0/60</td><td>60/60</td></tr>
+<tr><td class="left">Service star — buyers with a second reply</td><td>28 (needs +22)</td><td>≥ 50 buyers</td></tr>
+<tr><td class="left">Average response time</td><td>5.46 h</td><td>&lt; 4 h (goal ≤ 2 h)</td></tr>
+<tr><td class="left">24h response rate</td><td>93%</td><td>≥ 95%</td></tr>
+<tr><td class="left">Product star — quality products</td><td>830 (needs +170)</td><td>≥ 1,000 products</td></tr>
+<tr><td class="left">Products with clicks</td><td>126</td><td>≥ 200</td></tr>
+<tr><td class="left">New products posted</td><td>117 / 30 days</td><td>≥ 120 / 30 days (8-10 per week)</td></tr>
+<tr><td class="left">RTS products</td><td>0</td><td>10-20 standardized items</td></tr>
+<tr><td class="left">Business opportunities</td><td>71</td><td>≥ 100</td></tr>
+<tr><td class="left">Active buyers</td><td>64</td><td>≥ 100</td></tr>
+<tr><td class="left">AI Assistant credits used</td><td>416 / 39,996 (1%)</td><td>≥ 10% utilization</td></tr>
+<tr><td class="left">Sub-accounts active</td><td>5 / 10</td><td>10 / 10</td></tr>
+<tr><td class="left">Showcase slots used</td><td>60 / 60 (100%)</td><td>60 / 60 (keep)</td></tr>
+<tr><td class="left">Developed-market traffic (US, EU, AU, UK)</td><td>US 38.45% + limited EU/AU</td><td>Add Italy, Spain, Australia, UK to top markets</td></tr>
+</tbody>
+</table>
+<p style="font-size:12px;color:#888">Source: "Monthly diagnostic report (AI generated)" — Smart Assistant in-service report (data as of 07/09/2026). All figures are the latest 30-day window and MoM changes as reported by the platform; absolute previous-period values were not provided by the source, so they are not shown. Industry averages/leaders are taken from the source. Product quality standard applied: standard products PIS ≥ 5.0, top/hot products PIS ≥ 5.5. Order-related KPIs are expressed in order counts, not committed revenue.</p>
+</div>
+
+<div class="card">
+<h2>Conclusion &amp; Next Steps</h2>
+
+<p>DINGXIN is a <span class="orange">"healthy store with growing traffic but a blocked conversion chain"</span>. The foundation is strong (Healthy status, search traffic above industry, 60/60 showcase, 100% on-time delivery, Marketing star 5.0). September must fix the three blockers:</p>
+<ul style="padding-left:22px;margin:12px 0">
+<li><strong>Compliance first:</strong> Clear the 799 risk products (target ≤ 50 by 30/09) — nothing else works at full strength while 95.8% of the catalog is flagged.</li>
+<li><strong>Unlock the 5th star:</strong> Fix the Service star: +22 buyers with a second reply, response time from 5.46h down to < 4h; add +170 quality products for the Product star.</li>
+<li><strong>Convert and expand:</strong> Quote 60/60 RFQ, follow up 71 opportunities / 23 L2+ buyers within 48h for the first TA orders, shift traffic to developed markets, and activate AI Assistant + 5 remaining sub-accounts.</li>
+</ul>
+<p><strong>Final goal:</strong> Close the first Trade Assurance orders, clear compliance risk, and move from <span class="red">4 (forecast) to 5 stars</span> — turning traffic leadership into real orders.</p>
+</div>
+
+<div class="footer">
+DINGXIN | In-Service Report — latest 30-day performance (as of 07/09/2026) &amp; September 2026 action plan | Source: Alibaba.com Smart Assistant monthly diagnostic report (CRM in-service) | Account Manager: Huỳnh Anh Trúc (anhtruc.huynh@alibaba-inc.com)
+</div>
+</div>
+</div>
+<div id="view-zh" class="lang-view" style="display:none">
+<div class="container">
+<div class="header">
+<h1>DINGXIN</h1>
+<div class="subtitle">月度服务报告 | 最近30天表现（截至 2026/09/07）— 2026年9月行动计划</div>
+<div class="company-badge">Construction &amp; Real Estate · Alibaba.com | 店铺健康度：健康 · 预测星级：4/5（商品 4.0 · 营销 5.0 · 服务 3.0）</div>
+</div>
+
+<div class="card">
+<h2>执行摘要 — 最近30天</h2>
+
+<p>店铺保持 <strong>健康</strong> 状态：搜索流量占比 26.0%（行业平均 17.51%）表现优异，橱窗 60/60 全部使用。履约表现完美：按时发货率 100%，卖家原因取消订单 0 笔。但有三个问题限制增长：<strong>① 834 个有效商品中 799 个为风险商品（95.8%）</strong> —— 合规与流量质量问题；<strong>② 71 个商机、64 个活跃买家，却 0 笔 Trade Assurance 订单、支付转化率 0.0%</strong>；<strong>③ 服务星级仅 3.0</strong>，是升级星级的瓶颈，平均响应时间延长至 5.46 小时（行业平均 4.81 小时，上一周期 2.01 小时）。此外，本月 RFQ 报价权益 60 次全部未使用，AI 助理积分仅使用 1%。</p>
+<div class="metrics-grid" style="margin-top:16px">
+<div class="metric-card positive">
+<div class="value">74,979</div>
+<div class="label">曝光量（30天）</div>
+<div class="change up">环比 +21% · 访客 1,872（+13%）</div>
+</div>
+<div class="metric-card danger">
+<div class="value">71</div>
+<div class="label">商机数</div>
+<div class="change down">环比 -27% · 行业平均 172.3</div>
+</div>
+<div class="metric-card danger">
+<div class="value">64</div>
+<div class="label">活跃买家</div>
+<div class="change down">由 93 降至 64 · 行业平均 153.9</div>
+</div>
+<div class="metric-card warning">
+<div class="value">23</div>
+<div class="label">L2+ 买家</div>
+<div class="change">保持稳定 · 行业平均 96</div>
+</div>
+<div class="metric-card positive">
+<div class="value">93%</div>
+<div class="label">24小时回复率</div>
+<div class="change up">行业平均 87% · 领先者 100%</div>
+</div>
+<div class="metric-card danger">
+<div class="value">5.46小时</div>
+<div class="label">平均响应时间</div>
+<div class="change down">上一周期 2.01 小时 · 行业平均 4.81 小时</div>
+</div>
+<div class="metric-card danger">
+<div class="value">0</div>
+<div class="label">Trade Assurance 订单 · GMV 0</div>
+<div class="change down">支付转化率 0.0%</div>
+</div>
+<div class="metric-card danger">
+<div class="value">799/834</div>
+<div class="label">风险商品 / 有效商品</div>
+<div class="change down">95.8% —— 严重合规问题</div>
+</div>
+<div class="metric-card positive">
+<div class="value">60/60</div>
+<div class="label">橱窗使用数</div>
+<div class="change up">使用率 100%</div>
+</div>
+<div class="metric-card danger">
+<div class="value">0/60</div>
+<div class="label">本月 RFQ 报价次数</div>
+<div class="change down">使用率 0% —— 完全未使用</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>表现与行业对比 — 最近30天</h2>
+
+<div class="chart-row">
+<div>
+<div class="chart-container"><canvas id="chart0-zh"></canvas></div>
+</div>
+<div>
+<div class="chart-container"><canvas id="chart1-zh"></canvas></div>
+</div>
+</div>
+<table class="data-table">
+<thead>
+<tr><th class="left">指标</th><th>最近30天</th><th>环比变化</th><th>行业平均 / 领先者</th><th>评估</th></tr>
+</thead>
+<tbody>
+<tr class="highlight"><td class="left">曝光量</td><td>74,979</td><td class="change up">+21%</td><td>—</td><td>流量增长</td></tr>
+<tr><td class="left">访客数</td><td>1,872</td><td class="change up">+13%</td><td>—</td><td>保持增长</td></tr>
+<tr class="danger-row"><td class="left">商机数</td><td>71</td><td class="change down">-27%</td><td>172.3</td><td>远低于行业平均</td></tr>
+<tr class="danger-row"><td class="left">活跃买家</td><td>64</td><td class="change down">-31%</td><td>153.86 / 2,649.8</td><td>下滑，远低于行业</td></tr>
+<tr class="highlight"><td class="left">L2+ 买家</td><td>23</td><td>0%</td><td>96 / 1,506</td><td>稳定但规模有限</td></tr>
+<tr><td class="left">询盘数</td><td>24</td><td class="change down">-8%</td><td>26 / 776</td><td>接近行业平均</td></tr>
+<tr class="highlight"><td class="left">24小时回复率</td><td>93%</td><td class="change up">+6%</td><td>87% / 100%</td><td>优于行业平均</td></tr>
+<tr class="danger-row"><td class="left">平均响应时间</td><td>5.46 小时</td><td class="change down">+172%</td><td>4.81 小时 / 领先 0 小时</td><td>慢于行业 —— 需立即改善</td></tr>
+<tr class="danger-row"><td class="left">Trade Assurance 订单</td><td>0</td><td class="change down">-100%</td><td>—</td><td>无成交</td></tr>
+<tr class="danger-row"><td class="left">商机→支付转化率</td><td>0.0%</td><td class="change down">-4%</td><td>—</td><td>有商机但未转化付款</td></tr>
+<tr><td class="left">线索→订单转化率</td><td>2.05%</td><td class="change down">小幅下降</td><td>—</td><td>转化偏弱</td></tr>
+<tr class="highlight"><td class="left">30天按时发货率</td><td>100%</td><td>0%</td><td>—</td><td>履约完美</td></tr>
+<tr><td class="left">有效商品数</td><td>834</td><td class="change up">+16%</td><td>—</td><td>商品规模扩大</td></tr>
+<tr><td class="left">有曝光商品数</td><td>781</td><td class="change up">+17%</td><td>—</td><td>曝光良好</td></tr>
+<tr class="danger-row"><td class="left">有点击商品数</td><td>126</td><td class="change up">+2%</td><td>—</td><td>曝光到点击流失明显</td></tr>
+<tr><td class="left">有活跃买家商品数</td><td>23</td><td class="change down">-18%</td><td>—</td><td>互动下降</td></tr>
+<tr class="highlight"><td class="left">30天新发商品数</td><td>117</td><td class="change up">+21%</td><td>—</td><td>发品节奏良好</td></tr>
+<tr class="highlight"><td class="left">Top 商品数</td><td>19</td><td class="change up">+46%</td><td>—</td><td>持续增长</td></tr>
+<tr><td class="left">Super 商品数</td><td>2</td><td class="change up">+100%</td><td>—</td><td>持续增长</td></tr>
+<tr class="danger-row"><td class="left">RTS 商品数</td><td>0</td><td>0%</td><td>建议 ≥ 商品总数 50%</td><td>低于建议值</td></tr>
+<tr class="danger-row"><td class="left">买家主要地区（我的店铺）</td><td>美国 38.45% · 越南 15.36% · 中国 9.09% · 苏丹 7.25% · 哥伦比亚 3.93%</td><td>—</td><td>美国 27.72% · 中国 9.25% · 意大利 4.71% · 菲律宾 4.40% · 墨西哥 4.30%</td><td>区域结构错配 —— 缺失发达市场</td></tr>
+<tr class="highlight"><td class="left">主要流量来源（我的店铺）</td><td>其他 34.75% · 搜索 26.01% · 系统推荐 16.10% · 店内 9.44% · 直接访问 8.51%</td><td>—</td><td>其他 30.06% · 搜索 17.51% · 系统推荐 14.44% · 店内 14.48% · 直接访问 11.00%</td><td>搜索流量显著高于行业平均</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<strong>分析：</strong> 曝光量与访客数持续增长（+21% / +13%），L2+ 买家稳定在 23，但买家规模与转化在下滑：商机 -27%、活跃买家由 93 降至 64、支付转化 0%。店铺能吸引流量，却无法转化为成交 —— 差距在于买家跟进、商品质量/合规（799 个风险商品）与响应速度（5.46 小时）。
+</div>
+</div>
+
+<div class="card">
+<h2>瓶颈与根因分析</h2>
+
+<div class="bottleneck-box">
+<h3>流量在涨，转化却停住了</h3>
+<p style="font-size:13px;color:#555;margin-bottom:12px">四个瓶颈限制店铺增长。按优先级逐一解决，即可同时解锁星级与订单。</p>
+<div class="bottleneck-meter">
+<div class="meter-label">风险商品（799 / 834 有效 = 95.8%）</div>
+<div class="meter-bar"><div class="meter-fill" style="width:96%;background:#ea4335"></div></div>
+<div class="meter-value" style="color:#ea4335">合规风险 —— 最高优先级</div>
+</div>
+<div class="bottleneck-meter">
+<div class="meter-label">支付转化率（0.0%，目标 > 0%）</div>
+<div class="meter-bar"><div class="meter-fill" style="width:2%;background:#ea4335"></div></div>
+<div class="meter-value" style="color:#ea4335">0 笔 TA 订单 —— 商机未转化</div>
+</div>
+<div class="bottleneck-meter">
+<div class="meter-label">服务星级（3.0 / 5.0）—— 星级瓶颈</div>
+<div class="meter-bar"><div class="meter-fill" style="width:60%;background:#f9ab00"></div></div>
+<div class="meter-value" style="color:#e37400">还需 22 位买家二次回复</div>
+</div>
+<div class="bottleneck-meter">
+<div class="meter-label">RFQ 权益使用（0 / 60）</div>
+<div class="meter-bar"><div class="meter-fill" style="width:2%;background:#ea4335"></div></div>
+<div class="meter-value" style="color:#ea4335">本月 60 次报价额度未使用</div>
+</div>
+<div class="bottleneck-meter">
+<div class="meter-label">AI 助理积分使用（416 / 39,996 = 1%）</div>
+<div class="meter-bar"><div class="meter-fill" style="width:1%;background:#f9ab00"></div></div>
+<div class="meter-value" style="color:#e37400">数字人风控开关仍未开启</div>
+</div>
+<div class="bottleneck-meter">
+<div class="meter-label">商品星级（4.0 / 5.0）</div>
+<div class="meter-bar"><div class="meter-fill" style="width:80%;background:#f9ab00"></div></div>
+<div class="meter-value" style="color:#e37400">还需 +170 个优质商品</div>
+</div>
+</div>
+<h3>9月需解决的根因</h3>
+<div class="rec-item priority-high">
+<div class="rec-icon">&#9888;</div>
+<div>
+<div class="rec-title">799 个风险商品拖累曝光与流量质量 <span class="rec-badge p0">P0</span></div>
+<div class="rec-desc">有效商品中 95.8% 被标记为风险。逐条排查（图片、资质、类目、品牌/知识产权、价格）并整改或下架。这是流量质量与星级的合规前提。</div>
+</div>
+</div>
+<div class="rec-item priority-high">
+<div class="rec-icon">&#128172;</div>
+<div>
+<div class="rec-title">响应时间由 2.01 小时放缓至 5.46 小时 <span class="rec-badge p0">P0</span></div>
+<div class="rec-desc">已慢于行业平均（4.81 小时），是服务星级瓶颈的直接原因。开启消息提醒与 Smart Assistant，安排值班，工作时间内 4 小时内回复。</div>
+</div>
+</div>
+<div class="rec-item priority-high">
+<div class="rec-icon">&#128176;</div>
+<div>
+<div class="rec-title">有商机，却没有成交 <span class="rec-badge p0">P0</span></div>
+<div class="rec-desc">71 个商机、64 个活跃买家、24 个询盘、23 个 L2+ 买家，却 0 笔 TA 订单、支付转化 0.0%。对每个询盘跟进出报价、样品方案与 Trade Assurance 条款。</div>
+</div>
+</div>
+<div class="rec-item priority-med">
+<div class="rec-icon">&#127760;</div>
+<div>
+<div class="rec-title">流量区域错配、权益闲置 <span class="rec-badge p1">P1</span></div>
+<div class="rec-desc">流量偏向发展中地区（苏丹 7.25%、哥伦比亚 3.93%），而本类目活跃的发达市场（意大利、西班牙、澳大利亚、英国）缺失。重新分配广告与关键词，并把每月 60 次 RFQ 用起来。</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>转化漏斗 — 最近30天</h2>
+
+<div class="funnel">
+<div class="funnel-step step1"><span class="num">74,979</span><span class="desc">曝光量<br>最近30天</span></div>
+<div class="funnel-step step2"><span class="num">1,872</span><span class="desc">访客数<br>环比 +13%</span></div>
+<div class="funnel-step step3"><span class="num">24</span><span class="desc">询盘数<br>（商机 71）</span></div>
+<div class="funnel-step step4"><span class="num">0</span><span class="desc">TA 订单<br>支付转化 0.0%</span></div>
+</div>
+<p><span class="red">断点：</span>74,979 次曝光仅带来 1,872 次访客与 24 个询盘，最终 <strong>0 笔 Trade Assurance 订单</strong>。线索→订单转化率 2.05%，但 <strong>支付转化率为 0.0%</strong> —— 询盘与草稿订单没有被跟进成交。叠加 799 个风险商品与 5.46 小时响应时间，漏斗卡在最后两步：<strong>商品资质与买家跟进</strong>。</p>
+</div>
+
+<div class="card">
+<h2>星级分析 —— 预测 4 星，冲刺 5 星</h2>
+
+<div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;flex-wrap:wrap">
+<div style="background:#fff3cd;padding:16px 24px;border-radius:12px;text-align:center;flex:1;min-width:140px;border:2px dashed #f9ab00;">
+<div style="font-size:12px;color:#666">当前</div>
+<div style="font-size:36px;font-weight:700;color:#f9ab00">&#9733;&#9733;&#9733;&#9733;</div>
+<div style="font-size:14px;font-weight:600;color:#e37400">4 星（预测）</div>
+</div>
+<div style="font-size:28px;color:#0b5394;font-weight:700">&#10140;</div>
+<div style="background:#e8f0fe;padding:16px 24px;border-radius:12px;text-align:center;flex:1;min-width:140px;">
+<div style="font-size:12px;color:#666">9月目标</div>
+<div style="font-size:36px;font-weight:700;color:#1a73e8">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div style="font-size:14px;font-weight:600;color:#0b5394">5 星</div>
+</div>
+</div>
+<div class="notice"><strong>为什么 5 星触手可及：</strong>① 店铺健康度为 <strong>健康</strong> —— 这是保有星级的前提；② 当前预测 <strong>4 星</strong>：商品 4.0、营销 <strong>5.0（已达上限）</strong>、服务 <strong>3.0（瓶颈）</strong>；越南地区卖家的最终星级取这三项中的最低值（销售星级不计入）；③ 待补差距：<strong>服务星级还需 22 位买家二次回复</strong>，其次 <strong>商品星级还需 +170 个优质商品</strong>；营销指标已达标（1,089 位独立访客，差值为 0）。</div>
+<h3>星级指标 —— 当前值与升级所需差距</h3>
+<div class="star-section">
+<div class="star-card">
+<h4>商品星级 — 4.0</h4>
+<p>优质商品数：<strong>830</strong> · 还需 <strong>+170 个商品</strong></p>
+<div class="star-bar"><div class="fill orange" style="width:80%"></div></div>
+<p style="font-size:12px">按质量标准优化商品（PIS ≥ 5.0；Top/Hot 商品 ≥ 5.5）：图片、属性、资质、价格/MOQ —— 并先清理 799 个风险商品。</p>
+</div>
+<div class="star-card">
+<h4>营销星级 — 5.0（已达上限）</h4>
+<p>30天独立访客：<strong>1,089</strong> · 差额 <strong>0</strong></p>
+<div class="star-bar"><div class="fill green" style="width:100%"></div></div>
+<p style="font-size:12px;color:#34a853;font-weight:600">&#10003; 已满分 —— 保持曝光持续增长即可守住。</p>
+</div>
+<div class="star-card">
+<h4>服务星级 — 3.0（瓶颈）</h4>
+<p>已回复买家数：<strong>28</strong> · 还需 <strong>+22 位买家二次回复</strong></p>
+<div class="star-bar"><div class="fill red" style="width:45%"></div></div>
+<p style="font-size:12px;color:#ea4335;font-weight:700">最高优先级：跟进每位买家直到二次回复；同时把平均响应时间从 5.46 小时降到 4 小时以内。</p>
+</div>
+<div class="star-card">
+<h4>销售星级 — 90 天 GMV</h4>
+<p>90 天 GMV：<strong>330 USD</strong> · 还需 <strong>+170 USD</strong></p>
+<div class="star-bar"><div class="fill orange" style="width:65%"></div></div>
+<p style="font-size:12px">越南地区最终星级不计入该项，但每笔 Trade Assurance 订单都会提升店铺权重 —— 先拿下首批 TA 订单。</p>
+</div>
+</div>
+<h3>星级任务 —— 升级所需达成项</h3>
+<table class="data-table">
+<thead>
+<tr><th>指标</th><th>当前值</th><th>升级所需</th></tr>
+</thead>
+<tbody>
+<tr class="danger-row"><td>服务</td><td>已回复买家：28（30天）</td><td><strong>+22 位买家二次回复</strong></td></tr>
+<tr class="danger-row"><td>商品</td><td>优质商品：830</td><td><strong>+170 个商品</strong></td></tr>
+<tr><td>销售</td><td>90 天 GMV：330 USD</td><td><strong>+170 USD</strong></td></tr>
+<tr><td>营销</td><td>30天独立访客：1,089</td><td><span style="color:#137333;font-weight:700">0 —— 已达标（5.0）</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card">
+<h2>店铺亮点（需保持）</h2>
+
+<div class="bright-grid">
+<div class="bright-item">
+<div class="check">&#10003;</div>
+<div class="title">店铺健康度：健康</div>
+<div class="detail">保有星级、避免取消资格风险的前提。</div>
+</div>
+<div class="bright-item">
+<div class="check">&#10003;</div>
+<div class="title">搜索流量高于行业</div>
+<div class="detail">搜索占比 26.01%，行业平均 17.51% —— 商品信息与店铺基础建设良好。</div>
+</div>
+<div class="bright-item">
+<div class="check">&#10003;</div>
+<div class="title">橱窗全部使用</div>
+<div class="detail">60/60（100%）—— 商品流量权重已最大化。</div>
+</div>
+<div class="bright-item">
+<div class="check">&#10003;</div>
+<div class="title">履约表现完美</div>
+<div class="detail">按时发货率 100%，卖家原因取消 0 笔。</div>
+</div>
+<div class="bright-item">
+<div class="check">&#10003;</div>
+<div class="title">营销星级满分</div>
+<div class="detail">5.0 —— 已达 5 星门槛（1,089 位独立访客）。</div>
+</div>
+<div class="bright-item">
+<div class="check">&#10003;</div>
+<div class="title">24小时回复率优于行业</div>
+<div class="detail">93%，行业平均 87%。</div>
+</div>
+<div class="bright-item">
+<div class="check">&#10003;</div>
+<div class="title">商品规模与质量持续提升</div>
+<div class="detail">有效商品 834（+16%）、新发 117（+21%）、Top 商品 19（+46%）、Super 商品 2（+100%）。</div>
+</div>
+<div class="bright-item">
+<div class="check">&#10003;</div>
+<div class="title">优质买家基础稳定</div>
+<div class="detail">L2+ 买家稳定在 23 —— 是跟进转化的良好基础。</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>2026年9月行动计划 —— 先合规、再转化、解锁 5 星</h2>
+
+<div class="rec-item priority-high">
+<div class="rec-icon">&#9888;</div>
+<div>
+<div class="rec-title">处理 799 个风险商品 —— 合规优先 <span class="rec-badge p0">P0 - 第一优先</span></div>
+<div class="rec-desc">834 个有效商品中 799 个被标记为风险。导出风险商品清单，2 周内逐条整改：图片、所需资质、类目归属、品牌/知识产权授权、价格有效性；无法整改的直接下架。目标：<strong>9月30日前风险商品 ≤ 50 个</strong>，10 月中旬清零。这是流量质量与星级提升的最大解锁点。</div>
+</div>
+</div>
+<div class="rec-item priority-high">
+<div class="rec-icon">&#128172;</div>
+<div>
+<div class="rec-title">解决服务星级瓶颈：+22 位二次回复并提速响应 <span class="rec-badge p0">P0</span></div>
+<div class="rec-desc">服务星级（3.0）是 5 星升级的瓶颈。措施：① 安排接待值班，工作时间 <strong>4 小时</strong> 内回复（当前 5.46 小时，慢于行业 4.81 小时）；② 跟进每位买家直到 <strong>二次回复</strong> —— 30 天内还需 +22 位（当前 28 位）；③ 开启手机提醒与 Smart Assistant 全功能，老买家手动跟进；④ 24 小时回复率保持 ≥ 93%。</div>
+</div>
+</div>
+<div class="rec-item priority-high">
+<div class="rec-icon">&#128176;</div>
+<div>
+<div class="rec-title">把现有商机转化为首批 Trade Assurance 订单 <span class="rec-badge p0">P0</span></div>
+<div class="rec-desc">店铺有 71 个商机、64 个活跃买家、24 个询盘、23 个 L2+ 买家，却 0 笔订单、支付转化率 0.0%。措施：① 48 小时内联系全部 24 个询盘与 23 个 L2+ 买家，提供报价、样品方案与 Trade Assurance 条款；② 对草稿/未付款订单做二次跟进挽回；③ 目标：<strong>9月 ≥ 1 笔 TA 订单</strong>（每笔订单同时提升销售星级）。优先跟进美国买家（占流量 38.45%）。</div>
+</div>
+</div>
+<div class="rec-item priority-high">
+<div class="rec-icon">&#129309;</div>
+<div>
+<div class="rec-title">用满 RFQ 权益：0/60 → 60/60 <span class="rec-badge p0">P0</span></div>
+<div class="rec-desc">每月 60 次 RFQ 报价额度完全未使用（0%），而商机数环比下降 27%。按类目（Construction &amp; Real Estate）筛选 RFQ，24 小时内报价，附目录、MOQ、交期与 Trade Assurance 条款，每 2-3 天跟进一次。目标：<strong>60/60 全部报价</strong>。</div>
+</div>
+</div>
+<div class="rec-item priority-high">
+<div class="rec-icon">&#128230;</div>
+<div>
+<div class="rec-title">商品星级：补齐 +170 个优质商品 <span class="rec-badge p0">P0</span></div>
+<div class="rec-desc">商品星级 4.0，升级还需 +170 个优质商品。持续优化：属性完整、6-8 张高清主图 + 视频、完整规格、资质证书、清晰价格与 MOQ。应用当前质量标准：<strong>普通商品 PIS ≥ 5.0，Top/Hot 商品 PIS ≥ 5.5</strong>。优先优化已有 126 个有点击的商品 —— 提升质量可同时提高点击率与星级得分。</div>
+</div>
+</div>
+<div class="rec-item priority-high">
+<div class="rec-icon">&#128221;</div>
+<div>
+<div class="rec-title">每周发品与优化计划 <span class="rec-badge p0">P0 - 发品计划</span></div>
+<div class="rec-desc"><strong>每周发品方法：</strong><br>• <strong>周一 &amp; 周四：</strong>发布/刷新 8-10 个商品 —— 每个商品 6-8 张高清图（产品图、细节图、包装、装柜）+ 规格表 + 1 条短视频；标题结构 [产品 + 材质 + 尺寸/规格 + 应用]，例如 "Prefab Steel Structure Warehouse, Galvanized Steel Frame, 1,000 sqm, Industrial Building"。<br>• <strong>周三：</strong>针对当周热门 RFQ 发布 2-3 个商品，并刷新曝光最高商品的关键词。<br>• <strong>周末：</strong>按商品复查 PIS 与点击率 —— 低于质量标准的商品整改属性/描述/图片；处于标准与 Top 之间的商品补充视频与资质。<br>• <strong>RTS：</strong>把 10-20 个现货商品标准化为 RTS，提升 RTS 占比（当前 0，建议 ≥ 50%）。<br>• 橱窗 60/60 每周轮换，覆盖有询盘的商品。</div>
+</div>
+</div>
+<div class="rec-item priority-med">
+<div class="rec-icon">&#127919;</div>
+<div>
+<div class="rec-title">把流量转向发达市场 <span class="rec-badge p1">P1</span></div>
+<div class="rec-desc">流量偏向发展中地区（苏丹 7.25%、哥伦比亚 3.93%），而本类目活跃的发达市场缺失。把广告预算与关键词重心转向 <strong>美国、意大利、西班牙、澳大利亚、英国</strong>；在重点商品的标题/关键词中加入这些国家的搜索词与物流条款；考虑投放欧美定向推广。</div>
+</div>
+</div>
+<div class="rec-item priority-med">
+<div class="rec-icon">&#129302;</div>
+<div>
+<div class="rec-title">开启 AI 助理与剩余子账号 <span class="rec-badge p1">P1</span></div>
+<div class="rec-desc">Smart Assistant 积分仅使用 416 / 39,996（1%），且风控开关仍未开启。开启全部开关（数字人、消息、风控），让 AI 承接新买家首轮接待；激活剩余 <strong>5 个子账号</strong>（当前 5/10），延长在线与多语言覆盖时间。</div>
+</div>
+</div>
+<div class="rec-item priority-med">
+<div class="rec-icon">&#128200;</div>
+<div>
+<div class="rec-title">提升现有商品的点击率与互动 <span class="rec-badge p1">P1</span></div>
+<div class="rec-desc">781 个商品有曝光，但仅 126 个有点击、23 个有活跃买家。改善曝光→点击环节：对曝光前 50 的商品做主图 A/B 测试、显性化价格/MOQ、使用场景图，并用高意图关键词重写标题。</div>
+</div>
+</div>
+<div class="rec-item priority-low">
+<div class="rec-icon">&#128197;</div>
+<div>
+<div class="rec-title">月中与月末跟踪进度 <span class="rec-badge p2">P2</span></div>
+<div class="rec-desc">9月15日与30日复盘：风险商品数、RFQ 报价（目标 60/60）、TA 订单、服务星级二次回复买家（+22）、响应时间、发达市场流量占比。需要支持请联系客户经理 Huỳnh Anh Trúc（anhtruc.huynh@alibaba-inc.com）。</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>2026年9月 KPI 跟踪表</h2>
+
+<table class="data-table">
+<thead>
+<tr><th class="left">KPI</th><th>当前（最近30天）</th><th>9月目标</th></tr>
+</thead>
+<tbody>
+<tr class="danger-row"><td class="left"><strong>风险商品数</strong></td><td>799 / 834</td><td><strong>≤ 50</strong></td></tr>
+<tr class="highlight"><td class="left"><strong>Trade Assurance 订单</strong></td><td>0</td><td><strong>≥ 1 笔</strong></td></tr>
+<tr><td class="left">支付转化率（商机→支付）</td><td>0.0%</td><td>> 0%</td></tr>
+<tr><td class="left">RFQ 报价次数</td><td>0/60</td><td>60/60</td></tr>
+<tr><td class="left">服务星级 —— 二次回复买家数</td><td>28（还需 +22）</td><td>≥ 50 位买家</td></tr>
+<tr><td class="left">平均响应时间</td><td>5.46 小时</td><td>&lt; 4 小时（目标 ≤ 2 小时）</td></tr>
+<tr><td class="left">24小时回复率</td><td>93%</td><td>≥ 95%</td></tr>
+<tr><td class="left">商品星级 —— 优质商品数</td><td>830（还需 +170）</td><td>≥ 1,000 个</td></tr>
+<tr><td class="left">有点击商品数</td><td>126</td><td>≥ 200</td></tr>
+<tr><td class="left">新发商品数</td><td>117 / 30天</td><td>≥ 120 / 30天（每周 8-10 个）</td></tr>
+<tr><td class="left">RTS 商品数</td><td>0</td><td>标准化 10-20 个</td></tr>
+<tr><td class="left">商机数</td><td>71</td><td>≥ 100</td></tr>
+<tr><td class="left">活跃买家</td><td>64</td><td>≥ 100</td></tr>
+<tr><td class="left">AI 助理积分使用</td><td>416 / 39,996（1%）</td><td>使用率 ≥ 10%</td></tr>
+<tr><td class="left">子账号使用</td><td>5 / 10</td><td>10 / 10</td></tr>
+<tr><td class="left">橱窗使用</td><td>60 / 60（100%）</td><td>60 / 60（保持）</td></tr>
+<tr><td class="left">发达市场流量（美、欧、澳、英）</td><td>美国 38.45%，欧美澳英有限</td><td>把意大利、西班牙、澳大利亚、英国纳入主要市场</td></tr>
+</tbody>
+</table>
+<p style="font-size:12px;color:#888">数据来源：Alibaba.com Smart Assistant 《月度诊断报告（AI 生成）》（数据截至 2026/09/07）。所有数值为最近 30 天窗口及平台给出的环比变化；来源未提供上一周期的绝对值，故不展示。行业平均/领先者取自同一报告。商品质量标准：普通商品 PIS ≥ 5.0，Top/Hot 商品 PIS ≥ 5.5。订单类 KPI 以订单数量计，不承诺收入金额。</p>
+</div>
+
+<div class="card">
+<h2>结论与下一步</h2>
+
+<p>DINGXIN 目前是 <span class="orange">“店铺健康、流量在涨，但转化链路被卡住”</span> 的状态。基础扎实（健康度、搜索流量高于行业、橱窗 60/60、按时发货 100%、营销星级 5.0）。9月必须解决三个卡点：</p>
+<ul style="padding-left:22px;margin:12px 0">
+<li><strong>先合规:</strong> 清理 799 个风险商品（9月30日前 ≤ 50 个）—— 95.8% 商品被标记风险的状态下，其他动作难以发挥全部效果。</li>
+<li><strong>解锁第 5 星:</strong> 攻克服务星级：+22 位买家二次回复、响应时间由 5.46 小时降至 4 小时以内；再为商品星级补齐 +170 个优质商品。</li>
+<li><strong>转化与拓展:</strong> RFQ 报价 60/60，48 小时内跟进 71 个商机与 23 个 L2+ 买家拿下首批 TA 订单；把流量转向发达市场；开启 AI 助理与剩余 5 个子账号。</li>
+</ul>
+<p><strong>最终目标：</strong> 拿下首批 Trade Assurance 订单、清零合规风险，并从 <span class="red">预测 4 星提升到 5 星</span> —— 把流量优势转化为真实订单。</p>
+</div>
+
+<div class="footer">
+DINGXIN | 月度服务报告 —— 最近30天表现（截至 2026/09/07）与 2026年9月行动计划 | 数据来源：Alibaba.com Smart Assistant 月度诊断报告（CRM in-service）| 客户经理：Huỳnh Anh Trúc（anhtruc.huynh@alibaba-inc.com）
+</div>
+</div>
+</div>
+<script>
+var __zhInited = false;
+function __initA() {
+new Chart(document.getElementById('chart0'), {
+  type: 'bar',
+  data: { labels: ["Active buyers", "L2+ buyers", "Inquiries"], datasets: [{ label: "My store", data: [64.0, 23.0, 24.0], backgroundColor: 'rgba(11,83,148,0.6)' }, { label: "Industry average", data: [153.86, 96.0, 26.0], backgroundColor: 'rgba(234,67,53,0.7)' }] },
+  options: { responsive: true, maintainAspectRatio: false,
+    plugins: { title: { display: true, text: "Store vs Industry — Buyers &amp; Inquiries" } },
+    scales: { y: { beginAtZero: true } } }
+});
+
+new Chart(document.getElementById('chart1'), {
+  type: 'bar',
+  data: { labels: ["Impressions", "Visits", "Business opportunities", "TA orders"], datasets: [{ label: "MoM %", data: [21.0, 13.0, -27.0, -100.0], backgroundColor: 'rgba(249,171,0,0.8)' }] },
+  options: { responsive: true, maintainAspectRatio: false,
+    plugins: { title: { display: true, text: "MoM Change of Key Metrics (%)" } },
+    scales: { y: { beginAtZero: true } } }
+});
+}
+function __initB() {
+new Chart(document.getElementById('chart0-zh'), {
+  type: 'bar',
+  data: { labels: ["活跃买家", "L2+ 买家", "询盘数"], datasets: [{ label: "我的店铺", data: [64.0, 23.0, 24.0], backgroundColor: 'rgba(11,83,148,0.6)' }, { label: "行业平均", data: [153.86, 96.0, 26.0], backgroundColor: 'rgba(234,67,53,0.7)' }] },
+  options: { responsive: true, maintainAspectRatio: false,
+    plugins: { title: { display: true, text: "店铺 vs 行业 —— 买家与询盘" } },
+    scales: { y: { beginAtZero: true } } }
+});
+
+new Chart(document.getElementById('chart1-zh'), {
+  type: 'bar',
+  data: { labels: ["曝光量", "访客数", "商机数", "TA 订单"], datasets: [{ label: "环比 %", data: [21.0, 13.0, -27.0, -100.0], backgroundColor: 'rgba(249,171,0,0.8)' }] },
+  options: { responsive: true, maintainAspectRatio: false,
+    plugins: { title: { display: true, text: "核心指标环比变化（%）" } },
+    scales: { y: { beginAtZero: true } } }
+});
+}
+function __setLang(lang) {
+  var a = document.getElementById('view-en'), b = document.getElementById('view-zh');
+  var ba = document.getElementById('btn-en'), bb = document.getElementById('btn-zh');
+  var wantB = (lang === 'zh');
+  a.style.display = wantB ? 'none' : 'block';
+  b.style.display = wantB ? 'block' : 'none';
+  ba.classList.toggle('active', !wantB);
+  bb.classList.toggle('active', wantB);
+  if (wantB && !__zhInited) { __zhInited = true; __initB(); }
+  try { localStorage.setItem('inservice_lang', lang); } catch (e) {}
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+__initA();
+try {
+  var saved = localStorage.getItem('inservice_lang');
+  if (saved === 'zh') { __setLang('zh'); }
+} catch (e) {}
+</script>
+</body>
+</html>
