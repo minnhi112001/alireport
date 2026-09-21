@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo cáo ngành Pet Furniture &amp; Kid Furniture trên Alibaba.com | Cơ hội xuất khẩu cho doanh nghiệp Việt Nam</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  /* ================= RUSTIC BROWN THEME ================= */
+  :root{
+    --p:#4A2C17;              /* nâu gỗ óc chó — màu chủ đạo */
+    --s:#A9743F;              /* nâu gỗ sồi — phụ */
+    --g:#C08A2E;              /* đồng thau — nhấn */
+    --teal:#8A7452;           /* nâu xám rơm */
+    --bg:#FAF5EC;             /* kem vải lanh */
+    --text:#3B2B1F;           /* nâu cà phê */
+    --sidebar-bg:#2A1A0E;     /* gỗ nâu đen */
+    --card-bg:#FFFCF6;        /* trắng ngà */
+    --sw:272px;
+    --border-radius:8px;
+    --transition:all .3s ease;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Lexend',sans-serif;color:var(--text);line-height:1.65;
+    background-color:var(--bg);
+    background-image:radial-gradient(rgba(138,90,43,.055) 1px, transparent 1px);
+    background-size:20px 20px;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* ---------- Sidebar gỗ nâu ---------- */
+  .sidebar{position:fixed;top:0;left:0;width:var(--sw);height:100vh;background:linear-gradient(180deg,#1F1208 0%,#3E2413 55%,#4A2C17 100%);color:#fff;padding:1.8rem 1.2rem;overflow-y:auto;z-index:100;box-shadow:4px 0 20px rgba(42,26,14,.28)}
+  .brand{display:flex;align-items:center;gap:10px;font-size:1.05rem;font-weight:800;margin-bottom:.4rem;padding-bottom:.9rem;border-bottom:1px solid rgba(255,255,255,.12);letter-spacing:.2px}
+  .brand i{color:var(--g)}
+  .brand-sub{font-size:.68rem;color:rgba(255,255,255,.5);margin-bottom:1.4rem;letter-spacing:.6px;text-transform:uppercase}
+  .sidebar nav ul{list-style:none}
+  .sidebar nav ul li{margin-bottom:.35rem}
+  .sidebar nav ul li a{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.78);text-decoration:none;padding:.62rem .8rem;border-radius:6px;font-size:.83rem;font-weight:600;transition:var(--transition);line-height:1.35}
+  .sidebar nav ul li a i{margin-top:.15rem;font-size:.8rem;opacity:.85}
+  .sidebar nav ul li a:hover,.sidebar nav ul li a.active{color:#fff;background-color:rgba(255,255,255,.07);border-left:3px solid var(--g)}
+  .side-note{margin-top:1.4rem;background:rgba(192,138,46,.12);border:1px solid rgba(192,138,46,.32);border-radius:8px;padding:.85rem .9rem;font-size:.71rem;color:rgba(255,255,255,.82);line-height:1.55}
+  .side-note strong{color:var(--g);display:block;font-size:.77rem;margin-bottom:.3rem}
+  /* ---------- Layout ---------- */
+  .main-content{margin-left:var(--sw);padding:2.2rem 2.6rem 3rem;max-width:1440px}
+  .header-banner{background:linear-gradient(135deg,rgba(31,18,8,.94) 0%,rgba(74,44,23,.86) 100%),url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=80') no-repeat center/cover;color:#fff;padding:3rem 2.4rem;border-radius:var(--border-radius);position:relative;margin-bottom:2rem;box-shadow:0 10px 30px rgba(74,44,23,.22)}
+  .badge{display:inline-block;background-color:var(--g);color:#2A1A0E;font-weight:800;font-size:.68rem;letter-spacing:.8px;text-transform:uppercase;padding:.34rem .85rem;border-radius:50px;margin-bottom:1rem}
+  .badge.badge-alt{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.32);margin-left:.4rem}
+  .title{font-family:'Lora',Georgia,serif;font-size:2rem;font-weight:700;margin-bottom:.6rem;line-height:1.3;letter-spacing:.2px}
+  .title span{color:var(--g)}
+  .subtitle{color:rgba(255,255,255,.9);font-size:.95rem;max-width:900px;text-shadow:0 2px 6px rgba(0,0,0,.45)}
+  .meta{display:flex;flex-wrap:wrap;gap:18px;font-size:.78rem;color:rgba(255,255,255,.8);border-top:1px solid rgba(255,255,255,.2);padding-top:1rem;margin-top:1.5rem}
+  .section-card{background-color:var(--card-bg);border-radius:var(--border-radius);padding:2.2rem;margin-bottom:1.8rem;box-shadow:0 4px 22px rgba(74,44,23,.05);border:1px solid rgba(138,90,43,.14);scroll-margin-top:20px}
+  .section-title{font-family:'Lora',Georgia,serif;font-size:1.32rem;font-weight:700;color:var(--p);margin-bottom:.35rem;display:flex;align-items:center;gap:11px;padding-bottom:.75rem;border-bottom:2px dashed rgba(169,116,63,.45)}
+  .section-title i{color:var(--g)}
+  .section-sub{font-size:.78rem;color:#93826C;font-weight:600;letter-spacing:.4px;text-transform:uppercase;margin-bottom:1.3rem}
+  .sub-title{font-family:'Lora',Georgia,serif;font-size:1.02rem;font-weight:600;color:var(--p);margin:1.6rem 0 .7rem}
+  .sub-title.sm{font-size:.92rem}
+  p{margin-bottom:.9rem;color:#5B4A38;font-size:.9rem}
+  ul.clean,ol.clean{margin:0 0 1rem 1.1rem;font-size:.88rem;color:#5B4A38}
+  ul.clean li,ol.clean li{margin-bottom:.42rem}
+  /* ---------- Highlights ---------- */
+  .highlight{background-color:#F6EEE1;border-left:4px solid var(--s);padding:.95rem 1.2rem;border-radius:0 var(--border-radius) var(--border-radius) 0;margin-bottom:1.2rem;font-size:.86rem;color:#4E3E2E}
+  .highlight.alert{background-color:#FBF2DF;border-left-color:var(--g)}
+  .highlight.good{background-color:#EFF1E3;border-left-color:#6B7F4B}
+  .highlight.vn{background-color:#F5E7D5;border-left-color:#8A5A2B}
+  .highlight strong{color:var(--p)}
+  /* ---------- Grids & cards ---------- */
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-bottom:1.4rem}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-bottom:1.4rem}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-bottom:1.4rem}
+  .info-card{background-color:#F7EFE3;border-radius:var(--border-radius);padding:1.1rem 1.15rem;border:1px solid rgba(138,90,43,.14);transition:var(--transition)}
+  .info-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(74,44,23,.08);border-color:var(--s)}
+  .info-icon{font-size:1.3rem;color:var(--p);margin-bottom:.6rem}
+  .info-val{font-size:1.3rem;font-weight:800;color:var(--p);line-height:1.2}
+  .info-val small{font-size:.62rem;font-weight:600;color:#93826C;display:block;margin-top:.2rem}
+  .info-lbl{font-size:.76rem;font-weight:600;color:#8A5A2B;margin-top:.35rem}
+  .kpi-card{background:linear-gradient(145deg,#FFFCF6 0%,#F7EDDD 100%);border:1px solid rgba(169,116,63,.28);border-radius:var(--border-radius);padding:1.2rem;position:relative;overflow:hidden}
+  .kpi-card::after{content:'';position:absolute;right:-22px;top:-22px;width:70px;height:70px;border-radius:50%;background:rgba(169,116,63,.12)}
+  .kpi-num{font-size:1.55rem;font-weight:800;color:var(--p);line-height:1.1}
+  .kpi-num.up{color:#6B7F4B}
+  .kpi-lbl{font-size:.76rem;font-weight:700;color:var(--p);margin-top:.4rem}
+  .kpi-note{font-size:.68rem;color:#93826C;margin-top:.3rem;line-height:1.45}
+  /* ---------- Thẻ chương trình / sự kiện ---------- */
+  .event-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin:1.2rem 0 1.4rem}
+  .event-card{background:#FFFCF6;border:1px solid rgba(138,90,43,.2);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:var(--transition)}
+  .event-card:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(74,44,23,.13);border-color:var(--s)}
+  .event-imgbox{width:100%;height:168px;background:#F4EADC;overflow:hidden}
+  .event-img{width:100%;height:100%;object-fit:cover;display:block}
+  .event-body{padding:.9rem 1rem 1.1rem;display:flex;flex-direction:column;flex:1}
+  .event-date{font-size:.66rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:#8A5A2B;margin-bottom:.3rem}
+  .event-name{font-family:'Lora',Georgia,serif;font-size:.92rem;font-weight:700;color:var(--p);line-height:1.4;margin-bottom:.5rem}
+  .event-desc{font-size:.75rem;color:#5B4A38;line-height:1.55;margin-bottom:.75rem;flex:1}
+  .event-links{display:flex;flex-wrap:wrap;gap:6px}
+  .event-links a{background:#EFE5D6;color:#7A5A32;font-size:.67rem;font-weight:700;padding:.24rem .58rem;border-radius:4px;text-decoration:none;transition:var(--transition)}
+  .event-links a:hover{background:var(--p);color:#fff}
+  /* ---------- Thẻ Account Manager ---------- */
+  .am-card{background:linear-gradient(145deg,#FFFCF6 0%,#F6EBD9 100%);border:1px solid rgba(169,116,63,.35);border-radius:var(--border-radius);padding:1.7rem;display:grid;grid-template-columns:auto 1fr;gap:1.6rem;align-items:center;margin-bottom:1.2rem}
+  .am-avatar{width:96px;height:96px;border-radius:50%;background:linear-gradient(145deg,#4A2C17,#A9743F);display:flex;align-items:center;justify-content:center;color:#F3E4CC;font-family:'Lora',Georgia,serif;font-size:1.7rem;font-weight:700;letter-spacing:1px}
+  .am-role{font-size:.7rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#8A5A2B}
+  .am-name{font-family:'Lora',Georgia,serif;font-size:1.35rem;font-weight:700;color:var(--p);line-height:1.3;margin:.15rem 0 .55rem}
+  .am-line{font-size:.83rem;color:#5B4A38;margin-bottom:.3rem}
+  .am-line i{color:var(--s);width:16px}
+  .am-team{display:flex;flex-wrap:wrap;gap:6px;margin-top:.75rem}
+  .am-team span{background:#EFE5D6;color:#7A5A32;font-size:.68rem;font-weight:700;padding:.22rem .6rem;border-radius:4px}
+  /* ---------- Tables ---------- */
+  table{width:100%;border-collapse:collapse;margin-bottom:1.2rem;font-size:.79rem}
+  table th{background-color:#4A2C17;color:#fff;font-weight:700;text-align:left;padding:.62rem .75rem;border:1px solid rgba(74,44,23,.2);font-size:.76rem}
+  table td{padding:.58rem .75rem;border:1px solid rgba(138,90,43,.2);vertical-align:top}
+  table tr:nth-child(even){background-color:#FBF5EA}
+  table td.num{text-align:right;font-weight:700;color:var(--p)}
+  table td.up{color:#6B7F4B;font-weight:800;text-align:right}
+  table td a{color:#8A5A2B;font-weight:700;text-decoration:none;border-bottom:1px dotted rgba(169,116,63,.55);white-space:nowrap}
+  table td a:hover{color:var(--p);border-bottom-color:var(--p)}
+  .table-container{overflow-x:auto;margin:1.2rem 0;border-radius:8px;border:1px solid rgba(138,90,43,.22)}
+  .table-container table{margin-bottom:0}
+  .tbl-cap{font-size:.72rem;color:#93826C;margin-top:-.6rem;margin-bottom:1.2rem}
+  /* ---------- Product cards ---------- */
+  .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.15rem;margin:1.2rem 0 1.6rem}
+  .prod-card{background:#FFFCF6;border-radius:var(--border-radius);overflow:hidden;border:1px solid rgba(138,90,43,.2);display:flex;flex-direction:column;transition:var(--transition)}
+  .prod-card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(74,44,23,.13);border-color:var(--s)}
+  .prod-imgbox{position:relative;width:100%;height:172px;background:#F4EADC;overflow:hidden}
+  .prod-img{width:100%;height:100%;object-fit:contain;padding:6px;transition:var(--transition)}
+  .prod-card:hover .prod-img{transform:scale(1.05)}
+  .prod-rank{position:absolute;top:8px;left:8px;background:rgba(74,44,23,.92);color:#fff;font-size:.63rem;font-weight:800;padding:.18rem .5rem;border-radius:20px;letter-spacing:.4px}
+  .prod-body{padding:.8rem .85rem 1rem;display:flex;flex-direction:column;flex:1}
+  .prod-name{font-size:.76rem;font-weight:700;color:var(--p);line-height:1.4;margin-bottom:.5rem;min-height:2.6rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .prod-price{font-size:.8rem;font-weight:800;color:#8A5124;margin-bottom:.15rem}
+  .prod-moq{font-size:.68rem;color:#93826C;margin-bottom:.45rem}
+  .prod-sup{font-size:.68rem;color:#5B4A38;line-height:1.4;margin-bottom:.5rem;flex:1}
+  .prod-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:.6rem}
+  .tag{background-color:#EFE5D6;color:#7A5A32;font-size:.6rem;padding:.14rem .45rem;border-radius:3px;font-weight:700}
+  .tag.gold{background:#F8EDD6;color:#8A6516}
+  .tag.green{background:#EBEFE0;color:#5F7042}
+  .btn-link{display:block;width:100%;text-align:center;background-color:#4A2C17;color:#fff!important;padding:.48rem;border-radius:5px;font-size:.73rem;font-weight:700;text-decoration:none;transition:var(--transition)}
+  .btn-link:hover{background-color:#A9743F}
+  .btn-link.gold{background-color:#7A4A22}
+  .btn-link.gold:hover{background-color:#A9743F}
+  /* ---------- Seller cards ---------- */
+  .seller-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem;margin:1.1rem 0 1.4rem}
+  .seller-card{border:1px solid rgba(138,90,43,.18);border-left:4px solid var(--teal);border-radius:8px;padding:1rem 1.05rem;background:#FFFCF6;transition:var(--transition)}
+  .seller-card:hover{box-shadow:0 8px 18px rgba(74,44,23,.09)}
+  .seller-name{font-family:'Lora',Georgia,serif;font-size:.88rem;font-weight:700;color:var(--p);margin-bottom:.2rem;line-height:1.35}
+  .seller-loc{font-size:.7rem;color:#93826C;margin-bottom:.5rem}
+  .seller-line{font-size:.73rem;color:#5B4A38;margin-bottom:.25rem;line-height:1.5}
+  .seller-line b{color:var(--p)}
+  /* ---------- Charts / notes ---------- */
+  .chart-box{background:#FFFCF6;border:1px solid rgba(138,90,43,.2);border-radius:var(--border-radius);padding:1rem;height:340px;position:relative}
+  .chart-title{font-size:.8rem;font-weight:700;color:var(--p);margin-bottom:.6rem}
+  .note{font-size:.72rem;color:#93826C;line-height:1.55;border-top:1px dashed rgba(138,90,43,.3);padding-top:.8rem;margin-top:.4rem}
+  .src-list{font-size:.75rem;color:#8A7A63;line-height:1.75}
+  .src-list a{color:#8A5A2B;text-decoration:none;border-bottom:1px dotted rgba(169,116,63,.55);word-break:break-word}
+  .src-list a:hover{color:var(--p);border-bottom-color:var(--p)}
+  /* ---------- Footer ---------- */
+  footer{background:linear-gradient(180deg,#2A1A0E 0%,#3E2413 100%);color:#fff;padding:2.6rem 3rem 1.4rem;border-radius:var(--border-radius);margin-top:2.4rem}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr;gap:2.4rem;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:1.8rem}
+  .foot-title{font-family:'Lora',Georgia,serif;font-size:.95rem;font-weight:700;color:var(--g);margin-bottom:.8rem}
+  footer p{color:rgba(255,255,255,.72);font-size:.76rem;line-height:1.7;margin-bottom:.5rem}
+  footer a{color:rgba(255,255,255,.85)}
+  .foot-bottom{display:flex;justify-content:space-between;font-size:.7rem;color:rgba(255,255,255,.55);padding-top:1.3rem;flex-wrap:wrap;gap:.6rem}
+  /* ---------- Responsive ---------- */
+  @media (max-width:1200px){.prod-grid{grid-template-columns:repeat(3,1fr)}.grid-4{grid-template-columns:repeat(2,1fr)}.seller-grid{grid-template-columns:repeat(2,1fr)}.event-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:980px){.main-content{padding:1.4rem}.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.prod-grid{grid-template-columns:repeat(2,1fr)}.seller-grid,.event-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.am-card{grid-template-columns:1fr;text-align:center;justify-items:center}}
+  @media (max-width:760px){.sidebar{position:relative;width:100%;height:auto;padding:1rem}.sidebar nav ul{display:flex;flex-wrap:wrap;gap:6px}.sidebar nav ul li a{font-size:.74rem;padding:.45rem .6rem}.main-content{margin-left:0}.prod-grid{grid-template-columns:1fr}.title{font-size:1.5rem}}
+  @media print{.sidebar,.side-note{display:none}.main-content{margin-left:0;padding:0}.section-card{box-shadow:none;page-break-inside:avoid}.prod-card,.event-card{page-break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="brand"><i class="fa-solid fa-paw"></i><span>Alibaba B2B Intelligence</span></div>
+  <div class="brand-sub">Pet &amp; Kid Furniture · 2026</div>
+  <nav>
+    <ul>
+      <li><a href="#sec1" class="active"><i class="fa-solid fa-flag"></i> 1. Tóm tắt &amp; Cơ hội</a></li>
+      <li><a href="#sec2"><i class="fa-solid fa-globe"></i> 2. Thị trường chính &amp; Tăng trưởng</a></li>
+      <li><a href="#sec3"><i class="fa-solid fa-leaf"></i> 3. Lợi thế Made in Vietnam</a></li>
+      <li><a href="#sec4"><i class="fa-solid fa-store"></i> 4. Nhà bán tiêu biểu</a></li>
+      <li><a href="#sec5"><i class="fa-solid fa-award"></i> 5. Sản phẩm bán chạy</a></li>
+      <li><a href="#sec6"><i class="fa-solid fa-headset"></i> 6. Đồng hành cùng bạn</a></li>
+      <li><a href="#sec7"><i class="fa-solid fa-tags"></i> 7. Bản đồ từ khoá SEO</a></li>
+      <li><a href="#sec8"><i class="fa-solid fa-link"></i> 8. Lưu ý &amp; Nguồn dữ liệu</a></li>
+    </ul>
+  </nav>
+  <div class="side-note">
+    <strong><i class="fa-solid fa-circle-info"></i> Về báo cáo này</strong>
+    Dữ liệu nhu cầu người mua trích từ nguồn công bố chính thức của Alibaba.com. Số liệu quy mô thị trường từ các hãng nghiên cứu độc lập, có ghi rõ nguồn và mức chênh lệch.
+  </div>
+</div>
+
+<div class="main-content">
+
+  <div class="header-banner">
+    <span class="badge">Báo cáo thị trường B2B</span>
+    <span class="badge badge-alt">Alibaba.com · 2026</span>
+    <h1 class="title">NỘI THẤT THÚ CƯNG (PET FURNITURE) &amp; <span>NỘI THẤT TRẺ EM (KID FURNITURE)</span></h1>
+    <p class="subtitle">Cơ hội xuất khẩu trên Alibaba.com dành cho doanh nghiệp sản xuất Việt Nam — thị trường chính, thị trường xuất khẩu, đà tăng trưởng, lợi thế xuất xứ, nhà bán tiêu biểu và sản phẩm đang được người mua tìm kiếm.</p>
+    <div class="meta">
+      <span><i class="fa-solid fa-calendar-days"></i> Cập nhật: <strong>Tháng 09 / 2026</strong></span>
+      <span><i class="fa-solid fa-layer-group"></i> Ngách: <strong>Pet furniture + Kid furniture</strong></span>
+      <span><i class="fa-solid fa-location-dot"></i> Xuất xứ: <strong>Việt Nam</strong></span>
+      <span><i class="fa-solid fa-shield-halved"></i> Chế độ: <strong>Full intelligence report</strong></span>
+    </div>
+  </div>
+
+  <!-- ================= SEC 1 ================= -->
+  <div id="sec1" class="section-card">
+    <h2 class="section-title"><i class="fa-solid fa-flag"></i> 1. Tóm tắt &amp; Cơ hội</h2>
+    <div class="section-sub">Executive Summary — Vì sao nên bắt đầu trong 2026</div>
+
+    <div class="grid-4">
+      <div class="kpi-card">
+        <div class="kpi-num up">+46,42%</div>
+        <div class="kpi-lbl">Pet Houses &amp; Furniture</div>
+        <div class="kpi-note">Nhu cầu người mua trên Alibaba.com tăng so với cùng kỳ — nhóm sản phẩm trọng tâm của báo cáo.</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num up">+24,61%</div>
+        <div class="kpi-lbl">Ghế trẻ em</div>
+        <div class="kpi-note">Mức độ tương tác của người mua tăng; ghế là phân khúc lớn thứ hai trong nội thất trẻ em.</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num up">+38%</div>
+        <div class="kpi-lbl">Yêu cầu hỏi hàng ngành nội thất</div>
+        <div class="kpi-note">Mức tăng lượng yêu cầu hỏi hàng của nhóm hàng nội thất từ các nhà mua quốc tế (công bố tại sự kiện Alibaba.com × ITPC, 08/2026).</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">35,3%</div>
+        <div class="kpi-lbl">Bắc Mỹ dẫn dắt</div>
+        <div class="kpi-note">Tỷ trọng đóng góp vào tăng trưởng của thị trường nội thất thú cưng toàn cầu.</div>
+      </div>
+    </div>
+
+    <div class="highlight good">
+      <strong>Bức tranh chung:</strong> Hai ngách này đang gặp nhau ở đúng thời điểm. Chủ nuôi ngày càng xem thú cưng như thành viên trong nhà và muốn nội thất vừa đẹp vừa bền; phụ huynh sẵn sàng đầu tư cho góc học tập và phòng ngủ của con. Cả hai nhóm đều cần sản phẩm gỗ có thiết kế, làm từ nguyên liệu tự nhiên và kể được câu chuyện bền vững — đúng những gì nhà sản xuất Việt Nam đang có lợi thế nhất.
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <div class="sub-title"><i class="fa-solid fa-circle-check" style="color:var(--g)"></i> Ba động lực tăng trưởng</div>
+        <ul class="clean">
+          <li><strong>Thú cưng là thành viên gia đình</strong> — chủ nuôi sẵn sàng trả giá cao cho sản phẩm "đẹp như nội thất".</li>
+          <li><strong>Không gian sống nhỏ dần</strong> — căn hộ đô thị cần nội thất đa năng, gấp gọn, tích hợp.</li>
+          <li><strong>Ưu tiên an toàn &amp; vật liệu tự nhiên</strong> — gỗ thật, sơn an toàn, nguồn gốc rõ ràng ngày càng được hỏi tới.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="sub-title"><i class="fa-solid fa-seedling" style="color:var(--g)"></i> Ba việc nên chuẩn bị trước</div>
+        <ul class="clean">
+          <li>Chọn <strong>tối đa 2 dòng sản phẩm chủ lực</strong> (1 pet, 1 kid) để câu chuyện sản phẩm rõ ràng thay vì đăng tràn lan.</li>
+          <li>Chuẩn hoá <strong>thông tin sản phẩm và bộ ảnh có ngữ cảnh sử dụng thực tế</strong>.</li>
+          <li>Bổ sung dần <strong>hồ sơ chất lượng khi đã có đơn hàng</strong> — không cần đầy đủ ngay từ đầu.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">Các con số ở trên là dữ liệu do Alibaba.com công bố chính thức trong Seller Blog 2026, sự kiện Alibaba.com × ITPC (08/2026) và trang thông tin ngành hàng. Đây là chỉ số về nhu cầu và mức độ quan tâm của người mua, phù hợp để định hướng ngách và sản phẩm.</div>
+  </div>
+
+  <!-- ================= SEC 2 ================= -->
+  <div id="sec2" class="section-card">
+    <h2 class="section-title"><i class="fa-solid fa-globe"></i> 2. Thị trường chính &amp; Tăng trưởng</h2>
+    <div class="section-sub">Main Markets &amp; Growth — Pet Houses &amp; Furniture và Kid Furniture</div>
+
+    <p>Chương này trả lời hai câu hỏi thực tế: <strong>ngách nội thất thú cưng đang tăng như thế nào, hàng Việt Nam sẽ đi về đâu</strong>, và với nội thất trẻ em thì người mua đang tập trung ở những thị trường nào. Các con số nhu cầu dưới đây là dữ liệu Alibaba.com công bố chính thức, đo trực tiếp hành vi mua B2B trên sàn.</p>
+
+    <div class="sub-title"><i class="fa-solid fa-paw" style="color:var(--g)"></i> 2.1. Ngách Pet Houses &amp; Furniture (nội thất &amp; nhà cho thú cưng)</div>
+
+    <div class="grid-3">
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+        <div class="info-val">+46,42%<small>Tăng trưởng người mua trên Alibaba.com so với cùng kỳ</small></div>
+        <div class="info-lbl">Ngách tăng mạnh nhất ngành thú cưng</div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-earth-americas"></i></div>
+        <div class="info-val">Bắc Mỹ<small>Đóng góp khoảng 35,3% vào tăng trưởng, chiếm 40,5% thị phần toàn cầu (2023)</small></div>
+        <div class="info-lbl">Khu vực dẫn dắt nhu cầu</div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-house-chimney"></i></div>
+        <div class="info-val">94 triệu hộ<small>Nuôi thú cưng tại Hoa Kỳ; tổng chi tiêu ngành đạt 152 tỷ USD (2024)</small></div>
+        <div class="info-lbl">Quy mô nhu cầu tiêu dùng</div>
+      </div>
+    </div>
+
+    <p><strong>Vì sao ngách này tăng nhanh:</strong> nội thất thú cưng nằm ở điểm giao giữa hai xu hướng — chủ nuôi xem thú cưng như thành viên gia đình, và người sống trong căn hộ cần sản phẩm vừa tiết kiệm diện tích vừa hợp gu nhà ở. Sản phẩm bán tốt thường là sản phẩm <em>làm được hai việc cùng lúc</em>: vừa là chỗ ngủ của thú cưng, vừa là món nội thất trong phòng khách.</p>
+
+    <div class="sub-title sm"><i class="fa-solid fa-ship" style="color:var(--g)"></i> Thị trường xuất khẩu — hàng nội thất thú cưng đang đi về đâu</div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:22%">Thị trường</th>
+            <th style="width:30%">Tín hiệu nhu cầu</th>
+            <th style="width:22%">Quy mô ghi nhận</th>
+            <th>Hàm ý cho nhà xuất khẩu Việt Nam</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Bắc Mỹ</strong><br><span style="color:#93826C;font-size:.72rem">Thị trường số 1</span></td>
+            <td>Chiếm 40,5% thị phần nội thất thú cưng toàn cầu (2023) và đóng góp khoảng 35,3% vào tăng trưởng của ngành. Hoa Kỳ là thị trường lớn nhất trong khu vực và cũng dẫn đầu xu hướng sản phẩm thông minh.</td>
+            <td>Hoa Kỳ: 2,59 tỷ USD (2026) → 3,95 tỷ USD (2033), tăng 6,2% mỗi năm</td>
+            <td>Nên là thị trường trọng tâm số một khi bắt đầu. Ưu tiên sản phẩm đa năng cho căn hộ và bộ ảnh có ngữ cảnh sống thực tế — đây là nhóm người mua khó tính nhất về hình ảnh và thông số.</td>
+          </tr>
+          <tr>
+            <td><strong>Hoa Kỳ — phân khúc nội thất thông minh</strong></td>
+            <td>Bắc Mỹ chiếm tới 45% doanh số nội thất thú cưng thông minh toàn cầu; nhóm sản phẩm tích hợp nhiều công năng đóng góp 28% mức tăng trưởng của thị trường.</td>
+            <td>—</td>
+            <td>Gợi ý mở rộng: kết hợp gỗ với chi tiết tiện ích (ngăn lưu trữ, đệm thay rời, kệ gắn tường) để nâng giá trị đơn hàng.</td>
+          </tr>
+          <tr>
+            <td><strong>Châu Âu</strong></td>
+            <td>Thị trường tiêu dùng lớn thứ hai, ưu tiên nguyên liệu bền vững và nguồn gốc gỗ rõ ràng — đúng lợi thế của Việt Nam và có ưu đãi thuế theo hiệp định EVFTA.</td>
+            <td>Nằm trong nhóm thị trường tăng trưởng của ngành</td>
+            <td>Phù hợp cho dòng sản phẩm mây tre, cỏ biển, gỗ cà phê — nơi câu chuyện bền vững được trả giá cao.</td>
+          </tr>
+          <tr>
+            <td><strong>Canada · Vương quốc Anh</strong></td>
+            <td>Hai thị trường này ghi nhận mức tăng người mua mạnh nhất trong ngành nội thất trẻ em (+50,5% và +44,7%) và cũng là thị trường nội thất thú cưng ổn định nhờ văn hoá nuôi thú cưng lâu đời.</td>
+            <td>—</td>
+            <td>Việt Nam có ưu đãi thuế tại cả hai (CPTPP với Canada, UKVFTA với Anh) — nên đưa vào danh mục thị trường ngay từ năm đầu.</td>
+          </tr>
+          <tr>
+            <td><strong>Các thị trường mới nổi</strong></td>
+            <td>Mexico, Ấn Độ và một số thị trường châu Phi ghi nhận mức tăng trưởng hai con số về số lượng người mua B2B.</td>
+            <td>—</td>
+            <td>Có thể thử nghiệm với đơn nhỏ, mẫu gọn — chi phí vận chuyển thấp hơn và ít cạnh tranh hơn so với thị trường Mỹ.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tbl-cap">Nguồn: Alibaba.com Seller Blog 2026 (tỷ trọng đóng góp tăng trưởng, hành vi người mua); Grand View Research (thị phần Bắc Mỹ 40,5% năm 2023; phân khúc giường và sofa chiếm 38,1% năm 2023); Coherent Market Insights (thị trường nội thất thú cưng Hoa Kỳ 2,59 tỷ USD năm 2026, tăng 6,2%/năm); Intel Market Research (thị phần nội thất thông minh và sản phẩm đa năng); APPA dẫn qua Alibaba.com (94 triệu hộ nuôi, 152 tỷ USD chi tiêu năm 2024).</div>
+
+    <div class="highlight alert">
+      <strong>Thứ tự ưu tiên thị trường gợi ý:</strong> <em>(1)</em> Hoa Kỳ và Bắc Mỹ — nơi nhu cầu lớn nhất và cũng nhiều cạnh tranh nhất; <em>(2)</em> Canada, Vương quốc Anh và châu Âu — nơi mức tăng người mua cao nhưng ít nhà cung cấp Việt Nam hiện diện, lại có ưu đãi thuế theo hiệp định; <em>(3)</em> các thị trường mới nổi để thử nghiệm dòng sản phẩm mới với chi phí thấp.
+    </div>
+
+    <div class="grid-2">
+      <div class="chart-box"><div class="chart-title">Quy mô thị trường nội thất thú cưng 2026 theo các nguồn nghiên cứu (tỷ USD)</div><canvas id="petSizeChart"></canvas></div>
+      <div>
+        <div class="sub-title sm" style="margin-top:0">Quy mô &amp; đà tăng trưởng ngách này</div>
+        <div class="table-container" style="margin-top:.4rem">
+          <table>
+            <thead><tr><th style="width:46%">Nguồn nghiên cứu</th><th style="width:28%">Quy mô ghi nhận</th><th>Tăng trưởng</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>Grand View Research <span style="color:#93826C;font-size:.72rem">(Alibaba.com dẫn nguồn)</span></td>
+                <td>1,74 tỷ USD (2023) → 2,44 tỷ USD (2030)</td>
+                <td class="num">4,9% / năm</td>
+              </tr>
+              <tr>
+                <td>Future Market Insights</td>
+                <td>2,4 tỷ USD (2026) → 4,2 tỷ USD (2036)</td>
+                <td class="num">5,9% / năm</td>
+              </tr>
+              <tr>
+                <td>Fortune Business Insights</td>
+                <td>4,74 tỷ USD (2026) → 8,24 tỷ USD (2034)</td>
+                <td class="num">—</td>
+              </tr>
+              <tr>
+                <td>Coherent Market Insights</td>
+                <td>7,95 tỷ USD (2026) → 12,44 tỷ USD (2033)</td>
+                <td class="num">6,6% / năm</td>
+              </tr>
+              <tr>
+                <td><strong>Phân khúc riêng cho mèo</strong> <span style="color:#93826C;font-size:.72rem">(Alibaba.com dẫn nguồn)</span></td>
+                <td>6,46 tỷ USD (2026) → 10,33 tỷ USD (2035)</td>
+                <td class="num">5,6% / năm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note" style="margin-top:.2rem">
+          Các nguồn đưa ra con số khác nhau chủ yếu do <strong>phạm vi định nghĩa</strong>: có nguồn chỉ tính giường, nhà và cây cào móng; có nguồn tính cả phụ kiện, nệm và đồ trang trí. Khi lập kế hoạch, nên dùng khoảng thận trọng <strong>khoảng 5 tỷ USD cho năm 2026</strong> và dùng <em>đà tăng người mua trên Alibaba.com</em> làm thước đo thực tế hơn.
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <strong>Gợi ý chọn dòng sản phẩm cho ngách này:</strong> ưu tiên sản phẩm <em>đa năng và tiết kiệm diện tích</em> — bàn cạnh giường kiêm chuồng, giường nâng nền, hệ kệ gắn tường cho mèo, nhà thú cưng dạng module. Đây là những dòng vừa hợp gu nội thất, vừa tận dụng được lợi thế gỗ và nghề thủ công của Việt Nam.
+    </div>
+
+    <div class="sub-title"><i class="fa-solid fa-child-reaching" style="color:var(--g)"></i> 2.2. Thị trường chính — Nội thất trẻ em (Kids' chairs &amp; Kid furniture)</div>
+    <p>Trong nội thất trẻ em trên Alibaba.com, <strong>ghế là phân khúc lớn thứ hai</strong> (chỉ sau cũi/nôi), với mức độ tương tác của người mua tăng <strong>+24,61%</strong> so với cùng kỳ. Bảng dưới đây cho thấy người mua đang tập trung ở đâu — đây là cơ sở để chọn thị trường ưu tiên.</p>
+
+    <div class="grid-2">
+      <div>
+        <div class="table-container" style="margin-top:0">
+          <table>
+            <thead><tr><th style="width:38%">Quốc gia</th><th style="width:30%">Tỷ trọng người mua</th><th>Tăng trưởng theo năm</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Hoa Kỳ</strong></td><td class="num">15,8%</td><td class="up">+43,0%</td></tr>
+              <tr><td><strong>Mexico</strong></td><td class="num">4,0%</td><td class="up">+8,8%</td></tr>
+              <tr><td><strong>Canada</strong></td><td class="num">2,7%</td><td class="up">+50,5%</td></tr>
+              <tr><td><strong>Vương quốc Anh</strong></td><td class="num">2,6%</td><td class="up">+44,7%</td></tr>
+              <tr><td><strong>Ấn Độ</strong></td><td class="num">2,0%</td><td class="up">+35,1%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tbl-cap">Nguồn: Alibaba.com Seller Blog 2026 — dữ liệu phân bố người mua tháng 02/2026.</div>
+      </div>
+      <div class="chart-box"><div class="chart-title">Tỷ trọng người mua ghế trẻ em theo quốc gia (%)</div><canvas id="marketChart"></canvas></div>
+    </div>
+
+    <div class="highlight alert">
+      <strong>Một điểm đáng lưu ý:</strong> các quốc gia Đông Nam Á <em>chưa xuất hiện</em> trong nhóm 10 khu vực người mua hàng đầu của ngách này trên Alibaba.com, trong khi Hoa Kỳ, Canada và Anh đều tăng trưởng ở mức hai con số. Nghĩa là doanh nghiệp Việt Nam đang đứng ngay tại nguồn cung, phía trước còn nhiều dư địa để mở rộng tệp người mua quốc tế.
+    </div>
+    <div class="note">Quy mô thị trường nội thất trẻ em toàn cầu năm 2026 được các hãng nghiên cứu ước tính trong khoảng <strong>35 – 40 tỷ USD</strong> (Fortune Business Insights, Mordor Intelligence, Global Market Insights). Các con số cao hơn trên thị trường thường bao gồm cả đồ chơi giáo dục và nội thất phòng trẻ em nói chung.</div>
+  </div>
+
+  <!-- ================= SEC 3 ================= -->
+  <div id="sec3" class="section-card">
+    <h2 class="section-title"><i class="fa-solid fa-leaf"></i> 3. Lợi thế "Made in Vietnam" với hai ngách này</h2>
+    <div class="section-sub">Why Vietnam Wins in Pet Furniture &amp; Kid Furniture</div>
+
+    <p>Lợi thế của Việt Nam ở hai ngách này không nằm ở giá rẻ, mà ở sự kết hợp giữa <strong>nguyên liệu gỗ và mây tre tại chỗ</strong>, <strong>nghề thủ công lâu năm</strong>, <strong>ưu đãi thuế từ các hiệp định thương mại</strong> và <strong>kinh nghiệm thiết kế cho không gian sống nhỏ</strong>. Dưới đây là những điểm có thể đưa thẳng vào nội dung gian hàng để tạo khác biệt.</p>
+
+    <div class="grid-3">
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-file-contract"></i></div>
+        <div class="info-val" style="font-size:1rem">Thuế quan &amp; FTA</div>
+        <div class="info-lbl">Vị thế thuận lợi tại các thị trường lớn</div>
+        <p style="margin-top:.5rem;font-size:.8rem">Người mua quốc tế đang chủ động đa dạng hoá nguồn cung. Việt Nam có mạng lưới hiệp định thương mại phủ EU (EVFTA), Canada – Nhật – Úc – Mexico (CPTPP) và Anh (UKVFTA), giúp hàng Việt có lợi thế thuế rõ rệt tại những thị trường đang tăng mạnh nhất của ngành nội thất trẻ em.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-tree"></i></div>
+        <div class="info-val" style="font-size:1rem">Nguyên liệu tại chỗ</div>
+        <div class="info-lbl">Gỗ cao su, keo, tre, mây, cỏ biển</div>
+        <p style="margin-top:.5rem;font-size:.8rem">Nguồn gỗ rừng trồng ổn định cho khung chắc và giá thành hợp lý. Bên cạnh đó là <strong>mây, tre, cỏ biển, lục bình và gỗ cà phê già cỗi</strong> — những nguyên liệu mang sẵn câu chuyện bền vững mà người mua phương Tây rất quan tâm.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+        <div class="info-val" style="font-size:1rem">Thiết kế cho nhà nhỏ</div>
+        <div class="info-lbl">Lợi thế ít nơi có được</div>
+        <p style="margin-top:.5rem;font-size:.8rem">Nhà sản xuất Việt Nam và khu vực đã thiết kế cho căn hộ 45–60 m² trong nhiều thập kỷ. Chính năng lực <strong>gấp gọn, lưu trữ dọc, đa năng</strong> đó lại là điều người mua ở New York, Toronto hay London đang cần.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-industry"></i></div>
+        <div class="info-val" style="font-size:1rem">Năng lực gia công</div>
+        <div class="info-lbl">Hạ tầng nội thất xuất khẩu đã có sẵn</div>
+        <p style="margin-top:.5rem;font-size:.8rem">Việt Nam là <strong>nước xuất khẩu đồ nội thất lớn thứ hai thế giới</strong>, với hệ thống máy móc, phòng sấy, quy trình kiểm chất lượng và kinh nghiệm đóng gói xuất khẩu đã hoàn thiện — chỉ cần chuyển sang dòng sản phẩm mới.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-people-group"></i></div>
+        <div class="info-val" style="font-size:1rem">Làng nghề thủ công</div>
+        <div class="info-lbl">Nguồn cung dồi dào, chuyển đổi nhanh</div>
+        <p style="margin-top:.5rem;font-size:.8rem">Nhiều doanh nghiệp thủ công Việt Nam <strong>đã và đang bán nội thất trẻ em mây tre lên Alibaba.com</strong>. Việc chuyển sang dòng nội thất thú cưng gần như liền mạch — cùng nguyên liệu, cùng thợ, cùng kỹ thuật đan và hoàn thiện bề mặt.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-ship"></i></div>
+        <div class="info-val" style="font-size:1rem">Vị trí &amp; logistics</div>
+        <div class="info-lbl">Gần cảng, lead time tốt</div>
+        <p style="margin-top:.5rem;font-size:.8rem">Hệ thống cảng Cát Lái và Hải Phòng kết nối trực tiếp các tuyến đi Bắc Mỹ và châu Âu, giúp rút ngắn thời gian giao hàng so với nhiều nguồn cung khác trong khu vực.</p>
+      </div>
+    </div>
+
+    <div class="sub-title"><i class="fa-solid fa-star" style="color:var(--g)"></i> 3.1. Bốn điểm nên nhấn trong gian hàng</div>
+    <div class="table-container">
+      <table>
+        <thead><tr><th style="width:24%">Lợi thế</th><th style="width:38%">Vì sao người mua quan tâm</th><th>Cách thể hiện trong gian hàng</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Nguyên liệu tự nhiên &amp; bền vững</strong></td>
+            <td>Người mua EU và Bắc Mỹ ngày càng hỏi rõ nguồn gốc nguyên liệu, mức độ thân thiện môi trường và độ an toàn của vật liệu.</td>
+            <td>Đưa tên nguyên liệu (gỗ cao su, mây, cỏ biển…) và nguồn gốc vùng nguyên liệu vào mô tả; dùng ảnh cận cảnh vân gỗ, mối nối, bề mặt hoàn thiện.</td>
+          </tr>
+          <tr>
+            <td><strong>Thiết kế cho không gian nhỏ</strong></td>
+            <td>Khách hàng cuối ở các đô thị lớn cần sản phẩm tiết kiệm diện tích nhưng vẫn đẹp.</td>
+            <td>Thể hiện tính đa năng bằng ảnh thực tế: sản phẩm gấp lại, lưu trữ dọc, dùng trong căn hộ nhỏ; so sánh kích thước đóng gói với vật quen thuộc.</td>
+          </tr>
+          <tr>
+            <td><strong>Nghề thủ công &amp; khả năng tuỳ chỉnh</strong></td>
+            <td>Thương hiệu cần sản phẩm khác biệt để không cạnh tranh thuần bằng giá.</td>
+            <td>Nêu rõ các mức tuỳ chỉnh có thể làm: logo, màu sơn, kích thước, kiểu đan, bao bì bán lẻ.</td>
+          </tr>
+          <tr>
+            <td><strong>Vị thế thuế quan &amp; logistics</strong></td>
+            <td>Người mua tính tổng chi phí về kho (landed cost) chứ không chỉ giá nhà máy.</td>
+            <td>Nêu rõ điều kiện giao hàng, cảng xuất, thời gian sản xuất và ưu đãi thuế theo hiệp định ở phần mô tả dành cho từng khu vực.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sub-title"><i class="fa-solid fa-circle-plus" style="color:var(--g)"></i> 3.2. Hồ sơ chất lượng — gợi ý bổ sung, không bắt buộc ngay</div>
+    <div class="highlight good">
+      <strong>Bạn có thể bắt đầu mà không cần đầy đủ chứng nhận.</strong> Phần lớn người mua B2B hiểu rằng năng lực chứng nhận sẽ được bổ sung dần theo đơn hàng. Điều họ quan tâm nhất khi đặt lần đầu vẫn là <em>chất lượng mẫu, sự rõ ràng trong trao đổi và tiến độ giao hàng đúng hẹn</em>. Khi đã có đơn hàng và tệp khách ổn định, việc bổ sung hồ sơ sẽ dễ dàng và có mục tiêu hơn nhiều — cũng là lúc đội ngũ Alibaba.com hỗ trợ bạn chuẩn bị hồ sơ cho từng thị trường.
+    </div>
+    <div class="grid-2">
+      <div>
+        <div class="sub-title sm">Nhóm bạn có thể cân nhắc trước (làm song song khi rảnh)</div>
+        <ul class="clean">
+          <li><strong>Phiếu kiểm nghiệm vật liệu</strong> cho gỗ, sơn và vải bọc — thường là yêu cầu đầu tiên nhưng cũng dễ bổ sung nhất.</li>
+          <li><strong>Chứng nhận nguồn gốc gỗ bền vững (FSC)</strong> — hữu ích khi làm việc với người mua châu Âu, và cũng là điểm cộng trong câu chuyện sản phẩm.</li>
+          <li><strong>Báo cáo kiểm định lô hàng</strong> do bên thứ ba thực hiện khi lô hàng đã đủ lớn để chi phí này hợp lý.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="sub-title sm">Nhóm làm sau, khi đã có khách hàng mục tiêu rõ ràng</div>
+        <ul class="clean">
+          <li><strong>Tiêu chuẩn an toàn cho đồ trẻ em</strong> (ASTM F404, EN 14988, CPSIA) — thường được yêu cầu khi bán cho chuỗi bán lẻ lớn, không phải cho đơn hàng đầu tiên.</li>
+          <li><strong>Tiêu chuẩn vật liệu composite</strong> (TSCA Title VI) — chỉ áp dụng nếu sản phẩm dùng ván dăm hoặc MDF.</li>
+          <li><strong>Hệ thống quản lý chất lượng ISO 9001</strong> — mang tính dài hạn, giúp tăng độ tin cậy khi đàm phán hợp đồng lớn.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">Danh sách trên là <strong>gợi ý mở rộng</strong> để bạn chủ động dần, không phải điều kiện bắt buộc để mở gian hàng hay nhận đơn đầu tiên. Yêu cầu cụ thể phụ thuộc vào từng thị trường và từng người mua; nên xác nhận theo mã hàng cụ thể trước khi báo giá.</div>
+  </div>
+
+  <!-- ================= SEC 4 ================= -->
+  <div id="sec4" class="section-card">
+    <h2 class="section-title"><i class="fa-solid fa-store"></i> 4. Nhà bán tiêu biểu</h2>
+    <div class="section-sub">Typical Sellers — Doanh nghiệp Việt Nam đang bán hai ngách này trên Alibaba.com</div>
+
+    <p>Đây là những doanh nghiệp Việt Nam <strong>đã có gian hàng và đang bán nội thất trẻ em hoặc nội thất thú cưng trên Alibaba.com</strong>. Họ là bằng chứng cho thấy người Việt đã làm được, đồng thời là mẫu tham khảo trực tiếp về cách trình bày sản phẩm, đặt giá và xây dựng danh mục.</p>
+
+    <div class="seller-grid">
+      <div class="seller-card">
+        <div class="seller-name">SISU HANDICRAFT CO., LTD</div>
+        <div class="seller-loc"><i class="fa-solid fa-location-dot"></i> Việt Nam · gian hàng TrustPass trên Alibaba.com</div>
+        <div class="seller-line"><b>Sản phẩm:</b> khung treo đồ chơi mây cho bé, nội thất mây cho trẻ em</div>
+        <div class="seller-line"><b>Ngách thú cưng:</b> đệm cho chó mèo đan thủ công từ cỏ biển</div>
+        <div class="seller-line"><b>Điểm đáng học:</b> trình bày song song dòng "baby" và dòng "pet" trên cùng một năng lực đan mây — đúng hướng mở rộng sản phẩm đang khuyến nghị ở mục 3.</div>
+        <div style="margin-top:.6rem"><a class="btn-link gold" href="https://sisu.trustpass.alibaba.com/" target="_blank" rel="noopener">Xem gian hàng trên Alibaba.com</a></div>
+      </div>
+      <div class="seller-card">
+        <div class="seller-name">HNH HANDICRAFT EXPORT COMPANY LIMITED</div>
+        <div class="seller-loc"><i class="fa-solid fa-location-dot"></i> Việt Nam · gian hàng TrustPass trên Alibaba.com</div>
+        <div class="seller-line"><b>Sản phẩm:</b> bậc thang và kệ gỗ treo tường cho mèo, trụ cào móng</div>
+        <div class="seller-line"><b>Mức giá ghi trên listing:</b> 9,98 – 19,98 USD · MOQ 50</div>
+        <div class="seller-line"><b>Điểm đáng học:</b> chọn phân khúc phụ kiện gắn tường — nhẹ, dễ vận chuyển, ít cạnh tranh trực tiếp.</div>
+        <div style="margin-top:.6rem"><a class="btn-link gold" href="https://hnhcraft.trustpass.alibaba.com/" target="_blank" rel="noopener">Xem gian hàng trên Alibaba.com</a></div>
+      </div>
+      <div class="seller-card">
+        <div class="seller-name">VAN HUE FURNITURE IMPORT EXPORT JOINT STOCK</div>
+        <div class="seller-loc"><i class="fa-solid fa-location-dot"></i> Việt Nam · gian hàng TrustPass trên Alibaba.com</div>
+        <div class="seller-line"><b>Sản phẩm:</b> ghế học và ghế gỗ cho trẻ em theo phong cách Montessori</div>
+        <div class="seller-line"><b>Mức giá ghi trên listing:</b> 19,80 – 27,90 USD · MOQ 10 chiếc</div>
+        <div class="seller-line"><b>Điểm đáng học:</b> MOQ rất thấp — cách hiệu quả để thu hút người mua đặt đơn mẫu trước khi vào đơn lớn.</div>
+        <div style="margin-top:.6rem"><a class="btn-link gold" href="https://vn1564622444gqve.trustpass.alibaba.com/" target="_blank" rel="noopener">Xem gian hàng trên Alibaba.com</a></div>
+      </div>
+      <div class="seller-card">
+        <div class="seller-name">THY GLOBAL DEVELOPMENT &amp; INVESTMENT COMPANY</div>
+        <div class="seller-loc"><i class="fa-solid fa-location-dot"></i> Việt Nam · gian hàng TrustPass trên Alibaba.com</div>
+        <div class="seller-line"><b>Sản phẩm:</b> bộ bàn ghế tiệc mây thủ công cho trẻ em</div>
+        <div class="seller-line"><b>Mức giá ghi trên listing:</b> 19,25 – 27,38 USD · MOQ 30 chiếc</div>
+        <div class="seller-line"><b>Điểm đáng học:</b> định vị theo <em>tình huống sử dụng</em> (tiệc cho bé, sự kiện theo mùa) thay vì chỉ bán "ghế trẻ em" — mở ra mùa vụ bán hàng riêng.</div>
+        <div style="margin-top:.6rem"><a class="btn-link gold" href="https://thyglobal.trustpass.alibaba.com/" target="_blank" rel="noopener">Xem gian hàng trên Alibaba.com</a></div>
+      </div>
+      <div class="seller-card">
+        <div class="seller-name">VietMailan (VML) — nội thất mây tre</div>
+        <div class="seller-loc"><i class="fa-solid fa-location-dot"></i> Việt Nam · gian hàng TrustPass trên Alibaba.com</div>
+        <div class="seller-line"><b>Sản phẩm:</b> ghế nhỏ mây tự nhiên cho trẻ em, ghế ăn cho trẻ có đệm</div>
+        <div class="seller-line"><b>Mức giá ghi trên listing:</b> 9,50 – 18,00 USD và 17,10 – 32,40 USD</div>
+        <div class="seller-line"><b>Điểm đáng học:</b> phân tầng rõ giữa bản tiết kiệm và bản có đệm — tạo dư địa bán thêm cho cùng một tệp khách.</div>
+        <div style="margin-top:.6rem"><a class="btn-link gold" href="https://vietmailan.trustpass.alibaba.com/productgrouplist-913373621/Chairs_&_Tables.html" target="_blank" rel="noopener">Xem danh mục sản phẩm</a></div>
+      </div>
+      <div class="seller-card">
+        <div class="seller-name">Artex Thien Thanh — Kid furniture</div>
+        <div class="seller-loc"><i class="fa-solid fa-location-dot"></i> Việt Nam · gian hàng TrustPass trên Alibaba.com</div>
+        <div class="seller-line"><b>Sản phẩm:</b> ghế mây hình con vật cho bé, nội thất mây cho phòng trẻ em</div>
+        <div class="seller-line"><b>Mức giá ghi trên listing:</b> 10,15 – 18,89 USD</div>
+        <div class="seller-line"><b>Điểm đáng học:</b> sản phẩm dạng "đồ chơi kết hợp nội thất" — cùng lúc chạm được cả nhóm người mua đồ chơi và nhóm mua nội thất.</div>
+        <div style="margin-top:.6rem"><a class="btn-link gold" href="https://artexthienthanh.trustpass.alibaba.com/productgrouplist-903039246/Kid_furniture.html" target="_blank" rel="noopener">Xem danh mục Kid furniture</a></div>
+      </div>
+    </div>
+    <div class="note">Gian hàng và khoảng giá trên là dữ liệu công khai ghi nhận từ trang gian hàng/trang danh mục của doanh nghiệp trên Alibaba.com tại thời điểm lập báo cáo. Giá và MOQ có thể đã thay đổi — nên kiểm tra lại trước khi dùng làm căn cứ báo giá.</div>
+
+    <div class="sub-title"><i class="fa-solid fa-thumbs-up" style="color:var(--g)"></i> 4.1. Một gian hàng gây ấn tượng thường có gì</div>
+    <div class="grid-2">
+      <ul class="clean">
+        <li><strong>Ảnh đầu tiên rõ ràng, nền sạch</strong> — sản phẩm chiếm phần lớn khung hình, không ghép quá nhiều chữ.</li>
+        <li><strong>Bộ ảnh có ngữ cảnh</strong> — sản phẩm đặt trong phòng thật, có vật so sánh kích thước, có ảnh cận cảnh mối nối và bề mặt.</li>
+        <li><strong>Thông số đầy đủ</strong> — kích thước, vật liệu, tải trọng, màu, quy cách đóng gói, hướng dẫn lắp ráp.</li>
+      </ul>
+      <ul class="clean">
+        <li><strong>Thông tin tuỳ chỉnh rõ ràng</strong> — mức nào làm được ở số lượng bao nhiêu, thời gian làm mẫu là bao lâu.</li>
+        <li><strong>Thời gian phản hồi nhanh</strong> — trả lời trong vài giờ luôn tạo lợi thế lớn so với phản hồi sau nhiều ngày.</li>
+        <li><strong>Chính sách mẫu minh bạch</strong> — giá mẫu, thời gian giao mẫu và điều kiện đổi trả nêu ngay trong mô tả.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ================= SEC 5 ================= -->
+  <div id="sec5" class="section-card">
+    <h2 class="section-title"><i class="fa-solid fa-award"></i> 5. Sản phẩm bán chạy — hình ảnh &amp; link kiểm chứng</h2>
+    <div class="section-sub">Best-Selling Products — Bấm vào từng sản phẩm để mở trên Alibaba.com</div>
+
+    <div class="highlight">
+      <strong>Cách xem phần này:</strong> đây là các sản phẩm đang được hiển thị tốt trong kết quả tìm kiếm của người mua trên Alibaba.com cho hai từ khoá <em>pet furniture</em> và <em>kids furniture</em> (ghi nhận tháng 09/2026). Mỗi thẻ gồm ảnh sản phẩm thật, khoảng giá và MOQ niêm yết, nhà sản xuất và nút mở thẳng trang sản phẩm. Dùng làm thư viện tham chiếu: sản phẩm của bạn nên có ảnh, thông số và cách trình bày tương đương hoặc tốt hơn.
+    </div>
+
+    <div class="sub-title"><i class="fa-solid fa-paw" style="color:var(--g)"></i> 5.1. Nội thất thú cưng — 12 sản phẩm nổi bật</div>
+    <div class="prod-grid">
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 1</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/Hef06bc06e61745f187837d157acedeaf0.png_640x640.png" alt="Luxury Pet Sofa Bed Metal Luxury Felt Board"></div>
+        <div class="prod-body">
+          <div class="prod-name">Sofa cho thú cưng khung kim loại, bọc nỉ cao cấp cho mèo và chó</div>
+          <div class="prod-price">15 – 17 USD</div>
+          <div class="prod-moq">MOQ 50 chiếc</div>
+          <div class="prod-sup">Zhejiang Liantong Home Furnishing Products Co., Ltd.<br>Nhà sản xuất · 6 năm</div>
+          <div class="prod-tags"><span class="tag gold">Verified</span><span class="tag">Sofa</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Luxury-Pet-Sofa-Bed-Metal-Luxury_1601407752537.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 2</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/H7c644d7c5f974da4b9eeae08638f8018n.jpg_640x640.jpg" alt="Luxury Pet Furniture Large Dog Cat Wooden Frame Bed"></div>
+        <div class="prod-body">
+          <div class="prod-name">Giường gỗ khung lớn cho chó và mèo, lắp ráp dễ</div>
+          <div class="prod-price">147,35 – 169,99 USD</div>
+          <div class="prod-moq">MOQ 30 chiếc</div>
+          <div class="prod-sup">Ronsun Home And Garden Products Limited<br>Nhà sản xuất · 10 năm · đánh giá 5.0/5</div>
+          <div class="prod-tags"><span class="tag">Giường gỗ</span><span class="tag green">5.0★</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Easy-to-Assemble-Luxury-Pet-Furniture_10000006674251.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 3</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/H60cf4e44ac27450fa53c29b95d4b3fe0Z.jpg_640x640.jpg" alt="Dog Crate Furniture End Table Wooden Pet Cages"></div>
+        <div class="prod-body">
+          <div class="prod-name">Bàn cạnh giường kiêm chuồng chó bằng gỗ cho trong nhà</div>
+          <div class="prod-price">6 – 25 USD</div>
+          <div class="prod-moq">MOQ 100 chiếc</div>
+          <div class="prod-sup">Fujian Pet Home Co., Ltd.<br>Nhà cung cấp · 17 năm</div>
+          <div class="prod-tags"><span class="tag gold">Verified</span><span class="tag">2 trong 1</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Dog-Crate-Furniture-End-Table-Wooden_1601817635658.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 4</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/H55f33ab68ab94077942cd1f27e2c547bz.png_640x640.png" alt="Custom Wooden Pet Kennel End Table Dog Crate Furniture"></div>
+        <div class="prod-body">
+          <div class="prod-name">Chuồng chó gỗ kiêm bàn cạnh giường, nhận làm theo yêu cầu</div>
+          <div class="prod-price">36,80 – 71,55 USD</div>
+          <div class="prod-moq">MOQ 10 chiếc</div>
+          <div class="prod-sup">Dalian Usmile Pet Technology Co., Ltd.<br>Nhà cung cấp · 5 năm</div>
+          <div class="prod-tags"><span class="tag gold">Verified</span><span class="tag">Tuỳ chỉnh</span><span class="tag green">4.7★</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Wholesale-Custom-Luxury-Wooden-Pet-Kennel_1600491313079.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 5</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/H8d5b9ea8fc6243fcb46e37537ff2530cf.png_640x640.png" alt="Wooden Dogs Bed Cat Wooden Bed with Cushion Plywood Raised"></div>
+        <div class="prod-body">
+          <div class="prod-name">Giường gỗ nâng nền cho chó mèo, kèm đệm và bệ đỡ</div>
+          <div class="prod-price">25,65 – 32,99 USD</div>
+          <div class="prod-moq">MOQ 300 chiếc</div>
+          <div class="prod-sup">Qingdao Enjoy Global Industry Co., Ltd.<br>Nhà sản xuất · 6 năm</div>
+          <div class="prod-tags"><span class="tag gold">Verified</span><span class="tag green">4.8★</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Wholesale-Wooden-Dogs-Bed-Cat-Wooden_1601401052424.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 6</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/H6f3c9aef5a8240c8bb56bc4bfdf02e50h.png_640x640.png" alt="Four Seasons Universal Pet House Luxury Indoor Removable"></div>
+        <div class="prod-body">
+          <div class="prod-name">Nhà thú cưng dùng bốn mùa, vỏ tháo rời, dùng trong nhà</div>
+          <div class="prod-price">74,50 – 76 USD</div>
+          <div class="prod-moq">MOQ 500 chiếc</div>
+          <div class="prod-sup">Caoxian Zhizhenmei Wood Products Co., Ltd.<br>Nhà sản xuất · 9 năm</div>
+          <div class="prod-tags"><span class="tag gold">Verified</span><span class="tag">Tháo rời</span><span class="tag green">4.5★</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Four-Seasons-Universal-Pet-House-Factory_1601460795826.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 7</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/He399367c7ede4281be890454f47ab18bt.jpg_640x640.jpg" alt="OEM Pet Furniture PU Leather Waterproof Cat Couch"></div>
+        <div class="prod-body">
+          <div class="prod-name">Sofa mèo bọc da PU chống nước, nhận làm thương hiệu riêng</div>
+          <div class="prod-price">55 – 65 USD</div>
+          <div class="prod-moq">MOQ 100 chiếc</div>
+          <div class="prod-sup">Hangzhou Tianyuan Pet Products Co., Ltd.<br>Nhà sản xuất · 9 năm</div>
+          <div class="prod-tags"><span class="tag gold">Verified</span><span class="tag">OEM</span><span class="tag green">5.0★</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/2023-Factory-Custom-OEM-Pet-Furniture_1600676641667.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 8</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/Hd36c88c80ab34e96a5d46956483fbd31s.png_640x640.png" alt="Luxury Pet Sofa Solid Wood Dog Couch French Style Hand Carved"></div>
+        <div class="prod-body">
+          <div class="prod-name">Sofa thú cưng gỗ đặc, chạm khắc thủ công — phân khúc cao cấp</div>
+          <div class="prod-price">680 USD</div>
+          <div class="prod-moq">MOQ 50 chiếc</div>
+          <div class="prod-sup">Foshan Oe-Fashion Furniture Co., Ltd.<br>Nhà sản xuất · 9 năm</div>
+          <div class="prod-tags"><span class="tag">Chạm khắc tay</span><span class="tag">Gỗ đặc</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Luxury-Pet-Sofa-Solid-Wood-Dog_1601768876020.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 9</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/Sdb10d83c874640928d5799ceee403b15S.jpg_640x640.jpg" alt="Modern HDPE Acrylic Dog Crate Furniture Movable Clear Pet House"></div>
+        <div class="prod-body">
+          <div class="prod-name">Chuồng chó HDPE kết hợp mica trong suốt, di chuyển được</div>
+          <div class="prod-price">60,90 – 65 USD</div>
+          <div class="prod-moq">MOQ 5 chiếc</div>
+          <div class="prod-sup">Hangzhou Gougelila Technology Co., Ltd.<br>Nhà cung cấp · 2 năm</div>
+          <div class="prod-tags"><span class="tag">Thiết kế</span><span class="tag green">5.0★</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Modern-HDPE-Acrylic-Dog-Crate-Furniture_1601760644188.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 10</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/H0c87b1e3fbc4495294dbd1130f3bb2d7M.jpg_640x640.jpg" alt="Solid Wood Teak Pet Furniture Waterproof Mildew Proof"></div>
+        <div class="prod-body">
+          <div class="prod-name">Nội thất thú cưng gỗ teak đặc — chống nước, chống mốc</div>
+          <div class="prod-price">500 USD</div>
+          <div class="prod-moq">MOQ 1 chiếc</div>
+          <div class="prod-sup">Zhaoqing Bisini Furniture And Decoration Co., Ltd.<br>Nhà cung cấp · 17 năm</div>
+          <div class="prod-tags"><span class="tag gold">Verified</span><span class="tag green">5.0★</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Solid-Wood-Teak-Pet-Furniture-Waterproof_1601703624320.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 11</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/H42595b65a19f4788925365bdad48ad7bQ.jpg_640x640.jpg" alt="New Design Pet Sofa Cat Couch with Movable Cushion Wood Style"></div>
+        <div class="prod-body">
+          <div class="prod-name">Sofa mèo phong cách gỗ, đệm rời có thể tháo</div>
+          <div class="prod-price">36,99 – 40,99 USD</div>
+          <div class="prod-moq">MOQ 10 chiếc</div>
+          <div class="prod-sup">Taizhou Flourish Leisure Co., Ltd.<br>Nhà cung cấp · 13 năm</div>
+          <div class="prod-tags"><span class="tag">Đệm rời</span><span class="tag green">4.7★</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/New-Design-Pet-Sofa-Cat-Couch_1601048386787.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 12</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/Head7876d9ea14a9aadfd7985c1ca51ffI.jpg_640x640.jpg" alt="Modern Pet Furniture 2-in-1 Foldable Wooden Gate and Dog Crate"></div>
+        <div class="prod-body">
+          <div class="prod-name">Nội thất thú cưng 2 trong 1: cổng gỗ gấp gọn kiêm chuồng chó</div>
+          <div class="prod-price">19 USD</div>
+          <div class="prod-moq">MOQ 300 chiếc</div>
+          <div class="prod-sup">Shuyang Vidoo Crafts Co., Ltd.<br>Nhà sản xuất · 8 năm</div>
+          <div class="prod-tags"><span class="tag">Gấp gọn</span><span class="tag green">5.0★</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Factory-Modern-Pet-Furniture-2-in_1600223655933.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="sub-title"><i class="fa-solid fa-child-reaching" style="color:var(--g)"></i> 5.2. Nội thất trẻ em — 12 sản phẩm nổi bật</div>
+    <div class="prod-grid">
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 1</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/H245e991ccba94922aafa0673ac3c536cY.jpg_640x640.jpg" alt="Cute Bear Shape Solid Wood Kids Furniture"></div>
+        <div class="prod-body">
+          <div class="prod-name">Nội thất trẻ em gỗ đặc tạo hình chú gấu — dùng phòng khách hoặc phòng bé</div>
+          <div class="prod-price">24 USD</div>
+          <div class="prod-moq">MOQ 2 chiếc</div>
+          <div class="prod-sup">Yiwu Beipin Furniture Co., Ltd.<br>Nhà sản xuất · 5 năm</div>
+          <div class="prod-tags"><span class="tag green">5.0★</span><span class="tag">Thiết kế</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/New-Design-Living-Room-Kids-Furniture_1601081138382.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 2</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/He294449549834dd8aadda1b601bbce63P.jpg_640x640.jpg" alt="Kindergarten Furniture Custom Design Kids Desk and Chair"></div>
+        <div class="prod-body">
+          <div class="prod-name">Bàn và ghế mẫu giáo thiết kế theo yêu cầu, bán theo bộ</div>
+          <div class="prod-price">30 USD</div>
+          <div class="prod-moq">MOQ 30 bộ</div>
+          <div class="prod-sup">Guangzhou Flyfashion Furniture Co., Ltd.<br>Nhà sản xuất · 17 năm</div>
+          <div class="prod-tags"><span class="tag gold">Verified</span><span class="tag">Tuỳ chỉnh</span><span class="tag green">5.0★</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Hot-Sale-Kindergarten-Furniture-Custom-Design_1601685785500.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 3</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/Hfef8e19f719e40e386b52fb57f4d77c9z.jpg_640x640.jpg" alt="Wooden Kids Table and Chair Set Preschool Playroom"></div>
+        <div class="prod-body">
+          <div class="prod-name">Bộ bàn ghế gỗ cho trẻ mầm non — dùng phòng chơi hoặc lớp học</div>
+          <div class="prod-price">28 – 36 USD</div>
+          <div class="prod-moq">MOQ 100 chiếc</div>
+          <div class="prod-sup">Cao County Huateng Crafts Co., Ltd.<br>Nhà sản xuất · 5 năm</div>
+          <div class="prod-tags"><span class="tag green">5.0★</span><span class="tag">Bộ gỗ</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Wooden-Kids-Table-and-Chair-Set_1601027552726.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 4</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/H525c3b8f9e2b4e6ebfa8bee4ea34ce37f.png_640x640.png" alt="Wooden Toddler Chair Kids Chair Set Stackable"></div>
+        <div class="prod-body">
+          <div class="prod-name">Ghế gỗ cho bé mới biết đi, xếp chồng được, bán theo bộ</div>
+          <div class="prod-price">9 – 10 USD</div>
+          <div class="prod-moq">MOQ 200 bộ</div>
+          <div class="prod-sup">Shandong Cao County Linhao Woods Co., Ltd.<br>Nhà sản xuất · 19 năm</div>
+          <div class="prod-tags"><span class="tag gold">Verified</span><span class="tag green">5.0★</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Kids-Furniture-Wooden-Toddler-Chair-Wood_1601417212699.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 5</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/H35e4ca391b51467e94d9234b333eb2baJ.jpg_640x640.jpg" alt="Little Learner Natural Kids Furniture Table and Chair Set"></div>
+        <div class="prod-body">
+          <div class="prod-name">Bộ bàn ghế trẻ em gỗ tự nhiên, màu mộc</div>
+          <div class="prod-price">38,60 – 40,80 USD</div>
+          <div class="prod-moq">MOQ 100 chiếc</div>
+          <div class="prod-sup">Caoxian Zhizhenmei Wood Products Co., Ltd.<br>Nhà sản xuất · 9 năm</div>
+          <div class="prod-tags"><span class="tag gold">Verified</span><span class="tag green">4.6★</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Little-Learner-Natural-Kids-Furniture-Table_1601407823462.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 6</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/Hc6cb937fd33147e4be9e850a7b3b6d74G.jpg_640x640.jpg" alt="Children Desks and Chair Set Wooden Kids Study Table"></div>
+        <div class="prod-body">
+          <div class="prod-name">Bàn học và ghế gỗ cho trẻ — dùng tại nhà</div>
+          <div class="prod-price">14,80 – 15,60 USD</div>
+          <div class="prod-moq">MOQ 500 chiếc</div>
+          <div class="prod-sup">Qingdao Enjoy Global Industry Co., Ltd.<br>Nhà sản xuất · 6 năm</div>
+          <div class="prod-tags"><span class="tag gold">Verified</span><span class="tag green">4.8★</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Children-Desks-and-Chair-Set-Furniture_1600899830720.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 7</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/H720c2deda1934113af0cb65b34d97c1cr.jpg_640x640.jpg" alt="Kids Table Furniture Montessori Kindergarten"></div>
+        <div class="prod-body">
+          <div class="prod-name">Bàn Montessori cho bé mẫu giáo — bán theo bộ</div>
+          <div class="prod-price">94,92 USD</div>
+          <div class="prod-moq">MOQ 1 bộ</div>
+          <div class="prod-sup">Leader Joy Imp. &amp; Exp. Co., Ltd.<br>Nhà sản xuất · 15 năm</div>
+          <div class="prod-tags"><span class="tag">Montessori</span><span class="tag green">5.0★</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Wholesale-High-Quality-Kids-Table-Furniture_60805043586.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 8</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/HTB1Uy9wfNTI8KJjSspiq6zM4FXaa.jpg_640x640.jpg" alt="Colorful Lovely Kids Play School Furniture"></div>
+        <div class="prod-body">
+          <div class="prod-name">Nội thất trường mẫu giáo nhiều màu — bán theo bộ lớp học</div>
+          <div class="prod-price">50 – 66 USD</div>
+          <div class="prod-moq">MOQ 50 bộ</div>
+          <div class="prod-sup">FUJIAN JIANSHENG FURNITURE GROUP CO., LTD.<br>Nhà sản xuất · 20 năm</div>
+          <div class="prod-tags"><span class="tag gold">Verified</span><span class="tag green">5.0★</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Colorful-Lovely-Kids-Play-School-Furniture_60677814110.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 9</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/Aa69cf8c3d7704eba80cf40d9bd958ad4n.jpg_640x640.jpg" alt="Kids Furniture Table and 2 Chair Set with Storage"></div>
+        <div class="prod-body">
+          <div class="prod-name">Bộ bàn và hai ghế cho bé, có ngăn lưu trữ</div>
+          <div class="prod-price">40 – 45 USD</div>
+          <div class="prod-moq">MOQ 300 chiếc</div>
+          <div class="prod-sup">BILLION ARTS (HUIZHOU) CO., LTD.<br>Nhà sản xuất · 17 năm</div>
+          <div class="prod-tags"><span class="tag gold">Verified</span><span class="tag green">5.0★</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Kids-Furniture-Table-and-2-Chair_10000012980373.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 10</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/H7860a8b575a941d298448eb69b8d156cH.png_640x640.png" alt="Customized Modern Kids Furniture Set Wooden Kindergarten Table"></div>
+        <div class="prod-body">
+          <div class="prod-name">Bộ nội thất trẻ em mẫu giáo bằng gỗ, nhận tuỳ chỉnh</div>
+          <div class="prod-price">30,60 – 34,90 USD</div>
+          <div class="prod-moq">MOQ 50 bộ</div>
+          <div class="prod-sup">Ningbo Tonglu Children Products Co., Ltd.<br>Nhà sản xuất · 8 năm</div>
+          <div class="prod-tags"><span class="tag gold">Verified</span><span class="tag green">4.8★</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Customized-Modern-Kids-Furniture-Set-Wooden_1601524677897.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 11</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/Hd0c0faf70999410fab97f6d4f05ef1fdr.jpg_640x640.jpg" alt="Toddlers Modern Design Real Hardwood Kids Furniture for Bedroom"></div>
+        <div class="prod-body">
+          <div class="prod-name">Nội thất phòng ngủ trẻ em bằng gỗ cứng tự nhiên</div>
+          <div class="prod-price">24 – 26 USD</div>
+          <div class="prod-moq">MOQ 200 chiếc</div>
+          <div class="prod-sup">Shandong Ruijie Crafts Co., Ltd.<br>Nhà sản xuất · 3 năm</div>
+          <div class="prod-tags"><span class="tag gold">Verified</span><span class="tag">Gỗ cứng</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Toddlers-Modern-Design-Real-Hardwood-Kids_1601486650376.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-imgbox"><span class="prod-rank">TOP 12</span><img class="prod-img" loading="lazy" src="https://s.alicdn.com/@sc04/kf/H94779b0724e24b2c9c0913cbc70aaedcZ.png_640x640.png" alt="Modern Children Furniture Kindergarten Kids Table and Chairs Set"></div>
+        <div class="prod-body">
+          <div class="prod-name">Bộ bàn ghế trẻ em mẫu giáo, số lượng đặt linh hoạt</div>
+          <div class="prod-price">19 – 40 USD</div>
+          <div class="prod-moq">MOQ 1 chiếc</div>
+          <div class="prod-sup">Shenzhen Lonkin Furniture Co., Ltd.<br>Nhà sản xuất · 9 năm</div>
+          <div class="prod-tags"><span class="tag green">5.0★</span><span class="tag">Linh hoạt</span></div>
+          <a class="btn-link" href="https://www.alibaba.com/product-detail/Modern-Children-Furniture-Kindergarten-Kids-Table_1600605062893.html" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Xem trên Alibaba</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="note">Ảnh và đường dẫn là ảnh/đường dẫn thật từ listing trên Alibaba.com tại thời điểm ghi nhận. Giá là giá niêm yết theo bậc số lượng, chưa gồm vận chuyển, thuế và phí kiểm định.</div>
+  </div>
+
+  <!-- ================= SEC 6 ================= -->
+  <div id="sec6" class="section-card">
+    <h2 class="section-title"><i class="fa-solid fa-headset"></i> 6. Đồng hành cùng bạn trên Alibaba.com</h2>
+    <div class="section-sub">Gói thành viên, bộ công cụ, chương trình hỗ trợ và đội ngũ chuyên môn</div>
+
+    <p>Điểm khác biệt lớn nhất khi lên Alibaba.com là bạn <strong>không làm một mình</strong>. Bạn có bộ công cụ vận hành đã chuẩn hoá, các chương trình hỗ trợ dành cho doanh nghiệp Việt Nam và một đội ngũ chuyên môn đồng hành xuyên suốt.</p>
+
+    <div class="sub-title"><i class="fa-solid fa-box-open" style="color:var(--g)"></i> 6.1. Các gói thành viên và quyền lợi chính</div>
+    <div class="highlight">
+      Gói thành viên được thiết kế theo mức độ đồng hành: từ mức cơ bản để thử sức với thị trường quốc tế, đến mức đầy đủ dành cho doanh nghiệp muốn xây dựng hình ảnh nhà sản xuất uy tín. <strong>Quyền lợi cụ thể và điều kiện từng gói sẽ được Account Manager tư vấn trực tiếp theo ngành hàng và mục tiêu của doanh nghiệp bạn.</strong>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:34%">Quyền lợi</th>
+            <th style="width:22%">Mức cơ bản</th>
+            <th style="width:22%">Mức tăng trưởng</th>
+            <th style="width:22%">Mức Verified Supplier</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Hỗ trợ hiển thị ban đầu</strong></td><td>3 sao (6 tháng)</td><td>4 sao (6 tháng)</td><td>4 sao (6 tháng)</td></tr>
+          <tr><td><strong>Danh mục và số lượng sản phẩm đăng</strong></td><td>Không hạn chế</td><td>Không hạn chế</td><td>Không hạn chế</td></tr>
+          <tr><td><strong>Phản hồi yêu cầu báo giá (RFQ)</strong></td><td>40 / tháng</td><td>40 / tháng</td><td>60 / tháng</td></tr>
+          <tr><td><strong>Thẻ ưu tiên báo giá và thẻ xanh RFQ</strong></td><td>5 mỗi tháng</td><td>5 mỗi tháng</td><td>10 mỗi tháng</td></tr>
+          <tr><td><strong>Sản phẩm trưng bày nổi bật</strong></td><td>20</td><td>20</td><td>60</td></tr>
+          <tr><td><strong>Cam kết cơ hội kinh doanh</strong></td><td>Đảm bảo tối thiểu 35 cơ hội trong 90 ngày</td><td>—</td><td>—</td></tr>
+          <tr><td><strong>Quảng cáo từ khoá (KWA)</strong></td><td>Có</td><td colspan="2">Có, kèm hạn mức cao hơn</td></tr>
+          <tr><td><strong>Cố vấn sản phẩm (Product Advisor)</strong></td><td>3 tháng</td><td>6 tháng</td><td>12 tháng</td></tr>
+          <tr><td><strong>Trợ lý AI hỗ trợ vận hành</strong></td><td>330 credit / tháng</td><td>330 credit / tháng</td><td>Không hạn chế</td></tr>
+          <tr><td><strong>Công cụ phân tích gian hàng</strong></td><td>Có</td><td>Có</td><td>Bản nâng cao</td></tr>
+          <tr><td><strong>Tài khoản phụ cho nhân viên</strong></td><td>5</td><td>5</td><td>10</td></tr>
+          <tr><td><strong>Hiển thị trên tab "Nhà sản xuất"</strong></td><td>—</td><td>—</td><td><span class="tag green">Có</span></td></tr>
+          <tr><td><strong>Xác minh doanh nghiệp</strong></td><td>Có</td><td>Có</td><td>Có</td></tr>
+          <tr><td><strong>Xác minh tại nhà máy bởi đơn vị độc lập</strong></td><td>—</td><td>—</td><td><span class="tag green">Có</span></td></tr>
+          <tr><td><strong>Thiết kế gian hàng Verified, video và ảnh toàn cảnh nhà máy</strong></td><td>—</td><td>—</td><td><span class="tag green">Có</span></td></tr>
+          <tr><td><strong>Dịch vụ lên sàn cùng đội ngũ chuyên trách</strong></td><td colspan="3">Đội ngũ hỗ trợ thiết lập gian hàng và đưa sản phẩm lên sàn theo hình thức vận hành chuyên nghiệp</td></tr>
+          <tr><td><strong>Tư vấn tài khoản định kỳ</strong></td><td>Hàng quý</td><td>Hàng quý</td><td>Hàng tháng theo yêu cầu</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tbl-cap">Cấu trúc quyền lợi theo gói thành viên Alibaba.com dành cho nhà bán Việt Nam. Chi tiết áp dụng và ưu đãi theo từng thời điểm sẽ do Account Manager cập nhật trực tiếp.</div>
+
+    <div class="highlight good">
+      <strong>Ba điểm đáng chú ý nhất về quyền lợi:</strong>
+      <ul class="clean" style="margin-top:.5rem">
+        <li><strong>Không mất hoa hồng trên đơn hàng thực hiện ngoài sàn</strong> — doanh nghiệp giữ được biên lợi nhuận tốt hơn so với các kênh thương mại điện tử khác.</li>
+        <li><strong>Cam kết tối thiểu 35 cơ hội kinh doanh trong 90 ngày</strong> ở mức cơ bản, giúp doanh nghiệp yên tâm hơn khi bắt đầu.</li>
+        <li><strong>Đội ngũ chuyên trách hỗ trợ lên sàn</strong> — doanh nghiệp chưa có nhân sự thương mại điện tử vẫn có thể đưa gian hàng vào hoạt động.</li>
+      </ul>
+    </div>
+
+    <div class="sub-title"><i class="fa-solid fa-wand-magic-sparkles" style="color:var(--g)"></i> 6.2. Bộ công cụ đi kèm — dùng được ngay cho hai ngách này</div>
+    <div class="grid-3">
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-file-signature"></i></div>
+        <div class="info-val" style="font-size:1rem">Chợ yêu cầu báo giá (RFQ)</div>
+        <div class="info-lbl">Đón người mua đang chủ động tìm nguồn</div>
+        <p style="margin-top:.5rem;font-size:.8rem">Hơn 500.000 yêu cầu báo giá được đăng mỗi ngày. Đây là cách tiếp cận người mua đã có nhu cầu rõ ràng, thay vì chờ họ tìm đến mình.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-bullhorn"></i></div>
+        <div class="info-val" style="font-size:1rem">Quảng cáo từ khoá &amp; hiển thị</div>
+        <div class="info-lbl">Đưa sản phẩm chủ lực ra trước người mua</div>
+        <p style="margin-top:.5rem;font-size:.8rem">Chạy quảng cáo theo đúng từ khoá người mua gõ như <em>dog bed</em>, <em>cat tree</em>, <em>kids furniture</em>, <em>kindergarten furniture</em>.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="info-val" style="font-size:1rem">Bảo vệ giao dịch</div>
+        <div class="info-lbl">Tạo niềm tin cho cả hai phía</div>
+        <p style="margin-top:.5rem;font-size:.8rem">Cơ chế bảo vệ từ thanh toán đến giao hàng giúp người mua yên tâm hơn khi đặt đơn thử — yếu tố then chốt trong những đơn hàng đầu tiên.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-robot"></i></div>
+        <div class="info-val" style="font-size:1rem">Trợ lý AI</div>
+        <div class="info-lbl">Giảm khối lượng công việc vận hành</div>
+        <p style="margin-top:.5rem;font-size:.8rem">Hỗ trợ tối ưu tên và mô tả sản phẩm, dựng gian hàng, dịch tin nhắn tức thời và phân loại hỏi hàng từ người mua.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-chart-pie"></i></div>
+        <div class="info-val" style="font-size:1rem">Công cụ từ khoá &amp; phân tích gian hàng</div>
+        <div class="info-lbl">Biết người mua đang tìm gì</div>
+        <p style="margin-top:.5rem;font-size:.8rem">Đọc chỉ số tìm kiếm theo từ khoá, quốc gia người mua và hiệu suất từng sản phẩm — dữ liệu để quyết định nên đẩy dòng nào.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="info-val" style="font-size:1rem">Học viện nhà bán &amp; báo cáo ngành</div>
+        <div class="info-lbl">Kiến thức chính thống thay vì tự mò</div>
+        <p style="margin-top:.5rem;font-size:.8rem">Đào tạo theo yêu cầu, bài viết ngành hàng, báo cáo xu hướng và hội thảo trực tuyến dành riêng cho nhà bán.</p>
+      </div>
+    </div>
+
+    <div class="sub-title"><i class="fa-solid fa-calendar-check" style="color:var(--g)"></i> 6.3. Các chương trình và sự kiện của Alibaba.com</div>
+    <p>Dưới đây là những chương trình, sự kiện Alibaba.com đang triển khai — bao gồm cả chương trình dành riêng cho doanh nghiệp Việt Nam và sự kiện tìm nguồn hàng tầm cỡ toàn cầu của nền tảng. Mỗi thẻ đều có hình ảnh thực tế và đường dẫn tới bài viết đưa tin để bạn kiểm chứng.</p>
+
+    <div class="event-grid">
+      <div class="event-card">
+        <div class="event-imgbox"><img class="event-img" loading="lazy" src="https://dientuungdung.vn/stores/news_dataimages/2026/082026/06/23/dsc0372320260806231336.jpg" alt="Toàn cảnh Hội nghị kết nối giao thương Làm chủ AI Agent cùng Alibaba.com"></div>
+        <div class="event-body">
+          <div class="event-date">Việt Nam · 06 / 08 / 2026 · TP. Hồ Chí Minh</div>
+          <div class="event-name">Hội nghị kết nối giao thương "Làm chủ AI Agent, dẫn đầu tương lai xuất khẩu"</div>
+          <div class="event-desc">Alibaba.com phối hợp cùng Trung tâm Xúc tiến Thương mại và Đầu tư TP.HCM (ITPC) tổ chức, quy tụ hàng trăm doanh nghiệp. Tại sự kiện, Alibaba.com công bố: doanh nghiệp Việt Nam hiện có hơn <strong>2,7 triệu sản phẩm</strong> trên nền tảng; nhóm hàng nội thất ghi nhận lượng yêu cầu hỏi hàng <strong>tăng 38%</strong>; số nhà xuất khẩu Việt Nam mới tham gia tăng khoảng <strong>10%</strong> so với cùng kỳ. Cũng trong khuôn khổ hội nghị, giải pháp AI Agent <strong>Accio Work</strong> được giới thiệu tại thị trường Việt Nam.</div>
+          <div class="event-links">
+            <a href="https://baotintuc.vn/doanh-nghiep-doanh-nhan/ai-tiep-suc-doanh-nghiep-viet-vuon-ra-thi-truong-toan-cau-20260806184734186.htm" target="_blank" rel="noopener">Báo Tin tức</a>
+            <a href="https://dientuungdung.vn/lam-chu-ai-agent-dan-dau-tuong-lai-xuat-khau-cung-alibabacom-17244.html" target="_blank" rel="noopener">Điện tử &amp; Ứng dụng</a>
+            <a href="https://genk.vn/alibabacom-dua-accio-work-den-viet-nam-ai-gent-co-the-van-hanh-quy-trinh-xuat-khau-chi-tu-mot-cau-lenh-165260708152124658.chn" target="_blank" rel="noopener">GenK</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-imgbox"><img class="event-img" loading="lazy" src="https://images2.thanhnien.vn/zoom/1200_630/528068263637045248/2024/12/14/alibaba-1734178074287927099225-0-0-1087-2076-crop-1734178178773974366743.png" alt="Alibaba.com tuyển chọn doanh nghiệp tham gia Gian hàng Quốc gia Việt Nam"></div>
+        <div class="event-body">
+          <div class="event-date">Việt Nam · Giai đoạn 2025 – 2026</div>
+          <div class="event-name">Gian hàng Quốc gia Việt Nam (Vietnam Pavilion)</div>
+          <div class="event-desc">Chương trình phối hợp giữa Alibaba.com và Cục Xúc tiến thương mại (Bộ Công Thương), tuyển chọn <strong>200 doanh nghiệp tiêu biểu</strong> của Việt Nam để trao danh hiệu "Doanh nghiệp Tiêu biểu" và đưa lên Gian hàng Quốc gia trên Alibaba.com. Đây là kênh giúp doanh nghiệp tăng khả năng tiếp cận người mua quốc tế dưới danh nghĩa quốc gia.</div>
+          <div class="event-links">
+            <a href="https://thanhnien.vn/alibabacom-tuyen-chon-200-nha-ban-hang-tham-gia-vietnam-pavilion-185241214191046982.htm" target="_blank" rel="noopener">Thanh Niên</a>
+            <a href="https://www.vietnam.vn/alibaba-com-tuyen-chon-200-nha-ban-hang-tham-gia-vietnam-pavilion" target="_blank" rel="noopener">Vietnam.vn</a>
+            <a href="https://sggp.org.vn/alibabacom-khoi-dong-quy-trinh-tuyen-chon-200-nha-ban-hang-tham-gia-vietnam-pavilion-post773062.html" target="_blank" rel="noopener">Sài Gòn Giải Phóng</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-imgbox"><img class="event-img" loading="lazy" src="https://static.wixstatic.com/media/876ced_8387b7d489f943ddafde8e735c753b59~mv2.png/v1/fill/w_1269,h_690,al_c/Ali1.png" alt="Chương trình CoCreate của Alibaba.com dành cho doanh nghiệp SME"></div>
+        <div class="event-body">
+          <div class="event-date">Sự kiện toàn cầu · Hoa Kỳ &amp; Châu Âu</div>
+          <div class="event-name">CoCreate — sự kiện tìm nguồn hàng toàn cầu của Alibaba.com</div>
+          <div class="event-desc">Một trong những sự kiện tìm nguồn hàng lớn nhất thế giới, kết nối nhà bán, nhà bán lẻ và nhà bán buôn toàn cầu với các nhà sản xuất hàng đầu cùng chuyên gia trong ngành. Đây là <strong>sự kiện tầm cỡ quốc tế của Alibaba.com, được tổ chức tại Hoa Kỳ và châu Âu</strong> — không phải chương trình riêng của Việt Nam. Doanh nghiệp Việt Nam có thể tham gia thông qua vòng tuyển chọn <strong>CoCreate Pitch</strong> dành cho doanh nghiệp SME và nhà sáng lập.</div>
+          <div class="event-links">
+            <a href="https://www.alibabacocreate.com/" target="_blank" rel="noopener">Trang chính thức</a>
+            <a href="https://cocreate.alibaba.com/" target="_blank" rel="noopener">CoCreate Alibaba</a>
+            <a href="https://www.xhtt.vn/solutions/alibabacom-khoi-dong-cuoc-thi-toan-cau-cocreate-pitch-tao-co-hoi-cho-cac-doanh-nghiep-sme-cac-nha-sang-lap-viet-nam" target="_blank" rel="noopener">Bài viết về CoCreate Pitch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note">Hình ảnh là ảnh thật lấy từ các bài viết đưa tin về sự kiện. Lịch sự kiện và chương trình có thể thay đổi theo từng năm — bạn nên xem thông tin cập nhật tại <a href="https://seller.alibaba.com/vn" target="_blank" rel="noopener">seller.alibaba.com/vn</a> hoặc hỏi trực tiếp Account Manager.</div>
+
+    <div class="sub-title"><i class="fa-solid fa-trophy" style="color:var(--g)"></i> 6.4. Doanh nghiệp Việt Nam đã bứt phá cùng Alibaba.com</div>
+    <div class="table-container">
+      <table>
+        <thead><tr><th style="width:24%">Doanh nghiệp</th><th style="width:18%">Ngành</th><th>Kết quả công bố</th><th style="width:14%">Gian hàng</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Sukavina</strong> (Bình Dương)<br><span style="color:#93826C;font-size:.72rem">Lê Quốc Tuấn — Phó Giám đốc</span></td>
+            <td><strong>Nội thất và gia công kim loại</strong></td>
+            <td>Từ xưởng 2.000 m² lên nhà máy 8.000 m², nhân sự tăng gấp 3,75 lần và ký hợp đồng 2,5 triệu USD chỉ sau một năm tham gia Alibaba.com.</td>
+            <td><a href="https://sukavina.trustpass.alibaba.com/" target="_blank" rel="noopener">Xem gian hàng</a></td>
+          </tr>
+          <tr>
+            <td><strong>PIMA COMPANY LIMITED</strong><br><span style="color:#93826C;font-size:.72rem">Trương Anh Tuấn — Giám đốc Kinh doanh quốc tế</span></td>
+            <td>Nội thất và vật liệu hoàn thiện</td>
+            <td>Sau 8 năm, kết nối với 20 nhà máy và tăng gấp đôi doanh thu xuất khẩu.</td>
+            <td><a href="https://pima.trustpass.alibaba.com/" target="_blank" rel="noopener">Xem gian hàng</a></td>
+          </tr>
+          <tr>
+            <td><strong>Proline Việt Nam</strong><br><span style="color:#93826C;font-size:.72rem">Nguyễn Xuân Hải Yến — Đồng sáng lập</span></td>
+            <td>Bao bì công nghiệp</td>
+            <td>Doanh thu tăng gấp ba lần, lọt nhóm dẫn đầu tìm kiếm của ngành và xuất khẩu sang hơn 15 quốc gia.</td>
+            <td><a href="https://seller.alibaba.com/vn" target="_blank" rel="noopener">Câu chuyện đầy đủ</a></td>
+          </tr>
+          <tr>
+            <td><strong>VietArgo</strong><br><span style="color:#93826C;font-size:.72rem">Nhân Phan — Tổng Giám đốc</span></td>
+            <td>Nông sản và thực phẩm</td>
+            <td>Từ khởi nghiệp đến 12 triệu USD doanh thu trong năm đầu tiên; doanh thu tiếp tục tăng trưởng sau khi tham gia Alibaba.com.</td>
+            <td><a href="https://seller.alibaba.com/vn" target="_blank" rel="noopener">Câu chuyện đầy đủ</a></td>
+          </tr>
+          <tr>
+            <td><strong>Hành Sanh</strong> (thương hiệu SanKyo)<br><span style="color:#93826C;font-size:.72rem">Tô Nghiệp Siêu — Phó Giám đốc</span></td>
+            <td>Quạt điện</td>
+            <td>Mở rộng từ thị trường nội địa sang B2B quốc tế, đưa sản phẩm đến 9 quốc gia với bộ phận xuất khẩu rất gọn.</td>
+            <td><a href="https://seller.alibaba.com/vn" target="_blank" rel="noopener">Câu chuyện đầy đủ</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tbl-cap">Nguồn: các câu chuyện thành công công bố chính thức trên seller.alibaba.com/vn; gian hàng Sukavina và PIMA ghi nhận trực tiếp trên Alibaba.com.</div>
+
+    <div class="highlight">
+      <strong>Quy mô nền tảng:</strong> Alibaba.com kết nối hơn <strong>50 triệu người mua B2B đang hoạt động</strong>, hiển thị bằng 18 ngôn ngữ, người mua đến từ hơn <strong>190 quốc gia và vùng lãnh thổ</strong>. Trong năm 2024, hơn <strong>55.000 nhà bán đạt doanh số trên 1 triệu USD</strong> trên sàn.
+    </div>
+
+    <div class="sub-title"><i class="fa-solid fa-people-group" style="color:var(--g)"></i> 6.5. Đội ngũ chuyên môn đồng hành cùng bạn</div>
+    <p>Phía sau gian hàng của bạn là ba nhóm chuyên môn làm việc xuyên suốt quá trình: hướng dẫn vận hành, theo dõi hoạt động bán hàng và xử lý hình ảnh gian hàng.</p>
+
+    <div class="grid-3">
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="info-val" style="font-size:1rem">Đội ngũ Training</div>
+        <div class="info-lbl">Đào tạo và hướng dẫn vận hành gian hàng</div>
+        <p style="margin-top:.5rem;font-size:.8rem">Hướng dẫn đội ngũ của bạn cách đăng sản phẩm, viết tiêu đề, xử lý hỏi hàng và làm việc với người mua quốc tế — để doanh nghiệp dần tự chủ vận hành.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-gears"></i></div>
+        <div class="info-val" style="font-size:1rem">Đội ngũ Vận hành</div>
+        <div class="info-lbl">Hỗ trợ trong suốt quá trình bán hàng</div>
+        <p style="margin-top:.5rem;font-size:.8rem">Đồng hành ở các bước thiết lập gian hàng, tối ưu danh mục, theo dõi hiệu suất và xử lý các vấn đề phát sinh khi gian hàng đi vào hoạt động.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-palette"></i></div>
+        <div class="info-val" style="font-size:1rem">Đội ngũ Design</div>
+        <div class="info-lbl">Hình ảnh và nhận diện gian hàng</div>
+        <p style="margin-top:.5rem;font-size:.8rem">Hỗ trợ thiết kế gian hàng, bố cục hình ảnh sản phẩm và cách trình bày thông tin sao cho chuyên nghiệp và dễ tạo niềm tin với người mua.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SEC 7 ================= -->
+  <div id="sec7" class="section-card">
+    <h2 class="section-title"><i class="fa-solid fa-tags"></i> 7. Bản đồ từ khoá cho gian hàng</h2>
+    <div class="section-sub">Keyword Map — Dùng trực tiếp cho tiêu đề, mô tả và từ khoá ẩn</div>
+
+    <p>Bảng dưới đây là bộ từ khoá nên dùng khi đăng sản phẩm. Cấu trúc tiêu đề khuyến nghị trên Alibaba.com: <strong>[Từ khoá chính] + [Chất liệu] + [Đặc điểm nổi bật] + [Nhóm người mua]</strong>. Nên giữ tiêu đề trong khoảng 128 ký tự và đặt từ khoá chính trong 5 từ đầu tiên.</p>
+
+    <div class="table-container">
+      <table>
+        <thead><tr><th style="width:18%">Nhóm từ khoá</th><th style="width:41%">Ngành nội thất thú cưng</th><th style="width:41%">Ngành nội thất trẻ em</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Từ khoá chính</strong></td>
+            <td>pet furniture · dog bed · cat tree · cat tree and scratcher · pet house · dog crate furniture · cat furniture · pet sofa</td>
+            <td>kids furniture · children's table and chair set · kids chair · kindergarten furniture · toddler chair · kids study desk · children bed frame</td>
+          </tr>
+          <tr>
+            <td><strong>Xuất xứ &amp; giá trị</strong></td>
+            <td>made in Vietnam pet furniture · Vietnam pet furniture manufacturer · eco-friendly pet furniture · sustainable wooden pet bed</td>
+            <td>made in Vietnam kids furniture · Vietnam children furniture manufacturer · rattan kids furniture Vietnam · eco-friendly kids furniture</td>
+          </tr>
+          <tr>
+            <td><strong>Ý định mua hàng</strong></td>
+            <td>wholesale pet furniture · custom pet furniture · OEM pet furniture · private label dog bed · bulk cat tree supplier</td>
+            <td>wholesale kids furniture · custom kids furniture · OEM kindergarten furniture · private label children chair · daycare furniture supplier</td>
+          </tr>
+          <tr>
+            <td><strong>Chất liệu &amp; quy trình</strong></td>
+            <td>solid wood pet bed · teak pet furniture · plywood dog bed · sisal cat tree · seagrass pet bed · water hyacinth pet basket · rattan pet house · coffee wood pet furniture</td>
+            <td>solid wood kids table · Montessori wooden furniture · rattan kids chair · bamboo children furniture · hardwood toddler bed · kids furniture with storage</td>
+          </tr>
+          <tr>
+            <td><strong>Tình huống sử dụng</strong></td>
+            <td>apartment pet furniture · space saving cat tree · small dog bed indoor · elevated pet bed · pet furniture home decor · FBA pet bed</td>
+            <td>preschool furniture · daycare furniture · playroom furniture · children party chair · Montessori daycare furniture · kids bedroom furniture set</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <div class="sub-title sm">Mẫu tiêu đề — Nội thất thú cưng</div>
+        <div class="highlight" style="font-size:.82rem">
+          <em>Custom OEM Solid Wood Dog Bed Furniture, Indoor Elevated Pet Sofa with Cushion, Vietnam Manufacturer Wholesale</em>
+        </div>
+        <div class="highlight" style="font-size:.82rem">
+          <em>Space Saving Cat Tree and Scratcher, Sisal Scratching Post with Wide Platforms, Wholesale Cat Furniture from Vietnam</em>
+        </div>
+      </div>
+      <div>
+        <div class="sub-title sm">Mẫu tiêu đề — Nội thất trẻ em</div>
+        <div class="highlight" style="font-size:.82rem">
+          <em>Montessori Wooden Kids Table and Chair Set, Solid Rubberwood Children Study Desk, OEM Kindergarten Furniture Vietnam</em>
+        </div>
+        <div class="highlight" style="font-size:.82rem">
+          <em>Handmade Rattan Kids Chair, Natural Woven Children Chair for Nursery and Party, Wholesale from Vietnam Factory</em>
+        </div>
+      </div>
+    </div>
+    <div class="note">Sau khi gian hàng đi vào hoạt động, nên đối chiếu lại bộ từ khoá này với công cụ từ khoá trong Seller Center để biết từ khoá nào đang có lượng tìm kiếm tốt nhất theo từng thời điểm.</div>
+  </div>
+
+  <!-- ================= SEC 8 ================= -->
+  <div id="sec8" class="section-card">
+    <h2 class="section-title"><i class="fa-solid fa-link"></i> 8. Lưu ý &amp; Nguồn dữ liệu</h2>
+    <div class="section-sub">Notes &amp; Sources</div>
+
+    <div class="sub-title"><i class="fa-solid fa-circle-info" style="color:var(--g)"></i> 8.1. Vài điểm nên lưu ý để đi đường dài</div>
+    <div class="table-container">
+      <table>
+        <thead><tr><th style="width:26%">Điểm lưu ý</th><th>Hướng xử lý nhẹ nhàng, chủ động</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Chính sách thuế có thể thay đổi</strong></td>
+            <td>Mức thuế giữa các thị trường được điều chỉnh theo từng giai đoạn. Cách làm an toàn là xác nhận lại theo mã hàng cụ thể trước mỗi lần báo giá, đồng thời phân bổ doanh thu cho nhiều thị trường thay vì phụ thuộc vào một nơi duy nhất.</td>
+          </tr>
+          <tr>
+            <td><strong>Nên đa dạng thị trường ngay từ đầu</strong></td>
+            <td>Bên cạnh Hoa Kỳ, các thị trường châu Âu, Canada và Anh đang tăng trưởng tốt và có ưu đãi thuế theo hiệp định — phù hợp để cân bằng rủi ro và tận dụng lợi thế xuất xứ Việt Nam.</td>
+          </tr>
+          <tr>
+            <td><strong>Hồ sơ chất lượng nên bổ sung dần</strong></td>
+            <td>Không cần hoàn thiện ngay từ đầu. Hãy bắt đầu bằng bộ hồ sơ gọn nhẹ, rồi mở rộng dần theo yêu cầu cụ thể của từng nhóm khách hàng — chi phí và thời gian sẽ hợp lý hơn nhiều.</td>
+          </tr>
+          <tr>
+            <td><strong>Người mua luôn so sánh nhiều nhà cung cấp</strong></td>
+            <td>Điểm tạo khác biệt nằm ở chất lượng ảnh, độ đầy đủ của thông số, sự rõ ràng khi trao đổi và tiến độ giao hàng — những việc doanh nghiệp Việt Nam chủ động cải thiện được ngay.</td>
+          </tr>
+          <tr>
+            <td><strong>Số liệu quy mô thị trường có chênh lệch</strong></td>
+            <td>Các hãng nghiên cứu định nghĩa phạm vi khác nhau nên con số chênh nhau. Nên dùng khoảng thận trọng khi lập kế hoạch và ưu tiên dữ liệu hành vi người mua trên Alibaba.com để ra quyết định.</td>
+          </tr>
+          <tr>
+            <td><strong>Thông tin sản phẩm có thể đã thay đổi</strong></td>
+            <td>Giá và MOQ trong báo cáo được ghi nhận tại một thời điểm. Nên mở lại đường dẫn trực tiếp để kiểm tra trước khi dùng làm căn cứ so sánh hoặc báo giá.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sub-title"><i class="fa-solid fa-link" style="color:var(--g)"></i> 8.2. Danh mục nguồn dữ liệu</div>
+    <div class="grid-2">
+      <div>
+        <div class="sub-title sm">Nguồn chính thức từ Alibaba.com</div>
+        <div class="src-list">
+          <p>• <a href="https://seller.alibaba.com/blogs/2026/southeast-asia/pet-furniture/oem-customization-service-guide-alibaba-b2b" target="_blank" rel="noopener">Hướng dẫn gia công nội thất thú cưng theo yêu cầu</a> — mức tăng người mua của nhóm trụ cào móng, tỷ trọng đóng góp của Bắc Mỹ, xu hướng nhu cầu tuỳ chỉnh.</p>
+          <p>• <a href="https://seller.alibaba.com/blogs/2026/southeast-asia/kids-furniture/portable-kids-chairs-global-demand-alibaba" target="_blank" rel="noopener">Ghế trẻ em — cơ hội xuất khẩu cho nhà sản xuất Đông Nam Á</a> — mức tăng tương tác người mua +24,61%, phân bố người mua theo quốc gia tháng 02/2026.</p>
+          <p>• <a href="https://seller.alibaba.com/blogs/2026/southeast-asia/pet-supplies/beyond-the-leash-alibaba-global-trade-strategy" target="_blank" rel="noopener">Beyond the Leash — làn sóng ngành thú cưng Đông Nam Á</a> — bối cảnh tăng trưởng ngành và hành vi người mua B2B trên Alibaba.com.</p>
+          <p>• <a href="https://seller.alibaba.com/vn" target="_blank" rel="noopener">seller.alibaba.com/vn</a> — quy mô nền tảng, số lượng người mua B2B, số yêu cầu báo giá mỗi ngày, cấu trúc quyền lợi thành viên và câu chuyện thành công của doanh nghiệp Việt Nam.</p>
+          <p>• <a href="https://www.alibaba.com/" target="_blank" rel="noopener">alibaba.com</a> — dữ liệu sản phẩm, giá, MOQ và nhà sản xuất cho hai từ khoá "pet furniture" và "kids furniture" (tháng 09/2026).</p>
+        </div>
+      </div>
+      <div>
+        <div class="sub-title sm">Nguồn nghiên cứu thị trường và thương mại độc lập</div>
+        <div class="src-list">
+          <p>• <a href="https://www.grandviewresearch.com/industry-analysis/pet-furniture-market" target="_blank" rel="noopener">Grand View Research — Pet Furniture Market</a> (1,74 tỷ USD năm 2023 lên 2,44 tỷ USD năm 2030, tăng 4,9%/năm; thị phần Bắc Mỹ 40,5% năm 2023).</p>
+          <p>• <a href="https://www.coherentmarketinsights.com/industry-reports/us-pet-furniture-market" target="_blank" rel="noopener">Coherent Market Insights — U.S. Pet Furniture Market</a> (2,59 tỷ USD năm 2026 lên 3,95 tỷ USD năm 2033, tăng 6,2%/năm).</p>
+          <p>• <a href="https://www.coherentmarketinsights.com/industry-reports/global-pet-furniture-market" target="_blank" rel="noopener">Coherent Market Insights — Global Pet Furniture Market</a>.</p>
+          <p>• <a href="https://www.futuremarketinsights.com/reports/pet-furniture-market" target="_blank" rel="noopener">Future Market Insights — Pet Furniture Market</a> (2,4 tỷ USD năm 2026 lên 4,2 tỷ USD năm 2036).</p>
+          <p>• <a href="https://www.fortunebusinessinsights.com/pet-furniture-market-106261" target="_blank" rel="noopener">Fortune Business Insights — Pet Furniture Market</a>.</p>
+          <p>• <a href="https://www.intelmarketresearch.com/pet-dogcat-furniture-market-33309" target="_blank" rel="noopener">Intel Market Research — Pet Dog &amp; Cat Furniture Market Outlook</a> (thị phần nội thất thông minh Bắc Mỹ, tỷ trọng sản phẩm đa năng).</p>
+          <p>• <a href="https://www.fortunebusinessinsights.com/kids-furniture-market-114293" target="_blank" rel="noopener">Fortune Business Insights — Kids Furniture Market</a>.</p>
+          <p>• <a href="https://www.mordorintelligence.com/industry-reports/kids-and-nursery-furniture-market" target="_blank" rel="noopener">Mordor Intelligence — Kids &amp; Nursery Furniture Market</a>.</p>
+          <p>• <a href="https://www.gminsights.com/industry-analysis/kids-furniture-market" target="_blank" rel="noopener">Global Market Insights — Kids Furniture Market</a>.</p>
+          <p>• <a href="https://oec.world/en/profile/bilateral-product/other-furniture/reporter/vnm" target="_blank" rel="noopener">OEC — Vietnam "Other Furniture" exports</a> (nước xuất khẩu lớn thứ hai thế giới).</p>
+          <p>• <a href="https://www.vietnam-briefing.com/news/vietnams-wood-industry-2026-challenges-new-opportunities.html/" target="_blank" rel="noopener">Vietnam Briefing — Navigating Vietnam's Wood Industry in 2026</a>.</p>
+          <p>• <a href="https://misamex.vn/vietnam-furniture-exports-us-trade-pressures-2026/" target="_blank" rel="noopener">Misamex — Vietnam wood and furniture export data 2026</a>.</p>
+          <p>• <a href="https://sukavinafurniture.com/vietnam-furniture-export-2026/" target="_blank" rel="noopener">Sukavina — Vietnam Furniture Export 2026</a> (EVFTA, CPTPP và lợi thế tổng chi phí).</p>
+          <p>• <a href="https://thglobalvietnam.com/pet-furniture-home-decor-trend/" target="_blank" rel="noopener">TH Global Vietnam — Pet Furniture Home Decor Trends 2026</a>.</p>
+          <p>• <a href="https://www.fas.usda.gov/data/gain/2026/07/vietnam-vietnam-pet-food-market" target="_blank" rel="noopener">USDA FAS — Vietnam Pet Food Market</a> (đà tăng của thị trường thú cưng Việt Nam).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-title sm">Nguồn báo chí về các chương trình hỗ trợ và sự kiện</div>
+    <div class="src-list">
+      <p>• <a href="https://baotintuc.vn/doanh-nghiep-doanh-nhan/ai-tiep-suc-doanh-nghiep-viet-vuon-ra-thi-truong-toan-cau-20260806184734186.htm" target="_blank" rel="noopener">Báo Tin tức — AI tiếp sức doanh nghiệp Việt vươn ra thị trường toàn cầu</a> (06/08/2026): hội nghị Alibaba.com × ITPC, số liệu 2,7 triệu sản phẩm, mức tăng yêu cầu hỏi hàng nhóm nội thất 38%.</p>
+      <p>• <a href="https://dientuungdung.vn/lam-chu-ai-agent-dan-dau-tuong-lai-xuat-khau-cung-alibabacom-17244.html" target="_blank" rel="noopener">Điện tử &amp; Ứng dụng</a> · <a href="https://genk.vn/alibabacom-dua-accio-work-den-viet-nam-ai-gent-co-the-van-hanh-quy-trinh-xuat-khau-chi-tu-mot-cau-lenh-165260708152124658.chn" target="_blank" rel="noopener">GenK</a> — nội dung hội nghị và phần giới thiệu Accio Work tại Việt Nam.</p>
+      <p>• <a href="https://thanhnien.vn/alibabacom-tuyen-chon-200-nha-ban-hang-tham-gia-vietnam-pavilion-185241214191046982.htm" target="_blank" rel="noopener">Thanh Niên</a> · <a href="https://www.vietnam.vn/alibaba-com-tuyen-chon-200-nha-ban-hang-tham-gia-vietnam-pavilion" target="_blank" rel="noopener">Vietnam.vn</a> · <a href="https://sggp.org.vn/alibabacom-khoi-dong-quy-trinh-tuyen-chon-200-nha-ban-hang-tham-gia-vietnam-pavilion-post773062.html" target="_blank" rel="noopener">Sài Gòn Giải Phóng</a> — chương trình Gian hàng Quốc gia Việt Nam (Vietnam Pavilion), 200 doanh nghiệp tiêu biểu.</p>
+      <p>• <a href="https://www.alibabacocreate.com/" target="_blank" rel="noopener">Trang chính thức CoCreate</a> · <a href="https://cocreate.alibaba.com/" target="_blank" rel="noopener">cocreate.alibaba.com</a> · <a href="https://www.xhtt.vn/solutions/alibabacom-khoi-dong-cuoc-thi-toan-cau-cocreate-pitch-tao-co-hoi-cho-cac-doanh-nghiep-sme-cac-nha-sang-lap-viet-nam" target="_blank" rel="noopener">bài viết về CoCreate Pitch</a>.</p>
+    </div>
+
+    <div class="note">
+      <strong>Ghi chú về độ tin cậy:</strong> Các chỉ số tăng trưởng người mua, tỷ trọng người mua theo quốc gia, tỷ trọng đóng góp của Bắc Mỹ và mức tăng yêu cầu hỏi hàng là dữ liệu do Alibaba.com công bố chính thức — độ tin cậy cao cho việc chọn ngách, chọn thị trường và định hướng sản phẩm. Số liệu quy mô thị trường từ các hãng nghiên cứu độc lập có chênh lệch và chỉ nên dùng theo khoảng. Khoảng giá và MOQ trên sản phẩm là giá niêm yết công khai, có thể đã thay đổi. Các danh mục hồ sơ chất lượng nêu trong báo cáo là gợi ý mở rộng, không phải điều kiện bắt buộc, và không thay thế tư vấn pháp lý theo mã hàng cụ thể.
+    </div>
+  </div>
+
+  <footer>
+    <div class="foot-grid">
+      <div>
+        <div class="foot-title">Về báo cáo này</div>
+        <p>Báo cáo phân tích tiềm năng hai ngách nội thất thú cưng (pet furniture) và nội thất trẻ em (kid furniture) trên Alibaba.com, xây dựng cho doanh nghiệp sản xuất và xuất khẩu Việt Nam. Số liệu nhu cầu người mua, cấu trúc quyền lợi thành viên và chương trình hỗ trợ được trích từ nguồn công bố chính thức của Alibaba.com cùng các bài viết báo chí có ghi rõ đường dẫn; số liệu quy mô thị trường từ các nguồn nghiên cứu độc lập. Nhận định và khuyến nghị là phân tích chiến lược, không phải cam kết kết quả kinh doanh.</p>
+      </div>
+      <div>
+        <div class="foot-title">Liên hệ phụ trách</div>
+        <p><strong>Pham Nhi</strong> — Account Manager</p>
+        <p>Zalo · WhatsApp · WeChat: <strong>(+84) 974 965 909</strong></p>
+        <p>Văn phòng Bình Dương: Becamex Tower, Tầng 10, 230 Đại lộ Bình Dương, Phường Phú Hoà, Thủ Dầu Một, Bình Dương</p>
+      </div>
+      <div>
+        <div class="foot-title">Dẫn nguồn chính</div>
+        <p>• Alibaba.com Seller Blog 2026 (dữ liệu nhu cầu người mua)<br>
+        • seller.alibaba.com/vn (quyền lợi thành viên, chương trình hỗ trợ, câu chuyện thành công)<br>
+        • Alibaba.com product listings (giá, MOQ, nhà sản xuất)<br>
+        • Báo Tin tức · Thanh Niên · Vietnam.vn · Sài Gòn Giải Phóng · GenK · Điện tử &amp; Ứng dụng<br>
+        • Grand View Research · Coherent Market Insights · Future Market Insights · Fortune Business Insights · Intel Market Research · Mordor Intelligence · Global Market Insights<br>
+        • OEC · Vietnam Briefing · Misamex · USDA FAS</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 B2B Market Intelligence — Pet &amp; Kid Furniture on Alibaba.com</span>
+      <span>Cập nhật: Tháng 09/2026 · Dữ liệu có thể thay đổi theo thời điểm</span>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Scrollspy
+  (function () {
+    var sections = document.querySelectorAll('.section-card');
+    var navLinks = document.querySelectorAll('.sidebar nav ul li a');
+    function onScroll() {
+      var current = '';
+      sections.forEach(function (section) {
+        if (window.pageYOffset >= section.offsetTop - 150) { current = section.getAttribute('id'); }
+      });
+      navLinks.forEach(function (link) { link.classList.remove('active'); });
+      var active = document.querySelector('.sidebar nav ul li a[href="#' + current + '"]');
+      if (active) { active.classList.add('active'); }
+    }
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+  })();
+
+  // Smooth scroll
+  document.querySelectorAll('.sidebar nav ul li a').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) { e.preventDefault(); window.scrollTo({ top: target.offsetTop - 16, behavior: 'smooth' }); }
+    });
+  });
+
+  // Fallback ảnh sản phẩm
+  document.querySelectorAll('img.prod-img').forEach(function (img) {
+    img.addEventListener('error', function () {
+      this.style.display = 'none';
+      var box = this.parentElement;
+      if (box) {
+        var ph = document.createElement('div');
+        ph.style.cssText = 'display:flex;height:100%;align-items:center;justify-content:center;color:#c0ab92;font-size:.7rem;text-align:center;padding:1rem';
+        ph.textContent = 'Ảnh sản phẩm — xem trực tiếp trên Alibaba.com';
+        box.appendChild(ph);
+      }
+    });
+  });
+
+  // Fallback ảnh sự kiện
+  document.querySelectorAll('img.event-img').forEach(function (img) {
+    img.addEventListener('error', function () {
+      var box = this.parentElement;
+      if (box) {
+        box.style.display = 'flex';
+        box.style.alignItems = 'center';
+        box.style.justifyContent = 'center';
+        box.style.color = '#c0ab92';
+        box.style.fontSize = '.72rem';
+        box.textContent = 'Hình ảnh sự kiện — xem tại đường dẫn bài viết';
+      }
+    });
+  });
+
+  // Charts — dữ liệu quy mô thị trường từ các hãng nghiên cứu; dữ liệu người mua từ Alibaba.com
+  (function () {
+    if (typeof Chart === 'undefined') { return; }
+    Chart.defaults.font.family = 'Lexend, sans-serif';
+    Chart.defaults.font.size = 11;
+    Chart.defaults.color = '#8A7A63';
+
+    var el1 = document.getElementById('petSizeChart');
+    if (el1) {
+      new Chart(el1.getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['Grand View Research', 'Future Market Insights', 'Fortune Business Insights', 'Coherent Market Insights'],
+          datasets: [{
+            label: 'Quy mô thị trường nội thất thú cưng 2026 (tỷ USD)',
+            data: [1.8, 2.4, 4.74, 7.95],
+            backgroundColor: ['#6E4426', '#8A5A2B', '#A9743F', '#C08A2E'],
+            borderRadius: 5
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false },
+            tooltip: { callbacks: { label: function (c) { return c.parsed.y + ' tỷ USD (2026)'; } } } },
+          scales: { y: { beginAtZero: true, ticks: { callback: function (v) { return v + ' tỷ'; } }, grid: { color: 'rgba(138,90,43,.1)' } }, x: { grid: { display: false }, ticks: { maxRotation: 30, minRotation: 30, font: { size: 9.5 } } } }
+        }
+      });
+    }
+
+    var el2 = document.getElementById('marketChart');
+    if (el2) {
+      new Chart(el2.getContext('2d'), {
+        type: 'doughnut',
+        data: {
+          labels: ['Hoa Kỳ 15,8%', 'Mexico 4,0%', 'Canada 2,7%', 'Vương quốc Anh 2,6%', 'Ấn Độ 2,0%', 'Các quốc gia khác'],
+          datasets: [{
+            data: [15.8, 4.0, 2.7, 2.6, 2.0, 72.9],
+            backgroundColor: ['#4A2C17', '#8A5A2B', '#A9743F', '#C08A2E', '#BE9A6A', '#EDE2D0'],
+            borderColor: '#FFFCF6', borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false, cutout: '52%',
+          plugins: { legend: { position: 'right', labels: { boxWidth: 10, font: { size: 10 } } } }
+        }
+      });
+    }
+  })();
+</script>
+</body>
+</html>
