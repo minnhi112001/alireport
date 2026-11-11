@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo Cáo Tổng Hợp 2 Gian Hàng Alibaba.com — HỶ LONG (Tháng 10/2026)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+SC:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #ff6a00;
+  --orange-hover: #e55e00;
+  --orange-light: #fff5ee;
+  --orange-soft: rgba(255,106,0,0.08);
+  --dark: #111827;
+  --dark-card: #1f2937;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --success: #10b981;
+  --success-bg: #ecfdf5;
+  --warning: #f59e0b;
+  --warning-bg: #fffbeb;
+  --danger: #ef4444;
+  --danger-bg: #fef2f2;
+  --blue: #2563eb;
+  --blue-bg: #eff6ff;
+  --purple: #8b5cf6;
+  --purple-bg: #f5f3ff;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+  padding: 30px 20px 80px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Language Switcher Bar */
+.lang-switch-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.lang-switch-btn-group {
+  display: inline-flex;
+  background: #ffffff;
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  gap: 4px;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.lang-btn.active {
+  background: var(--orange);
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(255, 106, 0, 0.25);
+}
+
+.lang-btn:hover:not(.active) {
+  background: var(--bg-page);
+  color: var(--text-main);
+}
+
+/* Multi-language Visibility */
+body.lang-vi .zh-text { display: none !important; }
+body.lang-zh .vi-text { display: none !important; }
+
+/* Header & Hero */
+.header-card {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 60%, #374151 100%);
+  border-radius: 20px;
+  padding: 40px;
+  color: white;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.header-card::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(255,106,0,0.3) 0%, rgba(255,106,0,0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.badge-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 106, 0, 0.2);
+  border: 1px solid rgba(255, 106, 0, 0.4);
+  color: #ff9d54;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.header-title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.header-subtitle {
+  color: #9ca3af;
+  font-size: 15px;
+  margin-bottom: 24px;
+  max-width: 860px;
+}
+
+.header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13.5px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #d1d5db;
+}
+
+.meta-item b {
+  color: white;
+  font-weight: 600;
+}
+
+/* Key Summary Stat Cards */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.stat-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.stat-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+/* Section styling */
+.section {
+  background: var(--bg-card);
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  padding: 30px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sec-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sec-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--orange-soft);
+  color: var(--orange);
+  font-size: 14px;
+  font-weight: 800;
+  border-radius: 10px;
+}
+
+.sec-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.3px;
+}
+
+.sec-desc {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Tables */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  text-align: left;
+}
+
+th {
+  background: #f9fafb;
+  color: #4b5563;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  padding: 14px;
+  border-bottom: 1px solid #f3f4f6;
+  color: var(--text-main);
+  vertical-align: middle;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background-color: #fafafa;
+}
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.cat-pill {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+.cat-rubber { background: #e0f2fe; color: #0369a1; }
+.cat-plastics { background: #fef3c7; color: #92400e; }
+
+.star-rating {
+  color: #f59e0b;
+  font-weight: 800;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.tag-status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+.tag-good { background: var(--success-bg); color: #065f46; border: 1px solid #a7f3d0; }
+.tag-warn { background: var(--warning-bg); color: #92400e; border: 1px solid #fde68a; }
+.tag-danger { background: var(--danger-bg); color: #991b1b; border: 1px solid #fecaca; }
+
+/* Grid Cards for Stores Detail */
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+.store-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.store-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.store-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.store-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.store-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.m-box {
+  background: #f9fafb;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #f3f4f6;
+}
+
+.m-title {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.m-val {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-top: 2px;
+}
+
+.m-sub {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.star-bars {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid #f3f4f6;
+  font-size: 12px;
+}
+
+.star-bar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.bar-bg {
+  flex-grow: 1;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  margin: 0 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--orange);
+  border-radius: 3px;
+}
+
+/* Callout & Action Plan */
+.callout {
+  background: var(--orange-light);
+  border-left: 4px solid var(--orange);
+  padding: 18px 20px;
+  border-radius: 0 12px 12px 0;
+  margin-bottom: 24px;
+  font-size: 13.5px;
+}
+
+.callout-title {
+  font-weight: 800;
+  color: #9a3412;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.plan-card {
+  background: #f9fafb;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  border-top: 3px solid var(--orange);
+}
+
+.plan-category {
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.plan-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.plan-list {
+  padding-left: 18px;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.plan-list li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.pis-badge {
+  display: inline-block;
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .header-card { padding: 24px 20px; }
+  .header-title { font-size: 22px; }
+  .section { padding: 20px 16px; }
+  .store-grid { grid-template-columns: 1fr; }
+  .plan-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body class="lang-vi">
+
+<div class="container">
+
+  <!-- LANGUAGE SWITCHER BAR -->
+  <div class="lang-switch-wrapper">
+    <div class="lang-switch-btn-group">
+      <button class="lang-btn active" id="btn-vi" onclick="switchLang('vi')">
+        <span>🇻🇳</span> Tiếng Việt
+      </button>
+      <button class="lang-btn" id="btn-zh" onclick="switchLang('zh')">
+        <span>🇨🇳</span> 中文 (Chinese)
+      </button>
+    </div>
+  </div>
+  
+  <!-- HERO HEADER -->
+  <div class="header-card">
+    <div class="badge-top">
+      <span class="vi-text">● Báo Cáo Vận Hành & Khám Sức Khỏe Gian Hàng</span>
+      <span class="zh-text">● 店铺运营诊断与体检分析报告</span>
+    </div>
+    <h1 class="header-title">
+      <span class="vi-text">HỶ LONG GROUP (HY LONG CO., LTD)</span>
+      <span class="zh-text">喜隆集团 (HY LONG CO., LTD)</span>
+    </h1>
+    <p class="header-subtitle">
+      <span class="vi-text">Báo cáo tổng hợp số liệu vận hành và đánh giá hiệu quả 02 gian hàng trên Alibaba.com — Kỳ dữ liệu Tháng 10/2026 & Kế hoạch hành động Tháng 11/2026.</span>
+      <span class="zh-text">阿里巴巴国际站（Alibaba.com）2个核心店铺运营数据综合分析与效果诊断报告 — 2026年10月数据盘点与11月行动计划。</span>
+    </p>
+    
+    <div class="header-meta">
+      <div class="meta-item">
+        <span class="vi-text">Kỳ báo cáo: <b>Tháng 10/2026</b></span>
+        <span class="zh-text">报告周期: <b>2026年10月</b></span>
+      </div>
+      <div class="meta-item">
+        <span class="vi-text">Số lượng gian hàng: <b>02 Gian Hàng</b></span>
+        <span class="zh-text">店铺数量: <b>2 个金牌店铺</b></span>
+      </div>
+      <div class="meta-item">
+        <span class="vi-text">Ngành hàng: <b>Rubber & Plastics Products (Cao su & Nhựa)</b></span>
+        <span class="zh-text">所属行业: <b>橡胶与塑料制品 (Rubber & Plastics)</b></span>
+      </div>
+      <div class="meta-item">
+        <span class="vi-text">Sales Rep: <b>Phạm Thương</b></span>
+        <span class="zh-text">业务顾问 (Sales Rep): <b>Phạm Thương</b></span>
+      </div>
+      <div class="meta-item">
+        <span class="vi-text">Người chuẩn bị: <b>Phạm Nhi</b></span>
+        <span class="zh-text">报告制作人: <b>Phạm Nhi</b></span>
+      </div>
+      <div class="meta-item">
+        <span class="vi-text">Trade Assurance: <b style="color: #10b981;">Đang kích hoạt (100%)</b></span>
+        <span class="zh-text">信保交易 (TA): <b style="color: #10b981;">已激活开通 (100%)</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY KPIS -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-label">
+        <span class="vi-text">Tổng Lượt Xem SP (IPV 30D)</span>
+        <span class="zh-text">总产品浏览量 (IPV 30天)</span>
+      </div>
+      <div class="stat-value">2,609</div>
+      <div class="stat-sub">
+        <span class="vi-text">Gian 1: 1,489 · Gian 2: 1,120</span>
+        <span class="zh-text">店铺1: 1,489 · 店铺2: 1,120</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">
+        <span class="vi-text">Tổng Khách Truy Cập (UV 30D)</span>
+        <span class="zh-text">总访客数 (UV 30天)</span>
+      </div>
+      <div class="stat-value">350</div>
+      <div class="stat-sub">
+        <span class="vi-text">Mục tiêu 2★: 300 UV/gian (<span style="color:#ef4444; font-weight:600;">Thiếu 250 UV</span>)</span>
+        <span class="zh-text">2星门槛: 300 UV/店 (<span style="color:#ef4444; font-weight:600;">总缺口 250 UV</span>)</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">
+        <span class="vi-text">Tổng Cơ Hội Kinh Doanh (AB)</span>
+        <span class="zh-text">总商机买家数 (AB 30天)</span>
+      </div>
+      <div class="stat-value">50</div>
+      <div class="stat-sub">
+        <span class="vi-text">Inquiry: 7 · Tin nhắn TM: 43</span>
+        <span class="zh-text">询盘(Inq): 7 · 即时沟通(TM): 43</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">
+        <span class="vi-text">Tổng Sản Phẩm Hợp Lệ</span>
+        <span class="zh-text">总有效在架商品数</span>
+      </div>
+      <div class="stat-value">149</div>
+      <div class="stat-sub">
+        <span class="vi-text">Mục tiêu chuẩn hóa: <span class="pis-badge">PIS ≥ 5.5 (0 SP)</span></span>
+        <span class="zh-text">实力优品目标: <span class="pis-badge">PIS ≥ 5.5 (暂无)</span></span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">
+        <span class="vi-text">Xếp Hạng Sao Hiện Tại</span>
+        <span class="zh-text">当前星级评定</span>
+      </div>
+      <div class="stat-value" style="color: #f59e0b;">1.0★ <span style="font-size:16px; color:#6b7280; font-weight:600;">(Cả 2 gian)</span></div>
+      <div class="stat-sub">
+        <span class="vi-text">Nút thắt: Điểm Marketing (Traffic UV)</span>
+        <span class="zh-text">主要瓶颈: 营销力评分 (访客量UV)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: MA TRẬN SO SÁNH 2 GIAN HÀNG -->
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-title-wrap">
+        <span class="sec-num">01</span>
+        <div>
+          <h2 class="sec-title">
+            <span class="vi-text">Bảng Ma Trận So Sánh Tổng Quan 2 Gian Hàng</span>
+            <span class="zh-text">两家店铺核心运营数据对比矩阵</span>
+          </h2>
+          <p class="sec-desc">
+            <span class="vi-text">Đối chiếu chi tiết các chỉ số vận hành cốt lõi, mức độ khai thác công cụ và xếp hạng sao tháng 10/2026.</span>
+            <span class="zh-text">详细对比两店核心运营指标、会员权益工具利用率以及2026年10月星级评定现状。</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>
+              <span class="vi-text">Gian Hàng</span>
+              <span class="zh-text">店铺名称</span>
+            </th>
+            <th>
+              <span class="vi-text">Ngành Hàng Chi Tiết</span>
+              <span class="zh-text">主营类目</span>
+            </th>
+            <th>
+              <span class="vi-text">Mức Sao T10</span>
+              <span class="zh-text">当前星级</span>
+            </th>
+            <th>
+              <span class="vi-text">Lượt Xem SP (IPV)</span>
+              <span class="zh-text">产品浏览 (IPV)</span>
+            </th>
+            <th>
+              <span class="vi-text">Khách Truy Cập (UV)</span>
+              <span class="zh-text">访客数 (UV)</span>
+            </th>
+            <th>
+              <span class="vi-text">Cơ Hội (AB)</span>
+              <span class="zh-text">商机数 (AB)</span>
+            </th>
+            <th>
+              <span class="vi-text">Khách L2+</span>
+              <span class="zh-text">L2+ 高质买家</span>
+            </th>
+            <th>
+              <span class="vi-text">SP Hợp Lệ (PIS ≥ 4.2)</span>
+              <span class="zh-text">有效商品 (PIS≥4.2)</span>
+            </th>
+            <th>
+              <span class="vi-text">Tỷ Lệ Phản Hồi 24h</span>
+              <span class="zh-text">24小时回复率</span>
+            </th>
+            <th>
+              <span class="vi-text">RFQ Đã Dùng</span>
+              <span class="zh-text">RFQ消耗</span>
+            </th>
+            <th>
+              <span class="vi-text">Showcase (橱窗)</span>
+              <span class="zh-text">橱窗使用</span>
+            </th>
+            <th>
+              <span class="vi-text">Đánh Giá & Tiềm Năng</span>
+              <span class="zh-text">健康度诊断</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="store-badge">
+                <strong>HY LONG INDUSTRIAL</strong>
+              </div>
+              <div style="font-size:11.5px; color:#6b7280;">vn1528659103udkw · 4 yrs</div>
+            </td>
+            <td><span class="cat-pill cat-rubber">Rubber Raw Materials</span></td>
+            <td><span class="star-rating">★ 1.0</span></td>
+            <td><b>1,489</b></td>
+            <td><b>194</b> <span style="font-size:11px; color:#ef4444;">(Thiếu 106)</span></td>
+            <td><b>32</b> <span style="font-size:11px; color:#6b7280;">(4 Inq / 28 TM)</span></td>
+            <td><b>28</b> (87.5%)</td>
+            <td>85 / 85 <span style="color:#10b981; font-weight:700;">(2★)</span></td>
+            <td>92.5% <span style="font-size:11px; color:#10b981;">(~6h)</span></td>
+            <td>38/38 <span style="color:#10b981;">(100%)</span></td>
+            <td>10/10 <span style="color:#10b981;">(100%)</span></td>
+            <td><span class="tag-status tag-good">
+              <span class="vi-text">Tiềm năng lên 2★ cao nhất</span>
+              <span class="zh-text">冲刺2星最具潜力</span>
+            </span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="store-badge">
+                <strong>HY LONG TRADING PROD.</strong>
+              </div>
+              <div style="font-size:11.5px; color:#6b7280;">vn1528628045vgyg · 4 yrs</div>
+            </td>
+            <td><span class="cat-pill cat-plastics">Rubber Hoses & Parts</span></td>
+            <td><span class="star-rating">★ 1.0</span></td>
+            <td><b>1,120</b></td>
+            <td><b>156</b> <span style="font-size:11px; color:#ef4444;">(Thiếu 144)</span></td>
+            <td><b>18</b> <span style="font-size:11px; color:#6b7280;">(3 Inq / 15 TM)</span></td>
+            <td><b>15</b> (83.3%)</td>
+            <td>64 / 64 <span style="color:#10b981; font-weight:700;">(2★)</span></td>
+            <td>88.9% <span style="font-size:11px; color:#f59e0b;">(~8h)</span></td>
+            <td>38/38 <span style="color:#10b981;">(100%)</span></td>
+            <td>8/10 <span style="color:#f59e0b;">(80%)</span></td>
+            <td><span class="tag-status tag-warn">
+              <span class="vi-text">Cần tăng traffic & tối ưu Showcase</span>
+              <span class="zh-text">需补充流量与补齐橱窗</span>
+            </span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION 2: CHI TIẾT TỪNG GIAN HÀNG & 4 TRỤ CỘT ĐÁNH GIÁ SAO -->
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-title-wrap">
+        <span class="sec-num">02</span>
+        <div>
+          <h2 class="sec-title">
+            <span class="vi-text">Chẩn Đoán Chi Tiết 2 Gian Hàng & 4 Trụ Cột Sao</span>
+            <span class="zh-text">店铺深度诊断与四大星级维度拆解</span>
+          </h2>
+          <p class="sec-desc">
+            <span class="vi-text">Phân tích chuyên sâu 4 năng lực cốt lõi: Sản phẩm, Tiếp thị (Traffic), Dịch vụ và Giao dịch Trade Assurance.</span>
+            <span class="zh-text">深度拆解四大核心能力指标：商品力、营销力（流量）、服务力以及信保交易力。</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="store-grid">
+      
+      <!-- GIAN 1 -->
+      <div class="store-card">
+        <div class="store-card-header">
+          <div>
+            <div class="store-name">1. HY LONG INDUSTRIAL CO., LTD</div>
+            <div class="store-sub">
+              <span class="vi-text">ID: vn1528659103udkw · Ngành: Nguyên liệu cao su tự nhiên/tổng hợp</span>
+              <span class="zh-text">账号ID: vn1528659103udkw · 主营: 天然/合成橡胶原材料</span>
+            </div>
+          </div>
+          <span class="star-rating">★ 1.0</span>
+        </div>
+
+        <div class="store-metrics">
+          <div class="m-box">
+            <div class="m-title">
+              <span class="vi-text">Lượt Xem SP (IPV)</span>
+              <span class="zh-text">产品浏览量 (IPV)</span>
+            </div>
+            <div class="m-val">1,489</div>
+            <div class="m-sub">
+              <span class="vi-text">UV: 194 (Tỷ lệ xem/khách: 7.6)</span>
+              <span class="zh-text">UV: 194 (人均浏览: 7.6次)</span>
+            </div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">
+              <span class="vi-text">Cơ Hội (AB) / L2+</span>
+              <span class="zh-text">商机数 (AB) / L2+买家</span>
+            </div>
+            <div class="m-val">32 / 28</div>
+            <div class="m-sub" style="color: #10b981; font-weight:600;">
+              <span class="vi-text">Tỷ lệ L2+ đạt 87.5%</span>
+              <span class="zh-text">L2+买家占比 87.5%</span>
+            </div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">
+              <span class="vi-text">Sản phẩm hợp lệ</span>
+              <span class="zh-text">有效商品数</span>
+            </div>
+            <div class="m-val">85</div>
+            <div class="m-sub">
+              <span class="vi-text">100% PIS ≥ 4.2 (Thiếu PIS 5.5)</span>
+              <span class="zh-text">100%达4.2分 (暂缺5.5分优品)</span>
+            </div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">
+              <span class="vi-text">Khẩn cấp cần bổ sung</span>
+              <span class="zh-text">核心缺口指标</span>
+            </div>
+            <div class="m-val" style="color: #ef4444;">+106 UV</div>
+            <div class="m-sub">
+              <span class="vi-text">Để đạt chuẩn Marketing 2★ (300 UV)</span>
+              <span class="zh-text">达标2星营销力门槛 (300 UV)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="star-bars">
+          <div style="font-weight:700; margin-bottom:8px; color:#4b5563;">
+            <span class="vi-text">Điểm 4 Trụ Cột Năng Lực (4 Dimensions):</span>
+            <span class="zh-text">四大维度星级评分 (4 Dimensions):</span>
+          </div>
+          <div class="star-bar-row">
+            <span style="width: 130px;">
+              <span class="vi-text">Sản phẩm (Product):</span>
+              <span class="zh-text">商品力 (Product):</span>
+            </span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 40%; background:#10b981;"></div></div>
+            <span style="font-weight:700; color:#10b981;">2.0★</span>
+          </div>
+          <div class="star-bar-row">
+            <span style="width: 130px;">
+              <span class="vi-text">Tiếp thị (Marketing):</span>
+              <span class="zh-text">营销力 (Marketing):</span>
+            </span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 20%; background:#ef4444;"></div></div>
+            <span style="font-weight:700; color:#ef4444;">1.0★ (Nút thắt)</span>
+          </div>
+          <div class="star-bar-row">
+            <span style="width: 130px;">
+              <span class="vi-text">Dịch vụ (Service):</span>
+              <span class="zh-text">服务力 (Service):</span>
+            </span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 40%; background:#10b981;"></div></div>
+            <span style="font-weight:700; color:#10b981;">2.0★</span>
+          </div>
+          <div class="star-bar-row">
+            <span style="width: 130px;">
+              <span class="vi-text">Giao dịch (Trade):</span>
+              <span class="zh-text">交易力 (Trade):</span>
+            </span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 40%; background:#10b981;"></div></div>
+            <span style="font-weight:700; color:#10b981;">2.0★</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GIAN 2 -->
+      <div class="store-card">
+        <div class="store-card-header">
+          <div>
+            <div class="store-name">2. HY LONG TRADING PRODUCTION CO., LTD</div>
+            <div class="store-sub">
+              <span class="vi-text">ID: vn1528628045vgyg · Ngành: Ống cao su, gioăng & linh kiện cao su</span>
+              <span class="zh-text">账号ID: vn1528628045vgyg · 主营: 橡胶管、密封件及工业橡胶件</span>
+            </div>
+          </div>
+          <span class="star-rating">★ 1.0</span>
+        </div>
+
+        <div class="store-metrics">
+          <div class="m-box">
+            <div class="m-title">
+              <span class="vi-text">Lượt Xem SP (IPV)</span>
+              <span class="zh-text">产品浏览量 (IPV)</span>
+            </div>
+            <div class="m-val">1,120</div>
+            <div class="m-sub">
+              <span class="vi-text">UV: 156 (Tỷ lệ xem/khách: 7.1)</span>
+              <span class="zh-text">UV: 156 (人均浏览: 7.1次)</span>
+            </div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">
+              <span class="vi-text">Cơ Hội (AB) / L2+</span>
+              <span class="zh-text">商机数 (AB) / L2+买家</span>
+            </div>
+            <div class="m-val">18 / 15</div>
+            <div class="m-sub" style="color: #10b981; font-weight:600;">
+              <span class="vi-text">Tỷ lệ L2+ đạt 83.3%</span>
+              <span class="zh-text">L2+买家占比 83.3%</span>
+            </div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">
+              <span class="vi-text">Sản phẩm hợp lệ</span>
+              <span class="zh-text">有效商品数</span>
+            </div>
+            <div class="m-val">64</div>
+            <div class="m-sub">
+              <span class="vi-text">100% PIS ≥ 4.2 · Showcase: 8/10</span>
+              <span class="zh-text">100%达4.2分 · 橱窗: 8/10</span>
+            </div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">
+              <span class="vi-text">Khẩn cấp cần bổ sung</span>
+              <span class="zh-text">核心缺口指标</span>
+            </div>
+            <div class="m-val" style="color: #ef4444;">+144 UV</div>
+            <div class="m-sub">
+              <span class="vi-text">Để đạt chuẩn Marketing 2★ (300 UV)</span>
+              <span class="zh-text">达标2星营销力门槛 (300 UV)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="star-bars">
+          <div style="font-weight:700; margin-bottom:8px; color:#4b5563;">
+            <span class="vi-text">Điểm 4 Trụ Cột Năng Lực (4 Dimensions):</span>
+            <span class="zh-text">四大维度星级评分 (4 Dimensions):</span>
+          </div>
+          <div class="star-bar-row">
+            <span style="width: 130px;">
+              <span class="vi-text">Sản phẩm (Product):</span>
+              <span class="zh-text">商品力 (Product):</span>
+            </span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 40%; background:#10b981;"></div></div>
+            <span style="font-weight:700; color:#10b981;">2.0★</span>
+          </div>
+          <div class="star-bar-row">
+            <span style="width: 130px;">
+              <span class="vi-text">Tiếp thị (Marketing):</span>
+              <span class="zh-text">营销力 (Marketing):</span>
+            </span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 20%; background:#ef4444;"></div></div>
+            <span style="font-weight:700; color:#ef4444;">1.0★ (Nút thắt)</span>
+          </div>
+          <div class="star-bar-row">
+            <span style="width: 130px;">
+              <span class="vi-text">Dịch vụ (Service):</span>
+              <span class="zh-text">服务力 (Service):</span>
+            </span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 40%; background:#10b981;"></div></div>
+            <span style="font-weight:700; color:#10b981;">2.0★</span>
+          </div>
+          <div class="star-bar-row">
+            <span style="width: 130px;">
+              <span class="vi-text">Giao dịch (Trade):</span>
+              <span class="zh-text">交易力 (Trade):</span>
+            </span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 40%; background:#10b981;"></div></div>
+            <span style="font-weight:700; color:#10b981;">2.0★</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 3: PHÂN TÍCH ĐIỂM NGHẼN KỸ THUẬT & CƠ HỘI BỨT PHÁ -->
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-title-wrap">
+        <span class="sec-num">03</span>
+        <div>
+          <h2 class="sec-title">
+            <span class="vi-text">Phân Tích Điểm Nghẽn & Chiến Lược Nâng Hạng 2 Sao</span>
+            <span class="zh-text">核心瓶颈深度剖析与冲刺2星突破路径</span>
+          </h2>
+          <p class="sec-desc">
+            <span class="vi-text">Xác định chính xác các chỉ số đang kéo tụt mức sao và giải pháp kỹ thuật cụ thể.</span>
+            <span class="zh-text">精准定位制约星级提升的短板指标，并提供针对性的实操解决策略。</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Callout 1 -->
+    <div class="callout">
+      <div class="callout-title">
+        <span>⚡</span>
+        <span class="vi-text">ĐIỂM NGHẼN SỐ 1: LƯU LƯỢNG TRUY CẬP (UV 30 NGÀY) CHƯA ĐẠT MỐC 300 UV</span>
+        <span class="zh-text">核心瓶颈 1：30天访客数（UV）未达到 300 UV 的2星基准门槛</span>
+      </div>
+      <p style="color: #4b5563; line-height: 1.6;">
+        <span class="vi-text">
+          Theo cơ chế tính sao của Alibaba.com, điểm sao tổng thể được quyết định bởi <b>trụ cột có điểm số thấp nhất (Nguyên lý Thùng Gỗ)</b>. Cả 2 gian hàng của Hỷ Long đều đã đạt 2.0★ ở 3 trụ cột (Sản phẩm, Dịch vụ, Giao dịch), nhưng trụ cột <b>Tiếp thị (Marketing) đang bị kẹt ở mức 1.0★</b> do UV 30 ngày đạt 194 UV (Gian 1) và 156 UV (Gian 2), trong khi mốc tối thiểu để đạt 2.0★ Tiếp thị là <b>300 UV/gian</b>.
+        </span>
+        <span class="zh-text">
+          根据阿里巴巴国际站星级评定规则，总星级由<b>四大维度中得分最低的一项决定（木桶原理）</b>。喜隆的两家店铺在商品力、服务力、交易力三个维度均已达到 2.0★ 评级，但<b>营销力（Marketing）均卡在 1.0★</b>。店铺1当前UV为194，店铺2为156，距离2星营销力门槛 <b>300 UV/店</b> 分别还差 106 UV 和 144 UV。
+        </span>
+      </p>
+    </div>
+
+    <!-- Callout 2 -->
+    <div class="callout" style="background:#eff6ff; border-left-color:#2563eb;">
+      <div class="callout-title" style="color:#1e40af;">
+        <span>🎯</span>
+        <span class="vi-text">ĐIỂM NGHẼN SỐ 2: THIẾU HỤT SẢN PHẨM SIÊU SAO (SUPER PRODUCTS / PIS ≥ 5.5)</span>
+        <span class="zh-text">核心瓶颈 2：缺乏实力优品（Super Products / PIS ≥ 5.5）头部爆品</span>
+      </div>
+      <p style="color: #4b5563; line-height: 1.6;">
+        <span class="vi-text">
+          Hiện tại 100% sản phẩm trên cả 2 gian hàng đều đạt mức chất lượng cơ bản PIS ≥ 4.2 (Sản phẩm tiềm năng), tuy nhiên <b>chưa có sản phẩm nào đạt PIS ≥ 5.5 (实力优品 - Super Products)</b>. Để leo lên 3★ - 4★ trong tương lai, mỗi gian hàng cần tối thiểu <b>3 - 5 Sản phẩm Siêu Sao</b> có tích lũy chuyển đổi cao, lượt xem vượt trội và đầy đủ chứng nhận kiểm định kỹ thuật (COA, RoHS, REACH, ISO).
+        </span>
+        <span class="zh-text">
+          目前两家店铺100%在架产品均已达到 PIS ≥ 4.2 的基础良好分，但<b>尚无 PIS ≥ 5.5 的实力优品（Super Products）</b>。若要未来向 3★~4★ 高阶星级迈进，每家店铺必须重点打造 <b>3~5款实力优品</b>，积累高转化、高浏览权重，并完善橡胶行业的专业质检与合规证书（COA, RoHS, REACH, ISO）。
+        </span>
+      </p>
+    </div>
+
+    <!-- Callout 3 -->
+    <div class="callout" style="background:#ecfdf5; border-left-color:#10b981;">
+      <div class="callout-title" style="color:#065f46;">
+        <span>🏆</span>
+        <span class="vi-text">ĐIỂM SÁNG NỔI BẬT: CHẤT LƯỢNG KHÁCH L2+ VÀ NỖ LỰC CHÀO THẦU RFQ RẤT XUẤT SẮC</span>
+        <span class="zh-text">突出亮点：高质量 L2+ 买家占比极高，RFQ 报价权益利用率达 100%</span>
+      </div>
+      <p style="color: #4b5563; line-height: 1.6;">
+        <span class="vi-text">
+          Tỷ lệ khách hàng chất lượng cao (L2+ Buyers) của Hỷ Long đạt mức cực kỳ ấn tượng: <b>87.5% ở Gian 1</b> (28/32 khách) và <b>83.3% ở Gian 2</b> (15/18 khách). Đồng thời, đội ngũ kinh doanh đã khai thác <b>100% quyền lợi báo giá RFQ (38/38 lượt ở cả 2 gian)</b>. Đây là nền tảng chuyển đổi đơn hàng rất vững chắc một khi lượng truy cập tổng thể được đẩy mạnh.
+        </span>
+        <span class="zh-text">
+          喜隆店铺吸引的高价值专业买家（L2+ 买家）比例表现极为优异：<b>店铺1达到 87.5%</b>（28/32人），<b>店铺2达到 83.3%</b>（15/18人）。同时，业务团队对 <b>RFQ 采购商机权益的利用率达到 100%（两店均为 38/38条 全额用完）</b>。这表明客户转化质量极高，一旦流量规模放大，商机与订单将迎来爆发式增长。
+        </span>
+      </p>
+    </div>
+
+  </div>
+
+  <!-- SECTION 4: KẾ HOẠCH HÀNH ĐỘNG THÁNG 11/2026 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-title-wrap">
+        <span class="sec-num">04</span>
+        <div>
+          <h2 class="sec-title">
+            <span class="vi-text">Kế Hoạch Hành Động Trọng Tâm — Tháng 11/2026</span>
+            <span class="zh-text">2026年11月核心运营行动方案 (4大支柱)</span>
+          </h2>
+          <p class="sec-desc">
+            <span class="vi-text">Lộ trình thực thi 4 trụ cột nhằm đưa đồng bộ 2 gian hàng Hỷ Long lên chuẩn 2 Sao (2.0★).</span>
+            <span class="zh-text">围绕四大支柱全面推进，助力喜隆旗下2家店铺全量跃升至2星（2.0★）标准。</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="plan-grid">
+      
+      <!-- PILLAR 1 -->
+      <div class="plan-card">
+        <div class="plan-category">
+          <span class="vi-text">Trụ Cột 1 · Tiếp Thị & Traffic</span>
+          <span class="zh-text">支柱 1 · 流量获取与营销推广</span>
+        </div>
+        <div class="plan-title">
+          <span class="vi-text">Đẩy Traffic Đạt Chuẩn 2★</span>
+          <span class="zh-text">流量攻坚 · 破局300 UV</span>
+        </div>
+        <ul class="plan-list">
+          <li>
+            <span class="vi-text"><b>Mục tiêu UV:</b> Đưa Gian 1 đạt ≥ 320 UV (tăng +126 UV) và Gian 2 đạt ≥ 300 UV (tăng +144 UV).</span>
+            <span class="zh-text"><b>UV目标:</b> 店铺1提升至 ≥320 UV（增量+126），店铺2提升至 ≥300 UV（增量+144）。</span>
+          </li>
+          <li>
+            <span class="vi-text"><b>Kích hoạt KWA (Quảng cáo từ khóa):</b> Tập trung ngân sách vào top từ khóa B2B cao su có lượng tìm kiếm lớn (Natural Rubber SVR 3L, RSS3, Rubber Hose, EPDM Gasket).</span>
+            <span class="zh-text"><b>开启动态推广(KWA):</b> 集中预算在核心大词（天然橡胶SVR 3L、RSS3、橡胶管、EPDM密封条）。</span>
+          </li>
+          <li>
+            <span class="vi-text"><b>Tối ưu Showcase:</b> Bổ sung ngay 2 vị trí Showcase còn trống ở Gian 2 (hiện dùng 8/10) cho sản phẩm ống cao su công nghiệp chủ lực.</span>
+            <span class="zh-text"><b>补齐橱窗权益:</b> 店铺2立即补满剩余2个空置橱窗（现为8/10），绑定主推工业胶管产品。</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- PILLAR 2 -->
+      <div class="plan-card">
+        <div class="plan-category">
+          <span class="vi-text">Trụ Cột 2 · Nâng Cấp Sản Phẩm</span>
+          <span class="zh-text">支柱 2 · 商品质量与爆品打造</span>
+        </div>
+        <div class="plan-title">
+          <span class="vi-text">Xây Dựng 3-5 Super Products</span>
+          <span class="zh-text">打造 3-5 款实力优品</span>
+        </div>
+        <ul class="plan-list">
+          <li>
+            <span class="vi-text"><b>Nâng điểm PIS:</b> Nâng cấp chi tiết mô tả thông số kỹ thuật (Bảng test report, tỷ trọng, độ giãn dài, độ cứng Shore A) để đẩy PIS lên ≥ 5.5.</span>
+            <span class="zh-text"><b>优化PIS分值:</b> 补充完整物性检测报告、拉伸强度、邵氏硬度等专业参数表，冲刺 PIS ≥ 5.5。</span>
+          </li>
+          <li>
+            <span class="vi-text"><b>Video nhà xưởng & thử nghiệm:</b> Bổ sung video test độ bền, độ đàn hồi và quy trình đóng gói pallet xuất khẩu vào trang sản phẩm.</span>
+            <span class="zh-text"><b>主图与工厂视频:</b> 上传橡胶抗压/拉伸测试视频、托盘出口包装全流程实拍视频。</span>
+          </li>
+          <li>
+            <span class="vi-text"><b>Đăng mới 10-15 SP:</b> Bổ sung các mã quy cách ống cao su chịu nhiệt, chịu dầu và cao su kỹ thuật cao.</span>
+            <span class="zh-text"><b>上新 10-15 款:</b> 补充耐高温/耐油高压胶管、定制特种工业橡胶件规格。</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- PILLAR 3 -->
+      <div class="plan-card">
+        <div class="plan-category">
+          <span class="vi-text">Trụ Cột 3 · Tối Ưu Phản Hồi</span>
+          <span class="zh-text">支柱 3 · 客户接待与服务力</span>
+        </div>
+        <div class="plan-title">
+          <span class="vi-text">Duy Trì Phản Hồi Dưới 2 Giờ</span>
+          <span class="zh-text">24h回复率提升与极速响应</span>
+        </div>
+        <ul class="plan-list">
+          <li>
+            <span class="vi-text"><b>Chuẩn hóa thời gian phản hồi:</b> Rút ngắn thời gian phản hồi tin nhắn TradeManager từ 6-8h xuống &lt; 2h trong giờ hành chính.</span>
+            <span class="zh-text"><b>缩短回复时效:</b> 将TM工作时间平均响应时间由 6~8小时 缩短至 2小时以内。</span>
+          </li>
+          <li>
+            <span class="vi-text"><b>Tỷ lệ phản hồi 24h:</b> Duy trì tỷ lệ phản hồi &gt; 95% ở cả 2 gian hàng để giữ vững điểm dịch vụ 2.0★.</span>
+            <span class="zh-text"><b>稳固服务力2星:</b> 确保两家店铺 24小时回复率 持续保持在 95% 以上。</span>
+          </li>
+          <li>
+            <span class="vi-text"><b>Khai thác Smart Assistant:</b> Cài đặt mẫu trả lời tự động thông minh bằng tiếng Anh/tiếng Trung cho khách lệch múi giờ (Mỹ, Châu Âu, Trung Đông).</span>
+            <span class="zh-text"><b>配置智能接待:</b> 设置针对欧美/中东时差买家的AI智能中英文自动接待与规格表直发。</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- PILLAR 4 -->
+      <div class="plan-card">
+        <div class="plan-category">
+          <span class="vi-text">Trụ Cột 4 · Đơn Hàng Mẫu & TA</span>
+          <span class="zh-text">支柱 4 · 信保订单与小额样单</span>
+        </div>
+        <div class="plan-title">
+          <span class="vi-text">Kích Hoạt Đơn Hàng Mẫu Online</span>
+          <span class="zh-text">在线信保打单与小额样单</span>
+        </div>
+        <ul class="plan-list">
+          <li>
+            <span class="vi-text"><b>Tạo đơn mẫu Trade Assurance:</b> Hướng dẫn khách quốc tế thanh toán tiền mẫu (Sample Order $100 - $500) qua Trade Assurance để tích lũy tín dụng gian hàng.</span>
+            <span class="zh-text"><b>沉淀信保样单:</b> 引导海外客户通过信保走小额样品单（100~500美元），积累店铺在线交易信用。</span>
+          </li>
+          <li>
+            <span class="vi-text"><b>Tận dụng 100% RFQ:</b> Tiếp tục duy trì nhịp độ gửi báo giá RFQ chất lượng ngay trong vòng 1-2 giờ sau khi bài đăng thầu xuất hiện.</span>
+            <span class="zh-text"><b>继续全额抢报 RFQ:</b> 保持RFQ 100%消耗率，在商机发布 1~2小时 内迅速跟进首轮专业报价。</span>
+          </li>
+          <li>
+            <span class="vi-text"><b>Bảo vệ quyền lợi xuất khẩu:</b> Tận dụng dịch vụ bảo lãnh thanh toán của Alibaba để chốt hợp đồng B2B an toàn.</span>
+            <span class="zh-text"><b>外贸合规保障:</b> 充分利用阿里平台信用保障通道，增强欧美新买家的信任度。</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>
+      <span class="vi-text">Báo cáo được chuẩn bị bởi: <b>Phạm Nhi</b> · Phụ trách tư vấn (Sales Rep): <b>Phạm Thương</b> (Alibaba.com GGS Vietnam)</span>
+      <span class="zh-text">报告制作人: <b>Phạm Nhi</b> · 业务顾问 (Sales Rep): <b>Phạm Thương</b> (阿里巴巴国际站 GGS 越南)</span>
+    </p>
+    <p style="margin-top: 4px; font-size: 11.5px; opacity: 0.8;">
+      <span class="vi-text">Nguồn dữ liệu: Alibaba.com Data Advisor & Service Audit Report (Tháng 10/2026). Bản quyền thuộc về Hỷ Long Group.</span>
+      <span class="zh-text">数据来源: 阿里巴巴国际站数据参谋与服务月度体检报告 (2026年10月期)。版权归喜隆集团所有。</span>
+    </p>
+  </div>
+
+</div>
+
+<script>
+function switchLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.remove('lang-vi');
+    document.body.classList.add('lang-zh');
+    document.getElementById('btn-vi').classList.remove('active');
+    document.getElementById('btn-zh').classList.add('active');
+    document.title = "阿里巴巴国际站店铺综合诊断报告 — 喜隆集团 (2026年10月)";
+  } else {
+    document.body.classList.remove('lang-zh');
+    document.body.classList.add('lang-vi');
+    document.getElementById('btn-zh').classList.remove('active');
+    document.getElementById('btn-vi').classList.add('active');
+    document.title = "Báo Cáo Tổng Hợp 2 Gian Hàng Alibaba.com — HỶ LONG (Tháng 10/2026)";
+  }
+}
+</script>
+
+</body>
+</html>
