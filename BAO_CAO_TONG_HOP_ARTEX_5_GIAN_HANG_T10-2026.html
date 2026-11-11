@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo Cáo Tổng Hợp 5 Gian Hàng Alibaba.com — ARTEX DONG THAP (Tháng 10/2026)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #ff6a00;
+  --orange-hover: #e55e00;
+  --orange-light: #fff5ee;
+  --orange-soft: rgba(255,106,0,0.08);
+  --dark: #111827;
+  --dark-card: #1f2937;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --success: #10b981;
+  --success-bg: #ecfdf5;
+  --warning: #f59e0b;
+  --warning-bg: #fffbeb;
+  --danger: #ef4444;
+  --danger-bg: #fef2f2;
+  --blue: #2563eb;
+  --blue-bg: #eff6ff;
+  --purple: #8b5cf6;
+  --purple-bg: #f5f3ff;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+  padding: 30px 20px 80px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header & Hero */
+.header-card {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 60%, #374151 100%);
+  border-radius: 20px;
+  padding: 40px;
+  color: white;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.header-card::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(255,106,0,0.3) 0%, rgba(255,106,0,0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.badge-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 106, 0, 0.2);
+  border: 1px solid rgba(255, 106, 0, 0.4);
+  color: #ff9d54;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.header-title {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.header-subtitle {
+  color: #9ca3af;
+  font-size: 15px;
+  margin-bottom: 24px;
+  max-width: 800px;
+}
+
+.header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13.5px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #d1d5db;
+}
+
+.meta-item b {
+  color: white;
+  font-weight: 600;
+}
+
+/* Key Summary Stat Cards */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.stat-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.stat-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Section styling */
+.section {
+  background: var(--bg-card);
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  padding: 30px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sec-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sec-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--orange-soft);
+  color: var(--orange);
+  font-size: 14px;
+  font-weight: 800;
+  border-radius: 10px;
+}
+
+.sec-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.3px;
+}
+
+.sec-desc {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Tables */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  text-align: left;
+}
+
+th {
+  background: #f9fafb;
+  color: #4b5563;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  padding: 14px;
+  border-bottom: 1px solid #f3f4f6;
+  color: var(--text-main);
+  vertical-align: middle;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background-color: #fafafa;
+}
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.cat-pill {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+.cat-furniture { background: #e0f2fe; color: #0369a1; }
+.cat-gifts { background: #fef3c7; color: #92400e; }
+
+.star-rating {
+  color: #f59e0b;
+  font-weight: 800;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.tag-status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+.tag-good { background: var(--success-bg); color: #065f46; border: 1px solid #a7f3d0; }
+.tag-warn { background: var(--warning-bg); color: #92400e; border: 1px solid #fde68a; }
+.tag-danger { background: var(--danger-bg); color: #991b1b; border: 1px solid #fecaca; }
+
+/* Grid Cards for 5 Stores Detail */
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+.store-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.store-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.store-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.store-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.store-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.m-box {
+  background: #f9fafb;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #f3f4f6;
+}
+
+.m-title {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.m-val {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-top: 2px;
+}
+
+.m-sub {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.m-sub.up { color: var(--success); font-weight: 600; }
+.m-sub.down { color: var(--danger); font-weight: 600; }
+
+.star-bars {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #f3f4f6;
+  font-size: 12px;
+}
+
+.star-bar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.bar-bg {
+  flex-grow: 1;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  margin: 0 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--orange);
+  border-radius: 3px;
+}
+
+/* Callout & Action Plan */
+.callout {
+  background: var(--orange-light);
+  border-left: 4px solid var(--orange);
+  padding: 16px 20px;
+  border-radius: 0 12px 12px 0;
+  margin-bottom: 20px;
+  font-size: 13.5px;
+}
+
+.callout-title {
+  font-weight: 700;
+  color: #9a3412;
+  margin-bottom: 4px;
+}
+
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.plan-card {
+  background: #f9fafb;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  border-top: 3px solid var(--orange);
+}
+
+.plan-category {
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.plan-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.plan-list {
+  padding-left: 18px;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.plan-list li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.pis-badge {
+  display: inline-block;
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .header-card { padding: 24px 20px; }
+  .header-title { font-size: 22px; }
+  .section { padding: 20px 16px; }
+  .store-grid { grid-template-columns: 1fr; }
+  .plan-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  
+  <!-- HERO HEADER -->
+  <div class="header-card">
+    <div class="badge-top">
+      <span>●</span> Báo Cáo Vận Hành & Khám Sức Khỏe Gian Hàng
+    </div>
+    <h1 class="header-title">ARTEX DONG THAP JOINT STOCK COMPANY</h1>
+    <p class="header-subtitle">Báo cáo tổng hợp số liệu vận hành và đánh giá hiệu quả 05 gian hàng trên Alibaba.com — Kỳ dữ liệu Tháng 10/2026 & Kế hoạch hành động Tháng 11/2026.</p>
+    
+    <div class="header-meta">
+      <div class="meta-item">Kỳ báo cáo: <b>Tháng 10/2026</b></div>
+      <div class="meta-item">Số lượng gian hàng: <b>05 Gian Hàng</b></div>
+      <div class="meta-item">Ngành hàng: <b>Gifts & Crafts (3 gian) | Furniture (2 gian)</b></div>
+      <div class="meta-item">Sales Rep: <b>Vi Chi Minh</b></div>
+      <div class="meta-item">Người chuẩn bị: <b>Phạm Nhi</b></div>
+      <div class="meta-item">Trade Assurance: <b style="color: #10b981;">Đang kích hoạt (100%)</b></div>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY KPIS -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-label">Tổng Lượt Hiển Thị (Impressions)</div>
+      <div class="stat-value">57,708</div>
+      <div class="stat-sub"><span style="color:#ef4444; font-weight:600;">▼ MoM giảm nhẹ</span> (TB ~11.5k/gian)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Tổng Khách Truy Cập (UV 30D)</div>
+      <div class="stat-value">1,026</div>
+      <div class="stat-sub">Mục tiêu 2★: 300 UV/gian (Còn thiếu 474 UV)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Tổng Cơ Hội Kinh Doanh (AB)</div>
+      <div class="stat-value">123</div>
+      <div class="stat-sub">Inquiry: 33 · Tin nhắn TM: 90</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Tổng Sản Phẩm Đang Đăng</div>
+      <div class="stat-value">6,429</div>
+      <div class="stat-sub">Mục tiêu chuẩn hóa: <span class="pis-badge">PIS &gt; 5.5</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Xếp Hạng Sao Hiện Tại</div>
+      <div class="stat-value" style="color: #f59e0b;">1.0★ <span style="font-size:16px; color:#6b7280; font-weight:600;">(Cả 5 gian)</span></div>
+      <div class="stat-sub">Nút thắt: Điểm Marketing & Dịch Vụ</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: MA TRẬN SO SÁNH 5 GIAN HÀNG -->
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-title-wrap">
+        <span class="sec-num">01</span>
+        <div>
+          <h2 class="sec-title">Bảng Ma Trận So Sánh Tổng Quan 5 Gian Hàng</h2>
+          <p class="sec-desc">Đối chiếu chi tiết các chỉ số vận hành cốt lõi, mức độ khai thác công cụ và xếp hạng sao tháng 10/2026.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Gian Hàng</th>
+            <th>Ngành Hàng</th>
+            <th>Mức Sao T10</th>
+            <th>Lượt Hiển Thị</th>
+            <th>Khách (UV)</th>
+            <th>Cơ Hội (AB)</th>
+            <th>Sản Phẩm</th>
+            <th>Chất Lượng SP (PIS)</th>
+            <th>Tỷ Lệ Phản Hồi</th>
+            <th>RFQ Đã Dùng</th>
+            <th>Showcase</th>
+            <th>Đánh Giá Sức Khỏe</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="store-badge">
+                <strong>Gian 1 (SR-23)</strong>
+              </div>
+              <div style="font-size:11.5px; color:#6b7280;">2 năm hoạt động</div>
+            </td>
+            <td><span class="cat-pill cat-furniture">Furniture</span></td>
+            <td><span class="star-rating">★ 1.0</span></td>
+            <td><b>12,036</b> <span style="font-size:11px; color:#ef4444;">(-6.8%)</span></td>
+            <td><b>261</b> <span style="font-size:11px; color:#6b7280;">(Thiếu 39)</span></td>
+            <td><b>33</b> <span style="font-size:11px; color:#6b7280;">(5 Inq / 28 TM)</span></td>
+            <td>1,510</td>
+            <td>1,301 SP PIS ≥ 4.2 <span style="color:#10b981; font-weight:700;">(5★)</span></td>
+            <td>95.0% <span style="font-size:11px; color:#6b7280;">(9h)</span></td>
+            <td>32/32 <span style="color:#10b981;">(100%)</span></td>
+            <td>10/10 <span style="color:#10b981;">(100%)</span></td>
+            <td><span class="tag-status tag-good">Tiềm năng lên 2★ cao nhất</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="store-badge">
+                <strong>Gian 2 (SR-24)</strong>
+              </div>
+              <div style="font-size:11.5px; color:#6b7280;">3 năm hoạt động</div>
+            </td>
+            <td><span class="cat-pill cat-gifts">Gifts & Crafts</span></td>
+            <td><span class="star-rating">★ 1.0</span></td>
+            <td><b>15,090</b> <span style="font-size:11px; color:#ef4444;">(-9.1%)</span></td>
+            <td><b>220</b> <span style="font-size:11px; color:#6b7280;">(Thiếu 80)</span></td>
+            <td><b>19</b> <span style="font-size:11px; color:#6b7280;">(4 Inq / 15 TM)</span></td>
+            <td>1,526</td>
+            <td>1,301 SP PIS ≥ 4.2 <span style="color:#10b981; font-weight:700;">(5★)</span></td>
+            <td>73.9% <span style="font-size:11px; color:#ef4444;">(Cần cải thiện)</span></td>
+            <td>50/50 <span style="color:#10b981;">(100%)</span></td>
+            <td>20/20 <span style="color:#10b981;">(100%)</span></td>
+            <td><span class="tag-status tag-warn">Cần siết tốc độ phản hồi</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="store-badge">
+                <strong>Gian 3 (SR-25)</strong>
+              </div>
+              <div style="font-size:11.5px; color:#6b7280;">2 năm hoạt động</div>
+            </td>
+            <td><span class="cat-pill cat-gifts">Gifts & Crafts</span></td>
+            <td><span class="star-rating">★ 1.0</span></td>
+            <td><b>9,692</b> <span style="font-size:11px; color:#ef4444;">(-15.6%)</span></td>
+            <td><b>160</b> <span style="font-size:11px; color:#6b7280;">(Thiếu 140)</span></td>
+            <td><b>28</b> <span style="font-size:11px; color:#6b7280;">(18 Inq / 10 TM)</span></td>
+            <td>1,327</td>
+            <td>1,271 SP PIS ≥ 4.2 <span style="color:#10b981; font-weight:700;">(5★)</span></td>
+            <td>90.5% <span style="color:#10b981;">(Tốt)</span></td>
+            <td>31/31 <span style="color:#10b981;">(100%)</span></td>
+            <td>10/10 <span style="color:#10b981;">(100%)</span></td>
+            <td><span class="tag-status tag-warn">Chất lượng Inquiry tốt, thiếu UV</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="store-badge">
+                <strong>Gian 4 (SR-26)</strong>
+              </div>
+              <div style="font-size:11.5px; color:#6b7280;">2 năm hoạt động</div>
+            </td>
+            <td><span class="cat-pill cat-gifts">Gifts & Crafts</span></td>
+            <td><span class="star-rating">★ 1.0</span></td>
+            <td><b>10,946</b> <span style="font-size:11px; color:#ef4444;">(-7.8%)</span></td>
+            <td><b>240</b> <span style="font-size:11px; color:#6b7280;">(Thiếu 60)</span></td>
+            <td><b>39</b> <span style="font-size:11px; color:#10b981; font-weight:700;">(Cao nhất)</span></td>
+            <td>1,293</td>
+            <td>1,130 SP PIS ≥ 4.2 <span style="color:#10b981; font-weight:700;">(5★)</span></td>
+            <td>80.6% <span style="font-size:11px; color:#6b7280;">(Ổn định)</span></td>
+            <td>51/51 <span style="color:#10b981;">(100%)</span></td>
+            <td>20/20 <span style="color:#10b981;">(100%)</span></td>
+            <td><span class="tag-status tag-good">Tương tác TM sôi động nhất</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="store-badge">
+                <strong>Gian 5 (SR-27)</strong>
+              </div>
+              <div style="font-size:11.5px; color:#6b7280;">3 năm hoạt động</div>
+            </td>
+            <td><span class="cat-pill cat-furniture">Furniture</span></td>
+            <td><span class="star-rating">★ 1.0</span></td>
+            <td><b>9,998</b> <span style="font-size:11px; color:#10b981;">(+15.2%)</span></td>
+            <td><b>145</b> <span style="font-size:11px; color:#ef4444;">(Thấp nhất)</span></td>
+            <td><b>4</b> <span style="font-size:11px; color:#ef4444;">(1 Inq / 3 TM)</span></td>
+            <td>773</td>
+            <td>790 SP PIS ≥ 4.2 <span style="color:#f59e0b; font-weight:700;">(3★ - Thiếu 10)</span></td>
+            <td>100.0% <span style="color:#10b981;">(Xuất sắc)</span></td>
+            <td>20/20 <span style="color:#10b981;">(100%)</span></td>
+            <td>0/10 <span style="color:#ef4444; font-weight:700;">(0% - Chưa gắn)</span></td>
+            <td><span class="tag-status tag-danger">Cảnh báo: Bỏ trống Showcase</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION 2: CHI TIẾT HIỆN TRẠNG & ĐẶC ĐIỂM TỪNG GIAN HÀNG -->
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-title-wrap">
+        <span class="sec-num">02</span>
+        <div>
+          <h2 class="sec-title">Chẩn Đoán Chi Tiết 05 Gian Hàng</h2>
+          <p class="sec-desc">Phân tích sâu từng gian hàng về cơ cấu chuyển đổi, 4 chiều sao và các điểm nghẽn kỹ thuật.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="store-grid">
+      <!-- Gian 1 -->
+      <div class="store-card">
+        <div class="store-card-header">
+          <div>
+            <div class="store-name">Gian 1 — Furniture (SR-23)</div>
+            <div class="store-sub">ID: vn19064807636cnko · 2 năm · TA: ON</div>
+          </div>
+          <span class="tag-status tag-good">Tiềm năng 2★</span>
+        </div>
+        <div class="store-metrics">
+          <div class="m-box">
+            <div class="m-title">Khách truy cập (UV)</div>
+            <div class="m-val">261</div>
+            <div class="m-sub">Mục tiêu 2★: 300 UV (Thiếu 39)</div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">Cơ hội KD (AB)</div>
+            <div class="m-val">33</div>
+            <div class="m-sub up">5 Inquiries / 28 TM</div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">Sản phẩm PIS ≥ 4.2</div>
+            <div class="m-val">1,301</div>
+            <div class="m-sub" style="color:#10b981;">Đạt 5★ Sản phẩm</div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">Tỷ lệ phản hồi</div>
+            <div class="m-val">95.0%</div>
+            <div class="m-sub">Thời gian phản hồi: 9 giờ</div>
+          </div>
+        </div>
+        <div class="star-bars">
+          <div class="star-bar-row">
+            <span>Sản phẩm (1301 SP)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
+            <b>5★</b>
+          </div>
+          <div class="star-bar-row">
+            <span>Marketing (261 UV)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 87%;"></div></div>
+            <b>1★</b>
+          </div>
+          <div class="star-bar-row">
+            <span>Dịch vụ (14 khách)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 70%;"></div></div>
+            <b>2★</b>
+          </div>
+          <div class="star-bar-row">
+            <span>Giao dịch (GMV: $0)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 40%;"></div></div>
+            <b>2★</b>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gian 2 -->
+      <div class="store-card">
+        <div class="store-card-header">
+          <div>
+            <div class="store-name">Gian 2 — Gifts & Crafts (SR-24)</div>
+            <div class="store-sub">ID: vn1568746663dbmz · 3 năm · TA: ON</div>
+          </div>
+          <span class="tag-status tag-warn">Hiển thị cao nhất</span>
+        </div>
+        <div class="store-metrics">
+          <div class="m-box">
+            <div class="m-title">Lượt hiển thị</div>
+            <div class="m-val">15,090</div>
+            <div class="m-sub down">MoM: -9.07%</div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">Khách truy cập (UV)</div>
+            <div class="m-val">220</div>
+            <div class="m-sub">Mục tiêu 2★: 300 UV (Thiếu 80)</div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">Cơ hội KD (AB)</div>
+            <div class="m-val">19</div>
+            <div class="m-sub">4 Inquiries / 15 TM</div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">Tỷ lệ phản hồi</div>
+            <div class="m-val" style="color:#ef4444;">73.91%</div>
+            <div class="m-sub down">Dưới TB ngành (87.4%)</div>
+          </div>
+        </div>
+        <div class="star-bars">
+          <div class="star-bar-row">
+            <span>Sản phẩm (1301 SP)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
+            <b>5★</b>
+          </div>
+          <div class="star-bar-row">
+            <span>Marketing (220 UV)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 73%;"></div></div>
+            <b>1★</b>
+          </div>
+          <div class="star-bar-row">
+            <span>Dịch vụ (9 khách)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 45%;"></div></div>
+            <b>1★</b>
+          </div>
+          <div class="star-bar-row">
+            <span>Giao dịch (GMV: $0)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 40%;"></div></div>
+            <b>2★</b>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gian 3 -->
+      <div class="store-card">
+        <div class="store-card-header">
+          <div>
+            <div class="store-name">Gian 3 — Gifts & Crafts (SR-25)</div>
+            <div class="store-sub">ID: vn1566202818jkue · 2 năm · TA: ON</div>
+          </div>
+          <span class="tag-status tag-warn">Inquiry Chất Lượng</span>
+        </div>
+        <div class="store-metrics">
+          <div class="m-box">
+            <div class="m-title">Thư hỏi hàng (Inquiry)</div>
+            <div class="m-val" style="color:#10b981;">18</div>
+            <div class="m-sub up">Cao nhất nhóm Gifts</div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">Khách truy cập (UV)</div>
+            <div class="m-val">160</div>
+            <div class="m-sub">Mục tiêu 2★: 300 UV (Thiếu 140)</div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">Sản phẩm PIS ≥ 4.2</div>
+            <div class="m-val">1,271</div>
+            <div class="m-sub" style="color:#10b981;">Đạt 5★ Sản phẩm</div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">Tỷ lệ phản hồi</div>
+            <div class="m-val">90.48%</div>
+            <div class="m-sub up">Vượt TB ngành (87.4%)</div>
+          </div>
+        </div>
+        <div class="star-bars">
+          <div class="star-bar-row">
+            <span>Sản phẩm (1271 SP)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
+            <b>5★</b>
+          </div>
+          <div class="star-bar-row">
+            <span>Marketing (160 UV)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 53%;"></div></div>
+            <b>1★</b>
+          </div>
+          <div class="star-bar-row">
+            <span>Dịch vụ (7 khách)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 35%;"></div></div>
+            <b>1★</b>
+          </div>
+          <div class="star-bar-row">
+            <span>Giao dịch (GMV: $0)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 40%;"></div></div>
+            <b>2★</b>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gian 4 -->
+      <div class="store-card">
+        <div class="store-card-header">
+          <div>
+            <div class="store-name">Gian 4 — Gifts & Crafts (SR-26)</div>
+            <div class="store-sub">ID: vn1561861228oied · 2 năm · TA: ON</div>
+          </div>
+          <span class="tag-status tag-good">Cơ Hội KD Cao Nhất</span>
+        </div>
+        <div class="store-metrics">
+          <div class="m-box">
+            <div class="m-title">Tổng Cơ Hội (AB)</div>
+            <div class="m-val" style="color:#10b981;">39</div>
+            <div class="m-sub up">34 Tin nhắn TM / 5 Inquiries</div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">Khách truy cập (UV)</div>
+            <div class="m-val">240</div>
+            <div class="m-sub">Mục tiêu 2★: 300 UV (Thiếu 60)</div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">Khách chất lượng L2+</div>
+            <div class="m-val">31</div>
+            <div class="m-sub">21 khách trả phí</div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">Sản phẩm Top</div>
+            <div class="m-val">14</div>
+            <div class="m-sub" style="color:#10b981;">Nhiều Top Product nhất</div>
+          </div>
+        </div>
+        <div class="star-bars">
+          <div class="star-bar-row">
+            <span>Sản phẩm (1130 SP)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
+            <b>5★</b>
+          </div>
+          <div class="star-bar-row">
+            <span>Marketing (240 UV)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div>
+            <b>1★</b>
+          </div>
+          <div class="star-bar-row">
+            <span>Dịch vụ (19 khách)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 63%;"></div></div>
+            <b>2★</b>
+          </div>
+          <div class="star-bar-row">
+            <span>Giao dịch (GMV: $0)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 40%;"></div></div>
+            <b>2★</b>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gian 5 -->
+      <div class="store-card">
+        <div class="store-card-header">
+          <div>
+            <div class="store-name">Gian 5 — Furniture (SR-27)</div>
+            <div class="store-sub">ID: vn19052786324vueg · 3 năm · TA: ON</div>
+          </div>
+          <span class="tag-status tag-danger">Cần Tối Ưu Gấp</span>
+        </div>
+        <div class="store-metrics">
+          <div class="m-box">
+            <div class="m-title">Tổng Cơ Hội (AB)</div>
+            <div class="m-val" style="color:#ef4444;">4</div>
+            <div class="m-sub down">Chỉ 1 Inquiry / 3 TM</div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">Khách truy cập (UV)</div>
+            <div class="m-val" style="color:#ef4444;">145</div>
+            <div class="m-sub">Mục tiêu 2★: 300 UV (Thiếu 155)</div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">Sản phẩm PIS ≥ 4.2</div>
+            <div class="m-val" style="color:#f59e0b;">790</div>
+            <div class="m-sub down">Chỉ đạt 3★ SP (Mục tiêu 800)</div>
+          </div>
+          <div class="m-box">
+            <div class="m-title">Gian Trưng Bày (Showcase)</div>
+            <div class="m-val" style="color:#ef4444;">0/10</div>
+            <div class="m-sub down">Lãng phí 100% tài nguyên</div>
+          </div>
+        </div>
+        <div class="star-bars">
+          <div class="star-bar-row">
+            <span>Sản phẩm (790 SP)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 60%;"></div></div>
+            <b>3★</b>
+          </div>
+          <div class="star-bar-row">
+            <span>Marketing (145 UV)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 48%;"></div></div>
+            <b>1★</b>
+          </div>
+          <div class="star-bar-row">
+            <span>Dịch vụ (2 khách)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 20%;"></div></div>
+            <b>1★</b>
+          </div>
+          <div class="star-bar-row">
+            <span>Giao dịch (GMV: $0)</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 40%;"></div></div>
+            <b>2★</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: PHÂN TÍCH TỔNG HỢP & NGUYÊN NHÂN ĐIỂM NGHẼN -->
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-title-wrap">
+        <span class="sec-num">03</span>
+        <div>
+          <h2 class="sec-title">Nhận Định Chuyên Sâu & Điểm Nghẽn Vận Hành</h2>
+          <p class="sec-desc">Đánh giá các ưu thế nền tảng và 4 điểm nghẽn kỹ thuật chung của toàn bộ 5 gian hàng Artex.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">Điểm Mạnh Nổi Bật:</div>
+      Toàn bộ 5 gian hàng Artex đều có quy mô kho sản phẩm rất lớn (tổng 6,429 sản phẩm), tỷ lệ sản phẩm cơ bản đạt chuẩn PIS ≥ 4.2 đạt gần 90%. Đội ngũ vận hành đã khai thác 100% hạn ngạch RFQ được cấp (tổng cộng 184/184 lượt báo giá RFQ trong tháng 10). Tỷ lệ phản hồi tin nhắn duy trì ở mức khá tốt (73.9% – 100%).
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 20px;">
+      <div style="background: #fff5f5; border: 1px solid #fed7d7; border-radius: 12px; padding: 18px;">
+        <h4 style="color: #c53030; margin-bottom: 6px; font-size: 14.5px;">1. Điểm Nghẽn Marketing (UV Thấp)</h4>
+        <p style="font-size: 13px; color: #4a5568;">Cả 5 gian hàng đều chưa triển khai Quảng cáo từ khóa (P4P chi tiêu = 0 VND). Traffic phụ thuộc 100% vào tự nhiên (Organic) khiến lượng UV 30 ngày dao động 145 – 261 khách, chưa gian nào chạm mốc 300 UV để mở khóa 2★ Marketing.</p>
+      </div>
+
+      <div style="background: #fffaf0; border: 1px solid #feebc8; border-radius: 12px; padding: 18px;">
+        <h4 style="color: #dd6b20; margin-bottom: 6px; font-size: 14.5px;">2. Lãng Phí Showcase Tại Gian 5</h4>
+        <p style="font-size: 13px; color: #4a5568;">Gian hàng 5 (Furniture - SR 27) đang để trống hoàn toàn 10/10 vị trí Gian trưng bày (Showcase 0%). Đây là nguyên nhân trực tiếp khiến gian này chỉ có 4 AB và 145 UV trong cả tháng.</p>
+      </div>
+
+      <div style="background: #f0fff4; border: 1px solid #c6f6d5; border-radius: 12px; padding: 18px;">
+        <h4 style="color: #2f855a; margin-bottom: 6px; font-size: 14.5px;">3. Thiếu Chuẩn Hóa PIS &gt; 5.5 &amp; Super Product</h4>
+        <p style="font-size: 13px; color: #4a5568;">Mặc dù lượng sản phẩm PIS ≥ 4.2 rất nhiều, nhưng số lượng sản phẩm đạt chuẩn cao cấp <b>PIS &gt; 5.5 (Super Product)</b> hiện tại bằng 0 ở cả 5 gian. Việc thiếu sản phẩm PIS &gt; 5.5 làm giảm khả năng phân phối traffic tự nhiên từ thuật toán Alibaba.</p>
+      </div>
+
+      <div style="background: #ebf8ff; border: 1px solid #bee3f8; border-radius: 12px; padding: 18px;">
+        <h4 style="color: #2b6cb0; margin-bottom: 6px; font-size: 14.5px;">4. Chưa Khai Thác Đơn Hàng Trade Assurance</h4>
+        <p style="font-size: 13px; color: #4a5568;">Cả 5 gian hàng đều đã bật cổng Trade Assurance nhưng chưa phát sinh đơn giao dịch thực tế qua hệ thống (GMV 90 ngày = $0). Cần điều hướng các đơn hàng mẫu (Sample orders) thanh toán qua TA để tích lũy điểm Giao Dịch.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: KẾ HOẠCH HÀNH ĐỘNG THÁNG 11/2026 -->
+  <div class="section">
+    <div class="section-head">
+      <div class="sec-title-wrap">
+        <span class="sec-num">04</span>
+        <div>
+          <h2 class="sec-title">Kế Hoạch Hành Động Tháng 11/2026</h2>
+          <p class="sec-desc">Chiến lược trọng tâm phân theo 4 trụ cột nghiệp vụ giúp đưa tối thiểu 2 – 3 gian hàng nâng hạng lên 2★ và bứt phá hiệu quả kinh doanh.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="plan-grid">
+      <!-- Trụ cột 1 -->
+      <div class="plan-card">
+        <div class="plan-category">Trụ Cột 1 · Kho Sản Phẩm &amp; PIS &gt; 5.5</div>
+        <div class="plan-title">Chuẩn Hóa Sản Phẩm Đỉnh Cao (PIS &gt; 5.5)</div>
+        <ul class="plan-list">
+          <li><b>Nâng cấp PIS &gt; 5.5:</b> Lựa chọn Top 30 – 50 sản phẩm chủ lực/bán chạy nhất của mỗi gian để nâng cấp toàn diện: bổ sung video độ nét cao, bảng thông số kỹ thuật chi tiết, chứng chỉ kiểm định và ảnh chụp thực tế xưởng để đạt <span class="pis-badge">PIS &gt; 5.5 (Super Product)</span>.</li>
+          <li><b>Gian 5 (Furniture):</b> Lắp đầy ngay 10 sản phẩm <span class="pis-badge">PIS &gt; 5.5</span> vào 10 vị trí Showcase đang bị bỏ trống (0%).</li>
+          <li><b>Bổ sung sản phẩm mới:</b> Đăng thêm 20 sản phẩm mới PIS ≥ 4.5 cho Gian 5 để cán mốc 800 SP, nâng trần chiều Sản phẩm lên 5★.</li>
+        </ul>
+      </div>
+
+      <!-- Trụ cột 2 -->
+      <div class="plan-card">
+        <div class="plan-category">Trụ Cột 2 · Lưu Lượng &amp; Quảng Cáo</div>
+        <div class="plan-title">Kích Hoạt Traffic &amp; Cán Mốc 2★ Marketing</div>
+        <ul class="plan-list">
+          <li><b>Kích hoạt P4P cho Gian 1 &amp; Gian 4:</b> Đẩy mạnh chạy KWA/Smart Ads với ngân sách đề xuất 1.5 – 2.5 triệu VND/gian để kéo thêm 40 – 60 UV, chính thức cán mốc <b>300 UV</b> (đạt chuẩn 2★ Marketing).</li>
+          <li><b>Tối ưu CTR:</b> Thay thế ảnh đại diện chính (Main image) nền trắng chuẩn 1:1, gắn watermark thương hiệu và bổ sung hình ảnh ngữ cảnh (lifestyle) để tăng tỷ lệ click từ 1.0% lên &gt;2.5%.</li>
+          <li><b>Ứng dụng AI Smart Assistant:</b> Sử dụng hết hạn ngạch 660 credits AI/gian để tạo video ngắn tự động và dịch thuật đa ngôn ngữ cho kho sản phẩm.</li>
+        </ul>
+      </div>
+
+      <!-- Trụ cột 3 -->
+      <div class="plan-card">
+        <div class="plan-category">Trụ Cột 3 · Tương Tác &amp; Săn RFQ</div>
+        <div class="plan-title">Tăng Tốc Phản Hồi &amp; Tối Đa Hóa RFQ</div>
+        <ul class="plan-list">
+          <li><b>Gian 2 (Gifts &amp; Crafts):</b> Thiết lập kịch bản Auto-reply chuyên nghiệp và phân bổ trực tin nhắn TradeManager ca tối/cuối tuần để kéo tỷ lệ phản hồi từ 73.9% lên &gt;85% (rút ngắn thời gian phản hồi &lt;4h).</li>
+          <li><b>Khai thác 100% RFQ:</b> Tiếp tục phát huy thế mạnh gửi báo giá RFQ, tập trung vào các yêu cầu mua hàng từ người mua chất lượng cao (Verified Buyer, L2/L3 Buyer).</li>
+          <li><b>Chăm sóc tệp khách cũ:</b> Gửi tin nhắn chào hàng bộ sưu tập mới (New Arrivals) đến 123 người mua đã phát sinh tương tác trong tháng 10.</li>
+        </ul>
+      </div>
+
+      <!-- Trụ cột 4 -->
+      <div class="plan-card">
+        <div class="plan-category">Trụ Cột 4 · Giao Dịch &amp; Trade Assurance</div>
+        <div class="plan-title">Kéo Đơn Trade Assurance &amp; Chốt Sao</div>
+        <ul class="plan-list">
+          <li><b>Tạo đơn hàng mẫu qua TA:</b> Hướng dẫn người mua thanh toán các đơn hàng mẫu (Sample orders) trị giá $100 – $500 qua cổng Trade Assurance để phát sinh giao dịch thật, tạo tiền đề nâng điểm sao Giao Dịch.</li>
+          <li><b>Đảm bảo an toàn thanh toán:</b> Tận dụng quyền lợi Trade Assurance để tạo uy tín với người mua mới ở các thị trường khó tính (Mỹ, Châu Âu, Nhật Bản).</li>
+          <li><b>Đánh giá &amp; Điều chỉnh:</b> Kiểm tra định kỳ chỉ số 4 chiều sao vào giữa tháng để kịp thời bù đắp các khoảng cách chỉ số còn thiếu trước kỳ chốt sao.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>Báo cáo được tổng hợp tự động từ dữ liệu hệ thống Alibaba.com Data Advisor & CRM Service Reports Tháng 10/2026.</p>
+    <p style="margin-top: 4px;">Sales Rep: <b>Vi Chi Minh</b> · Người chuẩn bị: <b>Phạm Nhi</b> · Đơn vị khách hàng: <b>ARTEX DONG THAP JOINT STOCK COMPANY</b></p>
+  </div>
+
+</div>
+
+</body>
+</html>
